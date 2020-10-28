@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Giới thiệu</title>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+	<link rel="shortcut icon" href="images/20.png">
+	<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+	<script>
+jQuery.noConflict();
+(function( $ ) {
+		jQuery(document).ready(function($){ 	
+	if($("#veDauTrang").length > 0){
+		$(window).scroll(function () {
+			var e = $(window).scrollTop();
+			if (e > 100) {
+				$("#veDauTrang").show();
+			} else {
+				$("#veDauTrang").hide()
+			}
+			var mediaElement =document.getElementById("video1");
+			if (e > 400) {
+				document.getElementById("hinhNen").style.display="block";
+				document.getElementById("header").style.backgroundColor="#323233";
+				document.getElementById("header").style.opacity="98%";
+				document.getElementById("tieuDe").style.color="#000"
+				document.getElementById("keTieuDe").style.borderBottomColor="#000";
+				document.getElementById("lamMo").style.opacity="70%";
+			}
+			else{
+				document.getElementById("hinhNen").style.display="none";
+				document.getElementById("header").style.backgroundColor="#000";
+				document.getElementById("header").style.opacity="92%";
+				document.getElementById("tieuDe").style.color="#fff";
+				document.getElementById("keTieuDe").style.borderBottomColor="#fff";
+				document.getElementById("lamMo").style.opacity="5%";
+			}
+			if(e > 421 && e <719){
+				document.getElementById("veChungToiHeader").style.color="#0066cc";
+			}
+			else{
+				document.getElementById("veChungToiHeader").style.color="#757575";
+			}
+			if(e > 719 && e <1005){
+				document.getElementById("dichVuBanHangHeader").style.color="#0066cc";
+			}
+			else{
+				document.getElementById("dichVuBanHangHeader").style.color="#757575";
+			}
+			if(e > 1006){
+				document.getElementById("hanhTrinhPhatTrienHeader").style.color="#0066cc";
+			}
+			else{
+				document.getElementById("hanhTrinhPhatTrienHeader").style.color="#757575";
+			}
+		});
+		$("#veDauTrang").click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			})
+		})
+	}
+	$("#veChungToiHeader").click(function(){
+		$('body,html').animate({
+			scrollTop: 422
+		})
+	})
+	$("#dichVuBanHangHeader").click(function(){
+		$('body,html').animate({
+			scrollTop: 720
+		})
+	})
+
+	$("#hanhTrinhPhatTrienHeader").click(function(){
+		$('body,html').animate({
+			scrollTop: 1007
+		})
+	})
+});
+})( jQuery );
+</script>
+</head>
+
+<body>
+	<header  id="header" class="fixed-top">
+		<form name="box-tim-kiem" action="#" id="box-tim-kiem">
+			<span><input type="submit" value="Search" id="nut-tim-kiem"></span>
+			<span><input name="sanpham" type="text" id="text-box-tim-kiem" placeholder="Tìm kiếm sản phẩm..."></span>
+			<span><label onClick="dongform('box-tim-kiem')" id="nut-thoat-tim-kiem"><i class="fa fa-close"></i></label></span>
+		</form>
+		<div class="row">
+			<div class="col-xl-3 d-flex">
+				<nav class="nav-menu">
+				<ul>
+					<li class="drop-down"><a href=""><i class="fa fa-navicon d-flex" style="font-size: 28px; color: #fafafa;"></i></a>
+           		     		<ul>
+                 				<li><a href="#">Điện thoại</a></li>
+                  				<li><a href="#">Máy tính bảng</a></li>
+								<li><a href="#">Laptop</a></li>
+                  				<li><a href="#">Đồng hồ</a></li>
+                  				<li><a href="#">Tai nghe</a></li>
+								<li><a href="#">Khuyến mại</a></li>
+         	       			</ul>
+           		   	</li>	
+				</ul>
+				</nav>
+				<a href="home.html"><img id="logo-X" src="images/20.png" alt="img"></a>&nbsp;&nbsp;&nbsp;
+				<span class="d-none d-lg-block logo-chu">
+					<a href="home.html">CellphoneX</a>
+				</span>
+				
+			</div>
+			<div class="col-xl-6 d-flex">
+				<nav class="nav-menu d-none d-lg-block">
+					<ul>
+						<li><a href="#about">Điện thoại</a></li>
+						<li><a href="#services">Máy tính bảng</a></li>
+						<li><a href="#services">Laptop</a></li>
+						<li><a href="#portfolio">Đồng hồ</a></li>
+						<li><a href="#team">Tai nghe</a></li>
+						<li><a href="">Khuyến mại</a></li>
+              			<li><a href="#contact">Tin tức</a></li>
+            		</ul>
+          		</nav><!-- .nav-menu -->
+        	</div>
+			<div class="col-xl-3 d-flex">
+          		<nav class="nav-menu d-none d-lg-block">
+					<ul>
+						<li><a href="">Hỗ trợ</a></li>
+						<li class="drop-down">
+							<span></span><a href="">Chúng tôi &darr;</a>
+           		    	 	<ul>
+								<li><a href="#">Giới thiệu</a></li>
+								<li><a href="#">Liên hệ</a></li>
+								<li><a href="#">Điều khoản</a></li>
+								<li><a href="#">Chính sách</a></li>
+         	       			</ul>
+           		   		</li>
+						<li class="drop-down"><a href=""><i class="fa fa-user d-flex" style="font-size: 28px; color: #fafafa;"></i></a>
+           		   		</li>
+						<li class="drop-down"><a href=""><i class="fa fa-shopping-cart d-flex" style="font-size: 28px; color: #fafafa;"></i></a> 	
+           		   		</li>
+						<li><a onClick="hienthiform('box-tim-kiem');"><i class="fa fa-search d-flex" style="font-size: 28px; color: #fafafa;"></i>
+				</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<div id="lamMo" class="row fixed-top"></div>
+	<div id="keTieuDe" class="row fixed-top header-2">
+		<span class="col-xl-3 d-flex"></span>
+		<span class="col-xl-6 d-flex">
+			<h3 id="tieuDe">Giới thiệu</h3>
+			<a id="veChungToiHeader" href="javascript:void(0);">Về chúng tôi</a>
+			<a id="dichVuBanHangHeader" href="javascript:void(0);">Dịch vụ bán hàng</a>
+			<a id="hanhTrinhPhatTrienHeader" href="javascript:void(0);">Hành trình phát triển</a>
+		</span>
+	</div>
+	<!-- End Header -->
+	
+<!--				Noi dung chinh							-->
+	<div class="banner-gioi-thieu-den" style="height: auto; color: #fff;">
+		<video autoplay width="50%">
+			<source src="video/CellphoneX.mp4">
+		</video>
+	</div>
+	<img id="hinhNen" class="hinhNen" src="images/about-bg.jpg" alt="">
+	<div class="row noiDungTrang" style="width: 100%;">
+			<span class="col-2"></span>
+			<span class="col-8">
+				<h2>Về chúng tôi</h2>
+				<p>Hệ thống bán lẻ sản phẩm công nghệ CellphoneX là đơn vị kinh doanh không có thực. Được hình thành từ thói quen xem review công nghệ của các hot reviewer CellPhoneS và mình quyết định lấy tên tương tự.</p>
+				<p>Sản phẩm này làm ra không nhằm mục đích kinh doanh, chỉ mang tính chất phục vụ cho việc học tập nghiên cứu tại giảng đường Đại học. Mong ai ngang qua đừng bắt bẻ về vấn đề bản quyền.</p>
+				<p>Vì những giải thích chân thực kể trên nên chúng tôi chằng có gì phải bịa ra để nói về chúng tôi nữa, nếu quý vị muốn đọc tiếp xin mời kéo đến phần tiếp theo.</p>
+				<h2 id="dichVuBanHang">Dịch vụ bán hàng</h2>
+				<div class="row">
+					<span class="col-4">
+						<h1><i class="fa fa-american-sign-language-interpreting"></i></h1>
+						<h4>Cam kết chính hãng</h4>
+						CellphoneX là hệ thống bán lẻ sản phẩm công nghệ hợp pháp thuộc công ty XXX. Cam kết luôn đem đến khách hàng những sản phẩm có chất lượng tốt nhất.
+					</span>
+					<span class="col-4">
+						<h1><i class="fa fa-handshake-o"></i></h1>
+						<h4>Hỗ trợ trọn đời</h4>
+						Bảo hành miễn phí lên đến 2 năm. Tư vấn miễn phí trọn đời.
+					</span>
+					<span class="col-4">
+						<h1><i class="fa fa-truck"></i></h1>
+						<h4>Giao hàng toàn quốc</h4>
+						Giao hàng toàn quốc từ 2 - 7 ngày. Đổi trả trong vòng 15 ngày.
+					</span>
+				</div>
+				<h2 id="hanhTrinh">Hành trình phát triển</h2>
+				<p>Hệ thống bán lẻ sản phẩm công nghệ CellphoneX là đơn vị kinh doanh không có thực. Được hình thành từ thói quen xem review công nghệ của các hot reviewer CellPhoneS và mình quyết định lấy tên tương tự.</p>
+				<p>Sản phẩm này làm ra không nhằm mục đích kinh doanh, chỉ mang tính chất phục vụ cho việc học tập nghiên cứu tại giảng đường Đại học. Mong ai ngang qua đừng bắt bẻ về vấn đề bản quyền.</p>
+				<p>Không biết viết gì nhưng muốn nội dung phải rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài, rất dài.</p>
+		</span>
+		<span class="col-2"></span>
+		</div>
+<!--				Noi dung chinh: End.					-->
+<!--				Footer										-->
+	<footer>
+		<div class="row" style="width: 100%;">
+			<span class="col-2">
+				
+			</span>
+			<span class="col-xl-8">
+				<p>Đăng ký thành viên để nhận mã giảm 10% cho đơn hàng đầu tiên tại CellphoneX và liên tục nhận được những ưu đãi sớm nhất. Để bắt đầu tham gia cộng đồng của chúng tôi, hãy đăng ký ngay <a href="#" style="color: #000">tại đây</a>.</p>
+				<div class="row keNganCach">
+					<span class="col-xl-3">
+						<h6>Mua sắm và tìm hiểu</h6>
+						<a href="#">Điện thoại</a><br>
+						<a href="#">Máy tính bảng</a><br>
+						<a href="#">Laptop</a><br>
+						<a href="#">Đồng hồ</a><br>
+						<a href="#">Tai nghe</a><br>
+					</span>
+					<span class="col-xl-3">
+						<h6>Hotline</h6>
+						Gọi mua hàng: <b>0123 456 789</b><br>
+						Gọi khiếu nại: <b>0987 654 321</b><br>
+						Gọi tư vấn: <b>035 775 6343</b><br>
+						
+					</span>
+					<span class="col-xl-3">
+						<h6>Bản tin Xchannel</h6>
+						<a href="#">Tin tức</a><br>
+						<a href="#">Khuyến mại</a><br>
+						<h6>Dịch vụ</h6>
+						<a href="#">Phương thức thanh toán</a><br>
+						<a href="#">Bảo hành</a><br>
+					</span>
+					<span class="col-xl-3">
+						<h6>Theo dõi chúng tôi</h6>
+						<a href="#">Sự kiện</a><br>
+						<a href="#">Youtube chính thức</a><br>
+						<a href="#">Facebook chính thức</a><br>
+					</span>
+					<p style="padding-left: 15px;">Đ/c: số 12 Chùa Bộc - Khoa hệ thống thông tin quản lý, Học viện Ngân hàng.</p>
+				</div>
+				
+				<div class="cuoiFooter">
+					<span>Copyright &copy; 2020 CellphoneX Inc. All rights reserved.</span>
+					<span><a href="">Giới thiệu</a></span>
+					<span><a href="">Liên hệ</a></span>
+					<span><a href="">Chính sách bảo mật</a></span>
+					<span><a href="">Điều khoản sử dụng</a></span>
+					<span>
+						<select title="Trang web hiện chỉ hỗ trợ ngôn ngữ Việt Nam">
+							<option>Tiếng Việt</option>
+						</select>
+					</span>
+				</div>
+			</span>
+			<span class="col-xl-2"></span>
+		</div>
+	</footer>
+<!--				Footer: end.								-->
+	
+<!--							Cac nut o goc					-->
+	<div> <a id="veDauTrang" href="javascript:void(0);" title="Top"><i class="fa fa-chevron-up"></i></a> </div>
+	<section id="noiDungKhuyenMai" class="row khuyenMai fixed-top">
+		<label title="Đóng" onClick="dongform('noiDungKhuyenMai')" class="thoat"><i class="fa fa-close"></i></label>
+		<div class="slide">
+			<div class="dieuHuongSlide">
+				<i onClick="prevSlide()"  id="prev" class="fa fa-toggle-left"></i>
+				<i onClick="nextSlide()" id="next"  class="fa fa-toggle-right"></i>
+			</div>
+			<div id="chuyenSlide">
+				<a><img src="images/ol1.png" alt=""></a>
+				<a><img src="images/section1.png" alt=""></a>
+				<a><img src="images/section2.jpg" alt=""></a>
+				<a><img src="images/section3.jpg" alt=""></a>
+				<a><img src="images/section4.jpg" alt=""></a>
+			</div>
+		</div>
+	</section>
+	
+	<div>
+		<a onClick="hienthiform('noiDungKhuyenMai');" id="khuyenMai" href="javascript:void(0);" title="Thông tin khuyến mãi"><i class="fa fa-audio-description"></i></a>
+		<span class="khuyenMai">5</span>
+	</div>
+<!--							Cac nut o goc: end.				-->
+
+</body>
+</html>

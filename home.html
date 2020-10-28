@@ -1,0 +1,321 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CellphoneX - Sản phẩm chính hãng, chất lượng số 1 Việt Nam</title>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+	<link rel="shortcut icon" href="images/20.png">
+	<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+	<script>
+jQuery.noConflict();
+(function( $ ) {
+		jQuery(document).ready(function($){ 	
+	if($("#veDauTrang").length > 0){
+		$(window).scroll(function () {
+			var e = $(window).scrollTop();
+			var f = e;
+			if (e > 100) {
+				$("#veDauTrang").show();
+			} else {
+				$("#veDauTrang").hide()
+			}
+			if (e > 650) {
+				document.getElementById("header").style.backgroundColor="#323233";
+				document.getElementById("header").style.opacity="98%";
+			} else {
+				document.getElementById("header").style.backgroundColor="#000";
+				document.getElementById("header").style.opacity="92%";
+			}
+			if (e > 100) {
+				document.getElementById("xuatHien21").style.display="block";
+				document.getElementById("xuatHien22").style.display="block";
+				document.getElementById("xuatHien23").style.display="block";
+				document.getElementById("xuatHien24").style.display="block";
+				document.getElementById("xuatHien25").style.display="block";
+				document.getElementById("xuatHien26").style.display="block";
+				document.getElementById("xuatHien27").style.display="block";
+				document.getElementById("xuatHien28").style.display="block";
+			}
+			if (e > 850) {
+				document.getElementById("xuatHien33").style.display="block";
+				if(document.getElementById("xuatHien31").style.display=="none"){
+				document.getElementById("xuatHien33").play();
+				}
+				document.getElementById("xuatHien31").style.display="block";
+				document.getElementById("xuatHien32").style.display="block";
+				document.getElementById("xuatHien34").style.display="block";
+			}
+			if (e > 1450) {
+				document.getElementById("xuatHien41").style.display="block";
+				document.getElementById("xuatHien42").style.display="block";
+				document.getElementById("xuatHien43").style.display="block";
+				document.getElementById("xuatHien44").style.display="block";
+			}
+		});
+		$("#veDauTrang").click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			})
+		})
+	}
+});
+})( jQuery );
+</script>
+</head>
+
+<body>
+	<header  id="header" class="fixed-top">
+		<form name="box-tim-kiem" action="#" id="box-tim-kiem">
+			<span><input type="submit" value="Search" id="nut-tim-kiem"></span>
+			<span><input name="sanpham" type="text" id="text-box-tim-kiem" placeholder="Tìm kiếm sản phẩm..."></span>
+			<span><label onClick="dongform('box-tim-kiem')" id="nut-thoat-tim-kiem"><i class="fa fa-close"></i></label></span>
+		</form>
+		<div class="row">
+			<div class="col-xl-3 d-flex">
+				<nav class="nav-menu">
+				<ul>
+					<li class="drop-down"><a href=""><i class="fa fa-navicon d-flex" style="font-size: 28px; color: #fafafa;"></i></a>
+           		     		<ul>
+                 				<li><a href="dienthoai.html">Điện thoại</a></li>
+                  				<li><a href="maytinhbang.html">Máy tính bảng</a></li>
+								<li><a href="laptop.html">Laptop</a></li>
+                  				<li><a href="dongho.html">Đồng hồ</a></li>
+                  				<li><a href="tainghe.html">Tai nghe</a></li>
+								<li><a href="khuyenmai.html">Khuyến mại</a></li>
+         	       			</ul>
+           		   	</li>	
+				</ul>
+				</nav>
+				<a href="home.html"><img id="logo-X" src="images/20.png" alt="img"></a>&nbsp;&nbsp;&nbsp;
+				<span class="d-none d-lg-block logo-chu">
+					<a href="home.html">CellphoneX</a>
+				</span>
+				
+			</div>
+			<div class="col-xl-6 d-flex">
+				<nav class="nav-menu d-none d-lg-block">
+					<ul>
+						<li><a href="dienthoai.html">Điện thoại</a></li>
+						<li><a href="maytinhbang.html">Máy tính bảng</a></li>
+						<li><a href="laptop.html">Laptop</a></li>
+						<li><a href="dongho.html">Đồng hồ</a></li>
+						<li><a href="tainghe.html">Tai nghe</a></li>
+						<li><a href="khuyenmai.html">Khuyến mại</a></li>
+              			<li><a href="tintuc.html">Tin tức</a></li>
+            		</ul>
+          		</nav><!-- .nav-menu -->
+        	</div>
+			<div class="col-xl-3 d-flex">
+          		<nav class="nav-menu d-none d-lg-block">
+					<ul>
+						<li><a href="hotro.html">Hỗ trợ</a></li>
+						<li class="drop-down">
+							<span></span><a href="">Chúng tôi &darr;</a>
+           		    	 	<ul>
+								<li><a href="gioithieu.html">Giới thiệu</a></li>
+								<li><a href="lienhe.html">Liên hệ</a></li>
+								<li><a href="dieukhoan.html">Điều khoản</a></li>
+								<li><a href="chinhsach.html">Chính sách</a></li>
+         	       			</ul>
+           		   		</li>
+						<li class="drop-down"><a href=""><i class="fa fa-user d-flex" style="font-size: 28px; color: #fafafa;"></i></a>
+           		   		</li>
+						<li class="drop-down"><a href=""><i class="fa fa-shopping-cart d-flex" style="font-size: 28px; color: #fafafa;"></i></a> 	
+           		   		</li>
+						<li><a onClick="hienthiform('box-tim-kiem');"><i class="fa fa-search d-flex" style="font-size: 28px; color: #fafafa;"></i>
+				</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+	</header>
+	<!-- End Header -->
+	<!--					Banner gioi thieu				-->
+	<div class="banner-gioi-thieu-den">
+		<div class="chu-lon-banner-trang">Điện thoại</div>
+		<div class="mo-ta-banner-trang">Powerfull. Collorful. Wonderful.</div>
+		<video width="100%" height="650px" autoplay>
+			<source src="images/large_2x.mp4">
+		</video>
+		<a class="tim-hieu-them" href="dienthoai.html">Tìm hiểu thêm &gt;&gt;</a>
+	</div>
+	<div class="row" style="width: 100%;">
+	<span class="banner-gioi-thieu-trang col-xl-6" style="background-color: #d9d2bf">
+		<div id="xuatHien21" class="chu-lon-banner-den" style="display: none;">Máy tính bảng</div>
+		<div id="xuatHien22" class="mo-ta-banner-den-2" style="display: none;">Delightfully capable surprisingly affordable.</div>
+		<a id="xuatHien24" class="tim-hieu-them-den-2" href="maytinhbang.html" style="display: none;">Tìm hiểu thêm &gt;&gt;</a>
+		<img id="xuatHien23" src="images/computer_bn.png" alt="" style="width: 65%; max-height: 550px; display: none;">
+		
+	</span>
+	<span class="banner-gioi-thieu-trang col-xl-6" style="background-color: #419bbf">
+		<div id="xuatHien25" class="chu-lon-banner-den" style="display: none;">Laptop</div>
+		<div id="xuatHien26" class="mo-ta-banner-den-2" style="width: 52%; display: none;">Quality never goes out of style.</div>
+		<a id="xuatHien28" class="tim-hieu-them-den-2" href="laptop.html" style="display: none;">Tìm hiểu thêm &gt;&gt;</a>
+		<img id="xuatHien27" src="images/laptop.png" alt="img" style="width: 65%; max-height: 550px; display: none;">
+		
+	</span>
+	</div>
+	<div class="banner-gioi-thieu-trang">
+		<div id="xuatHien31" class="chu-lon-banner-den" style="display: none;">Đồng hồ thông minh</div>
+		<div id="xuatHien32" class="mo-ta-banner-den" style="display: none;">The future of health is on your wrist.</div>
+		<a id="xuatHien34" class="tim-hieu-them-den" href="dongho.html" style="display: none;">Tìm hiểu thêm &gt;&gt;</a>
+		<video style="display: none;" id="xuatHien33" width="100%" height="550px">
+			<source src="images/large (1).mp4">
+		</video>
+	</div>
+	<div class="banner-gioi-thieu-den" style="background-color: #000">
+		<div id="xuatHien41" class="chu-lon-banner-trang" style="display: none;">Tai nghe</div>
+		<div id="xuatHien42" class="mo-ta-banner-trang" style="display: none;">Everything you hear is unheard of.</div>
+		<a id="xuatHien44" class="tim-hieu-them" href="tainghe.html" style="display: none;">Tìm hiểu thêm &gt;&gt;</a>
+		<img id="xuatHien43" src="images/anigif_sub-buzz-8746-1572288971-3.gif" alt="img" style="display: none;">
+		
+	</div>
+	<!--				Banner gioi thieu: End.					-->
+	
+<!--				Footer										-->
+	<!--				Doi tac									-->
+	<div class="row" style="width: 100%; background-color: #fff;">
+		<span class="col-xl-1"></span>
+		<span class="col-xl-2">
+			<a class="doitac" href="https://www.apple.com/vn/"><img  src="images/404px-Apple_logo_black.svg.png" alt=""></a>
+		</span>
+		<span class="col-xl-2">
+			<a class="doitac" href="http://samsungstore.vn/"><img src="images/samsung-blocked-black-logo.png" alt=""></a>
+		</span>
+		<span class="col-xl-2">
+			<a class="doitac" href="https://www.oppo.com/"><img src="images/logo_white.png" alt=""></a>
+		</span>
+		<span class="col-xl-2">
+			<a class="doitac" href="https://www.vsmart.net/vi/"><img src="images/logo-Vsmart.png" alt=""></a>
+		</span>
+		<span class="col-xl-2">
+			<a class="doitac" href="https://www.microsoft.com/vi-vn"><img src="images/Microsoft_logo.png" alt=""></a>
+		</span>
+		<span class="col-xl-1"></span>
+	</div>
+	<div class="row" style="width: 100%; background-color: #fff;">
+		<span class="col-xl-1"></span>
+		<span class="col-xl-2">
+			<a class="doitac" href="https://consumer.huawei.com/"><img  src="images/Huawei-Logo.wine.png" alt=""></a>
+		</span>
+		<span class="col-xl-2">
+			<a class="doitac" href="https://mivietnam.vn/"><img src="images/Xiaomi-Logo.png" alt=""></a>
+		</span>
+		<span class="col-xl-2">
+			<a class="doitac" href="https://www.asus.com/vn/"><img src="images/AsusTek-black-logo.png" alt=""></a>
+		</span>
+		<span class="col-xl-2">
+			<a class="doitac" href="https://anker.vn/"><img src="images/anker.png" alt=""></a>
+		</span>
+		<span class="col-xl-2">
+			<a class="doitac" href="https://www.nokia.com/"><img src="images/nokia-logo.png" alt=""></a>
+		</span>
+		<span class="col-xl-1"></span>
+	</div>
+<!--					Doi tac: end.								-->
+
+	<footer>
+		<div class="row" style="width: 100%;">
+			<span class="col-2">
+				
+			</span>
+			<span class="col-xl-8">
+				<p>Đăng ký thành viên để nhận mã giảm 10% cho đơn hàng đầu tiên tại CellphoneX và liên tục nhận được những ưu đãi sớm nhất. Để bắt đầu tham gia cộng đồng của chúng tôi, hãy đăng ký ngay <a href="#" style="color: #000">tại đây</a>.</p>
+				<div class="row keNganCach">
+					<span class="col-xl-3">
+						<h6>Mua sắm và tìm hiểu</h6>
+						<a href="dienthoai.html">Điện thoại</a><br>
+						<a href="maytinhbang.html">Máy tính bảng</a><br>
+						<a href="laptop.html">Laptop</a><br>
+						<a href="dongho.html">Đồng hồ</a><br>
+						<a href="tainghe.html">Tai nghe</a><br>
+					</span>
+					<span class="col-xl-3">
+						<h6>Hotline</h6>
+						Gọi mua hàng: <b>0123 456 789</b><br>
+						Gọi khiếu nại: <b>0987 654 321</b><br>
+						Gọi tư vấn: <b>035 775 6343</b><br>
+						
+					</span>
+					<span class="col-xl-3">
+						<h6>Bản tin Xchannel</h6>
+						<a href="#">Tin tức</a><br>
+						<a href="#">Khuyến mại</a><br>
+						<h6>Dịch vụ</h6>
+						<a href="#">Phương thức thanh toán</a><br>
+						<a href="#">Bảo hành</a><br>
+					</span>
+					<span class="col-xl-3">
+						<h6>Theo dõi chúng tôi</h6>
+						<a href="#">Sự kiện</a><br>
+						<a href="https://www.youtube.com/user/cellphoneuk">Youtube chính thức</a><br>
+						<a href="https://www.facebook.com/CellphoneSVietnam">Facebook chính thức</a><br>
+					</span>
+					<p style="padding-left: 15px;">Đ/c: số 12 Chùa Bộc - Khoa hệ thống thông tin quản lý, Học viện Ngân hàng.</p>
+				</div>
+				
+				<div class="cuoiFooter">
+					<span>Copyright &copy; 2020 CellphoneX Inc. All rights reserved.</span>
+					<span><a href="gioithieu.html">Giới thiệu</a></span>
+					<span><a href="">Liên hệ</a></span>
+					<span><a href="">Chính sách bảo mật</a></span>
+					<span><a href="">Điều khoản sử dụng</a></span>
+					<span>
+						<select title="Trang web hiện chỉ hỗ trợ ngôn ngữ Việt Nam">
+							<option>Tiếng Việt</option>
+						</select>
+					</span>
+				</div>
+			</span>
+			<span class="col-xl-2"></span>
+		</div>
+	</footer>
+<!--				Footer: end.								-->
+	
+<!--							Cac nut o goc					-->
+	<div> <a id="veDauTrang" href="javascript:void(0);" title="Top"><i class="fa fa-chevron-up"></i></a> </div>
+	<div id="noiDungKhuyenMai" class="row khuyenMai fixed-top">
+		<section class="leSlide">
+			<label title="Đóng" onClick="dongform('noiDungKhuyenMai')" class="thoat"><i class="fa fa-close"></i></label>
+			<div class="slide">
+				<div class="dieuHuongSlide">
+					<i onClick="prevSlide()"  id="prev" class="fa fa-angle-left"></i>
+					<i onClick="nextSlide()" id="next"  class="fa fa-angle-right"></i>
+				</div>
+				<div id="chuyenSlide">
+					<a><img src="images/ol1.png" alt=""></a>
+					<a><img src="images/section1.png" alt=""></a>
+					<a><img src="images/section2.jpg" alt=""></a>
+					<a><img src="images/section3.jpg" alt=""></a>
+					<a><img src="images/section4.jpg" alt=""></a>
+				</div>
+				<div class="dieuHuongSlide2">
+					<label onClick="dieuHuong()" for="bottom_1" class="bar" id="bottom_1"></label>
+					<label onClick="dieuHuong2()" for="bottom_2" class="bar" id="bottom_2"></label>
+					<label onClick="dieuHuong3()" for="bottom_3" class="bar" id="bottom_3"></label>
+					<label onClick="dieuHuong4()" for="bottom_4" class="bar" id="bottom_4"></label>
+					<label onClick="dieuHuong5()" for="bottom_5" class="bar" id="bottom_5"></label>
+				</div>
+				<div style="width: 100%; height: 10%; position: absolute; top: 90%;" class="lamMo"></div>
+				<div style="width: 5%; height: 90%; position: absolute;" class="lamMo"></div>
+				<div style="width: 5%; height: 90%; position: absolute; left: 95%;" class="lamMo"></div>
+			</div>
+		</section>
+		<div class="leSlide">
+			
+		</div>
+	</div>
+	
+	
+	<div>
+		<a onClick="hienthiform('noiDungKhuyenMai');" id="khuyenMai" href="javascript:void(0);" title="Thông tin khuyến mãi"><i class="fa fa-audio-description"></i></a>
+		<span class="khuyenMai">5</span>
+	</div>
+<!--							Cac nut o goc: end.				-->
+
+</body>
+</html>
