@@ -263,22 +263,140 @@ jQuery.noConflict();
 	
 <!--							Cac nut o goc					-->
 	<div> <a id="veDauTrang" href="javascript:void(0);" title="Top"><i class="fa fa-chevron-up"></i></a> </div>
-	<section id="noiDungKhuyenMai" class="row khuyenMai fixed-top">
-		<label title="Đóng" onClick="dongform('noiDungKhuyenMai')" class="thoat"><i class="fa fa-close"></i></label>
-		<div class="slide">
-			<div class="dieuHuongSlide">
-				<i onClick="prevSlide()"  id="prev" class="fa fa-toggle-left"></i>
-				<i onClick="nextSlide()" id="next"  class="fa fa-toggle-right"></i>
+	<div id="noiDungKhuyenMai" class="row khuyenMai fixed-top">
+		<section class="leSlide">
+			<label title="Đóng" onClick="dongform('noiDungKhuyenMai')" class="thoat"><i class="fa fa-close"></i></label>
+			<div class="slide">
+				<div class="dieuHuongSlide">
+					<i onClick="prevSlide()"  id="prev" class="fa fa-angle-left"></i>
+					<i onClick="nextSlide()" id="next"  class="fa fa-angle-right"></i>
+				</div>
+				<div id="chuyenSlide">
+					<a><img src="images/ol1.png" alt=""></a>
+					<a><img src="images/section1.png" alt=""></a>
+					<a><img src="images/section2.jpg" alt=""></a>
+					<a><img src="images/section3.jpg" alt=""></a>
+					<a><img src="images/section4.jpg" alt=""></a>
+				</div>
+				<div class="dieuHuongSlide2">
+					<label onClick="dieuHuong()" class="bar" id="bottom_1"></label>
+					<label onClick="dieuHuong2()" class="bar" id="bottom_2"></label>
+					<label onClick="dieuHuong3()" class="bar" id="bottom_3"></label>
+					<label onClick="dieuHuong4()" class="bar" id="bottom_4"></label>
+					<label onClick="dieuHuong5()" class="bar" id="bottom_5"></label>
+				</div>
+				<div style="width: 5%; height: 100%; position: absolute;" class="lamMo"></div>
+				<div style="width: 5%; height: 100%; position: absolute; left: 95%;" class="lamMo"></div>
 			</div>
-			<div id="chuyenSlide">
-				<a><img src="images/ol1.png" alt=""></a>
-				<a><img src="images/section1.png" alt=""></a>
-				<a><img src="images/section2.jpg" alt=""></a>
-				<a><img src="images/section3.jpg" alt=""></a>
-				<a><img src="images/section4.jpg" alt=""></a>
+		</section>
+		<div class="leSlide">
+			<h2>Best - selling product</h2>
+			<div class="row">
+				<span class="col-1">
+					<label style="margin-top: 100%; font-size: 40px;" for="trai"><i class="fa fa-angle-left"></i></label>
+				</span>
+				<span class="col-10">
+					<div class="slide">
+				<div class="slides">
+					<input type="radio" name="dieuHuong" id="trai" checked>
+					<input type="radio" name="dieuHuong" id="phai">
+					<div class="thanhPhan s1">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPham">
+							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
+						</div>
+						<div style="font-size: 16px;">
+							Samsung Galaxy S10+ (Plus)
+						</div>
+						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
+						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span style="color: yellow;">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPham">
+							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
+						</div>
+						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
+						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
+						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span style="color: yellow;">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPham">
+							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
+						</div>
+						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
+						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
+						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span style="color: yellow;">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPham">
+							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
+						</div>
+						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
+						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
+						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span style="color: yellow;">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPham">
+							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
+						</div>
+						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
+						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
+						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span style="color: yellow;">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPham">
+							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
+						</div>
+						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
+						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
+						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span style="color: yellow;">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span>
+						</div>
+					</div>
+				</div>
+					</div>
+				</span>
+				<span class="col-1">
+					<label style="margin-top: 100%; font-size: 40px;" for="phai"><i class="fa fa-angle-right"></i></label>
+				</span>
 			</div>
+			
 		</div>
-	</section>
+	</div>
+	
 	
 	<div>
 		<a onClick="hienthiform('noiDungKhuyenMai');" id="khuyenMai" href="javascript:void(0);" title="Thông tin khuyến mãi"><i class="fa fa-audio-description"></i></a>

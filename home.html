@@ -22,13 +22,6 @@ jQuery.noConflict();
 			} else {
 				$("#veDauTrang").hide()
 			}
-			if (e > 650) {
-				document.getElementById("header").style.backgroundColor="#323233";
-				document.getElementById("header").style.opacity="98%";
-			} else {
-				document.getElementById("header").style.backgroundColor="#000";
-				document.getElementById("header").style.opacity="92%";
-			}
 			if (e > 100) {
 				document.getElementById("xuatHien21").style.display="block";
 				document.getElementById("xuatHien22").style.display="block";
@@ -73,8 +66,8 @@ jQuery.noConflict();
 			<span><input name="sanpham" type="text" id="text-box-tim-kiem" placeholder="Tìm kiếm sản phẩm..."></span>
 			<span><label onClick="dongform('box-tim-kiem')" id="nut-thoat-tim-kiem"><i class="fa fa-close"></i></label></span>
 		</form>
-		<div class="row">
-			<div class="col-xl-3 d-flex">
+		<div class="row" style="width: 100%;">
+			<div class="col-sm-3 d-flex">
 				<nav class="nav-menu">
 				<ul>
 					<li class="drop-down"><a href=""><i class="fa fa-navicon d-flex" style="font-size: 28px; color: #fafafa;"></i></a>
@@ -95,7 +88,7 @@ jQuery.noConflict();
 				</span>
 				
 			</div>
-			<div class="col-xl-6 d-flex">
+			<div class="col-sm-6 d-flex">
 				<nav class="nav-menu d-none d-lg-block">
 					<ul>
 						<li><a href="dienthoai.html">Điện thoại</a></li>
@@ -108,7 +101,7 @@ jQuery.noConflict();
             		</ul>
           		</nav><!-- .nav-menu -->
         	</div>
-			<div class="col-xl-3 d-flex">
+			<div class="col-sm-3 d-flex">
           		<nav class="nav-menu d-none d-lg-block">
 					<ul>
 						<li><a href="hotro.html">Hỗ trợ</a></li>
@@ -125,57 +118,191 @@ jQuery.noConflict();
            		   		</li>
 						<li class="drop-down"><a href=""><i class="fa fa-shopping-cart d-flex" style="font-size: 28px; color: #fafafa;"></i></a> 	
            		   		</li>
-						<li><a onClick="hienthiform('box-tim-kiem');"><i class="fa fa-search d-flex" style="font-size: 28px; color: #fafafa;"></i>
-				</a></li>
+						<li>
+							<a onClick="hienthiform('box-tim-kiem');"><i class="fa fa-search d-flex" style="font-size: 28px; color: #fafafa;"></i></a>
+						</li>
 					</ul>
 				</nav>
-
 			</div>
 		</div>
 	</header>
-	<!-- End Header -->
+
+	<section style="margin-top: 48px;">
+			<div class="slide">
+				<div class="dieuHuongSlide">
+					<i onClick="prevSlide()"  id="prev" class="fa fa-angle-left"></i>
+					<i onClick="nextSlide()" id="next"  class="fa fa-angle-right"></i>
+				</div>
+				<div id="chuyenSlide">
+					<a><img src="images/ol1.png" alt=""></a>
+					<a><img src="images/section1.png" alt=""></a>
+					<a><img src="images/section2.jpg" alt=""></a>
+					<a><img src="images/section3.jpg" alt=""></a>
+					<a><img src="images/section4.jpg" alt=""></a>
+				</div>
+				<div class="dieuHuongSlide2">
+					<label onClick="dieuHuong()" class="bar" id="bottom_1"></label>
+					<label onClick="dieuHuong2()" class="bar" id="bottom_2"></label>
+					<label onClick="dieuHuong3()" class="bar" id="bottom_3"></label>
+					<label onClick="dieuHuong4()" class="bar" id="bottom_4"></label>
+					<label onClick="dieuHuong5()" class="bar" id="bottom_5"></label>
+				</div>
+				<div style="width: 5%; height: 100%; position: absolute;" class="lamMo"></div>
+				<div style="width: 5%; height: 100%; position: absolute; left: 95%;" class="lamMo"></div>
+			</div>
+		</section>
+	
 	<!--					Banner gioi thieu				-->
-	<div class="banner-gioi-thieu-den">
-		<div class="chu-lon-banner-trang">Điện thoại</div>
-		<div class="mo-ta-banner-trang">Powerfull. Collorful. Wonderful.</div>
-		<video width="100%" height="650px" autoplay>
-			<source src="images/large_2x.mp4">
-		</video>
-		<a class="tim-hieu-them" href="dienthoai.html">Tìm hiểu thêm &gt;&gt;</a>
+	<div class="row" style="width: 101%; margin-top: 1%;">
+		<span class="banner-gioi-thieu-den" style="margin-right: 0.5%;">
+			<a href="" class="tieuDeBanner">ĐIỆN THOẠI</a>
+			<video autoplay width="100%;">
+				<source src="images/large_2x.mp4">
+			</video>
+		</span>
+		<span class="banner-gioi-thieu-trang" style="margin-left: 0.5%;">
+			<a href="" class="tieuDeBanner">ĐỒNG HỒ</a>
+			<video id="xuatHien33" width="50%;">
+				<source src="images/large (1).mp4">
+			</video>
+		</span>
 	</div>
-	<div class="row" style="width: 100%;">
-	<span class="banner-gioi-thieu-trang col-xl-6" style="background-color: #d9d2bf">
-		<div id="xuatHien21" class="chu-lon-banner-den" style="display: none;">Máy tính bảng</div>
-		<div id="xuatHien22" class="mo-ta-banner-den-2" style="display: none;">Delightfully capable surprisingly affordable.</div>
-		<a id="xuatHien24" class="tim-hieu-them-den-2" href="maytinhbang.html" style="display: none;">Tìm hiểu thêm &gt;&gt;</a>
-		<img id="xuatHien23" src="images/computer_bn.png" alt="" style="width: 65%; max-height: 550px; display: none;">
-		
-	</span>
-	<span class="banner-gioi-thieu-trang col-xl-6" style="background-color: #419bbf">
-		<div id="xuatHien25" class="chu-lon-banner-den" style="display: none;">Laptop</div>
-		<div id="xuatHien26" class="mo-ta-banner-den-2" style="width: 52%; display: none;">Quality never goes out of style.</div>
-		<a id="xuatHien28" class="tim-hieu-them-den-2" href="laptop.html" style="display: none;">Tìm hiểu thêm &gt;&gt;</a>
-		<img id="xuatHien27" src="images/laptop.png" alt="img" style="width: 65%; max-height: 550px; display: none;">
-		
-	</span>
+	<div class="row" style="width: 101%;">
+		<span class="banner-gioi-thieu-trang">
+			<a href="" class="tieuDeBanner">TABLET</a>
+			<img id="xuatHien23" src="images/computer_bn.png" alt="" style="width: 100%;">
+		</span>
+		<span class="banner-gioi-thieu-den" style="margin-left: 0.5%;">
+			<a href="" class="tieuDeBanner">LAPTOP</a>
+			<img id="xuatHien43" src="images/laptop.png" alt="img" style=" width: 70%;">
+		</span>
 	</div>
-	<div class="banner-gioi-thieu-trang">
-		<div id="xuatHien31" class="chu-lon-banner-den" style="display: none;">Đồng hồ thông minh</div>
-		<div id="xuatHien32" class="mo-ta-banner-den" style="display: none;">The future of health is on your wrist.</div>
-		<a id="xuatHien34" class="tim-hieu-them-den" href="dongho.html" style="display: none;">Tìm hiểu thêm &gt;&gt;</a>
-		<video style="display: none;" id="xuatHien33" width="100%" height="550px">
-			<source src="images/large (1).mp4">
-		</video>
-	</div>
-	<div class="banner-gioi-thieu-den" style="background-color: #000">
-		<div id="xuatHien41" class="chu-lon-banner-trang" style="display: none;">Tai nghe</div>
-		<div id="xuatHien42" class="mo-ta-banner-trang" style="display: none;">Everything you hear is unheard of.</div>
-		<a id="xuatHien44" class="tim-hieu-them" href="tainghe.html" style="display: none;">Tìm hiểu thêm &gt;&gt;</a>
-		<img id="xuatHien43" src="images/anigif_sub-buzz-8746-1572288971-3.gif" alt="img" style="display: none;">
-		
+	<div class="row" style="width: 101%;">
+		<span class="banner-gioi-thieu-den" style="margin-right: 3%;">
+			<a href="" class="tieuDeBanner">TAI NGHE</a>
+			<img src="images/airport.png" alt="img" style="width: 70%;">
+		</span>
+		<span class="noiDungGioiThieu">
+			<h6>HÃY CÙNG XÂY DỰNG CỘNG ĐỒNG CELLPHONEX</h6>
+			<h1><b>CellphoneX</b></h1>
+			<p>Tham gia vào cộng đồng của CellphoneX để cập nhật tin tức mới nhất của chúng tôi và nhận ưu đãi 10% cho đơn đặt hàng đầu tiên.</p>
+			<a href="" class="linkDen">ĐĂNG KÝ NGAY</a>
+		</span>
 	</div>
 	<!--				Banner gioi thieu: End.					-->
+	<!--				San pham ban chay						-->
+	<div class="row" style="width: 100%">
+		<span class="col-sm-1"></span>
+		<span class="col-sm-7 noiDungGioiThieu">
+			<h6>SẢN PHẨM ĐƯỢC YÊU THÍCH NHẤT THÁNG VỪA QUA</h6>
+			<h1>SẢN PHẨM BÁN CHẠY</h1>
+			<div style="text-align: center; margin-top: 1%;">
+			<div class="row" style=" width: 100%;">
+				<label id="labelTrai" for="trai"><i class="fa fa-angle-left"></i></label>
+				<label id="lablePhai" for="phai"><i class="fa fa-angle-right"></i></label>
+					<div class="slide">
+				<div class="slides">
+					<input type="radio" name="dieuHuong" id="trai" checked>
+					<input type="radio" name="dieuHuong" id="phai">
+					<div class="thanhPhan s1">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPham">
+							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
+						</div>
+						<div style="font-size: 16px;">
+							Samsung Galaxy S10+ (Plus)
+						</div>
+						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
+						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span style="color: yellow;">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPham">
+							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
+						</div>
+						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
+						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
+						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span style="color: yellow;">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPham">
+							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
+						</div>
+						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
+						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
+						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span style="color: yellow;">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPham">
+							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
+						</div>
+						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
+						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
+						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span style="color: yellow;">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPham">
+							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
+						</div>
+						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
+						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
+						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span style="color: yellow;">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPham">
+							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
+						</div>
+						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
+						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
+						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span style="color: yellow;">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span>
+						</div>
+					</div>
+				</div>
+					</div>
+			</div>
+			
+		</div>
+		</span>
+		<span class="col-sm-3">
+			<img src="images/Nâu Giản dị Ảnh ghép Bài đăng Facebook.png" alt="" width="100%">
+		</span>
+		
+	</div>
 	
+	<!--				San pham ban chay: end.					-->
 <!--				Footer										-->
 	<!--				Doi tac									-->
 	<div class="row" style="width: 100%; background-color: #fff;">
@@ -279,35 +406,8 @@ jQuery.noConflict();
 <!--							Cac nut o goc					-->
 	<div> <a id="veDauTrang" href="javascript:void(0);" title="Top"><i class="fa fa-chevron-up"></i></a> </div>
 	<div id="noiDungKhuyenMai" class="row khuyenMai fixed-top">
-		<section class="leSlide">
-			<label title="Đóng" onClick="dongform('noiDungKhuyenMai')" class="thoat"><i class="fa fa-close"></i></label>
-			<div class="slide">
-				<div class="dieuHuongSlide">
-					<i onClick="prevSlide()"  id="prev" class="fa fa-angle-left"></i>
-					<i onClick="nextSlide()" id="next"  class="fa fa-angle-right"></i>
-				</div>
-				<div id="chuyenSlide">
-					<a><img src="images/ol1.png" alt=""></a>
-					<a><img src="images/section1.png" alt=""></a>
-					<a><img src="images/section2.jpg" alt=""></a>
-					<a><img src="images/section3.jpg" alt=""></a>
-					<a><img src="images/section4.jpg" alt=""></a>
-				</div>
-				<div class="dieuHuongSlide2">
-					<label onClick="dieuHuong()" for="bottom_1" class="bar" id="bottom_1"></label>
-					<label onClick="dieuHuong2()" for="bottom_2" class="bar" id="bottom_2"></label>
-					<label onClick="dieuHuong3()" for="bottom_3" class="bar" id="bottom_3"></label>
-					<label onClick="dieuHuong4()" for="bottom_4" class="bar" id="bottom_4"></label>
-					<label onClick="dieuHuong5()" for="bottom_5" class="bar" id="bottom_5"></label>
-				</div>
-				<div style="width: 100%; height: 10%; position: absolute; top: 90%;" class="lamMo"></div>
-				<div style="width: 5%; height: 90%; position: absolute;" class="lamMo"></div>
-				<div style="width: 5%; height: 90%; position: absolute; left: 95%;" class="lamMo"></div>
-			</div>
-		</section>
-		<div class="leSlide">
-			
-		</div>
+		<label title="Đóng" onClick="dongform('noiDungKhuyenMai')" class="thoat"><i class="fa fa-close"></i></label>
+		
 	</div>
 	
 	
