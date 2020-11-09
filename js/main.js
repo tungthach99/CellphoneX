@@ -2,13 +2,11 @@
 function hienthiform(id)
 {
 	document.getElementById(id).style.display="block";
-	document.getElementById("header").style.backgroundColor="#000";
 }
 
 function dongform(id)
 {
 	document.getElementById(id).style.display="none";
-	document.getElementById("header").style.backgroundColor="#323233";
 }
 var kichThuoc = 0;
 function nextSlide(){
