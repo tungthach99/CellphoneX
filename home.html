@@ -105,18 +105,18 @@ jQuery.noConflict();
 		</div>
 	</header>
 
-	<section style="margin-top: 48px;">
+	<section class="leCacMuc" style="margin-top: 48px;">
 			<div class="slide">
 				<div class="dieuHuongSlide">
 					<i onClick="prevSlide()"  id="prev" class="fa fa-angle-left"></i>
 					<i onClick="nextSlide()" id="next"  class="fa fa-angle-right"></i>
 				</div>
 				<div id="chuyenSlide">
-					<a><img src="images/ol1.png" alt=""></a>
 					<a><img src="images/section1.png" alt=""></a>
 					<a><img src="images/section2.jpg" alt=""></a>
 					<a><img src="images/section3.jpg" alt=""></a>
-					<a><img src="images/section4.jpg" alt=""></a>
+					<a><img src="images/section1.png" alt=""></a>
+					<a><img src="images/section2.jpg" alt=""></a>
 				</div>
 				<div class="dieuHuongSlide2">
 					<label onClick="dieuHuong()" class="bar" id="bottom_1"></label>
@@ -155,7 +155,7 @@ jQuery.noConflict();
 			<img id="xuatHien22" src="images/laptop.png" alt="img" style=" width: 70%;">
 		</span>
 	</div>
-	<div class="row" style="width: 101%;">
+	<div class="row leCacMuc" style="width: 101%;">
 		<span class="banner-gioi-thieu-den" style="margin-right: 3%;">
 			<a href="" class="tieuDeBanner">TAI NGHE</a>
 			<img id="xuathien31" src="images/airport.png" alt="img" style="width: 70%;">
@@ -168,8 +168,9 @@ jQuery.noConflict();
 		</span>
 	</div>
 	<!--				Banner gioi thieu: End.					-->
+	
 	<!--				San pham ban chay						-->
-	<div class="row" style="width: 101%;">
+	<div class="row leCacMuc" style="width: 101%;">
 		<span class="col-sm-1"></span>
 		<span class="col-sm-3">
 			<img src="images/Nâu Giản dị Ảnh ghép Bài đăng Facebook.png" alt="" width="100%">
@@ -190,7 +191,7 @@ jQuery.noConflict();
 					<div class="thanhPhan s1">
 						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
 						<div class="anhSanPham">
-							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
+							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg" alt="galaxy s10+">
 						</div>
 						<div style="font-size: 16px;">
 							Samsung Galaxy S10+ (Plus)
@@ -199,7 +200,7 @@ jQuery.noConflict();
 						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
 						<div>
 							<i>Đánh giá: </i>
-							<span style="color: yellow;">
+							<span class="danhGia">
 							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
 						</div>
 					</div>
@@ -213,7 +214,7 @@ jQuery.noConflict();
 						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
 						<div>
 							<i>Đánh giá: </i>
-							<span style="color: yellow;">
+							<span class="danhGia">
 							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
 						</div>
 					</div>
@@ -227,7 +228,7 @@ jQuery.noConflict();
 						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
 						<div>
 							<i>Đánh giá: </i>
-							<span style="color: yellow;">
+							<span class="danhGia">
 							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
 						</div>
 					</div>
@@ -241,7 +242,7 @@ jQuery.noConflict();
 						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
 						<div>
 							<i>Đánh giá: </i>
-							<span style="color: yellow;">
+							<span class="danhGia">
 							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
 						</div>
 					</div>
@@ -255,7 +256,7 @@ jQuery.noConflict();
 						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
 						<div>
 							<i>Đánh giá: </i>
-							<span style="color: yellow;">
+							<span class="danhGia">
 							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
 						</div>
 					</div>
@@ -269,7 +270,7 @@ jQuery.noConflict();
 						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
 						<div>
 							<i>Đánh giá: </i>
-							<span style="color: yellow;">
+							<span class="danhGia">
 							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span>
 						</div>
 					</div>
@@ -279,51 +280,232 @@ jQuery.noConflict();
 			
 		</div>
 		</span>
-		
-		
+	</div>
+	<!--				San pham ban chay: end.					-->
+	
+	<!--				Su kien									-->
+	<div class="row leCacMuc" style="width: 101%;">
+		<span class="col-sm-1"></span>
+		<span class="col-sm-7">
+			<div>
+				<span class="anhSuKien">
+					<img src="images/hispeed.png">
+				</span>
+				<span class="anhSuKien">
+					<img src="images/ip12.png">
+				</span>
+				<span class="anhSuKien">
+					<img src="images/homepodmini.png">
+				</span>
+			</div>
+			<div>
+				<span class="anhSuKien">
+					<img src="images/sretina.png">
+				</span>
+				<span class="anhSuKien">
+					<img src="images/lidar.png">
+				</span>
+				<span class="anhSuKien">
+					<img src="images/mag safe.png">
+				</span>
+			</div>
+		</span>
+		<span class="col-sm-3 noiDungGioiThieu">
+			<h6>SỰ KIỆN NỔI BẬT</h6>
+			<h1>"HI, SPEED"</h1>
+			<p>Ra mắt Iphone 12 và quá nhiều thứ đã bị bỏ lỡ!!!</p>
+			<a href="" class="linkDen">CHI TIẾT SỰ KIỆN</a>
+		</span>
+	</div>
+	<!--				Su kien: end.							-->
+	
+<!--	Tin tuc														-->
+	<div class="row leCacMuc" style="width: 101%;">
+		<span class="col-sm-1"></span>
+		<span class="col-sm-7 noiDungGioiThieu">
+			<h6>NHỮNG MẸO DÙNG WINDOWS CÓ THỂ BẠN CHƯA BIẾT</h6>
+			<h1>KHÁM PHÁ VÔ VÀN NHỮNG MẸO "KỲ DIỆU"</h1>
+			<p>Hệ điều hành Windows là hệ điều hành tuyệt vời vả để có những trải nghiệm thú vị với nó, chắc chắn bạn sẽ không thể bỏ qua được các mẹo dùng windows cực hữu ích này.</p>
+			<a href="" class="linkDen">TÌM HIỂU THÔI!</a>
+			<div style="text-align: center; margin-top: 8%;">
+			<div class="row" style=" width: 100%;">
+				<label id="labelTrai2" for="trai2"><i class="fa fa-angle-left"></i></label>
+				<label id="lablePhai2" for="phai2"><i class="fa fa-angle-right"></i></label>
+					<div class="slide">
+				<div class="slides">
+					<input type="radio" name="dieuHuong" id="trai2" checked>
+					<input type="radio" name="dieuHuong" id="phai2">
+					<div class="thanhPhan s2">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPhamLon">
+							<img src="images/dell xps.png" alt="Dell XPS 13 9300 2020">
+						</div>
+						<div style="font-size: 16px;">
+							Dell XPS 13 9300 2020 - Intel Core i7-1065G7/RAM 16G...
+						</div>
+						Giá: <span class="giaDo">39.900.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span class="danhGia">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPhamLon">
+							<img src="images/dell xps.png" alt="Dell XPS 13 9300 2020">
+						</div>
+						<div style="font-size: 16px;">
+							Dell XPS 13 9300 2020 - Intel Core i7-1065G7/RAM 16G...
+						</div>
+						Giá: <span class="giaDo">39.900.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span class="danhGia">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPhamLon">
+							<img src="images/dell xps.png" alt="Dell XPS 13 9300 2020">
+						</div>
+						<div style="font-size: 16px;">
+							Dell XPS 13 9300 2020 - Intel Core i7-1065G7/RAM 16G...
+						</div>
+						Giá: <span class="giaDo">39.900.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span class="danhGia">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPhamLon">
+							<img src="images/dell xps.png" alt="Dell XPS 13 9300 2020">
+						</div>
+						<div style="font-size: 16px;">
+							Dell XPS 13 9300 2020 - Intel Core i7-1065G7/RAM 16G...
+						</div>
+						Giá: <span class="giaDo">39.900.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span class="danhGia">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPhamLon">
+							<img src="images/dell xps.png" alt="Dell XPS 13 9300 2020">
+						</div>
+						<div style="font-size: 16px;">
+							Dell XPS 13 9300 2020 - Intel Core i7-1065G7/RAM 16G...
+						</div>
+						Giá: <span class="giaDo">39.900.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span class="danhGia">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+						</div>
+					</div>
+					<div class="thanhPhan">
+						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<div class="anhSanPhamLon">
+							<img src="images/dell xps.png" alt="Dell XPS 13 9300 2020">
+						</div>
+						<div style="font-size: 16px;">
+							Dell XPS 13 9300 2020 - Intel Core i7-1065G7/RAM 16G...
+						</div>
+						Giá: <span class="giaDo">39.900.000<sup><u>đ</u></sup></span>
+						<div>
+							<i>Đánh giá: </i>
+							<span class="danhGia">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+						</div>
+					</div>
+				</div>
+					</div>
+			</div>
+			
+		</div>
+		</span>
+		<span class="col-sm-3">
+			<img src="images/meowindows.png" alt="mẹo hay công nghệ" width="100%;">
+		</span>
+	</div>
+<!--	Tin tuc: end.												-->
+	
+<!--	Tin khac													-->
+	<div class="row leCacMuc" style="width: 101%;">
+		<span class="col-sm-1">
+		</span>
+		<span class="col-sm-10">
+			<div class="row" style=" width: 100%;">
+				<label id="labelTrai3"><i class="fa fa-angle-left" onClick="prevTinTuc()"></i></label>
+				<label onClick="nextTinTuc()" id="lablePhai3"><i class="fa fa-angle-right"></i></label>
+				<div class="slide">
+					<div class="slides">
+						<div class="thanhPhan s3" id="tinTuc">
+							<a class="tinTuc" href="#">
+								<img src="images/onepl-nore.png" width="100%;" alt="">
+								<h6><b>OnePlus Nord SE với pin 4,500 mAh, sạc nhanh 65W sẽ ra mắt vào Q1/2021 với giá cực rẻ</b></h6>
+								<p>OnePlus đã tham gia vào phân khúc smartphone tầm trung vào tháng 7 vừa qua. Gần đây, công ty này...</p>
+								<h7>@tungthach</h7>
+							</a>
+						</div>
+						<div class="thanhPhan">
+							<a class="tinTuc" href="#">
+								<img src="images/onepl-nore.png" width="100%;" alt="">
+								<h6><b>OnePlus Nord SE với pin 4,500 mAh, sạc nhanh 65W sẽ ra mắt vào Q1/2021 với giá cực rẻ</b></h6>
+								<p>OnePlus đã tham gia vào phân khúc smartphone tầm trung vào tháng 7 vừa qua. Gần đây, công ty này...</p>
+								<h7>@tungthach</h7>
+							</a>
+						</div>
+						<div class="thanhPhan">
+							<a class="tinTuc" href="#">
+								<img src="images/onepl-nore.png" width="100%;" alt="">
+								<h6><b>OnePlus Nord SE với pin 4,500 mAh, sạc nhanh 65W sẽ ra mắt vào Q1/2021 với giá cực rẻ</b></h6>
+								<p>OnePlus đã tham gia vào phân khúc smartphone tầm trung vào tháng 7 vừa qua. Gần đây, công ty này...</p>
+								<h7>@tungthach</h7>
+							</a>
+						</div>
+						<div class="thanhPhan">
+							<a class="tinTuc" href="#">
+								<img src="images/onepl-nore.png" width="100%;" alt="">
+								<h6><b>OnePlus Nord SE với pin 4,500 mAh, sạc nhanh 65W sẽ ra mắt vào Q1/2021 với giá cực rẻ</b></h6>
+								<p>OnePlus đã tham gia vào phân khúc smartphone tầm trung vào tháng 7 vừa qua. Gần đây, công ty này...</p>
+								<h7>@tungthach</h7>
+							</a>
+						</div>
+						<div class="thanhPhan">
+							<a class="tinTuc" href="#">
+								<img src="images/onepl-nore.png" width="100%;" alt="">
+								<h6><b>OnePlus Nord SE với pin 4,500 mAh, sạc nhanh 65W sẽ ra mắt vào Q1/2021 với giá cực rẻ</b></h6>
+								<p>OnePlus đã tham gia vào phân khúc smartphone tầm trung vào tháng 7 vừa qua. Gần đây, công ty này...</p>
+								<h7>@tungthach</h7>
+							</a>
+						</div>
+						<div class="thanhPhan">
+							<a class="tinTuc" href="#">
+								<img src="images/onepl-nore.png" width="100%;" alt="">
+								<h6><b>OnePlus Nord SE với pin 4,500 mAh, sạc nhanh 65W sẽ ra mắt vào Q1/2021 với giá cực rẻ</b></h6>
+								<p>OnePlus đã tham gia vào phân khúc smartphone tầm trung vào tháng 7 vừa qua. Gần đây, công ty này...</p>
+								<h7>@tungthach</h7>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</span>
 	</div>
 	
-	<!--				San pham ban chay: end.					-->
+<!--	Tin khac: end.												-->
+	
 <!--				Footer										-->
-	<!--				Doi tac									-->
-	<div class="row" style="width: 100%; background-color: #fff;">
-		<span class="col-xl-1"></span>
-		<span class="col-xl-2">
-			<a class="doitac" href="https://www.apple.com/vn/"><img  src="images/404px-Apple_logo_black.svg.png" alt=""></a>
-		</span>
-		<span class="col-xl-2">
-			<a class="doitac" href="http://samsungstore.vn/"><img src="images/samsung-blocked-black-logo.png" alt=""></a>
-		</span>
-		<span class="col-xl-2">
-			<a class="doitac" href="https://www.oppo.com/"><img src="images/logo_white.png" alt=""></a>
-		</span>
-		<span class="col-xl-2">
-			<a class="doitac" href="https://www.vsmart.net/vi/"><img src="images/logo-Vsmart.png" alt=""></a>
-		</span>
-		<span class="col-xl-2">
-			<a class="doitac" href="https://www.microsoft.com/vi-vn"><img src="images/Microsoft_logo.png" alt=""></a>
-		</span>
-		<span class="col-xl-1"></span>
-	</div>
-	<div class="row" style="width: 100%; background-color: #fff;">
-		<span class="col-xl-1"></span>
-		<span class="col-xl-2">
-			<a class="doitac" href="https://consumer.huawei.com/"><img  src="images/Huawei-Logo.wine.png" alt=""></a>
-		</span>
-		<span class="col-xl-2">
-			<a class="doitac" href="https://mivietnam.vn/"><img src="images/Xiaomi-Logo.png" alt=""></a>
-		</span>
-		<span class="col-xl-2">
-			<a class="doitac" href="https://www.asus.com/vn/"><img src="images/AsusTek-black-logo.png" alt=""></a>
-		</span>
-		<span class="col-xl-2">
-			<a class="doitac" href="https://anker.vn/"><img src="images/anker.png" alt=""></a>
-		</span>
-		<span class="col-xl-2">
-			<a class="doitac" href="https://www.nokia.com/"><img src="images/nokia-logo.png" alt=""></a>
-		</span>
-		<span class="col-xl-1"></span>
-	</div>
+<!--				Doi tac									-->
+
 <!--					Doi tac: end.								-->
 
 	<footer>

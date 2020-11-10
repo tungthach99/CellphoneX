@@ -91,6 +91,23 @@ function prevSlide(){
 }
 setInterval(function(){
 	nextSlide();
+}, 7000);
+	
+var mg=0;
+function nextTinTuc()
+{
+	mg-=13;
+	if(mg<=-39) mg=-0;
+	document.getElementById("tinTuc").style.marginLeft = mg + '%';
+}
+function prevTinTuc()
+{
+		mg+=13;
+	if(mg>=0) mg=-39;
+	document.getElementById("tinTuc").style.marginLeft = mg + '%';
+}
+setInterval(function(){
+		nextTinTuc();
 }, 5000);
 function dieuHuong(){
 	kichThuoc = 0;

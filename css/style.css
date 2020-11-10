@@ -1,7 +1,6 @@
 /* CSS Document */
 /*		tungancut							Tung										*/
 a{
-	color: #0066cc;
 	transition: 0.5s;
 }
 a:hover{
@@ -14,6 +13,12 @@ p{
 h1{
 	font-size: 60px;
 	color: #000;
+}
+h7{
+	color: #515154;
+}
+.leCacMuc{
+	margin-bottom: 3%;
 }
 /*						Header:							*/
 
@@ -256,20 +261,7 @@ h1{
 	color: #000;
 	background-color: #fff;
 }
-.noiDungGioiThieu{
-	width: 40%;
-	color: #000;
-}
-.noiDungGioiThieu a{
-	text-align: center;
-	color: #fff;
-	margin: 5%;
-}
-.linkDen{
-	width: auto;
-	padding: 10px 20px;
-	background: #000;
-}
+
 /*						Banner gioi thieu: End 				*/
 
 /*							pop up*/
@@ -472,7 +464,7 @@ input[name="dieuHuong"]{
 .thanhPhan{
 	width: 12.5%;
 	transition: 0.6s;
-	margin: 2px;
+	margin: 0.5%;
 }
 
 .hoverSanPham{
@@ -484,7 +476,6 @@ input[name="dieuHuong"]{
 	display: none;
 	vertical-align: middle;
 	padding-top: 10%;
-	
 }
 .thanhPhan:hover .hoverSanPham{
 	display: block;
@@ -508,7 +499,10 @@ input[name="dieuHuong"]{
 	}
 }
 .anhSanPham img{
-	width: 70%;
+	width: 80%;
+}
+.anhSanPhamLon img {
+	width: 100%;
 }
 .giaDo{
 	color: #000;
@@ -522,7 +516,7 @@ input[name="dieuHuong"]{
 	margin-left: 0;
 }
 #phai:checked ~ .s1{
-	margin-left: -30%;
+	margin-left: -38%;
 }
 
 /*									pop up: end.*/
@@ -536,7 +530,7 @@ input[name="dieuHuong"]{
 	font-size: 24px;
 	text-align: center;
 	position: absolute;
-	top: 60%;
+	top: 70%;
 	z-index: 4;
 	left: -2%;
 }
@@ -549,10 +543,11 @@ input[name="dieuHuong"]{
 	color: #000;
 	font-size: 24px;
 	text-align: center;
-	top: 60%;
+	top: 70%;
 	z-index: 4;
 	right: 1%;
-}.doitac img{
+}
+.doitac img{
 	padding: 5px 0 0 5px;
 	width: 50%;
 	margin-left: 25%;
@@ -609,6 +604,20 @@ footer div{
 }
 
 /*Noi dung trang gioithieu*/
+.noiDungGioiThieu{
+	width: 40%;
+	color: #000;
+}
+.noiDungGioiThieu a{
+	text-align: center;
+	color: #fff;
+	margin: 5%;
+}
+.linkDen{
+	width: auto;
+	padding: 10px 20px;
+	background: #000;
+}
 .hinhNen{
 	opacity: 10%;
 	position: fixed;
@@ -629,5 +638,87 @@ footer div{
 	border: 1px #0066cc solid;
 }
 /*Noi dung trang gioithieu: End.*/
+
+/*su kien o trang chu*/
+
+.anhSuKien img{
+	width: 28%;
+	margin: 2%;
+	max-height: 300px;
+}
+/*su kien o trang chu: end.*/
+#trai2:checked ~ .s2{
+	margin-left: 0;
+}
+#phai2:checked ~ .s2{
+	margin-left: -35%;
+}
+#labelTrai2{
+	background-color: #fff;
+	border-radius: 20px;
+	width: 40px;
+	height: 40px;
+	color: #000;
+	font-size: 24px;
+	text-align: center;
+	position: absolute;
+	top: 70%;
+	z-index: 4;
+	left: -2%;
+}
+#lablePhai2{
+	position: absolute;
+	background-color: #fff;
+	border-radius: 20px;
+	width: 40px;
+	height: 40px;
+	color: #000;
+	font-size: 24px;
+	text-align: center;
+	top: 70%;
+	z-index: 4;
+	right: 1%;
+}
+/*Tin khac home:;					*/
+
+#labelTrai3{
+	background-color: #fff;
+	border-radius: 20px;
+	width: 40px;
+	height: 40px;
+	color: #000;
+	font-size: 24px;
+	text-align: center;
+	position: absolute;
+	top: 40%;
+	z-index: 4;
+	left: -2%;
+}
+#lablePhai3{
+	position: absolute;
+	background-color: #fff;
+	border-radius: 20px;
+	width: 40px;
+	height: 40px;
+	color: #000;
+	font-size: 24px;
+	text-align: center;
+	top: 40%;
+	z-index: 4;
+	right: 1%;
+}
+.tinTuc p{
+	color: #000;
+}
+.tinTuc h6{
+	margin: 0;
+}
+.tinTuc img{
+	max-height: 534px;
+}
+.tinTuc:hover h6{
+	color: #0066cc;
+}
+/*Tin khac home: end;				*/
 
 /*									Tung:end;									*/
