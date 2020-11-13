@@ -722,3 +722,114 @@ footer div{
 /*Tin khac home: end;				*/
 
 /*									Tung:end;									*/
+
+/*                                  Tuan                                                                     */
+/*              Chung                                                                */
+:root{
+	--maingray: #95a5a6;
+	--blue: #3498db;
+	--mainblue: #2980b9;
+}
+#khuyenmai{
+	color:var(--maingray);
+	margin:0;
+	padding:0;
+}
+@keyframes xanhnhapnhay{
+	0%{
+		color:#0984e3;
+	}
+	50%{
+		color: #81ecec;
+	}
+}
+/*   Header khuyen mai  */
+.box-header-km{
+		margin-top: 78px;
+		background-color: white;
+	}
+.box-header-km ul{
+	width: 100%;
+	list-style: none;
+	margin-inline-start: 80px;
+}
+.box-header-km ul li{
+	float: left;
+}
+.box-header-km ul li a{
+	padding: 17px 30px 10px 30px;
+	display: inline-block;
+	text-decoration: none;
+	color: var(--maingray);
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.box-header-km ul li a:hover, .box-menu-active{
+	border-bottom: 2px solid var(--mainblue);
+	text-decoration: none;
+	opacity: 1 !important;
+	transition: 0.5s;
+	color: #2f3640 !important;
+}
+#box-menu{
+	border-bottom: 1px solid var(--blue);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	max-width: 1200px !important;
+	margin: auto;
+	margin-bottom: 20px;
+	background-color: #f5f6fa;
+}
+/*                           Content khuyen mai                              */
+.km-grid {
+display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 10px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+.km-image{
+	height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+.km{
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+	height: 300px;
+	background-color: #f5f6fa;
+	
+}
+.km-title-1 {
+	color: #2c3e50;
+	font-weight: bold;
+	padding: 5px;
+}
+.km-title-1:hover {
+	text-decoration: underline;
+}
+#footer-km-content{
+	margin: 40px 10px;
+    font-size: 13px;
+	font-weight: bold;
+	color: var(--blue);
+}
+#footer-km-content-2{
+	float: right;
+	padding: 5px;
+	color: white;
+	background-color: var(--blue);
+}
+#footer-km-content-2:hover{
+	background-color: var(--mainblue)
+}
+#footer-km-content-1{
+	animation-name: xanhnhapnhay;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
