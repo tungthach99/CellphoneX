@@ -833,3 +833,12 @@ display: grid;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 }
+#km-content-2{
+	display: none;
+}
+#km-content-3{
+	display: none;
+}
+#km-content-4{
+	display: none;
+}
