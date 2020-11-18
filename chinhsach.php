@@ -106,7 +106,11 @@ jQuery.noConflict();
 	<!--				Banner gioi thieu: End.					-->
 	
 	<!--				San pham ban chay						-->
+<<<<<<< HEAD:chinhsach.php
 	<div class="row leCacMuc" style="width: 100%;">
+=======
+	<div class="row leCacMuc" style="width: 100%">
+>>>>>>> 6c1a454489e2e528da4e9c5f8fd390e7f755dd89:home.html
 		<span class="col-sm-1"></span>
 		<span class="col-sm-3">
 			<img src="images/Nâu Giản dị Ảnh ghép Bài đăng Facebook.png" alt="" width="100%">
