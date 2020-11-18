@@ -41,3 +41,7 @@ function doiboxmenu4() {
     document.getElementById("km-content-3").style = "display:none;";
     document.getElementById("km-content-4").style = "display:block;";
 }
+
+function next(){
+    document.getElementById("news-content1").style.transform = 'translateX(-295px)';
+}
