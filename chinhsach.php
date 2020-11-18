@@ -36,75 +36,11 @@ jQuery.noConflict();
 })( jQuery );
 </script>
 </head>
-
 <body>
-	<header  id="header" class="fixed-top">
-		<form name="box-tim-kiem" action="#" id="box-tim-kiem">
-			<span><input type="submit" value="Search" id="nut-tim-kiem"></span>
-			<span><input name="sanpham" type="text" id="text-box-tim-kiem" placeholder="Tìm kiếm sản phẩm..."></span>
-			<span><label onClick="dongform('box-tim-kiem')" id="nut-thoat-tim-kiem"><i class="fa fa-close"></i></label></span>
-		</form>
-		<div class="row" style="width: 100%;">
-			<div class="col-sm-3 d-flex">
-				<nav class="nav-menu">
-				<ul>
-					<li class="drop-down"><a href=""><i class="fa fa-navicon d-flex" style="font-size: 28px; color: #fafafa;"></i></a>
-           		     		<ul>
-                 				<li><a href="dienthoai.html">Điện thoại</a></li>
-                  				<li><a href="maytinhbang.html">Máy tính bảng</a></li>
-								<li><a href="laptop.html">Laptop</a></li>
-                  				<li><a href="dongho.html">Đồng hồ</a></li>
-                  				<li><a href="tainghe.html">Tai nghe</a></li>
-								<li><a href="khuyenmai.html">Khuyến mại</a></li>
-         	       			</ul>
-           		   	</li>	
-				</ul>
-				</nav>
-				<a href="home.html"><img id="logo-X" src="images/20.png" alt="img"></a>&nbsp;&nbsp;&nbsp;
-				<span class="d-none d-lg-block logo-chu">
-					<a href="home.html">CellphoneX</a>
-				</span>
-				
-			</div>
-			<div class="col-sm-6 d-flex">
-				<nav class="nav-menu d-none d-lg-block">
-					<ul>
-						<li><a href="dienthoai.html">Điện thoại</a></li>
-						<li><a href="maytinhbang.html">Máy tính bảng</a></li>
-						<li><a href="laptop.html">Laptop</a></li>
-						<li><a href="dongho.html">Đồng hồ</a></li>
-						<li><a href="tainghe.html">Tai nghe</a></li>
-						<li><a href="khuyenmai.html">Khuyến mại</a></li>
-              			<li><a href="tintuc.html">Tin tức</a></li>
-            		</ul>
-          		</nav><!-- .nav-menu -->
-        	</div>
-			<div class="col-sm-3 d-flex">
-          		<nav class="nav-menu d-none d-lg-block">
-					<ul>
-						<li><a href="hotro.html">Hỗ trợ</a></li>
-						<li class="drop-down">
-							<span></span><a href="">Chúng tôi &darr;</a>
-           		    	 	<ul>
-								<li><a href="gioithieu.html">Giới thiệu</a></li>
-								<li><a href="lienhe.html">Liên hệ</a></li>
-								<li><a href="dieukhoan.html">Điều khoản</a></li>
-								<li><a href="chinhsach.html">Chính sách</a></li>
-         	       			</ul>
-           		   		</li>
-						<li class="drop-down"><a href=""><i class="fa fa-user d-flex" style="font-size: 28px; color: #fafafa;"></i></a>
-           		   		</li>
-						<li class="drop-down"><a href=""><i class="fa fa-shopping-cart d-flex" style="font-size: 28px; color: #fafafa;"></i></a> 	
-           		   		</li>
-						<li>
-							<a onClick="hienthiform('box-tim-kiem');"><i class="fa fa-search d-flex" style="font-size: 28px; color: #fafafa;"></i></a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-
+<?php
+	include("layout/header.php");
+	include("layout/taikhoan.php");
+?>
 	<section class="leCacMuc" style="margin-top: 48px;">
 			<div class="slide">
 				<div class="dieuHuongSlide">
@@ -170,7 +106,7 @@ jQuery.noConflict();
 	<!--				Banner gioi thieu: End.					-->
 	
 	<!--				San pham ban chay						-->
-	<div class="row leCacMuc" style="width: 101%;">
+	<div class="row leCacMuc" style="width: 100%;">
 		<span class="col-sm-1"></span>
 		<span class="col-sm-3">
 			<img src="images/Nâu Giản dị Ảnh ghép Bài đăng Facebook.png" alt="" width="100%">
@@ -283,30 +219,47 @@ jQuery.noConflict();
 	</div>
 	<!--				San pham ban chay: end.					-->
 	
+	<!--				Zoom anh su kien									-->
+	<div id="noiDungPhongTo">
+		<div class="menuAnh">
+			<a href="javascript:void[0]"><img src="images/hispeed.png" onClick="zoom(this)" alt=""></a>
+			<a href="javascript:void[0]"><img src="images/ip12.png" onClick="zoom(this)" alt=""></a>
+			<a href="javascript:void[0]"><img src="images/homepodmini.png" onClick="zoom(this)" alt=""></a>
+			<a href="javascript:void[0]"><img src="images/sretina.png" onClick="zoom(this)" alt=""></a>
+			<a href="javascript:void[0]"><img src="images/lidar.png" onClick="zoom(this)" alt=""></a>
+			<a href="javascript:void[0]"><img src="images/mag safe.png" onClick="zoom(this)" alt=""></a>
+		</div>
+		<div class="anhPhongTo">
+			<img id="anhPhongTo" src="images/hispeed.png">
+		</div>
+		<a href="javascript:void[0]"><i class="fa fa-remove thoat" style="color: #fff;" onClick="dongform('noiDungPhongTo')" title="Đóng"></i></a>
+	</div>
+	<!--				Zoom anh su kien: end.
+	
 	<!--				Su kien									-->
-	<div class="row leCacMuc" style="width: 101%;">
+	<div class="row leCacMuc" style="width: 100%;">
 		<span class="col-sm-1"></span>
 		<span class="col-sm-7">
-			<div>
-				<span class="anhSuKien">
-					<img src="images/hispeed.png">
+			<div class="row">
+				<span class="anhSuKien col-sm-4">
+					<a href="javascript:void[0]"><img src="images/hispeed.png" onClick="zoom(this)" alt="" title="Xem ảnh"></a>
 				</span>
-				<span class="anhSuKien">
-					<img src="images/ip12.png">
+				<span class="anhSuKien col-sm-4">
+					<a href="javascript:void[0]"><img src="images/ip12.png" onClick="zoom(this)" alt="" title="Xem ảnh"></a>
 				</span>
-				<span class="anhSuKien">
-					<img src="images/homepodmini.png">
+				<span class="anhSuKien col-sm-4">
+					<a href="javascript:void[0]"><img src="images/homepodmini.png" onClick="zoom(this)" alt="" title="Xem ảnh"></a>
 				</span>
 			</div>
-			<div>
-				<span class="anhSuKien">
-					<img src="images/sretina.png">
+			<div class="row">
+				<span class="anhSuKien col-sm-4">
+					<a href="javascript:void[0]"><img src="images/sretina.png" onClick="zoom(this)" alt="" title="Xem ảnh"></a>
 				</span>
-				<span class="anhSuKien">
-					<img src="images/lidar.png">
+				<span class="anhSuKien col-sm-4">
+					<a href="javascript:void[0]"><img src="images/lidar.png" onClick="zoom(this)" alt="" title="Xem ảnh"></a>
 				</span>
-				<span class="anhSuKien">
-					<img src="images/mag safe.png">
+				<span class="anhSuKien col-sm-4">
+					<a href="javascript:void[0]"><img src="images/mag safe.png" onClick="zoom(this)" alt="" title="Xem ảnh"></a>
 				</span>
 			</div>
 		</span>
@@ -320,7 +273,7 @@ jQuery.noConflict();
 	<!--				Su kien: end.							-->
 	
 <!--	Tin tuc														-->
-	<div class="row leCacMuc" style="width: 101%;">
+	<div class="row leCacMuc" style="width: 100%;">
 		<span class="col-sm-1"></span>
 		<span class="col-sm-7 noiDungGioiThieu">
 			<h6>NHỮNG MẸO DÙNG WINDOWS CÓ THỂ BẠN CHƯA BIẾT</h6>
@@ -438,7 +391,7 @@ jQuery.noConflict();
 <!--	Tin tuc: end.												-->
 	
 <!--	Tin khac													-->
-	<div class="row leCacMuc" style="width: 101%;">
+	<div class="row leCacMuc" style="width: 100%;">
 		<span class="col-sm-1">
 		</span>
 		<span class="col-sm-10">
@@ -504,81 +457,10 @@ jQuery.noConflict();
 <!--	Tin khac: end.												-->
 	
 <!--				Footer										-->
-<!--				Doi tac									-->
-
-<!--					Doi tac: end.								-->
-
-	<footer>
-		<div class="row" style="width: 100%;">
-			<span class="col-2">
-				
-			</span>
-			<span class="col-xl-8">
-				<p>Đăng ký thành viên để nhận mã giảm 10% cho đơn hàng đầu tiên tại CellphoneX và liên tục nhận được những ưu đãi sớm nhất. Để bắt đầu tham gia cộng đồng của chúng tôi, hãy đăng ký ngay <a href="#" style="color: #000">tại đây</a>.</p>
-				<div class="row keNganCach">
-					<span class="col-xl-3">
-						<h6>Mua sắm và tìm hiểu</h6>
-						<a href="dienthoai.html">Điện thoại</a><br>
-						<a href="maytinhbang.html">Máy tính bảng</a><br>
-						<a href="laptop.html">Laptop</a><br>
-						<a href="dongho.html">Đồng hồ</a><br>
-						<a href="tainghe.html">Tai nghe</a><br>
-					</span>
-					<span class="col-xl-3">
-						<h6>Hotline</h6>
-						Gọi mua hàng: <b>0123 456 789</b><br>
-						Gọi khiếu nại: <b>0987 654 321</b><br>
-						Gọi tư vấn: <b>035 775 6343</b><br>
-						
-					</span>
-					<span class="col-xl-3">
-						<h6>Bản tin Xchannel</h6>
-						<a href="#">Tin tức</a><br>
-						<a href="#">Khuyến mại</a><br>
-						<h6>Dịch vụ</h6>
-						<a href="#">Phương thức thanh toán</a><br>
-						<a href="#">Bảo hành</a><br>
-					</span>
-					<span class="col-xl-3">
-						<h6>Theo dõi chúng tôi</h6>
-						<a href="#">Sự kiện</a><br>
-						<a href="https://www.youtube.com/user/cellphoneuk">Youtube chính thức</a><br>
-						<a href="https://www.facebook.com/CellphoneSVietnam">Facebook chính thức</a><br>
-					</span>
-					<p style="padding-left: 15px;">Đ/c: số 12 Chùa Bộc - Khoa hệ thống thông tin quản lý, Học viện Ngân hàng.</p>
-				</div>
-				
-				<div class="cuoiFooter">
-					<span>Copyright &copy; 2020 CellphoneX Inc. All rights reserved.</span>
-					<span><a href="gioithieu.html">Giới thiệu</a></span>
-					<span><a href="">Liên hệ</a></span>
-					<span><a href="">Chính sách bảo mật</a></span>
-					<span><a href="">Điều khoản sử dụng</a></span>
-					<span>
-						<select title="Trang web hiện chỉ hỗ trợ ngôn ngữ Việt Nam">
-							<option>Tiếng Việt</option>
-						</select>
-					</span>
-				</div>
-			</span>
-			<span class="col-xl-2"></span>
-		</div>
-	</footer>
+<?php
+	include("layout/footer.php");
+	include("layout/cacnut.php");
+?>
 <!--				Footer: end.								-->
-	
-<!--							Cac nut o goc					-->
-	<div> <a id="veDauTrang" href="javascript:void(0);" title="Top"><i class="fa fa-chevron-up"></i></a> </div>
-	<div id="noiDungKhuyenMai" class="row khuyenMai fixed-top">
-		<label title="Đóng" onClick="dongform('noiDungKhuyenMai')" class="thoat"><i class="fa fa-close"></i></label>
-		
-	</div>
-	
-	
-	<div>
-		<a onClick="hienthiform('noiDungKhuyenMai');" id="khuyenMai" href="javascript:void(0);" title="Thông tin khuyến mãi"><i class="fa fa-audio-description"></i></a>
-		<span class="khuyenMai">5</span>
-	</div>
-<!--							Cac nut o goc: end.				-->
-
 </body>
 </html>

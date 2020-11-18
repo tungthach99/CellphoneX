@@ -1,8 +1,5 @@
 /* CSS Document */
 /*		tungancutko							Tung										*/
-a{
-	transition: 0.5s;
-}
 a:hover{
 	text-decoration: none;
 }
@@ -205,6 +202,61 @@ h7{
 #tieuDe{
 	color: #000;
 }
+/*dangnhap*/
+@keyframes trenDuoi{
+	0%{
+		height: 0;
+	}
+}
+#formDangNhap{
+	transition: 0.5s;
+	position: fixed;
+	top: 48px;
+	left: 70%;
+	background-color: #fff;
+	width: 30%;
+	height: 100%;
+	z-index: 990;
+	text-align: center;
+	animation-name: trenDuoi;
+	animation-duration: 0.8s;
+	animation-iteration-count: 1;
+	overflow: hidden;
+	display: none;
+}
+#formDangNhap h4{
+	margin: 16% 0 5% 0;
+}
+#formDangNhap form input[type='text'], #formDangNhap form input[type='password']{
+	text-align: center;
+	width: 120px;
+	transition: 0.4s;
+	border: none;
+	border-bottom: 1px solid;
+	margin: 2.5% 0;
+	padding: 5px 0;
+}
+#formDangNhap form input:focus{
+	width: 60%;
+}
+form input[type='submit']{
+	margin: 2.5% 0;
+	width: 60%;
+	background-color: #000;
+	color: #fff;
+	padding: 5px 0;
+}
+.noiDungFormDangNhap{
+	margin: 5% 0;
+}
+.noiDungFormDangNhap a{
+	color: #000;
+}
+.noiDungFormDangNhap a:hover{
+	color: #007bff;
+}
+/*dang nhap: end.*/
+
 /*						Header: End;					*/
 
 /*						Banner gioi thieu: 				*/
@@ -365,6 +417,7 @@ h7{
 	left: 96.8%;
 	z-index: 1;
 	font-size: 22px;
+/*	top: 3%;*/
 }
 
 .slide{
@@ -465,6 +518,7 @@ input[name="dieuHuong"]{
 	width: 12.5%;
 	transition: 0.6s;
 	margin: 0.5%;
+	display: inline;
 }
 
 .hoverSanPham{
@@ -495,7 +549,6 @@ input[name="dieuHuong"]{
 		margin: 0;
 	}
 	100%{
-		margin: 0 8px;
 	}
 }
 .anhSanPham img{
@@ -642,7 +695,7 @@ footer div{
 /*su kien o trang chu*/
 
 .anhSuKien img{
-	width: 28%;
+	width: 100%;
 	margin: 2%;
 	max-height: 300px;
 }
@@ -718,6 +771,41 @@ footer div{
 }
 .tinTuc:hover h6{
 	color: #0066cc;
+}
+#noiDungPhongTo{
+	position: fixed; z-index: 998;
+	background-color: rgba(0,0,0,0.9);
+	width: 100%;
+	height: 100%;
+	top: 48px;
+	display: none;
+}
+#noiDungPhongTo .thoat{
+	top: 3%;
+}
+.anhPhongTo{
+	position: fixed;
+	width: 100%;
+	top: 10%;
+	text-align: center;
+}
+.menuAnh{
+	position: fixed;
+	left: 5%;
+	top: 12%;
+	width: 6.2%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 999;
+}
+.menuAnh img{
+	width: 100%;
+	max-height: 110px;
+	margin: 2%;
+	opacity: 70%;
+}
+.m1{
+	margin-top: -5%;
 }
 /*Tin khac home: end;				*/
 

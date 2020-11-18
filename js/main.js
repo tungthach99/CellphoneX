@@ -1,7 +1,10 @@
 
 function hienthiform(id)
 {
-	document.getElementById(id).style.display="block";
+	if(document.getElementById(id).style.display=="block")
+		document.getElementById(id).style.display="none";
+	else
+		document.getElementById(id).style.display="block";
 }
 
 function dongform(id)
@@ -153,4 +156,11 @@ function dieuHuong5(){
 			document.getElementById("bottom_3").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_5").style.backgroundColor="#fff";
+}
+
+function zoom(image){
+	var anh= image.src;
+	image.style.opacity = "100%";
+	document.getElementById("noiDungPhongTo").style.display="block";
+	document.getElementById("anhPhongTo").src= anh;
 }
