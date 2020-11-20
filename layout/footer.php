@@ -42,8 +42,8 @@
 					<span>Copyright &copy; 2020 CellphoneX Inc. All rights reserved.</span>
 					<span><a href="gioithieu.html">Giới thiệu</a></span>
 					<span><a href="">Liên hệ</a></span>
-					<span><a href="">Chính sách bảo mật</a></span>
-					<span><a href="">Điều khoản sử dụng</a></span>
+					<span><a href="chinhsach.php">Chính sách bảo mật</a></span>
+					<span><a href="dieukhoan.php">Điều khoản sử dụng</a></span>
 					<span>
 						<select title="Trang web hiện chỉ hỗ trợ ngôn ngữ Việt Nam">
 							<option>Tiếng Việt</option>

@@ -12,7 +12,7 @@
 	<script>
 jQuery.noConflict();
 (function( $ ) {
-		jQuery(document).ready(function($){ 	
+		jQuery(document).ready(function($){
 	if($("#veDauTrang").length > 0){
 		$(window).scroll(function () {
 			var e = $(window).scrollTop();
@@ -40,6 +40,7 @@ jQuery.noConflict();
 <?php
 	include("layout/header.php");
 	include("layout/taikhoan.php");
+	include("layout/giohang.php");
 ?>
 	<section class="leCacMuc" style="margin-top: 48px;">
 			<div class="slide">
@@ -65,7 +66,6 @@ jQuery.noConflict();
 				<div style="width: 5%; height: 100%; position: absolute; left: 95%;" class="lamMo"></div>
 			</div>
 		</section>
-	
 	<!--					Banner gioi thieu				-->
 	<div class="row" style="width: 101%; margin-top: 1%;">
 		<span class="banner-gioi-thieu-den" style="margin-right: 0.5%;">
@@ -222,17 +222,17 @@ jQuery.noConflict();
 	<!--				Zoom anh su kien									-->
 	<div id="noiDungPhongTo">
 		<div class="menuAnh">
-			<a href="javascript:void[0]"><img src="images/hispeed.png" onClick="zoom(this)" alt=""></a>
-			<a href="javascript:void[0]"><img src="images/ip12.png" onClick="zoom(this)" alt=""></a>
-			<a href="javascript:void[0]"><img src="images/homepodmini.png" onClick="zoom(this)" alt=""></a>
-			<a href="javascript:void[0]"><img src="images/sretina.png" onClick="zoom(this)" alt=""></a>
-			<a href="javascript:void[0]"><img src="images/lidar.png" onClick="zoom(this)" alt=""></a>
-			<a href="javascript:void[0]"><img src="images/mag safe.png" onClick="zoom(this)" alt=""></a>
+			<img src="images/hispeed.png" onClick="zoom(this)" alt="">
+			<img src="images/ip12.png" onClick="zoom(this)" alt="">
+			<img src="images/homepodmini.png" onClick="zoom(this)" alt="">
+			<img src="images/sretina.png" onClick="zoom(this)" alt="">
+			<img src="images/lidar.png" onClick="zoom(this)" alt="">
+			<img src="images/mag safe.png" onClick="zoom(this)" alt="">
 		</div>
 		<div class="anhPhongTo">
 			<img id="anhPhongTo" src="images/hispeed.png">
 		</div>
-		<a href="javascript:void[0]"><i class="fa fa-remove thoat" style="color: #fff;" onClick="dongform('noiDungPhongTo')" title="Đóng"></i></a>
+		<i class="fa fa-remove thoat" style="color: #fff;" onClick="dongform('noiDungPhongTo')" title="Đóng"></i>
 	</div>
 	<!--				Zoom anh su kien: end.
 	
@@ -242,24 +242,24 @@ jQuery.noConflict();
 		<span class="col-sm-7">
 			<div class="row">
 				<span class="anhSuKien col-sm-4">
-					<a href="javascript:void[0]"><img src="images/hispeed.png" onClick="zoom(this)" alt="" title="Xem ảnh"></a>
+					<img src="images/hispeed.png" onClick="zoom(this)" alt="" title="Xem ảnh">
 				</span>
 				<span class="anhSuKien col-sm-4">
-					<a href="javascript:void[0]"><img src="images/ip12.png" onClick="zoom(this)" alt="" title="Xem ảnh"></a>
+					<img src="images/ip12.png" onClick="zoom(this)" alt="" title="Xem ảnh">
 				</span>
 				<span class="anhSuKien col-sm-4">
-					<a href="javascript:void[0]"><img src="images/homepodmini.png" onClick="zoom(this)" alt="" title="Xem ảnh"></a>
+					<img src="images/homepodmini.png" onClick="zoom(this)" alt="" title="Xem ảnh">
 				</span>
 			</div>
 			<div class="row">
 				<span class="anhSuKien col-sm-4">
-					<a href="javascript:void[0]"><img src="images/sretina.png" onClick="zoom(this)" alt="" title="Xem ảnh"></a>
+					<img src="images/sretina.png" onClick="zoom(this)" alt="" title="Xem ảnh">
 				</span>
 				<span class="anhSuKien col-sm-4">
-					<a href="javascript:void[0]"><img src="images/lidar.png" onClick="zoom(this)" alt="" title="Xem ảnh"></a>
+					<img src="images/lidar.png" onClick="zoom(this)" alt="" title="Xem ảnh">
 				</span>
 				<span class="anhSuKien col-sm-4">
-					<a href="javascript:void[0]"><img src="images/mag safe.png" onClick="zoom(this)" alt="" title="Xem ảnh"></a>
+					<img src="images/mag safe.png" onClick="zoom(this)" alt="" title="Xem ảnh">
 				</span>
 			</div>
 		</span>

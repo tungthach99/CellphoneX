@@ -5,12 +5,13 @@ function hienthiform(id)
 		document.getElementById(id).style.display="none";
 	else
 		document.getElementById(id).style.display="block";
+	
 }
-
 function dongform(id)
 {
 	document.getElementById(id).style.display="none";
 }
+
 var kichThuoc = 0;
 function nextSlide(){
 	kichThuoc += 100;

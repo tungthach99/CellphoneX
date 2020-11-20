@@ -2,7 +2,7 @@
 		<form name="box-tim-kiem" action="#" id="box-tim-kiem">
 			<span><input type="submit" value="Search" id="nut-tim-kiem"></span>
 			<span><input name="sanpham" type="text" id="text-box-tim-kiem" placeholder="Tìm kiếm sản phẩm..."></span>
-			<span><label onClick="dongform('box-tim-kiem')" id="nut-thoat-tim-kiem"><i class="fa fa-close"></i></label></span>
+			<span><a style="cursor: pointer" onClick="dongform('box-tim-kiem')" id="nut-thoat-tim-kiem"><i class="fa fa-close"></i></a></span>
 		</form>
 		<div class="row" style="width: 100%;">
 			<div class="col-sm-3 d-flex">
@@ -48,16 +48,16 @@
            		    	 	<ul>
 								<li><a href="gioithieu.html">Giới thiệu</a></li>
 								<li><a href="lienhe.html">Liên hệ</a></li>
-								<li><a href="dieukhoan.html">Điều khoản</a></li>
-								<li><a href="chinhsach.html">Chính sách</a></li>
+								<li><a href="dieukhoan.php">Điều khoản</a></li>
+								<li><a href="chinhsach.php">Chính sách</a></li>
          	       			</ul>
            		   		</li>
-						<li class="drop-down"><a href="javascirpt:void[0]"><i class="fa fa-user d-flex" style="font-size: 28px; color: #fafafa;" onClick="hienthiform('formDangNhap')"></i></a>
+						<li class="drop-down"><a style="cursor: pointer"><i class="fa fa-user d-flex" style="font-size: 28px; color: #fafafa;" onClick="hienthiform('formDangNhap'),dongform('formGioHang')"></i></a>
            		   		</li>
-						<li class="drop-down"><a href=""><i class="fa fa-shopping-cart d-flex" style="font-size: 28px; color: #fafafa;"></i></a> 	
+						<li class="drop-down"><a style="cursor: pointer"><i class="fa fa-shopping-cart d-flex" style="font-size: 28px; color: #fafafa;" onClick="hienthiform('formGioHang'),dongform('formDangNhap')"></i></a> 	
            		   		</li>
 						<li>
-							<a onClick="hienthiform('box-tim-kiem');"><i class="fa fa-search d-flex" style="font-size: 28px; color: #fafafa;"></i></a>
+							<a style="cursor: pointer" onClick="hienthiform('box-tim-kiem');"><i class="fa fa-search d-flex" style="font-size: 28px; color: #fafafa;"></i></a>
 						</li>
 					</ul>
 				</nav>
