@@ -201,12 +201,8 @@ h7{
 	color: #0066cc;
 }
 #tieuDe{
-<<<<<<< Updated upstream
 	color: #000;
 	padding-top: 5px;
-=======
-	color: rgb(117, 117, 117);
->>>>>>> Stashed changes
 }
 /*dangnhap*/
 @keyframes trenDuoi{
@@ -1005,7 +1001,6 @@ display: grid;
     z-index: -1;
     background: var(--blue);
     background-image:  url("G:/Lap trinh web/CellphoneX/images/tin-tuc/tin-tuc-5.png");
-    background-size: 	;
     background-repeat: no-repeat;
 	background-position: center;
 	opacity: 1;
@@ -1043,9 +1038,6 @@ display: grid;
 	height: 200px;
 	width:  auto;
 }
-<<<<<<< Updated upstream
-/*                                                 Tuan end                                           */
-=======
 .news-content1-1 p{
 	color: black;
 }
@@ -1080,7 +1072,7 @@ display: grid;
 .header-content2-1{
 	font-size: 14px;
 	width: 100%;
-	margin: 0 10px 8px 8px;.
+	margin: 0 10px 8px 8px;
 	color: black;
 }
 .news-content2-11{
@@ -1258,4 +1250,3 @@ font-family: 'Poppins', sans-serif;
 }
 /*                                                 Tuan end                                           */
 
->>>>>>> Stashed changes
