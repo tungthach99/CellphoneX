@@ -43,5 +43,5 @@ function doiboxmenu4() {
 }
 
 function next(){
-    document.getElementById("news-content1").style.transform = 'translateX(-295px)';
+    document.getElementById("news-content1").style.transform = 'translateX(295px)';
 }
