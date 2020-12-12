@@ -861,6 +861,7 @@ footer div{
 	--maingray: #95a5a6;
 	--blue: #3498db;
 	--mainblue: #2980b9;
+	--cloud: #ecf0f1;
 }
 #khuyenmai{
 	color:var(--maingray);
@@ -974,6 +975,7 @@ display: grid;
 .tin-tuc{
 	margin: 0;
 	padding: 0;
+	overflow-x: hidden;
 }
 .tin-tuc a{
 	text-decoration: none;
@@ -983,6 +985,7 @@ display: grid;
 	width: 1200px;
 	height: 800px;
 	margin: 78px auto 0 auto;
+	display: flex;
 }
 .left-content-news1{
 	width: 800px;
@@ -994,17 +997,33 @@ display: grid;
 #thumbnail1{
 	height: 430px;
 	width: 800px;
-	background-image: url("../images/tin-tuc/tin-tuc-1.png");
 	background-size: cover;
 	position: absolute;
+	opacity: 0.8;
+}
+.thumbnail1::before{
+	content: '';
+    position: absolute;
+    height: 430px;
+	width: 800px;
+    z-index: -1;
+    background: var(--blue);
+    background-image:  url("G:/Lap trinh web/CellphoneX/images/tin-tuc/tin-tuc-5.png");
+    background-repeat: no-repeat;
+	background-position: center;
+	opacity: 1;
 }
 #thumbnail1 article{
+	text-align: center;
 	cursor: pointer;
 	font-size: 30px;
 	color: white;
 	font-weight: bold;
 	margin: 330px 30px auto 30px;
 	vertical-align: baseline;
+	position: absolute;
+	opacity: 1;
+	font-family: Helvetica Neue,Helvetica,Roboto,Arial,sans-serif !important;
 }
 .news-content1{
 	display: flex;
@@ -1027,4 +1046,215 @@ display: grid;
 	height: 200px;
 	width:  auto;
 }
+.news-content1-1 p{
+	color: black;
+}
+#thumbnail1 article:hover, .news-content1-1 p:hover{
+	color: var(--blue);
+}
+.right-content-news1{
+	width: 100%;
+	height: 100%;
+	margin-left: 10px;
+}
+.news-header{
+	font-size: 16px;
+	color: white;
+	background-color: var(--blue);
+	padding: 5px 15px;
+	font-weight: bold;
+	height: 35px;
+	margin-bottom: 15px;
+}
+.news-content2-1{
+	display: flex;
+	margin: 10px 0 10px 0;
+}
+.news-content2-1 a{
+	text-decoration: none;
+}
+#img-news-1{
+	width: 120px;
+	height: 85.8px;
+}
+.header-content2-1{
+	font-size: 14px;
+	width: 100%;
+	margin: 0 10px 8px 8px;
+	color: black;
+}
+.news-content2-11{
+	display: flex;
+	flex-direction: column;
+}
+.news-content-info{
+	width: 100%;
+	margin: 0 0 0 8px;
+}
+.header-content2-1 a{
+	color: black;
+	font-weight: bold;
+}
+.header-content2-1 a:hover{
+	color: var(--blue)
+}
+.news-content-info{
+	font-size: 12px;
+	color: var(--blue);
+	text-transform: uppercase;
+}
+/*                   Gioi thieu                                 */
+#tieuDe{
+	opacity: 1;
+}
+#lamMo1{
+	height: 48px;
+	top: 48px;
+	background-color: #fff;
+	opacity: 5%;
+	z-index: 2;
+}
+.gioi-thieu-nav{
+	overflow: hidden;
+	margin-top: 48px;
+	position: fixed;
+    width: 310px;
+    height: 	159px;
+    top: 0;
+	left: 0;
+	background-color: #f5f6fa;
+	border-right: 3px solid #2c3e50;
+	border-bottom: 3px solid #2c3e50;
+}
+.gioi-thieu-nav ul{
+	list-style: none;
+    padding-inline-start: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.gioi-thieu-nav ul li{
+    width: 110%;
+    height: 50px;
+    padding: 0;
+	position: relative;
+	margin: 0;
+}
+.gioi-thieu-nav ul li a{
+	text-decoration: none;
+    color: #4d4e53;
+    padding: 5px 30px;
+    cursor: pointer;
+	display: block;
+	font-size: 25px;
+    font-weight: 600;
+    text-align:left;
+    margin:  0;
+}
+#main-doc{
+	width: 70%;
+    margin-left: 310px;
+    padding: 10px;
+    margin-bottom: 110px;
+}
+
+/*                                               Ho tro                                             */
+.main-ho-tro{
+font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  color: white;
+  margin-top: 58px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.main-ho-tro::before{
+	content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: var(--blue);
+    background-image:  url("G:/Lap trinh web/CellphoneX/images/cua-hang.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+	background-position: center;
+	opacity: 0.8;
+}
+#hotro-form{
+    width: 720px;
+    margin: 0 auto;
+    background: rgba(27, 27, 50, 0.8);
+    border-radius: 5px;
+   text-align: left;
+   padding: 15px;
+}
+
+.hotro-control{
+    font-size: 20px;
+    padding-left: 10px;
+    width: 600px;
+    border-radius: 5px;
+    margin: 10px 60px 15px 60px ;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    height: 35px;
+}
+.main-ho-tro label{
+    margin-left: 60px;
+    font-size: 20px;
+}
+#hotro-clue{
+    font-style: italic;
+    font-size:  15px;
+}
+#hotro-label{
+    margin-top: 0;
+    margin-left: 60px;
+    font-size: 20px;
+}
+#hotro-dropdown{
+    font-size: 20px;
+    padding-left: 10px;
+    width: 600px;
+    border-radius: 5px;
+    margin: 0 60px 15px 60px ;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    height: 35px;
+}
+.hotro-input-radio, .hotro-input-checkbox{
+    display: inline-block;
+    margin: 0 auto 15px auto;
+    min-height: 1.25rem;
+    min-width: 1.25rem;
+}
+#hotro-comment-box{
+    width: 600px;
+    height: 150px;
+    padding-left: 10px;
+    margin: 0 60px 15px 60px ;
+    font-size: 20px;
+    resize: vertical;
+    overflow: hidden;
+}
+#hotro-submit{
+    width: 616px;
+    height: 40px;
+    font-size: 20px;
+    margin: 0 60px 15px 60px;
+    background: #37af65;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#hotro-description{
+	text-align: center;
+}
+#hotro-title{
+	font-size: 32px;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
+}
 /*                                                 Tuan end                                           */
+
