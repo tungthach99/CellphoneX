@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>CellphoneX - Sản phẩm chính hãng, chất lượng số 1 Việt Nam</title>
+<title>CellphoneX - Chính sách sử dụng</title>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 	<link rel="shortcut icon" href="images/20.png">
@@ -38,10 +38,13 @@ jQuery.noConflict();
 </head>
 <body>
 <?php
+	session_start();
 	include("layout/header.php");
 	include("layout/taikhoan.php");
 	include("layout/giohang.php");
+	require("public/ketnoi.php");
 ?>
+<!--				Banner dau trang					-->
 	<section class="leCacMuc" style="margin-top: 48px;">
 			<div class="slide">
 				<div class="dieuHuongSlide">
@@ -66,56 +69,46 @@ jQuery.noConflict();
 				<div style="width: 5%; height: 100%; position: absolute; left: 95%;" class="lamMo"></div>
 			</div>
 		</section>
-	<!--					Banner gioi thieu				-->
-	<div class="row" style="width: 101%; margin-top: 1%;">
-		<span class="banner-gioi-thieu-den" style="margin-right: 0.5%;">
-			<a href="" class="tieuDeBanner">ĐIỆN THOẠI</a>
+<!--				Banner dau trang: End.					-->
+
+<!--	Banner danh muc lon							-->
+	<div  class="banner-danh-muc">
+		<div class="banner-danh-muc-trai" style="background-color: #010001;">
+			<a class="tieuDeBanner" style="" href="" >ĐIỆN THOẠI</a>
 			<video id="xuatHien11" autoplay width="100%;">
-				<source src="images/large_2x.mp4">
+				<source src="video/1.mp4">
 			</video>
-		</span>
-		<span class="banner-gioi-thieu-trang" style="margin-left: 0.5%;">
-			<a href="" class="tieuDeBanner">ĐỒNG HỒ</a>
-			<video id="xuatHien12" autoplay width="50%;">
-				<source src="images/large (1).mp4">
+		</div>
+		<div class="banner-danh-muc-phai" style="background-color: #010001;">
+			<a class="tieuDeBanner" style="" href="" >ĐỒNG HỒ</a>
+			<video id="xuatHien12" autoplay width="100%;">
+				<source src="video/2.mp4">
 			</video>
-		</span>
+		</div>
 	</div>
-	<div class="row" style="width: 101%;">
-		<span class="banner-gioi-thieu-trang" style="margin-right: 0.5%;">
-			<a href="" class="tieuDeBanner">TABLET</a>
-			<img id="xuatHien21" src="images/computer_bn.png" alt="" style="width: 100%;">
-		</span>
-		<span class="banner-gioi-thieu-den" style="margin-left: 0.5%;">
-			<a href="" class="tieuDeBanner">LAPTOP</a>
-			<img id="xuatHien22" src="images/laptop.png" alt="img" style=" width: 70%;">
-		</span>
-	</div>
-	<div class="row leCacMuc" style="width: 101%;">
-		<span class="banner-gioi-thieu-den" style="margin-right: 3%;">
-			<a href="" class="tieuDeBanner">TAI NGHE</a>
-			<img id="xuathien31" src="images/airport.png" alt="img" style="width: 70%;">
-		</span>
-		<span class="noiDungGioiThieu">
-			<h6>HÃY CÙNG XÂY DỰNG CỘNG ĐỒNG CELLPHONEX</h6>
-			<h1><b>CellphoneX</b></h1>
-			<p>Tham gia vào cộng đồng của CellphoneX để cập nhật tin tức mới nhất của chúng tôi và nhận ưu đãi 10% cho đơn đặt hàng đầu tiên.</p>
-			<a href="" class="linkDen">ĐĂNG KÝ NGAY</a>
-		</span>
-	</div>
-	<!--				Banner gioi thieu: End.					-->
 	
-	<!--				San pham ban chay						-->
+	<div  class="banner-danh-muc">
+		<div class="banner-danh-muc-trai" style="background-color: #f2f2f2;">
+			<a class="tieuDeBanner" style="" href="" >TABLET</a>
+			<img src="images/computer_bn.png" width="100%;">
+		</div>
+		<div class="banner-danh-muc-phai" style="background-color: #f2f2f2;">
+			<a class="tieuDeBanner" style="" href="" >TAI NGHE</a>
+			<img src="images/airport-pro.png" width="100%;">
+		</div>
+	</div>
+<!--	Banner danh muc lon: end.							-->
+
+<!--	San pham ban chay								-->
 	<div class="row leCacMuc" style="width: 100%;">
 		<span class="col-sm-1"></span>
-		<span class="col-sm-3">
-			<img src="images/Nâu Giản dị Ảnh ghép Bài đăng Facebook.png" alt="" width="100%">
-		</span>
-		<span class="col-sm-7 noiDungGioiThieu">
-			<h6>SIÊU KHUYẾN MẠI </h6>
+		<span class="col-sm-10 noiDungGioiThieu">
+<!--			<h6>SIÊU KHUYẾN MẠI </h6>-->
 			<h1>SẢN PHẨM GIÁ TỐT</h1>
+<!--
 			<p>Theo dõi những hoạt động của chúng tôi để kịp thời đón nhận những ưu đãi cực lớn.</p>
 			<a href="" class="linkDen">KHÁM PHÁ CÁC KHUYẾN MẠI</a>
+-->
 			<div style="text-align: center; margin-top: 8%;">
 			<div class="row" style=" width: 100%;">
 				<label id="labelTrai" for="trai"><i class="fa fa-angle-left"></i></label>
@@ -183,6 +176,7 @@ jQuery.noConflict();
 						</div>
 					</div>
 					<div class="thanhPhan">
+
 						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
 						<div class="anhSanPham">
 							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
@@ -217,9 +211,9 @@ jQuery.noConflict();
 		</div>
 		</span>
 	</div>
-	<!--				San pham ban chay: end.					-->
+<!--	San pham ban chay								-->
 	
-	<!--				Zoom anh su kien									-->
+<!--	Zoom anh su kien								-->
 	<div id="noiDungPhongTo">
 		<div class="menuAnh">
 			<img src="images/hispeed.png" onClick="zoom(this)" alt="">
@@ -234,9 +228,9 @@ jQuery.noConflict();
 		</div>
 		<i class="fa fa-remove thoat" style="color: #fff;" onClick="dongform('noiDungPhongTo')" title="Đóng"></i>
 	</div>
-	<!--				Zoom anh su kien: end.
+<!--	Zoom anh su kien: end.								-->
 	
-	<!--				Su kien									-->
+<!--	Su kien												-->
 	<div class="row leCacMuc" style="width: 100%;">
 		<span class="col-sm-1"></span>
 		<span class="col-sm-7">
@@ -270,16 +264,13 @@ jQuery.noConflict();
 			<a href="" class="linkDen">CHI TIẾT SỰ KIỆN</a>
 		</span>
 	</div>
-	<!--				Su kien: end.							-->
+<!--	Su kien: end.												-->
 	
-<!--	Tin tuc														-->
+<!--	San pham noi bat														-->
 	<div class="row leCacMuc" style="width: 100%;">
 		<span class="col-sm-1"></span>
-		<span class="col-sm-7 noiDungGioiThieu">
-			<h6>NHỮNG MẸO DÙNG WINDOWS CÓ THỂ BẠN CHƯA BIẾT</h6>
-			<h1>KHÁM PHÁ VÔ VÀN NHỮNG MẸO "KỲ DIỆU"</h1>
-			<p>Hệ điều hành Windows là hệ điều hành tuyệt vời vả để có những trải nghiệm thú vị với nó, chắc chắn bạn sẽ không thể bỏ qua được các mẹo dùng windows cực hữu ích này.</p>
-			<a href="" class="linkDen">TÌM HIỂU THÔI!</a>
+		<span class="col-sm-10 noiDungGioiThieu">
+			<h1>SẢN PHẨM GIÁ TỐT</h1>
 			<div style="text-align: center; margin-top: 8%;">
 			<div class="row" style=" width: 100%;">
 				<label id="labelTrai2" for="trai2"><i class="fa fa-angle-left"></i></label>
@@ -289,7 +280,13 @@ jQuery.noConflict();
 					<input type="radio" name="dieuHuong" id="trai2" checked>
 					<input type="radio" name="dieuHuong" id="phai2">
 					<div class="thanhPhan s2">
-						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+						<span class="hoverSanPham">
+							<a href="#">
+								<i class="fa fa-external-link" title="Mở liên kết"></i>
+							</a>
+							<a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i>
+							</a>
+						</span>
 						<div class="anhSanPhamLon">
 							<img src="images/dell xps.png" alt="Dell XPS 13 9300 2020">
 						</div>
@@ -381,16 +378,12 @@ jQuery.noConflict();
 				</div>
 					</div>
 			</div>
-			
 		</div>
 		</span>
-		<span class="col-sm-3">
-			<img src="images/meowindows.png" alt="mẹo hay công nghệ" width="100%;">
-		</span>
 	</div>
-<!--	Tin tuc: end.												-->
-	
-<!--	Tin khac													-->
+<!--	San pham noi bat: end.														-->
+
+<!--	Ban tin										-->
 	<div class="row leCacMuc" style="width: 100%;">
 		<span class="col-sm-1">
 		</span>
@@ -453,14 +446,12 @@ jQuery.noConflict();
 			</div>
 		</span>
 	</div>
-	
-<!--	Tin khac: end.												-->
-	
-<!--				Footer										-->
+<!--	Ban tin: end.										-->
 <?php
 	include("layout/footer.php");
 	include("layout/cacnut.php");
 ?>
-<!--				Footer: end.								-->
+
+	
 </body>
 </html>
