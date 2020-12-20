@@ -27,24 +27,17 @@ h7{
 #header{
 	transition: all 0.5s;
 	z-index: 997;
-	background: #000;
-	height: 48px;
+	background: #fff;
+	height: 58px;
 }
 #logo-X{
-	padding-top: 5px;
-}
-.logo-chu a{
-	color: #fafafa;
-	text-decoration: none;
-	font-size: 30px;
-	font: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"
-}
-#header .header-transparent{
-	background: transparent;
+	padding-top: 10px;
+	margin: 0 58px;
 }
 .nav-menu ul{
 	list-style-type: none;
-	padding: 10px;
+	padding: 10px 0px;
+	cursor: pointer;
 }
 .nav-menu > ul{
 	display: flex;
@@ -58,10 +51,12 @@ h7{
 .nav-menu a{
 	display: block;
 	position: relative;
-	color: #a5a5a5;
+	color: #000;
 	transition: 0.3s;
 	font-size: 16px;
 	font-weight: 600;
+	padding: 5px 12px;
+	border-radius: 15px;
 }
 .nav-menu a:hover{
 	display: block;
@@ -69,17 +64,18 @@ h7{
 	color: #fff;
 	transition: 0.3s;
 	text-decoration: none;
+	background-color: #000;
 }
+
 .nav-menu .drop-down ul{
 	display: block;
 	position: absolute;
-	left: 14px;
   top: calc(100% + 30px);
   opacity: 0;
   visibility: hidden;
   padding: 10px 0;
-  background: #323233;
-/*  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);*/
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
 }
 .nav-menu .drop-down:hover > ul {
 	opacity: 99%;
@@ -91,12 +87,14 @@ h7{
 .nav-menu .drop-down li {
   min-width: 180px;
   position: relative;
+	cursor: pointer;
 }
 .nav-menu .drop-down ul a {
   padding: 10px 20px;
   font-size: 13px;
   text-transform: none;
-  color: #a5a5a5;
+  color: #000;
+	border-radius: 0;
 }
 
 .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
@@ -113,61 +111,52 @@ h7{
 /*  padding-right: 35px;*/
 }
 #box-tim-kiem{
+	position: fixed;
 	z-index: 998;
-	background-color: #323233;
-	position: absolute;
-	width: 50%;
-	margin: 0% 25%;
-	border-radius: 10px;
+	width: 100%;
+	height: 100%;
 	display: none;
-	animation-name: hienthi_1;
-	animation-duration: 1s;
+	background-color: rgba(0,0,0,0.7);
+	animation-name: opacity;
+	animation-duration: 0.8s;
 	animation-iteration-count: 1;
 }
-@keyframes hienthi_1{
-	0%{
-		left: 100%;
-		opacity: 0;
-	}
-	100%{
-		left: 0%;
-		opacity: 1;
-	}
-}
-#text-box-tim-kiem{
-	width: 82%;
-	height: 46px;
-	color: #a5a5a5;
-	background-color: #323233;
-	padding-left: 3%;
-	border: none;
-}
-#text-box-tim-kiem:hover, #text-box-tim-kiem:active, #text-box-tim-kiem:focus{
-	color: #fff;
+#box-tim-kiem #text-box-tim-kiem{
+	position: absolute;
+	width: 70%;
+	left: 15%;
+	top: 24%;
+	height: 58px;
+	padding: 0% 7% 0% 5%;
+	font-size: 20px;
 }
 #nut-tim-kiem{
-	width: 10%;
-	height: 46px;
-	border-left: 0 #000;
-	border-top: #000;
-	color: #fff;
-	background-color: #323233;
-	border: solid 1px;
-	border-radius: 10px;
+	height: 58px;
+	color: #1f1f1f;
+	background-color: rgba(0,0,0,0);
+	border: none;
+	position: absolute;
+	top: 23.6%;
+	right: 19%;
+	font-size: 30px;
 }
 #nut-thoat-tim-kiem{
-	width: 6.7%;
+	height: 8%;
+	position: absolute;
+	top: 15%;
+	right: 19.4%;
+	font-size: 38px;
 	color: #fff;
-	background-color: #323233;
-	font-weight: bold;
-	border-left: none;
-	border-bottom: none;
-	border-right: 2px #fff;
-	border-top: none;
-	border-bottom-right-radius: 10px;
-	border-top-right-radius: 10px;
 }
-
+#box-tim-kiem label{
+	height: 8%;
+	position: absolute;
+	top: 13%;
+	left: 20%;
+	font-size: 340%;
+	color: #fff;
+	font-weight: 700;
+}
 /*header2*/
 #lamMo{
 	height: 48px;
@@ -483,18 +472,20 @@ form input[type='submit']{
 
 #next{
 	position: absolute;
-	left: 97%;
-	top: 40%;
-	font-size: 40px;
+	right: 2%;
+	top: 37%;
+	font-size: 60px;
 	height: 85%;
 	z-index: 1;
+	cursor: pointer;
 }
 #prev{
 	position: absolute;
 	left: 2%;
-	top: 40%;
-	font-size: 40px;
+	top: 37%;
+	font-size: 60px;
 	z-index: 1;
+	cursor: pointer;
 }
 .dieuHuongSlide{
 	display: none;
@@ -528,7 +519,7 @@ form input[type='submit']{
 	opacity: 90%;
 }
 #bottom_1{
-	background-color: #fff;
+	background-color: #172f87;
 }
 input[name="dieuHuong"]{
 	position: absolute;
@@ -867,14 +858,6 @@ footer div{
 	color:var(--maingray);
 	margin:0;
 	padding:0;
-}
-@keyframes xanhnhapnhay{
-	0%{
-		color:#0984e3;
-	}
-	50%{
-		color: #81ecec;
-	}
 }
 /*   Header khuyen mai  */
 .box-header-km{

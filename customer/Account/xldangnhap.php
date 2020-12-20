@@ -1,4 +1,4 @@
-<script>alert("Hello");</script>
+<script>alert('Hello');</script>
 <?php
 require("../../public/ketnoi.php");
 $sql="select * from tblnguoidung where tendangnhap='".$_POST["txttendangnhap"]."' and matkhau='".$_POST["txtmatkhau"]."'";
@@ -10,13 +10,14 @@ if($result->num_rows>0)
 		//khoi tao phien lam viec
 		session_start();
 		$_SESSION["user"]=$_POST["txttendangnhap"];
+		$_SESSION["userngan"]=substr($_SESSION["user"],0,5);
 		header("location:../../home.php");
 		
 
 }
 else //khong ton tai tai khoan
 {
-	header("location:../../home.php?login=1&error=2");
+	header("location:../../home.php?&error=2");
 }
 	
 ?>

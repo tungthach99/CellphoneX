@@ -48,43 +48,52 @@ jQuery.noConflict();
 	<div class="batDau">
 		<h2>Đăng ký tài khoản</h2>
 		<p>Mời bạn điền một số thông tin cơ bản theo biểu mẫu dưới đây để đăng ký tài khoản:</p>
-		<form action="/action_page.php" class="was-validated">
+		<?php 
+    		if(isset($_GET["error"]))
+    		{
+      			if($_GET["error"]==1)
+      			{
+        			echo "Tài khoản này đã tồn tại!";
+      			}
+    		}
+		?>
+		<form action="customer/Account/xldangky.php" class="was-validated" method="post">
 			<div class="form-group row">
 				<span class="col-6">
-					<label>Họ và đệm:</label>
-					<input type="text" class="form-control" id="ho" name="ho" required>
+					<label>Họ:</label>
+					<input type="text" class="form-control" id="txtho" name="txtho" required>
 					<div class="valid-feedback">Hợp lệ.</div>
 					<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
 				</span>
 				<span class="col-2"></span>
 				<span class="col-4">
 					<label>Tên:</label>
-					<input type="text" class="form-control" id="ten" name="ten" required>
+					<input type="text" class="form-control" id="txtten" name="txtten" required>
 					<div class="valid-feedback">Hợp lệ.</div>
 					<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
 				</span>
 			</div>
 			<div class="from-group">
 				<label>Email của bạn:</label>
-				<input type="text" class="form-control" id="email" placeholder="Nhập email của bạn" name="email" required>
+				<input type="text" class="form-control" id="txtemail" placeholder="Nhập email của bạn" name="txtemail" required>
 				<div class="valid-feedback">Hợp lệ.</div>
 				<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
 			</div>
 			<div class="from-group">
 				<label>Mật khẩu:</label>
-				<input type="password" class="form-control" id="matkhau" placeholder="Nhập email của bạn" name="matkhau" required>
+				<input type="password" class="form-control" id="txtmatkhau" placeholder="Nhập email của bạn" name="txtmatkhau" required>
 				<div class="valid-feedback">Hợp lệ.</div>
 				<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
 			</div>
 			<div class="from-group">
 				<label>Xác nhận mật khẩu:</label>
-				<input type="password" class="form-control" id="email" placeholder="Nhập email của bạn" name="email" required>
+				<input type="password" class="form-control" id="txtxacnhanmk" placeholder="Nhập email của bạn" name="txtxacnhanmk" required>
 				<div class="valid-feedback">Hợp lệ.</div>
 				<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
 			</div>
 			<div class="form-group form-check">
 				<label class="form-check-label">
-				<input class="form-check-input" type="checkbox" name="dongydk" required> Tôi đã đọc và đồng ý với <a><b>điều khoản sử dụng</b></a> của CellphoneX.
+				<input class="form-check-input" type="checkbox" id="txtdongydk" name="txtdongydk" required> Tôi đã đọc và đồng ý với <a><b>điều khoản sử dụng</b></a> của CellphoneX.
 				<div class="valid-feedback">Đồng ý.</div>
 				<div class="invalid-feedback">Chấp nhận điều khoản sử dụng để tiếp tục.</div>
 				</label>

@@ -7,7 +7,9 @@
 	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 	<link rel="shortcut icon" href="images/20.png">
 	<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link type="text/css" rel="stylesheet" href="css/style.css">
+<!--	<link type="text/css" rel="stylesheet" href="css/style.css">-->
+		<link type="text/css" rel="stylesheet" href="css/style.css">
+
 	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
 	<script>
 jQuery.noConflict();
@@ -65,8 +67,10 @@ jQuery.noConflict();
 					<label onClick="dieuHuong4()" class="bar" id="bottom_4"></label>
 					<label onClick="dieuHuong5()" class="bar" id="bottom_5"></label>
 				</div>
+<!--
 				<div style="width: 5%; height: 100%; position: absolute;" class="lamMo"></div>
 				<div style="width: 5%; height: 100%; position: absolute; left: 95%;" class="lamMo"></div>
+-->
 			</div>
 		</section>
 <!--				Banner dau trang: End.					-->

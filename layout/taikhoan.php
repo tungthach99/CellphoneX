@@ -12,9 +12,15 @@
 	</div>
 	<?php }?>
 	<?php if(isset($_SESSION["user"])){?>
-	<h4>XIN CHÀO <?php echo $_SESSION["user"].'!';?></h4>
+	<h4>XIN CHÀO <?php
+		require("public/ketnoi.php");
+		$sql="select ten from tblnguoidung where tendangnhap='".$_SESSION["user"];
+		$result=$con->query($sql);
+		echo $result["ten"];
+		?>
+	</h4>
 	<div style="margin: 10% 0;">
-		<img src="../images/20 - Copy.png" width="120px" height="120px"; style="max-width: 150px; max-height: 150px; border: 2px solid; border-radius: 50%;">
+		<img src="images/20 - Copy.png" width="120px" height="120px"; style="max-width: 150px; max-height: 150px; border: 2px solid; border-radius: 50%;">
 	</div>
 	<div class="danhMucDieuHuong"><a>Cài đặt tài khoản</a></div>
 	<div class="danhMucDieuHuong"><a>Lịch sử mua hàng</a></div>

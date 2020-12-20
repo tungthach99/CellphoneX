@@ -18,7 +18,7 @@ function nextSlide(){
 	if(kichThuoc>400) kichThuoc=0;
 	document.getElementById("chuyenSlide").style.marginLeft = '-' + kichThuoc + '%';
 	if(kichThuoc == 0){
-			document.getElementById("bottom_1").style.backgroundColor="#fff";
+			document.getElementById("bottom_1").style.backgroundColor="#172f87";
 			document.getElementById("bottom_2").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_3").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
@@ -26,7 +26,7 @@ function nextSlide(){
 		}
 		if(kichThuoc == 100){
 			document.getElementById("bottom_1").style.backgroundColor="#a5a5a5";
-			document.getElementById("bottom_2").style.backgroundColor="#fff";
+			document.getElementById("bottom_2").style.backgroundColor="#172f87";
 			document.getElementById("bottom_3").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_5").style.backgroundColor="#a5a5a5";
@@ -34,7 +34,7 @@ function nextSlide(){
 		if(kichThuoc == 200){
 			document.getElementById("bottom_1").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_2").style.backgroundColor="#a5a5a5";
-			document.getElementById("bottom_3").style.backgroundColor="#fff";
+			document.getElementById("bottom_3").style.backgroundColor="#172f87";
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_5").style.backgroundColor="#a5a5a5";
 		}
@@ -42,7 +42,7 @@ function nextSlide(){
 			document.getElementById("bottom_1").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_2").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_3").style.backgroundColor="#a5a5a5";
-			document.getElementById("bottom_4").style.backgroundColor="#fff";
+			document.getElementById("bottom_4").style.backgroundColor="#172f87";
 			document.getElementById("bottom_5").style.backgroundColor="#a5a5a5";
 		}
 		if(kichThuoc == 400){
@@ -50,7 +50,7 @@ function nextSlide(){
 			document.getElementById("bottom_2").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_3").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
-			document.getElementById("bottom_5").style.backgroundColor="#fff";
+			document.getElementById("bottom_5").style.backgroundColor="#172f87";
 		}
 }
 function prevSlide(){
