@@ -47,7 +47,7 @@ jQuery.noConflict();
 	require("public/ketnoi.php");
 ?>
 <!--				Banner dau trang					-->
-	<section class="leCacMuc" style="margin-top: 48px;">
+	<section class="leCacMuc" style="margin-top: 58px;">
 			<div class="slide">
 				<div class="dieuHuongSlide">
 					<i onClick="prevSlide()"  id="prev" class="fa fa-angle-left"></i>
@@ -67,23 +67,21 @@ jQuery.noConflict();
 					<label onClick="dieuHuong4()" class="bar" id="bottom_4"></label>
 					<label onClick="dieuHuong5()" class="bar" id="bottom_5"></label>
 				</div>
-<!--
-				<div style="width: 5%; height: 100%; position: absolute;" class="lamMo"></div>
-				<div style="width: 5%; height: 100%; position: absolute; left: 95%;" class="lamMo"></div>
--->
 			</div>
 		</section>
 <!--				Banner dau trang: End.					-->
 
 <!--	Banner danh muc lon							-->
 	<div  class="banner-danh-muc">
-		<div class="banner-danh-muc-trai" style="background-color: #010001;">
+		<div class="hover-lam-mo banner-danh-muc-trai" style="background-color: #010001;">
+			<div class="lamMo">&nbsp;</div>
 			<a class="tieuDeBanner" style="" href="" >ĐIỆN THOẠI</a>
 			<video id="xuatHien11" autoplay width="100%;">
 				<source src="video/1.mp4">
 			</video>
 		</div>
-		<div class="banner-danh-muc-phai" style="background-color: #010001;">
+		<div class="hover-lam-mo banner-danh-muc-phai" style="background-color: #010001;">
+			<div class="lamMo">&nbsp;</div>
 			<a class="tieuDeBanner" style="" href="" >ĐỒNG HỒ</a>
 			<video id="xuatHien12" autoplay width="100%;">
 				<source src="video/2.mp4">
@@ -92,11 +90,14 @@ jQuery.noConflict();
 	</div>
 	
 	<div  class="banner-danh-muc">
-		<div class="banner-danh-muc-trai" style="background-color: #f2f2f2;">
+		<div class="hover-lam-mo banner-danh-muc-trai" style="background-color: #f2f2f2;">
+			<div class="lamMo">&nbsp;</div>
 			<a class="tieuDeBanner" style="" href="" >TABLET</a>
 			<img src="images/computer_bn.png" width="100%;">
+			
 		</div>
-		<div class="banner-danh-muc-phai" style="background-color: #f2f2f2;">
+		<div class="hover-lam-mo banner-danh-muc-phai" style="background-color: #f2f2f2;">
+			<div class="lamMo">&nbsp;</div>
 			<a class="tieuDeBanner" style="" href="" >TAI NGHE</a>
 			<img src="images/airport-pro.png" width="100%;">
 		</div>
@@ -107,12 +108,8 @@ jQuery.noConflict();
 	<div class="row leCacMuc" style="width: 100%;">
 		<span class="col-sm-1"></span>
 		<span class="col-sm-10 noiDungGioiThieu">
-<!--			<h6>SIÊU KHUYẾN MẠI </h6>-->
 			<h1>SẢN PHẨM GIÁ TỐT</h1>
-<!--
-			<p>Theo dõi những hoạt động của chúng tôi để kịp thời đón nhận những ưu đãi cực lớn.</p>
-			<a href="" class="linkDen">KHÁM PHÁ CÁC KHUYẾN MẠI</a>
--->
+
 			<div style="text-align: center; margin-top: 8%;">
 			<div class="row" style=" width: 100%;">
 				<label id="labelTrai" for="trai"><i class="fa fa-angle-left"></i></label>
