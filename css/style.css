@@ -107,10 +107,10 @@ h7{
   top: 0;
   left: 100%;
 }
-
+/*
 .nav-menu .drop-down .drop-down > a {
-/*  padding-right: 35px;*/
-}
+  padding-right: 35px;
+}*/
 #box-tim-kiem{
 	position: fixed;
 	z-index: 998;
