@@ -1260,5 +1260,65 @@ font-family: 'Poppins', sans-serif;
 	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
 }
+
+/*                                               Left menu                                                   */
+#left{
+	width:15%;
+	float:left;
+	margin: 50px 0;
+}
+#right{
+	margin-left: 15%;
+	width:80%;
+	background-color: yellow;
+}
+#list-left-menu a:hover{
+	text-decoration: underline;
+}
+
+/*                                                  San pham                                       */
+.product{
+	width:28%;
+	height:280px;
+	margin-right:5%;
+	font-size: 18px;
+	color:green;
+	text-align: center;
+	float:left;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+	height: 300px;
+	background-color: #f5f6fa;
+	
+}
+#product-content{
+	width:100%;
+}
+#product-img{
+	width: 200px;
+	height: 200px;
+}
+.row{
+	width:100%;
+	margin-bottom: 10px;
+	float:left;
+}
+#product_detail{
+	width:100%;
+	background:lightgray;
+}
+#left_product{
+	width:40%;
+	height: 300px;
+	float:left;
+}
+#right_product{
+	width:60%;
+	height:300px;
+	float:left;
+}
+#left_product img{
+	width:100%;
+}
 /*                                                 Tuan end                                           */
 
