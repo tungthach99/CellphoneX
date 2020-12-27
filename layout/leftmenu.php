@@ -1,4 +1,4 @@
-<div id="sidebar" style="position: fixed;">
+<div id="sidebar" style="position: fixed;margin: 150px 0 0 10px;">
 		
 		<ul class="list-group">
 		<?php $sql="Select * from categories";

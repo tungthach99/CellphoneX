@@ -55,8 +55,6 @@ jQuery.noConflict();
     <?php	
 		if(isset($_GET["product"]))
 		{
-			
-		
 				include("customer/Product/product_detail.php");
 			if ($_GET["product"]=="0")
 		
@@ -67,10 +65,6 @@ jQuery.noConflict();
         ?>
     </div>
 
-<?php
-	include("layout/footer.php");
-	include("layout/cacnut.php");
-?>
 
 	
 </body>

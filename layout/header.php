@@ -19,7 +19,7 @@
 					<ul>
 						<li class="drop-down"><a>Sản phẩm&nbsp;<i class="fa fa-sort-desc"></i></a>
            		     		<ul>
-                 				<li><a href="dienthoai.html">Điện thoại</a></li>
+                 				<li><a href="sanpham.php">Điện thoại</a></li>
                   				<li><a href="maytinhbang.html">Máy tính bảng</a></li>
                   				<li><a href="dongho.html">Đồng hồ</a></li>
                   				<li><a href="tainghe.html">Tai nghe</a></li>

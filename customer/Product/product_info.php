@@ -1,3 +1,4 @@
+<div style="margin-top 50px;">
 <div id="product-content">
 <?php 
 	  $sbmoitrang=9;
@@ -69,5 +70,6 @@
 	  		}
 
 		?>
+</div>
 </div>
 </div>
