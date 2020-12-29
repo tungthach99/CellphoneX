@@ -44,13 +44,15 @@ jQuery.noConflict();
 	include("layout/giohang.php");
 	require("public/ketnoi.php");
 ?>
-    <div id="left" >
+<div style="margin-top:100px; height: width:100%;"></div>
+<div id="row">
+	<div id="col-sm-2">
 	<!--menu trái-->
 		<?php 
 		include("layout/leftmenu.php");
 		?>
-    </div>
-	<div id="right">
+	</div>
+	<div id="col-sm-10" style="margin-left: 100px;">
 	<!--nội dung-->
     <?php	
 		if(isset($_GET["product"]))
@@ -63,7 +65,8 @@ jQuery.noConflict();
 		else
             include("customer/product/product_info.php");
         ?>
-    </div>
+	</div>
+</div>
 
 
 	

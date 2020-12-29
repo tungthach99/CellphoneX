@@ -1,4 +1,4 @@
-<div style="margin-top 50px;">
+<div style="margin-top 30px;">
 <div id="product-content">
 <?php 
 	  $sbmoitrang=9;
@@ -21,23 +21,23 @@
 	if($i%3==0)
 	{
 ?>
-	<div class="row">
 <?php 
 	}//end if
 ?>
 	<div class="product">
+		<div id="product-1">
 		<img id="product-img" src="images/san-pham/<?php echo $row['IDimage']; ?>">
-		<p><?php echo $row["tensanpham"];?></p>
-		<p> <?php echo $row["gia"];?></p>
-		<p> <a href="sanpham.php?product=1&masanpham=<?php echo $row['masanpham']?>"> Chi tiết</a>
+		<p id="title-product-1"><?php echo $row["tensanpham"];?></p>
+		<p id="title-product-2">Giá: <?php echo $row["gia"];?> đ</p>
+		<p id="title-product-1"> <a href="sanpham.php?product=1&masanpham=<?php echo $row['masanpham']?>"> Chi tiết</a>
+		</div>
 		<!--product=1=>product_detail.php-->
 		</p>
 	</div>
 <?php
 	if($i%3==2)
 	{
-?>
-</div> <!--div đóng của row-->
+?> <!--div đóng của row-->
 
 <?php 
 	}//end if
@@ -45,6 +45,8 @@
 }//end while
 }//if_num_row
 ?>
+</div>
+</div> <!-- product-content -->
 <div id="trang">
 		<!--Tinh duoc so trang-->
 		<?php 
@@ -62,7 +64,7 @@
 	  			{
 	  				$str.="&maloai=".$_GET["maloai"];
 	  			}
-	  			$str.="&trang=".$j."'>".$j."<a> ";
+	  			$str.="&trang=".$j."'>".$j."</a> ";
 
 	  			echo $str;
 	  			$j++;
@@ -70,6 +72,4 @@
 	  		}
 
 		?>
-</div>
-</div>
 </div>

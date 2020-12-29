@@ -1,4 +1,4 @@
-<div id="sidebar" style="position: fixed;margin: 150px 0 0 10px;">
+<div id="sidebar" style="position: fixed;margin: 50px 0 0 10px;">
 		
 		<ul class="list-group">
 		<?php $sql="Select * from categories";
@@ -9,7 +9,7 @@
 			while($row=$result->fetch_assoc())
 			{
 ?>
-		<li class="list-group-item list-group-item-success" id="list-left-menu"><a href="sanpham.php?&maloai=<?php  echo $row['maloai']; ?>"><?php echo $row["tenloai"]; ?> </a></li>
+		<li class="list-group-item list-group-item-success" id="list-left-menu"><a href="sanpham.php?&maloai=<?php  echo $row['maloai']; ?>"><?php echo $row["tenloai"]; ?> <span style="float:right;">>></span></a></li>
 		<?php
 			}//end_while
 			} //end if
