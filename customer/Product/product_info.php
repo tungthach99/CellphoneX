@@ -1,7 +1,7 @@
 <div style="margin-top 30px;">
 <div id="product-content">
 <?php 
-	  $sbmoitrang=9;
+	  $sbmoitrang=8;
 	  $sql="Select * from product";
 	  if (isset($_GET["maloai"]))
 	  	$sql.= " where maloai='".$_GET["maloai"]."'";
@@ -26,7 +26,7 @@
 ?>
 	<div class="product">
 		<div id="product-1">
-		<img id="product-img" src="images/san-pham/<?php echo $row['IDimage']; ?>">
+		<a href="sanpham.php?product=1&masanpham=<?php echo $row['masanpham']?>"><img id="product-img" src="images/san-pham/<?php echo $row['IDimage']; ?>"></a>
 		<p id="title-product-1"><?php echo $row["tensanpham"];?></p>
 		<p id="title-product-2">Giá: <?php echo $row["gia"];?> đ</p>
 		<p id="title-product-1"> <a href="sanpham.php?product=1&masanpham=<?php echo $row['masanpham']?>"> Chi tiết</a>
