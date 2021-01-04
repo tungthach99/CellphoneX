@@ -51,7 +51,7 @@ jQuery.noConflict();
 <div id="noiDungPhongTo" style="100%">
 		<div class="menuAnh">
 		<?php
-		$idanh="select id_anh from tbl_san_pham where id_san_pham='".$_GET['masanpham']."'";
+		$idanh="Select id_anh from tbl_san_pham where id_san_pham='".$_GET['masanpham']."'";
 		$sql="Select * from tbl_anh where id_anh='".$idanh."'";
 	  		$result=$con->query($sql);
 	  		
