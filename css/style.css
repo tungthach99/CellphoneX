@@ -107,10 +107,10 @@ h7{
   top: 0;
   left: 100%;
 }
-
+/*
 .nav-menu .drop-down .drop-down > a {
-/*  padding-right: 35px;*/
-}
+  padding-right: 35px;
+}*/
 #box-tim-kiem{
 	position: fixed;
 	z-index: 998;
@@ -815,7 +815,8 @@ footer .fa:hover{
 	color: #0066cc;
 }
 #noiDungPhongTo{
-	position: fixed; z-index: 998;
+	position: fixed; 
+	z-index: 998;
 	background-color: rgba(0,0,0,0.9);
 	width: 100%;
 	height: 100%;
@@ -1251,6 +1252,95 @@ font-family: 'Poppins', sans-serif;
 	color: white;
 	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
+}
+
+/*                                               Left menu                                                   */
+#list-left-menu a:hover{
+	text-decoration: underline;
+}
+
+/*                                                  San pham                                       */
+/*
+.product{
+	width:28%;
+	height:280px;
+	margin-right:5%;
+	font-size: 18px;
+	color:green;
+	text-align: center;
+	float:left;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+	height: 300px;
+	background-color: #f5f6fa;
+		
+}
+*/
+.product{
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  height: 300px;
+  background-color: #f5f6fa;
+}
+#product-content{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+	grid-gap: 10px;
+	width: 80%;
+	max-width: 1330px;
+	margin: 0 auto 10px auto;
+}
+#product-img{
+	margin: 0 35px 10px 35px;
+	height: 200px;
+    width: 200px;
+}
+#product-1{
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+	height: 300px;
+	background-color: #f5f6fa;
+}
+#title-product-1{
+	margin-inline-start: 30px !important;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+#title-product-2{
+	margin-inline-start: 30px !important;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: red;
+}
+#product_detail{
+	width:100%;
+	background:lightgray;
+}
+#left_product{
+	margin-left: 8%;
+	width:32%;
+	height: 300px;
+	float:left;
+}
+#right_product{
+	width:60%;
+	height:300px;
+	float:left;
+}
+#left_product img{
+	width:300px;
+	height: 300px;
+}
+#trang{
+		width: 40%;
+		text-align: center;
+		margin-left: 40%;
+}
+#trang a{
+	float: left;
+	display: block;
+	padding: 10px;
+	border: solid 1px var(--blue);
 }
 /*                                                 Tuan end                                           */
 

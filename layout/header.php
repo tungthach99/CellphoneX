@@ -19,11 +19,11 @@
 					<ul>
 						<li class="drop-down"><a>Sản phẩm&nbsp;<i class="fa fa-sort-desc"></i></a>
            		     		<ul>
-                 				<li><a href="dienthoai.html">Điện thoại</a></li>
-                  				<li><a href="maytinhbang.html">Máy tính bảng</a></li>
-                  				<li><a href="dongho.html">Đồng hồ</a></li>
-                  				<li><a href="tainghe.html">Tai nghe</a></li>
-								<li><a href="khuyenmai.html">Phụ kiện</a></li>
+                 				<li><a href="sanpham.php?&maloai=L01">Điện thoại</a></li>
+                  				<li><a href="sanpham.php?&maloai=L02">Máy tính bảng</a></li>
+                  				<li><a href="sanpham.php?&maloai=L03">Đồng hồ</a></li>
+                  				<li><a href="sanpham.php?&maloai=L04">Tai nghe</a></li>
+								<li><a href="sanpham.php?&maloai=L05l">Phụ kiện</a></li>
          	       			</ul>
            		   		</li>
 						<li class=" d-none d-lg-block"><a href="tintuc.html">Khuyến mãi</a></li>
