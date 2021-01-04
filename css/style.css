@@ -1259,9 +1259,11 @@ font-family: 'Poppins', sans-serif;
 	color: #2c3e50;
 }
 .list-san-pham{
-	background-color: white;
-	border-bottom: thin solid var(--light);
 	border: 0;
+}
+.list-san-pham{
+	background-color: white;
+	border-bottom: 2px solid var(--light);
 }
 .list-san-pham a{
 	color: black;
@@ -1269,6 +1271,9 @@ font-family: 'Poppins', sans-serif;
 #danh-muc-left-menu{
 	font-size: 25px;
 	margin-left: 20px; 
+	border-bottom: 2px solid var(--light);
+	padding-bottom: 10px;
+	margin-bottom: 0;
 }
 /*                                                  San pham                                       */
 /*

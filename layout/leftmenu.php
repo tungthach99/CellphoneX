@@ -1,6 +1,6 @@
 <div id="sidebar" style="position: fixed;margin: 50px 0 0 10px;">
 		
-		<ul class="list-group" style="margin-left: 25px; padding-right: 0;border: 0;">
+		<ul class="list-group" style="margin-left: 25px; padding-right: 0;">
 		<p id="danh-muc-left-menu"><i class="material-icons" style="font-size: 25px;">devices</i> DANH MỤC</p>
 		<?php $sql="Select * from tbl_danh_muc	";
 	  		$result=$con->query($sql);
