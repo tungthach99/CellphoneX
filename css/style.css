@@ -897,7 +897,7 @@ footer .fa:hover{
 	cursor: pointer;
 }
 .box-header-km ul li a:hover, .box-menu-active{
-	border-bottom: 2px solid var(--mainblue);
+	border-bottom: 2px solid black;
 	text-decoration: none;
 	opacity: 1 !important;
 	transition: 0s;
@@ -1257,6 +1257,15 @@ font-family: 'Poppins', sans-serif;
 /*                                               Left menu                                                   */
 #list-left-menu a:hover{
 	text-decoration: underline;
+	color: #2c3e50;
+}
+.list-san-pham{
+	background-color: white;
+	border: 2px solid #000204;
+	padding-right: 0;
+}
+.list-san-pham a{
+	color: black;
 }
 
 /*                                                  San pham                                       */
@@ -1279,7 +1288,7 @@ font-family: 'Poppins', sans-serif;
 .product{
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   border-radius: 2px;
-  height: 300px;
+  height: 330px;
   background-color: #f5f6fa;
 }
 #product-content{
@@ -1291,14 +1300,14 @@ font-family: 'Poppins', sans-serif;
 	margin: 0 auto 10px auto;
 }
 #product-img{
-	margin: 0 35px 10px 35px;
+	margin: 0 20px 10px 35px;
 	height: 200px;
     width: 200px;
 }
 #product-1{
 	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     border-radius: 2px;
-	height: 300px;
+	height: 330px;
 	background-color: #f5f6fa;
 }
 #title-product-1{
@@ -1314,7 +1323,8 @@ font-family: 'Poppins', sans-serif;
 }
 #product_detail{
 	width:100%;
-	background:lightgray;
+	background:white;
+	margin-bottom: 100px;
 }
 #left_product{
 	margin-left: 8%;
@@ -1335,12 +1345,29 @@ font-family: 'Poppins', sans-serif;
 		width: 40%;
 		text-align: center;
 		margin-left: 40%;
+		margin-bottom: 70px;
 }
 #trang a{
+	color: #000204;
 	float: left;
-	display: block;
 	padding: 10px;
-	border: solid 1px var(--blue);
+	border: solid 1px #000204;
+}
+#trang a:hover{
+	background-color: var(--maingray);
+}
+.btn{
+	margin: 15px 0 5px 0;
+}
+.heart{
+	position: absolute;
+	margin-right: 20px;
+}
+#heart-1{
+
+}
+#heart-2{
+	display: ;
 }
 /*                                                 Tuan end                                           */
 

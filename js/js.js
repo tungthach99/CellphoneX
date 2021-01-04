@@ -45,3 +45,13 @@ function doiboxmenu4() {
 function next(){
     document.getElementById("news-content1").style.transform = 'translateX(295px)';
 }
+
+function doiheart1(){
+    document.getElementById("heart-1").style = "display:block;";
+    document.getElementById("heart-2").style = "display:none;";
+}
+
+function doiheart2(){
+    document.getElementById("heart-1").style = "display:none;";
+    document.getElementById("heart-2").style = "display:block;";
+}
