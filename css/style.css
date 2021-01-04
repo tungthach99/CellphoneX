@@ -1260,13 +1260,16 @@ font-family: 'Poppins', sans-serif;
 }
 .list-san-pham{
 	background-color: white;
-	border: 2px solid #000204;
-	padding-right: 0;
+	border-bottom: thin solid var(--light);
+	border: 0;
 }
 .list-san-pham a{
 	color: black;
 }
-
+#danh-muc-left-menu{
+	font-size: 25px;
+	margin-left: 20px; 
+}
 /*                                                  San pham                                       */
 /*
 .product{
