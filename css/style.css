@@ -688,14 +688,6 @@ footer .fa:hover{
 	border-top: 1px solid;
 	border-bottom: 1px solid;
 }
-.cuoiFooter span{
-	margin-right: 5%;
-}
-.cuoiFooter select{
-	float: right;
-	border: none;
-	background-color: #F5F6F7;
-}
 
 /*Noi dung trang gioithieu*/
 .noiDungGioiThieu{

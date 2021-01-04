@@ -62,34 +62,44 @@ jQuery.noConflict();
 				<span class="col-6">
 					<label>Họ:</label>
 					<input type="text" class="form-control" id="txtho" name="txtho" required>
+<!--
 					<div class="valid-feedback">Hợp lệ.</div>
 					<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
+-->
 				</span>
 				<span class="col-2"></span>
 				<span class="col-4">
 					<label>Tên:</label>
 					<input type="text" class="form-control" id="txtten" name="txtten" required>
+<!--
 					<div class="valid-feedback">Hợp lệ.</div>
 					<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
+-->
 				</span>
 			</div>
 			<div class="from-group">
-				<label>Email của bạn:</label>
-				<input type="text" class="form-control" id="txtemail" placeholder="Nhập email của bạn" name="txtemail" required>
+				<label>Tên đăng nhập của bạn:</label>
+				<input type="text" class="form-control" id="txttendangnhap" placeholder="Nhập email của bạn" name="txttendangnhap" required>
+<!--
 				<div class="valid-feedback">Hợp lệ.</div>
 				<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
+-->
 			</div>
 			<div class="from-group">
 				<label>Mật khẩu:</label>
-				<input type="password" class="form-control" id="txtmatkhau" placeholder="Nhập email của bạn" name="txtmatkhau" required>
+				<input type="password" class="form-control" id="txtmatkhau" placeholder="Nhập tên đăng nhập" name="txtmatkhau" required>
+<!--
 				<div class="valid-feedback">Hợp lệ.</div>
 				<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
+-->
 			</div>
 			<div class="from-group">
 				<label>Xác nhận mật khẩu:</label>
 				<input type="password" class="form-control" id="txtxacnhanmk" placeholder="Nhập email của bạn" name="txtxacnhanmk" required>
+<!--
 				<div class="valid-feedback">Hợp lệ.</div>
 				<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
+-->
 			</div>
 			<div class="form-group form-check">
 				<label class="form-check-label">

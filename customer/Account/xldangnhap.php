@@ -1,7 +1,7 @@
 <script>alert('Hello');</script>
 <?php
 require("../../public/ketnoi.php");
-$sql="select * from tblnguoidung where tendangnhap='".$_POST["txttendangnhap"]."' and matkhau='".$_POST["txtmatkhau"]."'";
+$sql="select * from tbl_khach_hang where ten_dang_nhap='".$_POST["txttendangnhap"]."' and mat_khau='".$_POST["txtmatkhau"]."'";
 $result=$con->query($sql);
 if($result->num_rows>0)
 {

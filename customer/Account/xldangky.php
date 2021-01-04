@@ -2,11 +2,11 @@
 require("../../public/ketnoi.php");
 $ho=$_POST["txtho"];
 $ten=$_POST["txtten"];
-$email=$_POST["txtemail"];
+$tendangnhap=$_POST["txttendangnhap"];
 $matkhau=$_POST["txtmatkhau"];
 $xacnhanmk=$_POST["txtxacnhanmk"];
 //kiểm tra sự trùng lặp csdl
-$sql="select * from tblnguoidung where tendangnhap='".$_POST["txtemail"]."'";
+$sql="select * from tbl_khach_hang where ten_dang_nhap='".$_POST["txttendangnhap"]."'";
 $result=$con->query($sql);
 if($result->num_rows>0) //tai khoan da ton tai
 {
@@ -14,7 +14,7 @@ if($result->num_rows>0) //tai khoan da ton tai
 }
 else
 {
-	$sql="insert into tblnguoidung(tendangnhap,matkhau,ho,ten) values('".$email."','".$matkhau."','".$ho."','".$ten."')";
+	$sql="insert into tbl_khach_hang(ten_dang_nhap,mat_khau,ho,ten_khach_hang) values('".$tendangnhap."','".$matkhau."','".$ho."','".$ten."')";
 	//echo $sql;
 	if($con->query($sql)===TRUE)
 	{

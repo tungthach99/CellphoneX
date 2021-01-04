@@ -4,7 +4,7 @@
 	<form action="customer/Account/xldangnhap.php" method="post">
 		<input type="text" placeholder="Email của bạn" id="txttendangnhap" name="txttendangnhap"><br>
 		<input type="password" placeholder="Mật khẩu" id="txtmatkhau" name="txtmatkhau"><br>
-		<input type="checkbox" name="nhomatkhau">Duy trì đăng nhập<br>
+		<input type="checkbox" name="nhomatkhau">Nhớ mật khẩu<br>
 		<input type="submit" value="Đăng nhập">
 	</form>
 	<div class="noiDungFormDangNhap">
