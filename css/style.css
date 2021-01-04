@@ -677,7 +677,6 @@ footer .fa{
 	font-size: 22px;
 	text-align: center;
 	border: solid 1px #e7e7e7;
-	-webkit-border-radius: 3px;
 	color: #000;
 	line-height: 45px;
 }
@@ -1363,11 +1362,7 @@ font-family: 'Poppins', sans-serif;
 	position: absolute;
 	margin-right: 20px;
 }
-#heart-1{
 
-}
-#heart-2{
-	display: ;
-}
+
 /*                                                 Tuan end                                           */
 
