@@ -941,16 +941,16 @@ display: grid;
 	text-decoration: underline;
 }
 #footer-km-content{
-	margin: 40px 10px;
+	margin: 35px 10px;
     font-size: 13px;
 	font-weight: bold;
-	color: var(--blue);
+	color: black;
 }
 #footer-km-content-2{
 	float: right;
 	padding: 5px;
 	color: white;
-	background-color: var(--blue);
+	background-color:black;
 }
 #footer-km-content-2:hover{
 	background-color: var(--mainblue)
@@ -1004,7 +1004,7 @@ display: grid;
 	width: 800px;
     z-index: -1;
     background: var(--blue);
-    background-image:  url("G:/Lap trinh web/CellphoneX/images/tin-tuc/tin-tuc-5.png");
+    background-image:  url("C:/xampp/htdocs/CellphoneX/images/tin-tuc/tin-tuc-5.png");
     background-repeat: no-repeat;
 	background-position: center;
 	opacity: 1;
@@ -1335,18 +1335,47 @@ font-family: 'Poppins', sans-serif;
 }
 #left_product{
 	margin-left: 8%;
-	width:32%;
+	width:22%;
 	height: 300px;
 	float:left;
 }
 #right_product{
-	width:60%;
+	width:70%;
 	height:300px;
 	float:left;
 }
 #left_product img{
 	width:300px;
 	height: 300px;
+}
+#left_product p{
+	margin-left: 35px;
+}
+#title-detail-product-1{
+	font-size: 40px;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+#title-detail-product-2{
+	color: #2c3e50;
+	margin-bottom: 15px;
+	font-weight: bold;
+	font-size: 25px;
+}
+#title-detail-product-3{
+	color: #2c3e50;
+	margin-bottom: 15px;
+	font-size: 25px;
+	width: 80%;
+	padding: 5px;
+	border: 2px solid var(--light);
+}
+#header-detail-product{
+	padding: 5px;
+	background-color: black;
+	color: white;
+	font-style: uppercase;
+	width: 150px;
 }
 #trang{
 		width: 40%;
@@ -1370,7 +1399,9 @@ font-family: 'Poppins', sans-serif;
 	position: absolute;
 	margin-right: 20px;
 }
-
+.btn-mua{
+	margin-right: 15px;
+}
 
 /*                                                 Tuan end                                           */
 

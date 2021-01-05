@@ -51,8 +51,7 @@ jQuery.noConflict();
 <div id="noiDungPhongTo" style="100%">
 		<div class="menuAnh">
 		<?php
-		$idanh="S	elect id_anh from tbl_san_pham where id_san_pham='".$_GET['masanpham']."'";
-		$sql="Select * from tbl_anh where id_anh='".$idanh."'";
+		$sql="Select * from tbl_san_pham inner join tbl_anh on tbl_san_pham.id_anh = tbl_anh.id_anh where tbl_san_pham.id_san_pham ='".$_GET["masanpham"]."'";
 	  		$result=$con->query($sql);
 	  		
 	 		if($result->num_rows>0)
