@@ -5,6 +5,12 @@
 	  $sql="Select * from tbl_san_pham";
 	  if (isset($_GET["maloai"]))
 	  	$sql.= " where id_danh_muc='".$_GET["maloai"]."'";
+	
+	//code tim kiem sp
+	if (isset($_GET["tensanpham"]))
+	  	$sql.= " where ten_san_pham like '%".$_GET["tensanpham"]."%'";
+	//end tk.
+	
 	  $sql.=" LIMIT $sbmoitrang";
 	  if(isset($_GET["trang"]))
 	  {
