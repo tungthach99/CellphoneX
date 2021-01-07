@@ -4,12 +4,14 @@
 <meta charset="utf-8">
 <title>CellphoneX - Chính sách sử dụng</title>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
 	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 	<link rel="shortcut icon" href="images/20.png">
 	<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script>
 jQuery.noConflict();
 (function( $ ) {
@@ -48,8 +50,8 @@ jQuery.noConflict();
 <!-- Phong to anh -->
 <div id="noiDungPhongTo" style="100%">
 		<div class="menuAnh">
-		<?php 
-		$sql="Select image_product.idimg,image_product.idsrc from image_product inner join product on image_product.idimg = product.idimg";
+		<?php
+		$sql="Select * from tbl_san_pham inner join tbl_anh on tbl_san_pham.id_anh = tbl_anh.id_anh where tbl_san_pham.id_san_pham ='".$_GET["masanpham"]."'";
 	  		$result=$con->query($sql);
 	  		
 	 		if($result->num_rows>0)
@@ -57,7 +59,7 @@ jQuery.noConflict();
 			while($row=$result->fetch_assoc())
 			{
 ?>
-			<img src="images/san-pham/<?php echo $row['idsrc']; ?>" onClick="zoom(this)" alt="">
+			<img src="images/san-pham/<?php echo $row['id_src']; ?>" onClick="zoom(this)" alt="">
 			<?php
 			}//end_while	
 			} //end if
@@ -93,7 +95,10 @@ jQuery.noConflict();
         ?>
 	</div>
 </div>
-
+<?php
+	include("layout/footer.php");
+	include("layout/cacnut.php");
+?>
 
 	
 </body>

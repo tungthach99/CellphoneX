@@ -2,9 +2,9 @@
 <div id="product-content">
 <?php 
 	  $sbmoitrang=8;
-	  $sql="Select * from product";
+	  $sql="Select * from tbl_san_pham";
 	  if (isset($_GET["maloai"]))
-	  	$sql.= " where maloai='".$_GET["maloai"]."'";
+	  	$sql.= " where id_danh_muc='".$_GET["maloai"]."'";
 	  $sql.=" LIMIT $sbmoitrang";
 	  if(isset($_GET["trang"]))
 	  {
@@ -26,10 +26,13 @@
 ?>
 	<div class="product">
 		<div id="product-1">
-		<a href="sanpham.php?product=1&masanpham=<?php echo $row['masanpham']?>"><img id="product-img" src="images/san-pham/<?php echo $row['IDimage']; ?>"></a>
-		<p id="title-product-1"><?php echo $row["tensanpham"];?></p>
-		<p id="title-product-2">Giá: <?php echo $row["gia"];?> đ</p>
-		<p id="title-product-1"> <a href="sanpham.php?product=1&masanpham=<?php echo $row['masanpham']?>"> Chi tiết</a>
+		<a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><img id="product-img" src="images/san-pham/<?php echo $row['anh']; ?>"></a>
+		<a id="heart-2"><i  class="fa fa-heart heart" style="color:red;"></i></a>
+		<p id="title-product-1"><?php echo $row["ten_san_pham"];?></p>
+		<p id="title-product-2">Giá: <?php echo $row["don_gia"];?> đ</p>
+		<a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><button class="btn btn-dark" style="margin-left: 5px;">Chi tiết  <i class='fas fa-clipboard-list'></i>
+		</button></a>
+		<button class="btn btn-dark" style="float:right; margin-right:5px;">Mua  <i class='fas fa-cart-plus'></i></button>
 		</div>
 		<!--product=1=>product_detail.php-->
 		</p>
@@ -50,9 +53,9 @@
 <div id="trang">
 		<!--Tinh duoc so trang-->
 		<?php 
-			$sqlsum="Select * from product";
+			$sqlsum="Select * from tbl_san_pham";
 	  		if (isset($_GET["maloai"]))
-	  			$sqlsum.= " where maloai='".$_GET["maloai"]."'";
+	  			$sqlsum.= " where id_danh_muc='".$_GET["maloai"]."'";
 	  		$result=$con->query($sqlsum);
 	  		$tongsb=$result->num_rows;
 	  		$tongsotrang=ceil($tongsb/$sbmoitrang);

@@ -12,7 +12,7 @@
 				<a href="home.php"><img id="logo-X" src="images/20 - Copy (2).png" alt="img"></a>
 <!--
 				<span class="d-none d-lg-block logo-chu">
-					<a href="home.html">CellphoneX</a>
+					<a href="home.php">CellphoneX</a>
 				</span>
 -->
 				<nav class="nav-menu">
@@ -23,11 +23,11 @@
                   				<li><a href="sanpham.php?&maloai=L02">Máy tính bảng</a></li>
                   				<li><a href="sanpham.php?&maloai=L03">Đồng hồ</a></li>
                   				<li><a href="sanpham.php?&maloai=L04">Tai nghe</a></li>
-								<li><a href="sanpham.php?&maloai=L05l">Phụ kiện</a></li>
+								<li><a href="sanpham.php?&maloai=L05">Phụ kiện</a></li>
          	       			</ul>
            		   		</li>
-						<li class=" d-none d-lg-block"><a href="tintuc.html">Khuyến mãi</a></li>
-              			<li class=" d-none d-lg-block"><a href="tintuc.html">Tin tức</a></li>
+						<li class=" d-none d-lg-block"><a href="khuyenmai	.php">Khuyến mãi</a></li>
+              			<li class=" d-none d-lg-block"><a href="tintuc.php">Tin tức</a></li>
             		</ul>
           		</nav><!-- .nav-menu -->
         	</span>
@@ -35,13 +35,13 @@
           		<nav class="nav-menu d-none d-lg-block">
 					<ul>
 						<?php if(!isset($_SESSION["userngan"])){?>
-						<li style="margin-left: 23%;"><a href="khuyenmai.html">Yêu thích</a></li>
+						<li style="margin-left: 23%;"><a href="khuyenmai.php">Yêu thích</a></li>
       					<li class="drop-down"><i class="fa fa-user" style="font-size: 34px;" onClick="hienthiform('formDangNhap'),dongform('formGioHang')"></i>
            		   		</li>
       					<?php }?>
 						
 						<?php if(isset($_SESSION["userngan"])){?>
-						<li><a href="khuyenmai.html">Yêu thích</a></li>
+						<li><a href="khuyenmai.php">Yêu thích</a></li>
       					<li class="drop-down"><span style="font-size: 20px;" onClick="hienthiform('formDangNhap'),dongform('formGioHang')"><img width="32px;" height="32px;" style="border-radius: 50%;" src="images/20 - Copy.png">&nbsp;<?php echo $_SESSION["userngan"];?></span>
            		   		</li>
       					<?php }?>
