@@ -30,6 +30,7 @@ h7{
 	background: #fff;
 	height: 58px;
 	box-shadow:1px 1px 5px var(--light);;
+	width: 100%;
 }
 #logo-X{
 	padding-top: 10px;

@@ -83,6 +83,10 @@ jQuery.noConflict();
 	<div id="col-sm-10" style="margin-left: 100px;">
 	<!--nội dung-->
     <?php	
+		if(isset($_GET["maloai"]))
+		{
+				include("customer/Product/product_info.php");
+		}
 		if(isset($_GET["product"]))
 		{
 				include("customer/Product/product_detail.php");
@@ -90,8 +94,13 @@ jQuery.noConflict();
 		
 				include("customer/product/product_info.php");
 		}
-		else
-            include("customer/product/product_info.php");
+		
+		//code tim kiem san pham
+		if(isset($_GET["tensanpham"]))
+		{
+				include("customer/Product/product_info.php");
+		}
+		//end tim kiem.
         ?>
 	</div>
 </div>

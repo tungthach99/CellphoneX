@@ -1,8 +1,8 @@
 <header  id="header" class="fixed-top">
 	<div id="box-tim-kiem">
-		<form action="#" method="">
+		<form action="xlsearch.php" method="get">
 			<label class="d-none d-lg-block">Nhập sản phẩm bạn cần tìm:</label>
-			<input name="sanpham" type="text" id="text-box-tim-kiem" placeholder="Tìm kiếm sản phẩm..."><br>
+			<input name="text-box-tim-kiem" type="text" id="text-box-tim-kiem" placeholder="Tìm kiếm sản phẩm..."><br>
 			<button type="submit" id="nut-tim-kiem"><i class="fa fa-search"></i></button>
 			<a onClick="dongform('box-tim-kiem')" id="nut-thoat-tim-kiem" title="Đóng"><i class="fa fa-close"></i></a>
 		</form>

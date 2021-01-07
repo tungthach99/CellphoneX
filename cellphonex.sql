@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 04, 2021 lúc 04:43 PM
+-- Thời gian đã tạo: Th1 07, 2021 lúc 06:10 PM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -110,8 +110,16 @@ CREATE TABLE `tbl_khach_hang` (
   `so_dien_thoai` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `dia_chi` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ghi_chu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `mat_khau` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+  `mat_khau` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ten_dang_nhap` varchar(55) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_khach_hang`
+--
+
+INSERT INTO `tbl_khach_hang` (`id_khach_hang`, `ten_khach_hang`, `email`, `so_dien_thoai`, `dia_chi`, `ghi_chu`, `mat_khau`, `ten_dang_nhap`) VALUES
+(1, '', NULL, NULL, NULL, NULL, '1', 'tung');
 
 -- --------------------------------------------------------
 
@@ -151,7 +159,7 @@ CREATE TABLE `tbl_san_pham` (
 
 INSERT INTO `tbl_san_pham` (`id_san_pham`, `ten_san_pham`, `don_gia`, `id_danh_muc`, `anh`, `mo_ta`, `id_anh`, `so_luong`) VALUES
 (1, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
-(2, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
+(2, 'iPhoneXS', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
 (3, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
 (4, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
 (5, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
@@ -222,7 +230,7 @@ ALTER TABLE `tbl_don_hang`
 -- AUTO_INCREMENT cho bảng `tbl_khach_hang`
 --
 ALTER TABLE `tbl_khach_hang`
-  MODIFY `id_khach_hang` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_khach_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_nhan_vien`
