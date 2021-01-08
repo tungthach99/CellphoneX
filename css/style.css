@@ -988,7 +988,7 @@ display: grid;
 /*                            Content tin tuc 1                */
 .content-news{
 	width: 1200px;
-	height: 800px;
+	height: auto;
 	margin: 78px auto 0 auto;
 	display: flex;
 }
@@ -1013,7 +1013,7 @@ display: grid;
 	width: 800px;
     z-index: -1;
     background: var(--blue);
-    background-image:  url("C:/xampp/htdocs/CellphoneX/images/tin-tuc/tin-tuc-5.png");
+    background-image:  url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
     background-repeat: no-repeat;
 	background-position: center;
 	opacity: 1;
@@ -1055,17 +1055,18 @@ display: grid;
 	color: black;
 }
 #thumbnail1 article:hover, .news-content1-1 p:hover{
-	color: var(--blue);
+	color: black;
+	opacity: 1;
 }
 .right-content-news1{
-	width: 100%;
+	width: 400px;
 	height: 100%;
 	margin-left: 10px;
 }
 .news-header{
 	font-size: 16px;
 	color: white;
-	background-color: var(--blue);
+	background-color: black;
 	padding: 5px 15px;
 	font-weight: bold;
 	height: 35px;
@@ -1101,12 +1102,40 @@ display: grid;
 	font-weight: bold;
 }
 .header-content2-1 a:hover{
-	color: var(--blue)
+	color: var(--blue);
 }
 .news-content-info{
 	font-size: 12px;
-	color: var(--blue);
+	color: #2c3e50;
 	text-transform: uppercase;
+}
+.tin-tuc-1{ 
+	height: 170px;
+    margin: 10px 0 10px 0;
+	display: flex;
+	flex-direction: column;
+}
+.tin-tuc-1 a{
+	color: #000;
+}
+.tin-tuc-1 img{
+	width: 250px;
+	height: 168px;
+	float: left;
+	display: flex;
+	flex-direction: column;
+}
+.header-tin-tuc{
+	color: black;
+	font-size: 25px;
+	margin: 0 0 0 10px;
+	font-weight: bold;
+}
+.noi-dung-tin-tuc{
+	font-size: 15px;
+	margin: 0 0 0 10px;
+	height: 100px;
+	overflow: hidden;
 }
 /*                   Gioi thieu                                 */
 #tieuDe{
