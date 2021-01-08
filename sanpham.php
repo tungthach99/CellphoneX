@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>CellphoneX - Chính sách sử dụng</title>
+<title>CellphoneX - Danh sách sản phẩm</title>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/js.js"></script>
 	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
@@ -72,15 +72,14 @@ jQuery.noConflict();
 		<i class="fa fa-remove thoat" style="color: #fff;" onClick="dongform('noiDungPhongTo')" title="Đóng"></i>
 	</div>
 <!-- Phong to anh end-->
-<div style="margin-top:100px; height: width:100%;"></div>
-<div id="row">
-	<div id="col-sm-2">
+<div class="row" style="width: 101%; margin-top:100px;">
+	<span class="col-sm-2 d-none d-lg-block">
 	<!--menu trái-->
 		<?php 
 		include("layout/leftmenu.php");
 		?>
-	</div>
-	<div id="col-sm-10" style="margin-left: 100px;">
+	</span>
+	<span class="col-sm-10">
 	<!--nội dung-->
     <?php	
 		if(isset($_GET["maloai"]))
@@ -102,7 +101,7 @@ jQuery.noConflict();
 		}
 		//end tim kiem.
         ?>
-	</div>
+	</span>
 </div>
 <?php
 	include("layout/footer.php");

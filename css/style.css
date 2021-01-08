@@ -11,8 +11,10 @@ p{
 	text-align: justify;
 }
 h1{
-	font-size: 60px;
+	font-size: 48px;
 	color: #000;
+	text-align: center;
+	margin-top: 2%;
 }
 h2{
 	margin: 10% 0 15px 0;
@@ -50,7 +52,7 @@ h7{
 	padding: 0px 15px;
 
 }
-.nav-menu a{
+.nav-menu .nav1{
 	display: block;
 	position: relative;
 	color: #000;
@@ -60,7 +62,7 @@ h7{
 	padding: 5px 12px;
 	border-radius: 15px;
 }
-.nav-menu a:hover{
+.nav-menu .nav1:hover{
 	display: block;
 	position: relative;
 	color: #fff;
@@ -545,6 +547,8 @@ input[name="dieuHuong"]{
 	transition: 0.6s;
 	margin: 0.5%;
 	display: inline;
+	background-color: rgba(241, 241, 243,0.9);
+	height: 100%;
 }
 
 .hoverSanPham{
@@ -820,7 +824,7 @@ footer .fa:hover{
 	background-color: rgba(0,0,0,0.9);
 	width: 100%;
 	height: 100%;
-	top: 48px;
+	top: 58px;
 	display: none;
 }
 #noiDungPhongTo .thoat{
@@ -830,8 +834,12 @@ footer .fa:hover{
 .anhPhongTo{
 	position: fixed;
 	width: 100%;
-	top: 10%;
+	top: 12%;
 	text-align: center;
+}
+#anhPhongTo{
+	width: 42%;
+	max-height: 600px;
 }
 .menuAnh{
 	position: fixed;
@@ -1277,54 +1285,41 @@ font-family: 'Poppins', sans-serif;
 	margin-bottom: 0;
 }
 /*                                                  San pham                                       */
-/*
-.product{
-	width:28%;
-	height:280px;
-	margin-right:5%;
-	font-size: 18px;
-	color:green;
-	text-align: center;
-	float:left;
-	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
-	height: 300px;
-	background-color: #f5f6fa;
-		
-}
-*/
-.product{
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  border-radius: 2px;
-  height: 330px;
-  background-color: #f5f6fa;
-}
+
 #product-content{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
 	grid-gap: 10px;
-	width: 80%;
-	max-width: 1330px;
-	margin: 0 auto 10px auto;
+	width: 94%;
+	margin-left: 4%;
 }
 #product-img{
-	margin: 0 20px 10px 35px;
+	margin: 0 0px 10px 40px;
 	height: 200px;
     width: 200px;
+	transition: 0.3s;
+}
+#product-img:hover{
+	width: 210px;
+	height: 210px;
+	margin-bottom: 0;
 }
 #product-1{
-	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
     border-radius: 2px;
-	height: 330px;
-	background-color: #f5f6fa;
+	height: 350px;
+/*	background-color: #f5f6fa;*/
+	width: 289px;
 }
 #title-product-1{
-	margin-inline-start: 30px !important;
-	margin-bottom: 5px;
+	text-align: center;
+	margin: 5px 7% 0 7%;
 	font-weight: bold;
+	height: 40px;
+	width: 86%;
 }
 #title-product-2{
-	margin-inline-start: 30px !important;
+	text-align: center;
 	margin-bottom: 5px;
 	font-weight: bold;
 	color: red;
@@ -1404,6 +1399,18 @@ font-family: 'Poppins', sans-serif;
 .btn-mua{
 	margin-right: 15px;
 }
-
+.nutChiTiet{
+	width: 60%;
+	color: #fff;
+	background-color:rgba(0,0,0,1);
+	font-size: 18px;
+	height: 40px;
+	border-radius: 25px;
+	margin: 5px 0 0 20%;
+	border: none;
+}
+.nutChiTiet:hover{
+	co
+}
 /*                                                 Tuan end                                           */
 

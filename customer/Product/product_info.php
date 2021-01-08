@@ -1,4 +1,3 @@
-<div style="margin-top 30px;">
 <div id="product-content">
 <?php 
 	  $sbmoitrang=8;
@@ -30,19 +29,15 @@
 <?php 
 	}//end if
 ?>
-	<div class="product">
 		<div id="product-1">
-		<a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><img id="product-img" src="images/san-pham/<?php echo $row['anh']; ?>"></a>
+		<a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><img style="margin-top: 10px;" id="product-img" src="images/san-pham/<?php echo $row['anh']; ?>"></a>
 		<a id="heart-2"><i  class="fa fa-heart heart" style="color:red;"></i></a>
 		<p id="title-product-1"><?php echo $row["ten_san_pham"];?></p>
 		<p id="title-product-2">Giá: <?php echo $row["don_gia"];?> đ</p>
-		<a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><button class="btn btn-dark" style="margin-left: 5px;">Chi tiết  <i class='fas fa-clipboard-list'></i>
+		<a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><button class="nutChiTiet">Chi tiết
 		</button></a>
-		<button class="btn btn-dark" style="float:right; margin-right:5px;">Mua  <i class='fas fa-cart-plus'></i></button>
 		</div>
 		<!--product=1=>product_detail.php-->
-		</p>
-	</div>
 <?php
 	if($i%3==2)
 	{
@@ -54,7 +49,6 @@
 }//end while
 }//if_num_row
 ?>
-</div>
 </div> <!-- product-content -->
 <div id="trang">
 		<!--Tinh duoc so trang-->

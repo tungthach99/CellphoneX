@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>CellphoneX - Chính sách sử dụng</title>
+<title>CellphoneX - Điện thoại, Lap top, sản phẩm công nghệ giá tốt nhất</title>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 	<link rel="shortcut icon" href="images/20.png">
@@ -108,108 +108,53 @@ jQuery.noConflict();
 	<div class="row leCacMuc" style="width: 100%;">
 		<span class="col-sm-1"></span>
 		<span class="col-sm-10 noiDungGioiThieu">
-			<h1>SẢN PHẨM GIÁ TỐT</h1>
-
-			<div style="text-align: center; margin-top: 8%;">
+			<h1>SẢN PHẨM GIÁ RẺ</h1>
+			<div style="text-align: center;">
+			
 			<div class="row" style=" width: 100%;">
 				<label id="labelTrai" for="trai"><i class="fa fa-angle-left"></i></label>
 				<label id="lablePhai" for="phai"><i class="fa fa-angle-right"></i></label>
-					<div class="slide">
+				<div class="slide">
 				<div class="slides">
 					<input type="radio" name="dieuHuong" id="trai" checked>
 					<input type="radio" name="dieuHuong" id="phai">
-					<div class="thanhPhan s1">
-						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
-						<div class="anhSanPham">
-							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg" alt="galaxy s10+">
-						</div>
-						<div style="font-size: 16px;">
-							Samsung Galaxy S10+ (Plus)
-						</div>
-						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
-						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
-						<div>
-							<i>Đánh giá: </i>
-							<span class="danhGia">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
-						</div>
-					</div>
-					<div class="thanhPhan">
-						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
-						<div class="anhSanPham">
-							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
-						</div>
-						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
-						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
-						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
-						<div>
-							<i>Đánh giá: </i>
-							<span class="danhGia">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
-						</div>
-					</div>
-					<div class="thanhPhan">
-						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
-						<div class="anhSanPham">
-							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
-						</div>
-						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
-						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
-						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
-						<div>
-							<i>Đánh giá: </i>
-							<span class="danhGia">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
-						</div>
-					</div>
-					<div class="thanhPhan">
-						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
-						<div class="anhSanPham">
-							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
-						</div>
-						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
-						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
-						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
-						<div>
-							<i>Đánh giá: </i>
-							<span class="danhGia">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
-						</div>
-					</div>
-					<div class="thanhPhan">
-
-						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
-						<div class="anhSanPham">
-							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
-						</div>
-						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
-						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
-						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
-						<div>
-							<i>Đánh giá: </i>
-							<span class="danhGia">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
-						</div>
-					</div>
-					<div class="thanhPhan">
-						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
-						<div class="anhSanPham">
-							<img src="images/61YVqHdFRxL._AC_SL1322_.jpg">
-						</div>
-						<div style="font-size: 16px;">Samsung Galaxy S10+ (Plus)</div>
-						Giá: <span class="giaDo">12.400.000<sup><u>đ</u></sup></span>
-						<span class="giaGachNgang">19.990.000<sup><u>đ</u></sup></span>
-						<div>
-							<i>Đánh giá: </i>
-							<span class="danhGia">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span>
-						</div>
-					</div>
+					<?php
+						$sql="SELECT * FROM tbl_san_pham WHERE id_danh_muc <>'L05' ORDER BY don_gia ASC LIMIT 6";
+						$result=$con->query($sql);
+						if($result->num_rows>0)
+						{
+							$i=0;
+							while($row=$result->fetch_assoc())
+							{
+								$i=$i+1;
+								?>
+								<div class="thanhPhan <?php if($i==1) echo "s1"; ?>">
+									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+									<div class="anhSanPham">
+										<img src="images/san-pham/<?php echo $row['anh']; ?>">
+									</div>
+									<div style="font-size: 16px;">
+										<?php echo $row["ten_san_pham"];?>
+									</div>
+									Giá: <span class="giaDo"><?php echo $row["don_gia"];?><sup><u>đ</u></sup></span>
+									<span class="giaGachNgang"></span>
+<!--
+									<div>
+										<i>Đánh giá: </i>
+										<span class="danhGia">
+										<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
+									</div>
+-->
+								</div>
+					<?php
+							}
+						}
+					?>
 				</div>
-					</div>
+				</div>
 			</div>
 			
-		</div>
+			</div>
 		</span>
 	</div>
 <!--	San pham ban chay								-->
@@ -268,127 +213,121 @@ jQuery.noConflict();
 <!--	Su kien: end.												-->
 	
 <!--	San pham noi bat														-->
-	<div class="row leCacMuc" style="width: 100%;">
+		<div class="row leCacMuc" style="width: 100%;">
 		<span class="col-sm-1"></span>
 		<span class="col-sm-10 noiDungGioiThieu">
-			<h1>SẢN PHẨM GIÁ TỐT</h1>
-			<div style="text-align: center; margin-top: 8%;">
+			<h1>SẢN PHẨM NỔI BẬT</h1>
+			<div style="text-align: center;">
+			
 			<div class="row" style=" width: 100%;">
-				<label id="labelTrai2" for="trai2"><i class="fa fa-angle-left"></i></label>
-				<label id="lablePhai2" for="phai2"><i class="fa fa-angle-right"></i></label>
-					<div class="slide">
+				<label id="labelTrai" for="trai"><i class="fa fa-angle-left"></i></label>
+				<label id="lablePhai" for="phai"><i class="fa fa-angle-right"></i></label>
+				<div class="slide">
 				<div class="slides">
-					<input type="radio" name="dieuHuong" id="trai2" checked>
-					<input type="radio" name="dieuHuong" id="phai2">
-					<div class="thanhPhan s2">
-						<span class="hoverSanPham">
-							<a href="#">
-								<i class="fa fa-external-link" title="Mở liên kết"></i>
-							</a>
-							<a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i>
-							</a>
-						</span>
-						<div class="anhSanPhamLon">
-							<img src="images/dell xps.png" alt="Dell XPS 13 9300 2020">
-						</div>
-						<div style="font-size: 16px;">
-							Dell XPS 13 9300 2020 - Intel Core i7-1065G7/RAM 16G...
-						</div>
-						Giá: <span class="giaDo">39.900.000<sup><u>đ</u></sup></span>
-						<div>
-							<i>Đánh giá: </i>
-							<span class="danhGia">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
-						</div>
-					</div>
-					<div class="thanhPhan">
-						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
-						<div class="anhSanPhamLon">
-							<img src="images/dell xps.png" alt="Dell XPS 13 9300 2020">
-						</div>
-						<div style="font-size: 16px;">
-							Dell XPS 13 9300 2020 - Intel Core i7-1065G7/RAM 16G...
-						</div>
-						Giá: <span class="giaDo">39.900.000<sup><u>đ</u></sup></span>
-						<div>
-							<i>Đánh giá: </i>
-							<span class="danhGia">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
-						</div>
-					</div>
-					<div class="thanhPhan">
-						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
-						<div class="anhSanPhamLon">
-							<img src="images/dell xps.png" alt="Dell XPS 13 9300 2020">
-						</div>
-						<div style="font-size: 16px;">
-							Dell XPS 13 9300 2020 - Intel Core i7-1065G7/RAM 16G...
-						</div>
-						Giá: <span class="giaDo">39.900.000<sup><u>đ</u></sup></span>
-						<div>
-							<i>Đánh giá: </i>
-							<span class="danhGia">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
-						</div>
-					</div>
-					<div class="thanhPhan">
-						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
-						<div class="anhSanPhamLon">
-							<img src="images/dell xps.png" alt="Dell XPS 13 9300 2020">
-						</div>
-						<div style="font-size: 16px;">
-							Dell XPS 13 9300 2020 - Intel Core i7-1065G7/RAM 16G...
-						</div>
-						Giá: <span class="giaDo">39.900.000<sup><u>đ</u></sup></span>
-						<div>
-							<i>Đánh giá: </i>
-							<span class="danhGia">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
-						</div>
-					</div>
-					<div class="thanhPhan">
-						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
-						<div class="anhSanPhamLon">
-							<img src="images/dell xps.png" alt="Dell XPS 13 9300 2020">
-						</div>
-						<div style="font-size: 16px;">
-							Dell XPS 13 9300 2020 - Intel Core i7-1065G7/RAM 16G...
-						</div>
-						Giá: <span class="giaDo">39.900.000<sup><u>đ</u></sup></span>
-						<div>
-							<i>Đánh giá: </i>
-							<span class="danhGia">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
-						</div>
-					</div>
-					<div class="thanhPhan">
-						<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
-						<div class="anhSanPhamLon">
-							<img src="images/dell xps.png" alt="Dell XPS 13 9300 2020">
-						</div>
-						<div style="font-size: 16px;">
-							Dell XPS 13 9300 2020 - Intel Core i7-1065G7/RAM 16G...
-						</div>
-						Giá: <span class="giaDo">39.900.000<sup><u>đ</u></sup></span>
-						<div>
-							<i>Đánh giá: </i>
-							<span class="danhGia">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
-						</div>
-					</div>
+					<input type="radio" name="dieuHuong" id="trai" checked>
+					<input type="radio" name="dieuHuong" id="phai">
+					<?php
+						$sql="SELECT * FROM tbl_san_pham WHERE id_danh_muc <>'L05' ORDER BY don_gia ASC LIMIT 6";
+						$result=$con->query($sql);
+						if($result->num_rows>0)
+						{
+							$i=0;
+							while($row=$result->fetch_assoc())
+							{
+								$i=$i+1;
+								?>
+								<div class="thanhPhan <?php if($i==1) echo "s1"; ?>">
+									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+									<div class="anhSanPham">
+										<img src="images/san-pham/<?php echo $row['anh']; ?>">
+									</div>
+									<div style="font-size: 16px;">
+										<?php echo $row["ten_san_pham"];?>
+									</div>
+									Giá: <span class="giaDo"><?php echo $row["don_gia"];?><sup><u>đ</u></sup></span>
+									<span class="giaGachNgang"></span>
+<!--
+									<div>
+										<i>Đánh giá: </i>
+										<span class="danhGia">
+										<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
+									</div>
+-->
+								</div>
+					<?php
+							}
+						}
+					?>
 				</div>
-					</div>
+				</div>
 			</div>
-		</div>
+			
+			</div>
 		</span>
 	</div>
 <!--	San pham noi bat: end.														-->
 
+<!--San pham moi-->
+		<div class="row leCacMuc" style="width: 100%;">
+		<span class="col-sm-1"></span>
+		<span class="col-sm-10 noiDungGioiThieu">
+			<h1>SẢN PHẨM MỚI</h1>
+			<div style="text-align: center;">
+			
+			<div class="row" style=" width: 100%;">
+				<label id="labelTrai" for="trai"><i class="fa fa-angle-left"></i></label>
+				<label id="lablePhai" for="phai"><i class="fa fa-angle-right"></i></label>
+				<div class="slide">
+				<div class="slides">
+					<input type="radio" name="dieuHuong" id="trai" checked>
+					<input type="radio" name="dieuHuong" id="phai">
+					<?php
+						$sql="SELECT * FROM tbl_san_pham WHERE id_danh_muc <>'L05' ORDER BY don_gia ASC LIMIT 6";
+						$result=$con->query($sql);
+						if($result->num_rows>0)
+						{
+							$i=0;
+							while($row=$result->fetch_assoc())
+							{
+								$i=$i+1;
+								?>
+								<div class="thanhPhan <?php if($i==1) echo "s1"; ?>">
+									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+									<div class="anhSanPham">
+										<img src="images/san-pham/<?php echo $row['anh']; ?>">
+									</div>
+									<div style="font-size: 16px;">
+										<?php echo $row["ten_san_pham"];?>
+									</div>
+									Giá: <span class="giaDo"><?php echo $row["don_gia"];?><sup><u>đ</u></sup></span>
+									<span class="giaGachNgang"></span>
+<!--
+									<div>
+										<i>Đánh giá: </i>
+										<span class="danhGia">
+										<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
+									</div>
+-->
+								</div>
+					<?php
+							}
+						}
+					?>
+				</div>
+				</div>
+			</div>
+			
+			</div>
+		</span>
+	</div>
+<!--San pham moi: end.-->
+	
 <!--	Ban tin										-->
 	<div class="row leCacMuc" style="width: 100%;">
 		<span class="col-sm-1">
 		</span>
 		<span class="col-sm-10">
+			<h1>TIN TỨC</h1>
 			<div class="row" style=" width: 100%;">
 				<label id="labelTrai3"><i class="fa fa-angle-left" onClick="prevTinTuc()"></i></label>
 				<label onClick="nextTinTuc()" id="lablePhai3"><i class="fa fa-angle-right"></i></label>

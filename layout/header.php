@@ -17,17 +17,17 @@
 -->
 				<nav class="nav-menu">
 					<ul>
-						<li class="drop-down"><a>Sản phẩm&nbsp;<i class="fa fa-sort-desc"></i></a>
+						<li class="drop-down"><a class="nav1">Sản phẩm&nbsp;<i class="fa fa-sort-desc"></i></a>
            		     		<ul>
-                 				<li><a href="sanpham.php?&maloai=L01">Điện thoại</a></li>
-                  				<li><a href="sanpham.php?&maloai=L02">Máy tính bảng</a></li>
-                  				<li><a href="sanpham.php?&maloai=L03">Đồng hồ</a></li>
-                  				<li><a href="sanpham.php?&maloai=L04">Tai nghe</a></li>
-								<li><a href="sanpham.php?&maloai=L05">Phụ kiện</a></li>
+                 				<li><a class="nav1" href="sanpham.php?&maloai=L01">Điện thoại</a></li>
+                  				<li><a class="nav1" href="sanpham.php?&maloai=L02">Máy tính bảng</a></li>
+                  				<li><a class="nav1" href="sanpham.php?&maloai=L03">Đồng hồ</a></li>
+                  				<li><a class="nav1" href="sanpham.php?&maloai=L04">Tai nghe</a></li>
+								<li><a class="nav1" href="sanpham.php?&maloai=L05">Phụ kiện</a></li>
          	       			</ul>
            		   		</li>
-						<li class=" d-none d-lg-block"><a href="khuyenmai	.php">Khuyến mãi</a></li>
-              			<li class=" d-none d-lg-block"><a href="tintuc.php">Tin tức</a></li>
+						<li class=" d-none d-lg-block"><a class="nav1" href="khuyenmai.php">Khuyến mãi</a></li>
+              			<li class=" d-none d-lg-block"><a class="nav1" href="tintuc.php">Tin tức</a></li>
             		</ul>
           		</nav><!-- .nav-menu -->
         	</span>
@@ -35,21 +35,21 @@
           		<nav class="nav-menu d-none d-lg-block">
 					<ul>
 						<?php if(!isset($_SESSION["userngan"])){?>
-						<li style="margin-left: 23%;"><a href="khuyenmai.php">Yêu thích</a></li>
-      					<li class="drop-down"><i class="fa fa-user" style="font-size: 34px;" onClick="hienthiform('formDangNhap'),dongform('formGioHang')"></i>
+						<li style="margin-left: 23%;"><a class="nav1" href="khuyenmai.php">Yêu thích</a></li>
+      					<li class="drop-down"><i class="fa fa-user" style="font-size: 34px; color: #000;" onClick="hienthiform('formDangNhap'),dongform('formGioHang')"></i>
            		   		</li>
       					<?php }?>
 						
 						<?php if(isset($_SESSION["userngan"])){?>
-						<li><a href="khuyenmai.php">Yêu thích</a></li>
+						<li><a class="nav1" href="khuyenmai.php">Yêu thích</a></li>
       					<li class="drop-down"><span style="font-size: 20px;" onClick="hienthiform('formDangNhap'),dongform('formGioHang')"><img width="32px;" height="32px;" style="border-radius: 50%;" src="images/20 - Copy.png">&nbsp;<?php echo $_SESSION["userngan"];?></span>
            		   		</li>
       					<?php }?>
 						
-						<li style="cursor: pointer"><i class="fa fa-shopping-cart d-flex" style="font-size: 34px;" onClick="hienthiform('formGioHang'),dongform('formDangNhap')"></i>
+						<li style="cursor: pointer"><a href="giohang.php" class="fa fa-shopping-cart d-flex" style="font-size: 34px; color: #000;"></a>
            		   		</li>
 						<li style="cursor: pointer">
-							<i onClick="hienthiform('box-tim-kiem');" class="fa fa-search d-flex" style="font-size: 33px;"></i>
+							<i onClick="hienthiform('box-tim-kiem');" class="fa fa-search d-flex" style="font-size: 33px; color: #000;"></i>
 						</li>
 					</ul>
 				</nav>
