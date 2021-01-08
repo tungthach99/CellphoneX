@@ -56,7 +56,6 @@ jQuery.noConflict();
    					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th>#</th>
 								<th>Tên sản phẩm</th>
 								<th>Ảnh</th>
 								<th>Số lượng</th>
@@ -68,20 +67,35 @@ jQuery.noConflict();
 						</thead>
 						<tbody>
 							<?php
-							if(isset($_SESSION["id_san_pham"])){
+							if(isset($_SESSION["giohang"])){
+								foreach($_SESSION["giohang"] as $key=>$value){
+									$sql="select * from tbl_san_pham where id_san_pham=".$value;
+									$result=$con->query($sql);
+									if($result->num_rows>0)
+									{
+										$tongtien=0;
+										while($row=$result->fetch_assoc())
+										{
 							?>
-								<tr>
-									<td><?php echo $_SESSION["id_san_pham"]; ?></td>
-									<td style="display: none;"><?php echo $_SESSION["id_san_pham"]; ?></td>
-									<td><?php echo $_SESSION["ten_sp"] ?></td>
-									<td><img style="width: 20%;" src="images/san-pham/<?php echo $_SESSION["anh"]; ?>"></td>
-									<td></td>
-									<td><?php echo $_SESSION["don_gia"]; ?></td>
-									<td><?php echo $_SESSION["sl_ton"]; ?></td>
-									<td></td>
-									<td><a class="fa fa-trash"></a></td>
-								</tr>
+							<tr>
+								<td style="display: none;"><?php echo $row['id_san_pham'] ?></td>
+								<td><?php echo $row['ten_san_pham']?></td>
+								<td><img style="width: 20%;" src="images/san-pham/<?php echo $row['anh'] ?>"></td>
+								<td><?php echo $_SESSION["soluong"][$key] ?></td>
+								<td><?php echo $row['don_gia']; ?></td>
+								<td><?php echo $row['so_luong']; ?></td>
+								<?php
+									$thanhtien=$_SESSION["soluong"][$key]*$row['don_gia'];
+									$tongtien=$tongtien+$thanhtien;
+								?>
+								
+								<td><?php echo $thanhtien ?></td>
+								<td><a class="fa fa-trash"></a></td>
+							</tr>
 							<?php
+										}
+									}
+								}
 							}
 							?>
 						</tbody>
