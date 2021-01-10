@@ -87,7 +87,7 @@ $row=$result->fetch_assoc();
 					Tin tức <i class='fas fa-angle-double-right'></i>
 				</div>
 <?php
-$sql="Select * FROM `tbl_tin_tuc` ORDER BY id_tin_tuc DESC LIMIT 4";
+$sql="Select * FROM `tbl_tin_tuc` ORDER BY add_date DESC LIMIT 4";
 $result=$con->query($sql);	  		
 if($result->num_rows>0)
 	{
@@ -99,8 +99,7 @@ if($result->num_rows>0)
 					<div class="news-content2-11">
 						<h3 class="header-content2-1"><a href="chitiettintuc.php?matintuc=<?php echo $row['id_tin_tuc']?>"><?php echo $row['tieu_de']?></a><br></h3>
 						<div class="news-content-info">
-							<i class="fa fa-clock-o"></i> 9 giờ trước 
-							<i class="fa fa-comment-o" style="margin-left: 10px;"></i> 1 bình luận
+							<i class="fa fa-clock-o"></i> <?php echo $row['add_date'] ?>
 						</div>
 					</div>
 				</div>
