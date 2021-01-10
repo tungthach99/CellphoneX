@@ -1,23 +1,16 @@
 <?php
 	session_start();
+	if(!isset($_SESSION["giohang"])) $_SESSION["giohang"] = array(0=>"0");
+	if(!isset($_SESSION["soluong"])) $_SESSION["soluong"] = array(0=>"0");
+	if(isset($_SESSION["stt_gio_hang"]))
+	{
+		$_SESSION["stt_gio_hang"]++;
+	}
+	else $_SESSION["stt_gio_hang"]=1;
 	require("../../public/ketnoi.php");
-	if(!isset($_SESSION["stt"]))
-	{
-		$_SESSION["stt"]=0;
-	}
-	$sql="select * from tbl_san_pham where id_san_pham=".$_GET["masanpham"];
-	$result=$con->query($sql);
-	if($result->num_rows>0)
-	{
-		while($row=$result->fetch_assoc())
-		{
-			if(isset($_SESSION["stt"])) $_SESSION["stt"]++;
-			$_SESSION["id_san_pham"]=$row['id_san_pham'];
-			$_SESSION["ten_sp"]=$row['ten_san_pham'];
-			$_SESSION["don_gia"]=$row['don_gia'];
-			$_SESSION["anh"]=$row['anh'];
-			$_SESSION["sl_ton"]=$row['so_luong'];
-		}
-	}
+	$_SESSION["giohang"][$_SESSION["stt_gio_hang"]]=$_GET["masanpham"];
+	$_SESSION["soluong"][$_SESSION["stt_gio_hang"]]=$_GET["soluong"];
+foreach($_SESSION["soluong"] as $key=>$value)
+	echo $value." ";	
 	header("location:../../giohang.php?&action=them");
 ?>

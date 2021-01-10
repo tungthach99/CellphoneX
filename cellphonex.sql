@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 07, 2021 lúc 06:10 PM
+-- Thời gian đã tạo: Th1 08, 2021 lúc 07:25 PM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -41,7 +41,51 @@ INSERT INTO `tbl_anh` (`id_anh`, `id_src`) VALUES
 ('IMG01', 'iPhoneX.jpg'),
 ('IMG01', 'iPhoneX-1.jpg'),
 ('IMG01', 'iPhoneX-2.jpg'),
-('IMG01', 'iPhoneX-3.jpg');
+('IMG01', 'iPhoneX-3.jpg'),
+('IMG02', 'samsung-A12.jpg'),
+('IMG02', 'samsung-galaxy-a12_1.jpg'),
+('IMG02', 'samsung-galaxy-a12_2.jpg'),
+('IMG02', 'samsung-galaxy-a12_3.jpg'),
+('IMG03', 'not-20-ultra.jpg'),
+('IMG03', 'note_20_ultra_1_7.jpg'),
+('IMG03', 'note_20_ultra_gold_4.jpg'),
+('IMG03', 'not-20-ultra-2.jpg'),
+('IMG04', 'xiaomi-mi-10t-pro_2_.jpg'),
+('IMG04', 'xiaomi-mi-10t-pro_1_.jpg'),
+('IMG04', '637370828366783154_xiaomi-mi-10t-pro-bac-1_1.jpg'),
+('IMG05', 'tabs7plus.jpg'),
+('IMG05', 'tabs7plus.jpg'),
+('IMG06', 'iphone12promax.jpg'),
+('IMG06', 'iphone12promax-1.jpg'),
+('IMG06', 'iphone12promax-2.jpg'),
+('IMG07', 'iphone11.jpg'),
+('IMG07', 'iphone11-1.jpg'),
+('IMG07', 'iphone11-2.jpg'),
+('IMG08', 'iphone-xr_1_.jpg'),
+('IMG08', 'iphone-xr_2_.jpg'),
+('IMG08', 'iphone-xr_3_.jpg'),
+('IMG08', 'iphone-xr_4_.jpg'),
+('IMG08', 'iphone-xr_5_.jpg'),
+('IMG09', 'iphone-12-mini-black-select-2020_2.jpg'),
+('IMG09', 'iphone-12-mini-blue-select-2020_2.jpg'),
+('IMG09', 'iphone-12-mini-red-select-2020_2.jpg'),
+('IMG09', 'iphone-12-mini-white-select-2020_2.jpg'),
+('IMG10', 'rog_3.jpg'),
+('IMG10', 'rog_phone_3_0002_layer_2.jpg'),
+('IMG10', 'rog_phone_3_0003_layer_1.jpg'),
+('IMG10', 'rog_phone_3_0001_layer_3.jpg'),
+('IMG11', 'pin-du-phong-xiaomi-2000mah-18w.jpg'),
+('IMG11', 'pin-du-phong-xiaomi-2000mah-18w-1.jpg'),
+('IMG11', 'pin-du-phong-xiaomi-2000mah-18w-2.jpg'),
+('IMG13', 'samsung-watch-active-2-1.jpg'),
+('IMG13', 'samsung-watch-active-2-2.jpg'),
+('IMG13', 'samsung-watch-active-2-3.jpg'),
+('IMG14', 'airport2.jpg'),
+('IMG14', 'airport2-1.jpg'),
+('IMG14', 'airport2-2.jpg'),
+('IMG14', 'airport2-3.jpg'),
+('IMG12', 'img-apple-main-recovered_1_1.jpg'),
+('IMG12', 'watch.jpg');
 
 -- --------------------------------------------------------
 
@@ -136,6 +180,13 @@ CREATE TABLE `tbl_nhan_vien` (
   `mat_khau` varchar(256) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
+--
+-- Đang đổ dữ liệu cho bảng `tbl_nhan_vien`
+--
+
+INSERT INTO `tbl_nhan_vien` (`id_nhan_vien`, `ten_nhan_vien`, `email`, `so_dien_thoai`, `tai_khoan`, `mat_khau`) VALUES
+(1, '', '', '', 'tungthach99', 'tungthach99');
+
 -- --------------------------------------------------------
 
 --
@@ -158,18 +209,20 @@ CREATE TABLE `tbl_san_pham` (
 --
 
 INSERT INTO `tbl_san_pham` (`id_san_pham`, `ten_san_pham`, `don_gia`, `id_danh_muc`, `anh`, `mo_ta`, `id_anh`, `so_luong`) VALUES
-(1, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
-(2, 'iPhoneXS', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
-(3, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
-(4, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
-(5, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
-(6, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
-(7, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
-(8, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
-(9, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
-(10, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
-(11, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0),
-(12, 'iPhoneX', 0, 'L01', 'iPhoneX.jpg', NULL, 'IMG01', 0);
+(1, 'iPhoneX', 5000000, 'L01', 'iPhoneX.jpg', 'Ngừng sản xuất rồi đó.', 'IMG01', 255),
+(2, 'Samsung Galaxy A12', 4290000, 'L01', 'samsung-A12.jpg', NULL, 'IMG02', 255),
+(3, 'Samsung Galaxy Note 20 Ultra', 2990000, 'L01', 'not-20-ultra.jpg', NULL, 'IMG03', 255),
+(4, 'Xiaomi Mi 10T Pro 5G', 12990000, 'L01', 'xiaomi-mi-10t-pro_2_.jpg', NULL, 'IMG04', 255),
+(5, 'Samsung Galaxy Tab S7', 18990000, 'L02', 'tabs7plus.jpg', NULL, 'IMG05', 255),
+(6, 'Iphone 12 ProMax Chính hãng (VN/A)', 33990000, 'L01', 'iphone12promax.jpg', NULL, 'IMG06', 255),
+(7, 'IPhone 11 Chính hãng (VN/A)', 24990000, 'L01', 'iphone11.jpg', NULL, 'IMG07', 255),
+(8, 'Apple iphone XR chính hãng (VN/A)', 14990000, 'L01', 'iphone-xr_1_.jpg', NULL, 'IMG08', 255),
+(9, 'Iphone 12 mini (VN/A)', 25990000, 'L01', 'iphone-12-mini-black-select-2020_2.jpg', NULL, 'IMG09', 255),
+(10, 'Asus ROG phone 3', 22990000, 'L01', 'rog_3.jpg', NULL, 'IMG10', 255),
+(11, 'Pin sạc dự phòng Xiaomi Redmi 20000mah sạc nhanh 18W', 450, 'L05', 'pin-du-phong-xiaomi-2000mah-18w.jpg', NULL, 'IMG11', 255),
+(12, 'Apple Watch Series 6 44mm GPS Viền Nhôm Dây Cao Su Chính Hãng(VN/A)', 13990000, 'L03', 'img-apple-main-recovered_1_1.jpg', NULL, 'IMG12', 255),
+(28, 'Galaxy Watch Active 2', 5990000, 'L03', 'samsung-watch-active-2-1.jpg', 'Tình trạng\r\nNguyên hộp, đầy đủ phụ kiện từ nhà sản xuất\r\nHộp bao gồm\r\nĐồng hồ, bộ sạc, HDSD\r\nBảo hành\r\nBảo hành 12 tháng tại trung tâm bảo hành Chính hãng. 1 đổi 1 trong 30 ngày nếu có lỗi nhà sản xuất.', 'IMG13', 255),
+(29, 'Apple AirPods2 VN/A', 3990000, 'L04', 'airport2.jpg', 'Vừa qua, Apple đã chính thức cho ra mắt chiếc tai nghe Airpods 2. Thế hệ thứ 2 lần này không có nhiều sự khác biệt so với thế hệ đầu về ngoại hình, trừ một số chi tiết về đèn báo hiệu cũng như ra mắt thêm phiên bản sạc không dây và sạc thường (sạc có dây)', 'IMG14', 255);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -236,13 +289,13 @@ ALTER TABLE `tbl_khach_hang`
 -- AUTO_INCREMENT cho bảng `tbl_nhan_vien`
 --
 ALTER TABLE `tbl_nhan_vien`
-  MODIFY `id_nhan_vien` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_nhan_vien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_san_pham`
 --
 ALTER TABLE `tbl_san_pham`
-  MODIFY `id_san_pham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_san_pham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
