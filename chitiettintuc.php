@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>Tin tức</title>
     <script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
 <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 <link rel="shortcut icon" href="images/20.png">
 <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script>
 jQuery.noConflict();
@@ -97,13 +99,46 @@ $sql="select * from tbl_tin_tuc where id_tin_tuc='".$_GET['matintuc']."'";
 $result=$con->query($sql);
 $row=$result->fetch_assoc();
 ?>
-    <div class="col-sm-8">
-    <div class="header-tin-tuc" style="text-align:center;border-bottom: 1px solid black; "><?php echo $row['tieu_de']?></div>
-    <div style="font-size: 13px; font-style: italic;margin-left:10px;">@<?php echo $row['tac_gia'];?></div>
-    <div style="font-size: 13px; font-style: italic;margin: 0 0 15px 10px;"><?php echo $row['add_date'];?></div>
-    <div style="font-size: 15px;margin-left:10px;"><?php echo $row['noi_dung'];?></div>
-    </div>
+	<div class="col-sm-8">
+    	<div class="header-tin-tuc" style="text-align:center;border-bottom: 1px solid black; "><?php echo $row['tieu_de']?></div>
+    	<div style="font-size: 13px; font-style: italic;margin-left:10px;">@<?php echo $row['tac_gia'];?></div>
+    	<div style="font-size: 13px; font-style: italic;margin: 0 0 15px 10px;"><?php echo $row['add_date'];?></div>
+    	<div style="font-size: 15px;margin-left:10px;"><?php echo $row['noi_dung'];?></div>
+	<!-- Binh luan -->
+		<form action="xlbinhluan.php" method="POST">
+		<div class="binh-luan-group">
+        	<p id="binh-luan-label">Viết bình luận ...<i class="fa fa-pencil"></i></p>
+			<textarea id="comment-box" name="noi_dung" placeholder="Hãy nhập bình luận của bạn ở đây"> </textarea>
+			<button type="submit"  class="btn btn-primary" style="margin: 0 0 10px 5%;">Gửi</button>
+			<input type="text" style="display: none;" name="ma_tin_tuc" value="<?php echo $row['id_tin_tuc']?>">
+		</div>
+		</form>
+<?php
+$sql="select * from tbl_binh_luan where id_tin_tuc='".$_GET['matintuc']."' order by ngay_tao DESC";
+$result=$con->query($sql);
+if($result->num_rows>0)
+	{
+	while($row=$result->fetch_assoc())
+	{
+?>
+		<div class="hien-thi-binh-luan">
+			<div class="hien-thi-ten"><?php echo $row['ten_khach_hang']?><span class="hien-thi-ngay"><?php echo $row['ngay_tao']?></span></div>
+			<div class="hien-thi-noi-dung" value= null><?php echo $row['noi_dung']?></div>
+		</div>
+<?php
+	}//end_while	
+	} //end if
+?>
+	</div>
 </div>
+<?php	
+if(isset($_SESSION["kiemtrasua"]) && $_SESSION["kiemtrasua"]==1)
+	require("layout/message.php");
+?>
+<?php	
+if(isset($_SESSION["kiemtrasua"]) && $_SESSION["kiemtrasua"]==2)
+	require("layout/message2.php");
+?>
 <?php
 	include("layout/footer.php");
 	include("layout/cacnut.php");

@@ -51,8 +51,7 @@ jQuery.noConflict();
 		<div class="menuAnh">
 		<?php
 		$sql="Select * from tbl_san_pham inner join tbl_anh on tbl_san_pham.id_anh = tbl_anh.id_anh where tbl_san_pham.id_san_pham ='".$_GET["masanpham"]."'";
-	  		$result=$con->query($sql);
-	  		
+	  	$result=$con->query($sql);
 	 		if($result->num_rows>0)
 			{
 			while($row=$result->fetch_assoc())
