@@ -58,7 +58,6 @@ jQuery.noConflict();
 <?php
 	include("layout/header.php");
 	include("layout/taikhoan.php");
-	include("layout/giohang.php");
 ?>
 	<div id="lamMo" class="row fixed-top"></div>
 	<header id="header2" class="row fixed-top header-2">

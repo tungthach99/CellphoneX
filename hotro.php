@@ -58,7 +58,6 @@ if($("#veDauTrang").length > 0){
 <?php
 include("layout/header.php");
 include("layout/taikhoan.php");
-include("layout/giohang.php");
 ?>
 <!-- Noi dung chinh -->
 <main class="main-ho-tro">

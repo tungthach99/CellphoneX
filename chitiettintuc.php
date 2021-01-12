@@ -62,7 +62,6 @@ if($("#veDauTrang").length > 0){
 	session_start();
 	include("layout/header.php");
 	include("layout/taikhoan.php");
-	include("layout/giohang.php");
 	require("public/ketnoi.php");
 ?>
 <!--                        Tin tuc                           -->

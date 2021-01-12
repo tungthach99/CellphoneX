@@ -60,7 +60,6 @@ if($("#veDauTrang").length > 0){
 <?php
 include("layout/header.php");
 include("layout/taikhoan.php");
-include("layout/giohang.php");
 ?>
     <div class="box-header-km">
         <div class="row" style="width: 100%;">
