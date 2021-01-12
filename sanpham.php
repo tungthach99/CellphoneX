@@ -44,7 +44,6 @@ jQuery.noConflict();
 	session_start();
 	include("layout/header.php");
 	include("layout/taikhoan.php");
-	include("layout/giohang.php");
 	require("public/ketnoi.php");
 ?>
 <!-- Phong to anh -->
