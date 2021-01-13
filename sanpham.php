@@ -10,7 +10,6 @@
 	<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
-	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script>
 jQuery.noConflict();
@@ -70,7 +69,7 @@ jQuery.noConflict();
 		<i class="fa fa-remove thoat" style="color: #fff;" onClick="dongform('noiDungPhongTo')" title="Đóng"></i>
 	</div>
 <!-- Phong to anh end-->
-<div class="row" style="width: 101%; margin-top:100px;">
+<div class="row" style="width: 101%;">
 	<span class="col-sm-2 d-none d-lg-block">
 	<!--menu trái-->
 		<?php 

@@ -17,7 +17,7 @@
 -->
 				<nav class="nav-menu">
 					<ul>
-						<li class="drop-down"><a class="nav1">Sản phẩm&nbsp;<i class="fa fa-sort-desc"></i></a>
+						<li class="drop-down"><a href="sanpham.php?&tensanpham=" class="nav1">Sản phẩm&nbsp;<i class="fa fa-sort-desc"></i></a>
            		     		<ul>
                  				<li><a class="nav1" href="sanpham.php?&maloai=L01">Điện thoại</a></li>
                   				<li><a class="nav1" href="sanpham.php?&maloai=L02">Máy tính bảng</a></li>
@@ -56,3 +56,4 @@
 			</span>
 		</div>
 	</header>
+<div style="height: 58px;">&nbsp;</div>

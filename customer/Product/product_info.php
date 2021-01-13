@@ -56,23 +56,32 @@
 			$sqlsum="Select * from tbl_san_pham";
 	  		if (isset($_GET["maloai"]))
 	  			$sqlsum.= " where id_danh_muc='".$_GET["maloai"]."'";
+			if (isset($_GET["tensanpham"]))
+				$sqlsum.= " where ten_san_pham like '%".$_GET["tensanpham"]."%'";
 	  		$result=$con->query($sqlsum);
 	  		$tongsb=$result->num_rows;
 	  		$tongsotrang=ceil($tongsb/$sbmoitrang);
 	  		$j=1;
-	  		while($j<=$tongsotrang)
-	  		{
-	  			$str= "<a href='sanpham.php?";
-	  			if(isset($_GET["maloai"]))
+			if($tongsotrang>1)
+			{
+	  			while($j<=$tongsotrang)
 	  			{
-	  				$str.="&maloai=".$_GET["maloai"];
-	  			}
-	  			$str.="&trang=".$j."'>".$j."</a> ";
+					$str= "<a href='sanpham.php?";
+	  				if(isset($_GET["maloai"]))
+	  				{
+	  					$str.="&maloai=".$_GET["maloai"];
+	  				}
+					if(isset($_GET["tensanpham"]))
+	  				{
+	  					$str.="&tensanpham=".$_GET["tensanpham"];
+	  				}
+	  				$str.="&trang=".$j."'>".$j."</a> ";
 
-	  			echo $str;
-	  			$j++;
+	  				echo $str;
+	  				$j++;
 				//tong so ban ghi
-	  		}
+	  			}
+			}
 
 		?>
 </div>

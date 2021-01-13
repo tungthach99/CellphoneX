@@ -59,22 +59,14 @@ jQuery.noConflict();
 		<form action="customer/Account/xldangky.php" class="was-validated" method="post">
 			<div class="form-group row">
 				<span class="col-6">
-					<label>Họ:</label>
-					<input type="text" class="form-control" id="txtho" name="txtho" required>
+					<label>Họ và tên:</label>
+					<input type="text" class="form-control" id="txtho" name="txthoten" required>
 <!--
 					<div class="valid-feedback">Hợp lệ.</div>
 					<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
 -->
 				</span>
 				<span class="col-2"></span>
-				<span class="col-4">
-					<label>Tên:</label>
-					<input type="text" class="form-control" id="txtten" name="txtten" required>
-<!--
-					<div class="valid-feedback">Hợp lệ.</div>
-					<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
--->
-				</span>
 			</div>
 			<div class="from-group">
 				<label>Tên đăng nhập của bạn:</label>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 08, 2021 lúc 07:25 PM
+-- Thời gian đã tạo: Th1 13, 2021 lúc 07:12 AM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -102,6 +102,29 @@ CREATE TABLE `tbl_chi_tiet_don_hang` (
   `ghi_chu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
+--
+-- Đang đổ dữ liệu cho bảng `tbl_chi_tiet_don_hang`
+--
+
+INSERT INTO `tbl_chi_tiet_don_hang` (`id_don_hang`, `id_san_pham`, `don_gia`, `so_luong`, `thanh_tien`, `ghi_chu`) VALUES
+(35, 1, 5000000, 1, 5000000, NULL),
+(35, 2, 4290000, 0, 0, NULL),
+(36, 1, 5000000, 1, 5000000, NULL),
+(37, 1, 5000000, 4, 20000000, NULL),
+(38, 1, 5000000, 3, 15000000, NULL),
+(38, 6, 33990000, 3, 101970000, NULL),
+(38, 12, 13990000, 3, 41970000, NULL),
+(39, 6, 33990000, 1, 33990000, NULL),
+(40, 6, 33990000, 0, 0, NULL),
+(41, 1, 5000000, 0, 0, NULL),
+(42, 1, 5000000, 0, 0, NULL),
+(42, 11, 450, 1, 450, NULL),
+(43, 1, 5000000, 0, 0, NULL),
+(43, 2, 4290000, 1, 4290000, NULL),
+(43, 11, 450, 11, 4950, NULL),
+(44, 3, 2990000, 4, 11960000, NULL),
+(45, 11, 450, 1, 450, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -138,8 +161,29 @@ CREATE TABLE `tbl_don_hang` (
   `id_nhan_vien` int(11) DEFAULT NULL,
   `tong_tien` float(255,0) DEFAULT NULL,
   `trang_thai` int(4) DEFAULT 0,
-  `ngay_dat` datetime(6) DEFAULT NULL
+  `ngay_dat` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ten_khach_hang` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
+  `dia_chi_nhan_hang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `hinh_thuc_mua_hang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ghi_chu` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_don_hang`
+--
+
+INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `id_nhan_vien`, `tong_tien`, `trang_thai`, `ngay_dat`, `ten_khach_hang`, `dia_chi_nhan_hang`, `hinh_thuc_mua_hang`, `ghi_chu`) VALUES
+(35, -1, NULL, 5000000, 0, '01/12/2021 03:29:35 pm', '', '', 'COD', ''),
+(36, -1, NULL, 5000000, 0, '01/12/2021 03:31:38 pm', '', '', 'COD', ''),
+(37, -1, NULL, 20000000, 0, '01/12/2021 05:51:46 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', 'ấ'),
+(38, -1, NULL, 158940000, 0, '01/12/2021 06:39:32 pm', 'Thạch Thọ Tùng', '12 Chùa Bộc', 'COD', ''),
+(39, -1, NULL, 33990000, 0, '01/12/2021 09:27:35 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', ''),
+(40, -1, NULL, 67980000, 0, '01/12/2021 09:31:20 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', 'Tặng quà em yêu<3'),
+(41, -1, NULL, 5000000, 0, '01/12/2021 11:52:04 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
+(42, -1, NULL, 30450, 0, '01/13/2021 02:00:58 am', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
+(43, -1, NULL, 3994950, 0, '01/13/2021 12:41:45 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
+(44, -1, NULL, 11660000, 0, '01/13/2021 12:43:29 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
+(45, -1, NULL, 30450, 0, '01/13/2021 01:00:17 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', 'abc');
 
 -- --------------------------------------------------------
 
@@ -163,7 +207,26 @@ CREATE TABLE `tbl_khach_hang` (
 --
 
 INSERT INTO `tbl_khach_hang` (`id_khach_hang`, `ten_khach_hang`, `email`, `so_dien_thoai`, `dia_chi`, `ghi_chu`, `mat_khau`, `ten_dang_nhap`) VALUES
-(1, '', NULL, NULL, NULL, NULL, '1', 'tung');
+(1, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'Hà Nội', NULL, '1', 'tung');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_ma_giam_gia`
+--
+
+CREATE TABLE `tbl_ma_giam_gia` (
+  `ma_giam_gia` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `chiet_khau` int(255) DEFAULT NULL,
+  `tinh_trang` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_ma_giam_gia`
+--
+
+INSERT INTO `tbl_ma_giam_gia` (`ma_giam_gia`, `chiet_khau`, `tinh_trang`) VALUES
+('TUNGTHACH', 300000, 0);
 
 -- --------------------------------------------------------
 
@@ -219,8 +282,8 @@ INSERT INTO `tbl_san_pham` (`id_san_pham`, `ten_san_pham`, `don_gia`, `id_danh_m
 (8, 'Apple iphone XR chính hãng (VN/A)', 14990000, 'L01', 'iphone-xr_1_.jpg', NULL, 'IMG08', 255),
 (9, 'Iphone 12 mini (VN/A)', 25990000, 'L01', 'iphone-12-mini-black-select-2020_2.jpg', NULL, 'IMG09', 255),
 (10, 'Asus ROG phone 3', 22990000, 'L01', 'rog_3.jpg', NULL, 'IMG10', 255),
-(11, 'Pin sạc dự phòng Xiaomi Redmi 20000mah sạc nhanh 18W', 450, 'L05', 'pin-du-phong-xiaomi-2000mah-18w.jpg', NULL, 'IMG11', 255),
-(12, 'Apple Watch Series 6 44mm GPS Viền Nhôm Dây Cao Su Chính Hãng(VN/A)', 13990000, 'L03', 'img-apple-main-recovered_1_1.jpg', NULL, 'IMG12', 255),
+(11, 'Pin sạc dự phòng Xiaomi Redmi 20000mah sạc nhanh 18W', 450000, 'L05', 'pin-du-phong-xiaomi-2000mah-18w.jpg', '', 'IMG11', 255),
+(12, 'Apple Watch Series 6 (VN/A)', 13990000, 'L03', 'img-apple-main-recovered_1_1.jpg', NULL, 'IMG12', 255),
 (28, 'Galaxy Watch Active 2', 5990000, 'L03', 'samsung-watch-active-2-1.jpg', 'Tình trạng\r\nNguyên hộp, đầy đủ phụ kiện từ nhà sản xuất\r\nHộp bao gồm\r\nĐồng hồ, bộ sạc, HDSD\r\nBảo hành\r\nBảo hành 12 tháng tại trung tâm bảo hành Chính hãng. 1 đổi 1 trong 30 ngày nếu có lỗi nhà sản xuất.', 'IMG13', 255),
 (29, 'Apple AirPods2 VN/A', 3990000, 'L04', 'airport2.jpg', 'Vừa qua, Apple đã chính thức cho ra mắt chiếc tai nghe Airpods 2. Thế hệ thứ 2 lần này không có nhiều sự khác biệt so với thế hệ đầu về ngoại hình, trừ một số chi tiết về đèn báo hiệu cũng như ra mắt thêm phiên bản sạc không dây và sạc thường (sạc có dây)', 'IMG14', 255);
 
@@ -256,6 +319,12 @@ ALTER TABLE `tbl_khach_hang`
   ADD PRIMARY KEY (`id_khach_hang`) USING BTREE;
 
 --
+-- Chỉ mục cho bảng `tbl_ma_giam_gia`
+--
+ALTER TABLE `tbl_ma_giam_gia`
+  ADD PRIMARY KEY (`ma_giam_gia`);
+
+--
 -- Chỉ mục cho bảng `tbl_nhan_vien`
 --
 ALTER TABLE `tbl_nhan_vien`
@@ -277,13 +346,13 @@ ALTER TABLE `tbl_san_pham`
 -- AUTO_INCREMENT cho bảng `tbl_don_hang`
 --
 ALTER TABLE `tbl_don_hang`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khach_hang`
 --
 ALTER TABLE `tbl_khach_hang`
-  MODIFY `id_khach_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_khach_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_nhan_vien`

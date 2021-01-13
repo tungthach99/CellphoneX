@@ -1,7 +1,6 @@
 <?php
 require("../../public/ketnoi.php");
-$ho=$_POST["txtho"];
-$ten=$_POST["txtten"];
+$hoten=$_POST["txthoten"];
 $tendangnhap=$_POST["txttendangnhap"];
 $matkhau=$_POST["txtmatkhau"];
 $xacnhanmk=$_POST["txtxacnhanmk"];
@@ -14,7 +13,7 @@ if($result->num_rows>0) //tai khoan da ton tai
 }
 else
 {
-	$sql="insert into tbl_khach_hang(ten_dang_nhap,mat_khau,ho,ten_khach_hang) values('".$tendangnhap."','".$matkhau."','".$ho."','".$ten."')";
+	$sql="insert into tbl_khach_hang(ten_dang_nhap,mat_khau,ten_khach_hang) values('".$tendangnhap."','".$matkhau."','".$hoten."')";
 	//echo $sql;
 	if($con->query($sql)===TRUE)
 	{
