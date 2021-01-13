@@ -46,7 +46,7 @@ jQuery.noConflict();
 	require("public/ketnoi.php");
 ?>
 <!--				Banner dau trang					-->
-	<section class="leCacMuc" style="margin-top: 58px;">
+	<section class="leCacMuc">
 			<div class="slide">
 				<div class="dieuHuongSlide">
 					<i onClick="prevSlide()"  id="prev" class="fa fa-angle-left"></i>
@@ -128,7 +128,7 @@ jQuery.noConflict();
 								$i=$i+1;
 								?>
 								<div class="thanhPhan <?php if($i==1) echo "s1"; ?>">
-									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-heart-o" title="Yêu thích"></i></a></span>
 									<div class="anhSanPham">
 										<img src="images/san-pham/<?php echo $row['anh']; ?>">
 									</div>
@@ -219,12 +219,12 @@ jQuery.noConflict();
 			<div style="text-align: center;">
 			
 			<div class="row" style=" width: 100%;">
-				<label id="labelTrai" for="trai"><i class="fa fa-angle-left"></i></label>
-				<label id="lablePhai" for="phai"><i class="fa fa-angle-right"></i></label>
+				<label id="labelTrai4" for="trai4"><i class="fa fa-angle-left"></i></label>
+				<label id="lablePhai4" for="phai4"><i class="fa fa-angle-right"></i></label>
 				<div class="slide">
 				<div class="slides">
-					<input type="radio" name="dieuHuong" id="trai" checked>
-					<input type="radio" name="dieuHuong" id="phai">
+					<input type="radio" name="dieuHuong" id="trai4" checked>
+					<input type="radio" name="dieuHuong" id="phai4">
 					<?php
 						$sql="SELECT * FROM tbl_san_pham WHERE id_danh_muc <>'L05' ORDER BY don_gia ASC LIMIT 6";
 						$result=$con->query($sql);
@@ -235,8 +235,8 @@ jQuery.noConflict();
 							{
 								$i=$i+1;
 								?>
-								<div class="thanhPhan <?php if($i==1) echo "s1"; ?>">
-									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+								<div class="thanhPhan <?php if($i==1) echo "s4"; ?>">
+									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-heart-o" title="Yêu thích"></i></a></span>
 									<div class="anhSanPham">
 										<img src="images/san-pham/<?php echo $row['anh']; ?>">
 									</div>
@@ -245,13 +245,6 @@ jQuery.noConflict();
 									</div>
 									Giá: <span class="giaDo"><?php echo $row["don_gia"];?><sup><u>đ</u></sup></span>
 									<span class="giaGachNgang"></span>
-<!--
-									<div>
-										<i>Đánh giá: </i>
-										<span class="danhGia">
-										<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
-									</div>
--->
 								</div>
 					<?php
 							}
@@ -274,12 +267,12 @@ jQuery.noConflict();
 			<div style="text-align: center;">
 			
 			<div class="row" style=" width: 100%;">
-				<label id="labelTrai" for="trai"><i class="fa fa-angle-left"></i></label>
-				<label id="lablePhai" for="phai"><i class="fa fa-angle-right"></i></label>
+				<label id="labelTrai2" for="trai2"><i class="fa fa-angle-left"></i></label>
+				<label id="lablePhai2" for="phai2"><i class="fa fa-angle-right"></i></label>
 				<div class="slide">
 				<div class="slides">
-					<input type="radio" name="dieuHuong" id="trai" checked>
-					<input type="radio" name="dieuHuong" id="phai">
+					<input type="radio" name="dieuHuong" id="trai2" checked>
+					<input type="radio" name="dieuHuong" id="phai2">
 					<?php
 						$sql="SELECT * FROM tbl_san_pham WHERE id_danh_muc <>'L05' ORDER BY don_gia ASC LIMIT 6";
 						$result=$con->query($sql);
@@ -290,8 +283,8 @@ jQuery.noConflict();
 							{
 								$i=$i+1;
 								?>
-								<div class="thanhPhan <?php if($i==1) echo "s1"; ?>">
-									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-shopping-cart" title="Thêm vào giỏ hàng"></i></a></span>
+								<div class="thanhPhan <?php if($i==1) echo "s2"; ?>">
+									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-heart-o" title="Yêu thích"></i></a></span>
 									<div class="anhSanPham">
 										<img src="images/san-pham/<?php echo $row['anh']; ?>">
 									</div>
@@ -300,13 +293,6 @@ jQuery.noConflict();
 									</div>
 									Giá: <span class="giaDo"><?php echo $row["don_gia"];?><sup><u>đ</u></sup></span>
 									<span class="giaGachNgang"></span>
-<!--
-									<div>
-										<i>Đánh giá: </i>
-										<span class="danhGia">
-										<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></span>
-									</div>
--->
 								</div>
 					<?php
 							}

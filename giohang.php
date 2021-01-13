@@ -43,7 +43,6 @@ jQuery.noConflict();
 	session_start();
 	include("layout/header.php");
 	include("layout/taikhoan.php");
-
 	require("public/ketnoi.php");
 	if(isset($_GET["action"]) and $_GET["action"] == 'hoantat')
 	{
@@ -62,19 +61,18 @@ jQuery.noConflict();
 	}
 ?>
 
-	<div class="row" style="width: 100%;">
+	<div class="row" style="width: 100%; margin-top: -58px;">
 		<span onClick="dongform('formGioHang')" class="col-2"></span>
 		<span class="col-8">
 			<?php
 				if(isset($_SESSION["giohang"]))
 				 {
 					 
-				 
 			?>
 			<div class="container">
  				<h2>Chi tiết giỏ hàng</h2>  
 				<div class="table-responsive">
-   					<table class="table table-bordered">
+   					<table style="text-align: center;" class="table table-bordered">
 						<thead>
 							<tr style="background: url('images/background.jpg')">
 								<th>Tên sản phẩm</th>
@@ -83,6 +81,8 @@ jQuery.noConflict();
 								<th>Đơn giá</th>
 								<th>SL tồn</th>
 								<th>Thành tiền</th>
+								<th>Tăng</th>
+								<th>Giảm</th>
 								<th>Xóa</th>
 							</tr>
 						</thead>
@@ -97,6 +97,8 @@ jQuery.noConflict();
 									{
 										while($row=$result->fetch_assoc())
 										{
+											if($_SESSION["soluong"][$key] >0)
+											{
 							?>
 							<tr>
 								<td style="display: none;"><?php echo $row['id_san_pham'] ?></td>
@@ -111,9 +113,16 @@ jQuery.noConflict();
 								?>
 								
 								<td><?php echo $thanhtien?></td>
-								<td><a class="fa fa-trash"></a></td>
+								<td>
+								<a class="fa fa-plus" href="customer/Order/xltangdonhang.php?&stt=<?php echo $key?>"></a>
+								</td>
+								<td>
+								<a class="fa fa-minus" href="customer/Order/xlgiamdonhang.php?&stt=<?php echo $key?>"></a>
+								</td>
+								<td><a class="fa fa-trash" href="customer/Order/xlxoadonhang.php?&stt=<?php echo $key?>"></a></td>
 							</tr>
 							<?php
+											}
 										}
 									}
 								}
@@ -122,11 +131,31 @@ jQuery.noConflict();
 						</tbody>
 					</table>
 				</div>
+				</form>
+				<form action="customer/Order/ktmagiamgia.php" method="get" style="float: right;">
+					<input id="magiamgia" name="magiamgia" type="text" placeholder="Mã giảm giá..." value="<?php
+				if(isset($_SESSION["magiamgia"]))
+					echo $_SESSION["magiamgia"];
+						?>">
+					<button title="Chỉ áp dụng với đơn hàng lớn hơn giá trị voucher" type="submit" class="linkDen" style="border: none;color: #fff; border-radius: 5px; float: right;"><?php
+				if(isset($_SESSION["chietkhau"]) and $_SESSION["chietkhau"]>0)
+					echo "Hủy";
+				else echo "Áp dụng";
+						?></button>
+					<br><b style="float: right;">Chiết khấu: <?php
+				if(isset($_SESSION["chietkhau"]))
+				{
+					$_SESSION["tongtien"]-=$_SESSION["chietkhau"];
+					if($_SESSION["tongtien"]<=0) $_SESSION["tongtien"]=0;
+					echo $_SESSION["chietkhau"];
+				}
+						?> VND</b>
+				</form><br><br><br>
 				<?php if(isset($_SESSION["giohang"])) {?>
 				<div style="float: right;"><b>Tổng Tiền: </b><b style="color: red;"><?php echo $_SESSION["tongtien"] ?></b><b> VND</b></div><?php }?>
 				<div><br>
 					<a href="sanpham.php?&maloai=L01" >&lsaquo; Tiếp tục mua hàng</a>
-					<?php if(isset($_SESSION["giohang"])) {?>
+					<?php if(isset($_SESSION["giohang"]) and $_SESSION["tongtien"]>0) {?>
 					<a onClick="hienthiform('formGioHang')" class="linkDen" style="color: #fff; border-radius: 5px; float: right;">Đặt hàng</a>
 					<?php }?>
 				</div>
@@ -147,8 +176,9 @@ jQuery.noConflict();
 	
 <?php
 	include("layout/dathang.php");
-	include("layout/footer.php");
 	include("layout/cacnut.php");
+	include("layout/footer.php");
+
 ?>
 
 	

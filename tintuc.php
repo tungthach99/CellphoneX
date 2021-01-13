@@ -9,7 +9,7 @@
 <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
 <script>
 jQuery.noConflict();
 (function( $ ) {

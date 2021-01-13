@@ -9,9 +9,9 @@ $row=$result->fetch_assoc();
 		<img style="cursor: pointer" src="images/san-pham/<?php echo $row['anh'];?>" onClick="zoom(this)">
 		<p><i class="material-icons">remove_red_eye</i> Click vào ảnh để xem thêm</p>
 		<form action="customer/Order/xlthemgiohang.php?&masanpham=<?php echo $_GET['masanpham'];?>" method="get">
-			<input name="soluong" type="number" value="0" max="<?php echo $row["so_luong"];?>" min="1">
-			<input name="masanpham" type="text" style="display: none;" value="<?php echo $_GET['masanpham'] ?>">
-			<button type="submit" class="btn-mua btn btn-success">Đặt hàng <i class='fas fa-cart-plus'></i>
+			Số lượng: <input name="soluong" type="number" value="0" max="<?php echo $row["so_luong"];?>" min="1">
+			<input name="masanpham" type="text" style="display: none;" value="<?php echo $_GET['masanpham'] ?>"><br>
+			<button type="submit" class="btn-mua btn btn-success">Đặt hàng <i class='fa fa-cart-plus'></i>
 			</button>
 			<btn class="btn btn-primary">Chia sẻ <i class="fa fa-share-alt"></i></btn>
 		</form>

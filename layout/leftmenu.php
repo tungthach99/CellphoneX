@@ -10,7 +10,7 @@
 			while($row=$result->fetch_assoc())
 			{
 ?>
-		<li class="list-group-item list-group-item-success list-san-pham" id="list-left-menu"><a class="aa" href="sanpham.php?&maloai=<?php  echo $row['id_danh_muc']; ?>"><?php echo $row["ten_danh_muc"]; ?> <span style="margin-left: 5px;float:right; padding-right: 5px;"><i class='fas fa-angle-double-right'></i></span></a></li>
+		<li class="list-group-item list-group-item-success list-san-pham" id="list-left-menu"><a class="aa" href="sanpham.php?&maloai=<?php  echo $row['id_danh_muc']; ?>"><?php echo $row["ten_danh_muc"]; ?> <span style="margin-left: 5px;float:right; padding-right: 5px;"><i class='fa fa-forward'></i></span></a></li>
 		<?php
 			}//end_while
 			} //end if

@@ -1,18 +1,38 @@
-<form action="customer/Order/xldathang.php" method="post" id="formGioHang" style="text-align: left">
-	<div class="row">
-	<div class="col-5" style="margin-left: 5%; margin-right: 5%;">
-		<h3 style="margin-top: 5%;">Thông tin giao hàng</h3>
+<div id="formGioHang">
+<form action="customer/Order/xldathang.php" method="post" style="text-align: left">
+	<?php
+	if(isset($_SESSION["id-user"]))
+	{
+		$sql="select * from tbl_khach_hang where id_khach_hang =  ".$_SESSION["id-user"];
+		$result=$con->query($sql);
+		$row=$result->fetch_assoc();
+	}
+	?>
+	<div class="row" style="width: 920px;">
+	<div class="col-5" style="margin-left: 8%; margin-right: 5%;">
+		<h3 style="margin-top: 5%; color: #b04dff">Thông tin giao hàng</h3>
 		<div class="form-group">
-    	<input type="text" class="form-control" id="hoten" name="hoten" placeholder="Họ và tên">
-  		</div>
+    	<input type="text" class="form-control" id="hoten" name="hoten" placeholder="Họ và tên" required value="<?php
+			   		if($result->num_rows>0)
+					{
+						echo $row["ten_khach_hang"];
+					}
+			   ?>">
+		</div>
   		<div class="form-group">
-			<input type="text" class="form-control" name="email" placeholder="Email của bạn">
+			<input type="text" class="form-control" name="email" placeholder="Email của bạn" value="<?php if($result->num_rows>0)
+					{
+						echo $row["email"];
+					}?>">
   		</div>
 		<div class="form-group">
-			<input type="text" class="form-control" name="sdt" placeholder="Số điện thoại">
+			<input title="Nhập số điện thoại" type="text" class="form-control" name="sdt" placeholder="Số điện thoại" required value="<?php if($result->num_rows>0)
+					{
+						echo $row["so_dien_thoai"];
+					}?>">
   		</div>
 		<div class="form-group">
-   			<select class="custom-select" id="validationCustom04" name="diachi" required>
+   			<select class="custom-select" id="validationCustom04" name="diachi">
         <option disabled value="-1">Chọn tỉnh/thành phố</option>
         <option value="1">Cần Thơ</option>
 		<option value="1">Đà Nẵng</option>
@@ -80,14 +100,14 @@
       </select>
  	 	</div>
 		<div class="form-group">
-			<input type="text" class="form-control" name="diaChiNhanHang" placeholder="Địa chỉ cụ thể nhận hàng">
+			<input type="text" class="form-control" name="diaChiNhanHang" placeholder="Địa chỉ cụ thể nhận hàng" required>
 		</div>
   		<div class="form-group">
     		<textarea class="form-control" name="ghichu" rows="3" placeholder="Ghi chú"></textarea>
   		</div>
 	</div>
-	<div class="col-5">
-		<h3 style="margin-top: 5%;">Phương thức thanh toán</h3>
+	<div class="col-5" style="background-color: #f4f6f7; border-radius: 25px;">
+		<h3 style="margin-top: 5%;  color: #b04dff">Phương thức thanh toán</h3>
 		<div class="form-check">
      		<label class="form-check-label" for="radio1">
         	<input type="radio" class="form-check-input" id="radio1" name="hinhthuc" value="option1" disabled>Thoanh toán thẻ (ATM nội địa, Visa, MasterCard)
@@ -103,10 +123,8 @@
         	<input type="radio" class="form-check-input" id="radio2" name="hinhthuc" value="option3" checked>Thanh toán khi nhận hàng (COD)
       		</label>
     	</div>
-		<h3 style="margin-top: 5%;">&nbsp;</h3>
-		<input style="padding: 8.8px 20px;" name="magiamgia" type="text" placeholder="Mã giảm giá..."><a href="" class="linkDen" style="color: #fff;">Áp dụng</a>
 		<p>
-			<br>
+			<br><br><br><br><br>
 			<b>Phí vận chuyển: </b>
 			<?php
 			if($_SESSION["tongtien"]>600000 || $_SESSION["tongtien"]==0)
@@ -116,14 +134,16 @@
 			else 
 			{
 				$_SESSION["phivanchuyen"]=30000;
+				$_SESSION["tongtien"]+=$_SESSION["phivanchuyen"];
 			}
 			echo $_SESSION["phivanchuyen"]?><b> VND</b><br>
 			(Miễn phí cho đơn trên 600 000 VND)
 		</p>
 		<p style="font-size: 24px;">
-			<b>TỔNG TIỀN: </b><?php echo $_SESSION["tongtien"] ?><b> VND</b>
+			<b>TỔNG TIỀN: </b><b style="color: red"><?php echo $_SESSION["tongtien"] ?></b><b> VND</b>
 		</p>
-		<button style="padding: 10px 25px 10px 25px; background-color: #1F2BC6 ;border: none; color: #fff;" type="submit"><b>HOÀN TẤT ĐƠN HÀNG</b></button>
+		<button style="padding: 10px 25px 10px 25px; background-color: #b04dff ;border: none; color: #fff;" type="submit"><b>HOÀN TẤT ĐƠN HÀNG</b></button>
+		<a onClick="dongform('formGioHang')" style="padding: 10px 25px 10px 25px; background-color: rgba(148,137,137,0.1);border: none; color: #b04dff;"><b>ĐÓNG</b></a>
 	</div>
 </div>
-</form>
+</div>
