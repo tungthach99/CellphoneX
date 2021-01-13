@@ -971,7 +971,7 @@ footer .fa:hover{
 /*                           Content khuyen mai                              */
 .km-grid {
 display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 393.3px));
   grid-gap: 10px;
   width: 100%;
   max-width: 1200px;
@@ -994,6 +994,8 @@ display: grid;
 	color: #2c3e50;
 	font-weight: bold;
 	padding: 5px;
+	text-transform: uppercase;
+	text-align: center;
 }
 .km-title-1:hover {
 	text-decoration: underline;

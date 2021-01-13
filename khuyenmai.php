@@ -60,6 +60,7 @@ if($("#veDauTrang").length > 0){
 <?php
 include("layout/header.php");
 include("layout/taikhoan.php");
+require("public/ketnoi.php");
 ?>
     <div class="box-header-km">
         <div class="row" style="width: 100%;">
@@ -81,189 +82,101 @@ include("layout/taikhoan.php");
 			<!---               content km 1                       -->
             <div class="col-sm-10" id="km-content-1">
                 <div class="km-grid">
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km1.png" alt="Chương trình khuyến mại 1">
+                    <?php
+                    $sql="Select * FROM tbl_san_pham INNER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham where 
+                    tbl_khuyen_mai.id_khuyen_mai = 'KM01'";
+                    $result=$con->query($sql);	  		
+                    if($result->num_rows>0)
+                        {
+                        while($row=$result->fetch_assoc())
+                        {
+                    ?>
+                    <a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>" target="_blank" class="km km-title" >
+                        <img class="km-image" src="images/san-pham/<?php echo $row['anh']?>" alt="Chương trình khuyến mại 1">
                         <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
+                            <?php echo $row['ten_khuyen_mai']?>
                         </p>
                         <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
                     </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km1.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km1.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km1.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km1.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km1.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
+                    <?php 
+                        }
+                    }
+                    ?>
                 </div>
 			</div>
 <!---               content km 2                       -->
 			<div class="col-sm-10" id="km-content-2">
                 <div class="km-grid">
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km2.png" alt="Chương trình khuyến mại 1">
+                <?php
+                    $sql="Select * FROM tbl_san_pham INNER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham where
+                     tbl_khuyen_mai.id_khuyen_mai = 'KM02'";
+                    $result=$con->query($sql);	  		
+                    if($result->num_rows>0)
+                        {
+                        while($row=$result->fetch_assoc())
+                        {
+                    ?>
+                    <a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>" target="_blank" class="km km-title" >
+                        <img class="km-image" src="images/san-pham/<?php echo $row['anh']?>" alt="Chương trình khuyến mại 1">
                         <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
+                            <?php echo $row['ten_khuyen_mai']?>
                         </p>
                         <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
                     </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km2.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km2.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km2.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km2.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km2.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
+                    <?php 
+                        }
+                    }
+                    ?>
                 </div>
 			</div>
 			<!---               content km 3                       -->
 			<div class="col-sm-10" id="km-content-3">
                 <div class="km-grid">
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km3.png" alt="Chương trình khuyến mại 1">
+                <?php
+                    $sql="Select * FROM tbl_san_pham INNER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham where
+                     tbl_khuyen_mai.id_khuyen_mai = 'KM03'";
+                    $result=$con->query($sql);	  		
+                    if($result->num_rows>0)
+                        {
+                        while($row=$result->fetch_assoc())
+                        {
+                    ?>
+                    <a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>" target="_blank" class="km km-title" >
+                        <img class="km-image" src="images/san-pham/<?php echo $row['anh']?>" alt="Chương trình khuyến mại 1">
                         <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
+                            <?php echo $row['ten_khuyen_mai']?>
                         </p>
                         <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
                     </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km3.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km3.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km3.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km3.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km3.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
+                    <?php 
+                        }
+                    }
+                    ?>
                 </div>
 			</div>
 			<!---               content km 4                       -->
 			<div class="col-sm-10" id="km-content-4">
                 <div class="km-grid">
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km4.png" alt="Chương trình khuyến mại 1">
+                <?php
+                    $sql="Select * FROM tbl_san_pham INNER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham where
+                     tbl_khuyen_mai.id_khuyen_mai = 'KM04'";
+                    $result=$con->query($sql);	  		
+                    if($result->num_rows>0)
+                        {
+                        while($row=$result->fetch_assoc())
+                        {
+                    ?>
+                    <a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>" target="_blank" class="km km-title" >
+                        <img class="km-image" src="images/san-pham/<?php echo $row['anh']?>" alt="Chương trình khuyến mại 1">
                         <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
+                            <?php echo $row['ten_khuyen_mai']?>
                         </p>
                         <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
                     </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km4.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km4.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km4.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km4.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
-                    <a href="#" target="_blank" class="km km-title" >
-                        <img class="km-image" src="images/khuyen-mai/km4.png" alt="Chương trình khuyến mại 1">
-                        <p class="km-title-1">
-                            APPLE WATCH SE | SERIES 6 - MUA NGAY GIÁ TỐT
-                        </p>
-                        <p id="footer-km-content"><span id="footer-km-content-1">Đang diễn ra</span> <span id="footer-km-content-2">Xem chi tiết</span></p>         
-                    </a>
+                    <?php 
+                        }
+                    }
+                    ?>
                 </div>
 			</div>
             <div class="col-sm-1"></div>

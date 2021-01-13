@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$bl=3;
 	require("public/ketnoi.php");
 	$_SESSION["kiemtrasua"]=0;
 	$noidung=$_POST['noi_dung'];
@@ -9,7 +10,7 @@
 	if ($noidung != "" && $tenkhachhang != "")
 	{
 		$sql_insert="insert into tbl_binh_luan(ten_khach_hang,id_tin_tuc,noi_dung) values('".$tenkhachhang."','".$idtintuc."','".$noidung."')";
-		if($con->query($sql_insert)===TRUE)
+		if($con->query($sql_insert)===TRUE && $con->query($sql_insert1)===TRUE)
 		{	
 			header($tranghientai);
 		}
@@ -25,7 +26,7 @@
 			$_SESSION["kiemtrasua"]=1;
 			header($tranghientai);
 		}
-		if($noidung == "")
+		else
 		{
 		$_SESSION["kiemtrasua"]=2;
 		header($tranghientai."&error=02");
