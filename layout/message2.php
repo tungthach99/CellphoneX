@@ -9,6 +9,6 @@ function dongform(id)
 <div class="mess" id="mess-sua">
 	<h1>Cảnh báo!</h1>
 	<p>Hãy nhập nội dung bạn muốn bình luận</p>
-	<button onClick="dongform('che-man-hinh');" class="btn btn-success">Đã hiểu</button>
+	<a style="color: #fff; border-radius: 5px; float: right;" onClick="dongform('che-man-hinh');" class="linkXanh">Đã hiểu</a>
 </div>
 </div>

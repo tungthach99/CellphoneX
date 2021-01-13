@@ -12,7 +12,7 @@ if($result->num_rows>0)
 		session_start();
 		$_SESSION["id-user"]=$row["id_khach_hang"];
 		$_SESSION["ten-user"]=$row["ten_khach_hang"];
-		$_SESSION["userngan"]=substr($_POST["txttendangnhap"],0,5);
+		$_SESSION["userngan"]=substr($_POST["txttendangnhap"],0,4);
 		header("location:../../home.php");
 		
 

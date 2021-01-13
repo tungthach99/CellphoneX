@@ -35,13 +35,13 @@
           		<nav class="nav-menu d-none d-lg-block">
 					<ul>
 						<?php if(!isset($_SESSION["userngan"])){?>
-						<li style="margin-left: 23%;"><a class="nav1" href="khuyenmai.php">Yêu thích</a></li>
+						<li style="margin-left: 23%;"><a class="nav1" href="yeuthich.php">Yêu thích</a></li>
       					<li class="drop-down"><i class="fa fa-user" style="font-size: 34px; color: #000;" onClick="hienthiform('formDangNhap'),dongform('formGioHang')"></i>
            		   		</li>
       					<?php }?>
 						
 						<?php if(isset($_SESSION["userngan"])){?>
-						<li><a class="nav1" href="khuyenmai.php">Yêu thích</a></li>
+						<li><a class="nav1" href="yeuthich.php">Yêu thích</a></li>
       					<li class="drop-down"><span style="font-size: 20px;" onClick="hienthiform('formDangNhap'),dongform('formGioHang')"><img width="32px;" height="32px;" style="border-radius: 50%;" src="images/20 - Copy.png">&nbsp;<?php echo $_SESSION["userngan"];?></span>
            		   		</li>
       					<?php }?>

@@ -51,13 +51,26 @@ jQuery.noConflict();
 		<div id="thongBaoChinh">
 			<h1>Thông báo!</h1>
 			<p>Đặt hàng thành công</p>
-			<a style="color: #fff; border-radius: 5px; float: right;" onClick="dongform('cheManHinh');" class="linkDen">Đã hiểu</a>
+			<a style="color: #fff; border-radius: 5px; float: right;" onClick="dongform('cheManHinh');" class="linkXanh">Đã hiểu</a>
 		</div>
 	</div>
 		<?php
-		unset($_SESSION["giohang"]);
-		unset($_SESSION["stt_gio_hang"]);
-		
+		if(isset($_SESSION["giohang"])) unset($_SESSION["giohang"]);
+		if(isset($_SESSION["stt_gio_hang"])) unset($_SESSION["stt_gio_hang"]);
+		if(isset($_SESSION["magiamgia"])) unset($_SESSION["magiamgia"]);
+		if(isset($_SESSION["phivanchuyen"])) unset($_SESSION["phivanchuyen"]);
+	}
+	if(isset($_GET["action"]) and $_GET["action"] == 'hethang')
+	{
+		?>
+	<div id="cheManHinh">
+		<div id="thongBaoChinh">
+			<h1>Thông báo!</h1>
+			<p>Xin lỗi! Hàng hóa bạn định mua hiện không còn đủ hàng. <i class="fa fa-frown-o"></i></p>
+			<a style=" color: #fff; border-radius: 5px; float: right;" onClick="dongform('cheManHinh');" class="linkXanh">Đã hiểu</a>
+		</div>
+	</div>
+		<?php
 	}
 ?>
 

@@ -128,7 +128,7 @@ jQuery.noConflict();
 								$i=$i+1;
 								?>
 								<div class="thanhPhan <?php if($i==1) echo "s1"; ?>">
-									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-heart-o" title="Yêu thích"></i></a></span>
+									<span class="hoverSanPham"><a href="sanpham.php?&tensanpham=<?php echo $row["ten_san_pham"];?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-heart-o" title="Yêu thích"></i></a></span>
 									<div class="anhSanPham">
 										<img src="images/san-pham/<?php echo $row['anh']; ?>">
 									</div>
@@ -236,7 +236,7 @@ jQuery.noConflict();
 								$i=$i+1;
 								?>
 								<div class="thanhPhan <?php if($i==1) echo "s4"; ?>">
-									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-heart-o" title="Yêu thích"></i></a></span>
+									<span class="hoverSanPham"><a href="sanpham.php?&tensanpham=<?php echo $row["ten_san_pham"];?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-heart-o" title="Yêu thích"></i></a></span>
 									<div class="anhSanPham">
 										<img src="images/san-pham/<?php echo $row['anh']; ?>">
 									</div>
@@ -284,7 +284,7 @@ jQuery.noConflict();
 								$i=$i+1;
 								?>
 								<div class="thanhPhan <?php if($i==1) echo "s2"; ?>">
-									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-heart-o" title="Yêu thích"></i></a></span>
+									<span class="hoverSanPham"><a href="sanpham.php?&tensanpham=<?php echo $row["ten_san_pham"];?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-heart-o" title="Yêu thích"></i></a></span>
 									<div class="anhSanPham">
 										<img src="images/san-pham/<?php echo $row['anh']; ?>">
 									</div>

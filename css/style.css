@@ -762,6 +762,17 @@ footer .fa:hover{
 	padding: 10px 20px;
 	background: #000;
 }
+.linkDen:hover{
+	background-color: #232222;
+}
+.linkXanh{
+	width: auto;
+	padding: 10px 20px;
+	background-color: #3f1f4b;
+}
+.linkXanh:hover{
+	background-color: #5A1786;
+}
 #hinhNen{
 	opacity: 10%;
 	position: fixed;
