@@ -18,8 +18,8 @@ $row=$result->fetch_assoc();
 		</div>
 		<div id="right_product">
 			<p id="title-detail-product-1"><?php echo $row["ten_san_pham"];?></p>
-			<p id="title-detail-product-2"> Giá sp: <?php echo $row["don_gia"];?> đ</p>
-			<p > Số lượng tồn: <?php echo $row["so_luong"];?> sp</p>
+			<p id="title-detail-product-2"> Giá sp: <?php echo number_format($row["don_gia"]);?> đ</p>
+			<p > Số lượng tồn: <?php echo number_format($row["so_luong"]);?> sp</p>
 			<div id="header-detail-product">MÔ TẢ SẢN PHẨM</div>
 			<p id="title-detail-product-3"><?php echo $row["mo_ta"];?></p>
 		</div>

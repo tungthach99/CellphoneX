@@ -2,7 +2,8 @@
 	session_start();
 	require("../../public/ketnoi.php");
 	$action="hethang";
-	$idkhachhang=-1;
+	if(isset($_SESSION["id-user"])) $idkhachhang=$_SESSION["id-user"];
+	else $idkhachhang=-1;
 	$tongtien=$_SESSION["tongtien"];
 	$trangthai='dat hang';
 	$tenkhachhang = $_POST["hoten"];

@@ -58,8 +58,11 @@ jQuery.noConflict();
 		if(isset($_SESSION["giohang"])) unset($_SESSION["giohang"]);
 		if(isset($_SESSION["stt_gio_hang"])) unset($_SESSION["stt_gio_hang"]);
 		if(isset($_SESSION["magiamgia"])) unset($_SESSION["magiamgia"]);
+		if(isset($_SESSION["chietkhau"])) $_SESSION["chietkhau"]=0;
 		if(isset($_SESSION["phivanchuyen"])) unset($_SESSION["phivanchuyen"]);
 	}
+	if(isset($_GET["action"]) and $_GET["action"] == 'check' and isset($_GET["login"]) and $_GET["login"] == 0) include("layout/message5.php");
+	if(isset($_GET["action"]) and $_GET["action"] == 'check' and isset($_GET["check"]) and $_GET["action"] == 0) include("layout/message4.php");
 	if(isset($_GET["action"]) and $_GET["action"] == 'hethang')
 	{
 		?>
@@ -116,16 +119,16 @@ jQuery.noConflict();
 							<tr>
 								<td style="display: none;"><?php echo $row['id_san_pham'] ?></td>
 								<td><?php echo $row['ten_san_pham']?></td>
-								<td><img style="width: 20%;" src="images/san-pham/<?php echo $row['anh'] ?>"></td>
-								<td><?php echo $_SESSION["soluong"][$key] ?></td>
-								<td><?php echo $row['don_gia']; ?></td>
-								<td><?php echo $row['so_luong']; ?></td>
+								<td><img style="width: 25%;" src="images/san-pham/<?php echo $row['anh'] ?>"></td>
+								<td><?php echo number_format($_SESSION["soluong"][$key]) ?></td>
+								<td><?php echo number_format($row['don_gia']) ?></td>
+								<td><?php echo number_format($row['so_luong']) ?></td>
 								<?php
 									$thanhtien=$_SESSION["soluong"][$key]*$row['don_gia'];
 									$_SESSION["tongtien"]+=$thanhtien;
 								?>
 								
-								<td><?php echo $thanhtien?></td>
+								<td><?php echo number_format($thanhtien) ?></td>
 								<td>
 								<a class="fa fa-plus" href="customer/Order/xltangdonhang.php?&stt=<?php echo $key?>"></a>
 								</td>
@@ -160,12 +163,12 @@ jQuery.noConflict();
 				{
 					$_SESSION["tongtien"]-=$_SESSION["chietkhau"];
 					if($_SESSION["tongtien"]<=0) $_SESSION["tongtien"]=0;
-					echo $_SESSION["chietkhau"];
+					echo number_format($_SESSION["chietkhau"]);
 				}
 						?> VND</b>
 				</form><br><br><br>
 				<?php if(isset($_SESSION["giohang"])) {?>
-				<div style="float: right;"><b>Tổng Tiền: </b><b style="color: red;"><?php echo $_SESSION["tongtien"] ?></b><b> VND</b></div><?php }?>
+				<div style="float: right;"><b>Tổng Tiền: </b><b style="color: red;"><?php echo number_format($_SESSION["tongtien"]) ?></b><b> VND</b></div><?php }?>
 				<div><br>
 					<a href="sanpham.php?&maloai=L01" >&lsaquo; Tiếp tục mua hàng</a>
 					<?php if(isset($_SESSION["giohang"]) and $_SESSION["tongtien"]>0) {?>

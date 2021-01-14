@@ -31,9 +31,38 @@
 ?>
 		<div id="product-1">
 		<a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><img style="margin-top: 10px;" id="product-img" src="images/san-pham/<?php echo $row['anh']; ?>"></a>
-		<a id="heart-2"><i  class="fa fa-heart heart" style="color:red;"></i></a>
+<!--			san pham yeu thich-->
+		<?php
+		if (isset($_SESSION["id-user"]))
+		{
+			$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id_san_pham"]."'";
+			$resultyt=$con->query($sqlcheckyeuthich);
+			if($resultyt->num_rows>0)
+			{
+		?>
+		<a class="heart" class="heart" title="Yêu thích" href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-heart" title="Bỏ thích"></i>
+		</a>
+		<?php
+			}
+			else
+			{
+		?>
+		<a class="heart" href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-heart-o" title="Yêu thích"></i>
+		</a>
+		<?php
+			}
+		}
+		else
+		{
+		?>
+		<a class="heart" href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-heart-o" title="Yêu thích"></i>
+		</a>
+		<?php
+		}
+		?>
+<!--			san pham yeu thich: end.-->
 		<p id="title-product-1"><?php echo $row["ten_san_pham"];?></p>
-		<p id="title-product-2">Giá: <?php echo $row["don_gia"];?> đ</p>
+		<p id="title-product-2">Giá: <?php echo number_format($row["don_gia"]);?> đ</p>
 		<a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><button class="nutChiTiet">Chi tiết
 		</button></a>
 		</div>

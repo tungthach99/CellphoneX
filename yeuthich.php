@@ -47,6 +47,70 @@ jQuery.noConflict();
 	<div class="row" style="width: 100%;">
 		<span  class="col-2"></span>
 		<span class="col-8">
+			<div id="product-content">
+<?php
+			if(isset($_SESSION["id-user"]))
+			{
+				$sql="SELECT tbl1.id_san_pham, tbl1.ten_san_pham,tbl1.don_gia,tbl1.anh
+				FROM tbl_san_pham as tbl1
+				LEFT OUTER JOIN
+				(SELECT id_san_pham
+				FROM tbl_yeu_thich INNER JOIN tbl_khach_hang
+				ON tbl_yeu_thich.id_khach_hang=tbl_khach_hang.id_khach_hang
+				WHERE tbl_khach_hang.id_khach_hang='".$_SESSION["id-user"]."') AS tbl2
+				ON tbl1.id_san_pham = tbl2.id_san_pham
+				WHERE tbl1.id_san_pham = tbl2.id_san_pham";
+	  			$result=$con->query($sql);
+	 			if($result->num_rows>0)
+				{
+					while($row=$result->fetch_assoc())
+					{
+?>
+						<div id="product-1">
+							<a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><img style="margin-top: 10px;" id="product-img" src="images/san-pham/<?php echo $row['anh']; ?>"></a>
+							<!--			san pham yeu thich-->
+		<?php
+		if (isset($_SESSION["id-user"]))
+		{
+			$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id_san_pham"]."'";
+			$resultyt=$con->query($sqlcheckyeuthich);
+			if($resultyt->num_rows>0)
+			{
+		?>
+		<a class="heart" class="heart" title="Yêu thích" href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-heart" title="Bỏ thích"></i>
+		</a>
+		<?php
+			}
+			else
+			{
+		?>
+		<a class="heart" href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-heart-o" title="Yêu thích"></i>
+		</a>
+		<?php
+			}
+		}
+		else
+		{
+		?>
+		<a class="heart" href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-heart-o" title="Yêu thích"></i>
+		</a>
+		<?php
+		}
+		?>
+<!--			san pham yeu thich: end.-->
+							<p id="title-product-1"><?php echo $row["ten_san_pham"];?></p>
+							<p id="title-product-2">Giá: <?php echo $row["don_gia"];?> đ</p>
+							<a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>">
+							<button class="nutChiTiet">Chi tiết</button></a>
+						</div>
+		<!--product=1=>product_detail.php-->
+
+<?php 
+					}//end while
+				}//if_num_row
+			}
+?>
+			</div>
 			<a href="sanpham.php?&maloai=L01" >&lsaquo; Tiếp tục mua hàng</a>
 		</span>
 		<span class="col-2" onClick="dongform('formGioHang')"></span>
