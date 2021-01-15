@@ -107,7 +107,8 @@ jQuery.noConflict();
 							$_SESSION["tongtien"]=0;
 							if(isset($_SESSION["giohang"])){
 								foreach($_SESSION["giohang"] as $key=>$value){
-									$sql="select * from tbl_san_pham where id_san_pham=".$value;
+									$sql="select *,tbl_san_pham.don_gia*(1-tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi from tbl_san_pham 
+									LEFT OUTER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham where tbl_san_pham.id_san_pham=".$value;
 									$result=$con->query($sql);
 									if($result->num_rows>0)
 									{
@@ -118,13 +119,19 @@ jQuery.noConflict();
 							?>
 							<tr>
 								<td style="display: none;"><?php echo $row['id_san_pham'] ?></td>
+								<?php
+								if(isset($row['muc_khuyen_mai']))
+								$giatinh=$row['gia_moi'];
+								else
+								$giatinh=$row['don_gia'];
+								?>
 								<td><?php echo $row['ten_san_pham']?></td>
 								<td><img style="width: 25%;" src="images/san-pham/<?php echo $row['anh'] ?>"></td>
 								<td><?php echo number_format($_SESSION["soluong"][$key]) ?></td>
-								<td><?php echo number_format($row['don_gia']) ?></td>
+								<td><?php echo number_format($giatinh) ?></td>
 								<td><?php echo number_format($row['so_luong']) ?></td>
 								<?php
-									$thanhtien=$_SESSION["soluong"][$key]*$row['don_gia'];
+									$thanhtien=$_SESSION["soluong"][$key]*$giatinh;
 									$_SESSION["tongtien"]+=$thanhtien;
 								?>
 								
