@@ -20,8 +20,8 @@ $row=$result->fetch_assoc();
 			<p id="title-detail-product-1"><?php echo $row["ten_san_pham"];?></p>
 			<?php
 			if (isset($row["muc_khuyen_mai"]))
-			echo  "<div id='title-detail-product-2' style='color:#2c3e50; text-decoration: line-through'>Giá sản phẩm: ".number_format($row["don_gia"])."đ</div>".
-			"<div id='title-detail-product-2'>Giá sản phẩm: ".number_format($row["gia_moi"])."đ</div>";
+			echo  "<div id='title-detail-product-2'>Giá sản phẩm: ".number_format($row["gia_moi"]).
+			"đ <span style=' font-size: 18px;'>Giá niêm yết: </span><span style='color:#2c3e50; text-decoration: line-through; font-size: 18px;'>".number_format($row["don_gia"])."đ</span></div>";
 			else
 			echo "<div id='title-detail-product-2'>Giá sản phẩm: ".number_format($row["don_gia"])."đ</div>";
 			?>

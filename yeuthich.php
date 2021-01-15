@@ -51,7 +51,7 @@ jQuery.noConflict();
 <?php
 			if(isset($_SESSION["id-user"]))
 			{
-				$sql="SELECT tbl1.id_san_pham, tbl1.ten_san_pham,tbl1.don_gia,tbl1.anh
+				$sql="SELECT tbl1.id_san_pham, tbl1.ten_san_pham,tbl1.don_gia,tbl1.anh,tbl3.muc_khuyen_mai,tbl1.don_gia*(1-tbl3.muc_khuyen_mai/100) AS gia_moi 
 				FROM tbl_san_pham as tbl1
 				LEFT OUTER JOIN
 				(SELECT id_san_pham
@@ -59,6 +59,8 @@ jQuery.noConflict();
 				ON tbl_yeu_thich.id_khach_hang=tbl_khach_hang.id_khach_hang
 				WHERE tbl_khach_hang.id_khach_hang='".$_SESSION["id-user"]."') AS tbl2
 				ON tbl1.id_san_pham = tbl2.id_san_pham
+				LEFT OUTER JOIN tbl_khuyen_mai AS tbl3
+				ON tbl1.id_san_pham=tbl3.id_san_pham
 				WHERE tbl1.id_san_pham = tbl2.id_san_pham";
 	  			$result=$con->query($sql);
 	 			if($result->num_rows>0)
@@ -99,7 +101,13 @@ jQuery.noConflict();
 		?>
 <!--			san pham yeu thich: end.-->
 							<p id="title-product-1"><?php echo $row["ten_san_pham"];?></p>
-							<p id="title-product-2">Giá: <?php echo $row["don_gia"];?> đ</p>
+							<?php
+							if (isset($row["muc_khuyen_mai"]))
+							echo "<p id='title-product-2'>Giá: ".number_format($row["gia_moi"]).
+							"đ <span style='font-size:12px; color:#2c3e50; text-decoration: line-through'>".number_format($row["don_gia"])."</span></p>";
+							else
+							echo  "<p id='title-product-2'>Giá: ".number_format($row["don_gia"])."đ </p>";
+							?>
 							<a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>">
 							<button class="nutChiTiet">Chi tiết</button></a>
 						</div>

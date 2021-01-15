@@ -1,7 +1,7 @@
 <div id="product-content">
 <?php 
 	  $sbmoitrang=8;
-	  $sql="Select * from tbl_san_pham";
+	  $sql="select *,tbl_san_pham.don_gia*(1-tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi from tbl_san_pham LEFT OUTER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham";
 	  if (isset($_GET["maloai"]))
 	  	$sql.= " where id_danh_muc='".$_GET["maloai"]."'";
 	
@@ -62,7 +62,13 @@
 		?>
 <!--			san pham yeu thich: end.-->
 		<p id="title-product-1"><?php echo $row["ten_san_pham"];?></p>
-		<p id="title-product-2">Giá: <?php echo number_format($row["don_gia"]);?> đ</p>
+		<?php
+			if (isset($row["muc_khuyen_mai"]))
+			echo "<p id='title-product-2'>Giá: ".number_format($row["gia_moi"]).
+			"đ <span style='font-size:12px; color:#2c3e50; text-decoration: line-through'>".number_format($row["don_gia"])."</span></p>";
+			else
+			echo  "<p id='title-product-2'>Giá: ".number_format($row["don_gia"])."đ </p>";
+		?>
 		<a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><button class="nutChiTiet">Chi tiết
 		</button></a>
 		</div>
