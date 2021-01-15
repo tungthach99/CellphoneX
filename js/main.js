@@ -58,7 +58,7 @@ function prevSlide(){
 	if(kichThuoc<0) kichThuoc=400;
 	document.getElementById("chuyenSlide").style.marginLeft = '-' + kichThuoc + '%';
 	if(kichThuoc == 0){
-			document.getElementById("bottom_1").style.backgroundColor="#fff";
+			document.getElementById("bottom_1").style.backgroundColor="#172f87";
 			document.getElementById("bottom_2").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_3").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
@@ -66,7 +66,7 @@ function prevSlide(){
 		}
 	if(kichThuoc == 100){
 			document.getElementById("bottom_1").style.backgroundColor="#a5a5a5";
-			document.getElementById("bottom_2").style.backgroundColor="#fff";
+			document.getElementById("bottom_2").style.backgroundColor="#172f87";
 			document.getElementById("bottom_3").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_5").style.backgroundColor="#a5a5a5";
@@ -74,7 +74,7 @@ function prevSlide(){
 		if(kichThuoc == 200){
 			document.getElementById("bottom_1").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_2").style.backgroundColor="#a5a5a5";
-			document.getElementById("bottom_3").style.backgroundColor="#fff";
+			document.getElementById("bottom_3").style.backgroundColor="#172f87";
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_5").style.backgroundColor="#a5a5a5";
 		}
@@ -82,7 +82,7 @@ function prevSlide(){
 			document.getElementById("bottom_1").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_2").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_3").style.backgroundColor="#a5a5a5";
-			document.getElementById("bottom_4").style.backgroundColor="#fff";
+			document.getElementById("bottom_4").style.backgroundColor="#172f87";
 			document.getElementById("bottom_5").style.backgroundColor="#a5a5a5";
 		}
 		if(kichThuoc == 400){
@@ -90,7 +90,7 @@ function prevSlide(){
 			document.getElementById("bottom_2").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_3").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
-			document.getElementById("bottom_5").style.backgroundColor="#fff";
+			document.getElementById("bottom_5").style.backgroundColor="#172f87";
 		}
 }
 setInterval(function(){
@@ -116,7 +116,7 @@ setInterval(function(){
 function dieuHuong(){
 	kichThuoc = 0;
 	document.getElementById("chuyenSlide").style.marginLeft = '-' + kichThuoc + '%';
-	document.getElementById("bottom_1").style.backgroundColor="#fff";
+	document.getElementById("bottom_1").style.backgroundColor="#172f87";
 			document.getElementById("bottom_2").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_3").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
@@ -126,7 +126,7 @@ function dieuHuong2(){
 	kichThuoc = 100;
 	document.getElementById("chuyenSlide").style.marginLeft = '-' + kichThuoc + '%';
 	document.getElementById("bottom_1").style.backgroundColor="#a5a5a5";
-			document.getElementById("bottom_2").style.backgroundColor="#fff";
+			document.getElementById("bottom_2").style.backgroundColor="#172f87";
 			document.getElementById("bottom_3").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_5").style.backgroundColor="#a5a5a5";
@@ -136,7 +136,7 @@ function dieuHuong3(){
 	document.getElementById("chuyenSlide").style.marginLeft = '-' + kichThuoc + '%';
 	document.getElementById("bottom_1").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_2").style.backgroundColor="#a5a5a5";
-			document.getElementById("bottom_3").style.backgroundColor="#fff";
+			document.getElementById("bottom_3").style.backgroundColor="#172f87";
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_5").style.backgroundColor="#a5a5a5";
 }
@@ -146,7 +146,7 @@ function dieuHuong4(){
 	document.getElementById("bottom_1").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_2").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_3").style.backgroundColor="#a5a5a5";
-			document.getElementById("bottom_4").style.backgroundColor="#fff";
+			document.getElementById("bottom_4").style.backgroundColor="#172f87";
 			document.getElementById("bottom_5").style.backgroundColor="#a5a5a5";
 }
 function dieuHuong5(){
@@ -156,7 +156,7 @@ function dieuHuong5(){
 			document.getElementById("bottom_2").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_3").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
-			document.getElementById("bottom_5").style.backgroundColor="#fff";
+			document.getElementById("bottom_5").style.backgroundColor="#172f87";
 }
 
 function zoom(image){

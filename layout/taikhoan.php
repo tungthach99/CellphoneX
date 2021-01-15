@@ -6,7 +6,7 @@
 		<input type="text" placeholder="Email của bạn" id="txttendangnhap" name="txttendangnhap"><br>
 		<input type="password" placeholder="Mật khẩu" id="txtmatkhau" name="txtmatkhau"><br>
 		<div class="noiDungFormDangNhap">
-			<a href="chitiettk.php">Quên mật khẩu?</a>
+			<a href="quenmatkhau.php">Quên mật khẩu?</a>
 		</div>
 		<input type="submit" value="Đăng nhập">
 	</form>

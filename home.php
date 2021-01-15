@@ -58,11 +58,11 @@ jQuery.noConflict();
 					<i onClick="nextSlide()" id="next"  class="fa fa-angle-right"></i>
 				</div>
 				<div id="chuyenSlide">
-					<a><img src="images/section1.png" alt=""></a>
-					<a><img src="images/section2.jpg" alt=""></a>
-					<a><img src="images/section3.jpg" alt=""></a>
-					<a><img src="images/section1.png" alt=""></a>
-					<a><img src="images/section2.jpg" alt=""></a>
+					<a style="cursor: auto"><img src="images/section1.png" alt=""></a>
+					<a style="cursor: auto"><img src="images/section2.jpg" alt=""></a>
+					<a style="cursor: auto"><img src="images/section3.jpg" alt=""></a>
+					<a style="cursor: auto"><img src="images/section1.png" alt=""></a>
+					<a style="cursor: auto"><img src="images/section2.jpg" alt=""></a>
 				</div>
 				<div class="dieuHuongSlide2">
 					<label onClick="dieuHuong()" class="bar" id="bottom_1"></label>

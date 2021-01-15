@@ -31,14 +31,19 @@
 						echo $row["so_dien_thoai"];
 					}?>">
   		</div>
-<!--
 		<div class="form-group">
    			<select class="custom-select" id="validationCustom04" name="diachi">
-        <option disabled value="-1">Chọn tỉnh/thành phố</option>
+        <option disabled selected value="-1"><?php
+			if($result->num_rows>0)
+					{
+						echo $row["dia_chi"];
+					}
+			if(!isset($_SESSION["id-user"])) echo "Chọn tỉnh/thành phố";
+			?></option>
         <option value="1">Cần Thơ</option>
 		<option value="1">Đà Nẵng</option>
 		<option value="1">Hải Phòng</option>
-		<option selected value="1">Hà Nội</option>
+		<option value="1">Hà Nội</option>
 		<option value="1">TP HCM</option>
 		<option value="An Giang">An Giang</option>
 		<option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
@@ -100,15 +105,11 @@
 		<option value="Phú Yên">Phú Yên</option>
       </select>
  	 	</div>
--->
 		<div class="form-group">
-			<input type="text" class="form-control" name="diaChiNhanHang" placeholder="Địa chỉ cụ thể nhận hàng" value="<?php if($result->num_rows>0)
-					{
-						echo $row["dia_chi"];
-					}?>" required>
+			<input type="text" class="form-control" name="diaChiNhanHang" placeholder="Địa chỉ cụ thể nhận hàng" required>
 		</div>
   		<div class="form-group">
-    		<textarea class="form-control" name="ghichu" rows="5" placeholder="Ghi chú"></textarea>
+    		<textarea class="form-control" name="ghichu" rows="3" placeholder="Ghi chú"></textarea>
   		</div>
 	</div>
 	<div class="col-5" style="background-color: #f4f6f7; border-radius: 25px;">

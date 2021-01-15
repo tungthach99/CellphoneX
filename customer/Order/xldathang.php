@@ -4,6 +4,7 @@
 	$action="hethang";
 	if(isset($_SESSION["id-user"])) $idkhachhang=$_SESSION["id-user"];
 	else $idkhachhang=-1;
+	if(!isset($_SESSION["magiamgia"])) $_SESSION["magiamgia"]="";
 	$tongtien=$_SESSION["tongtien"];
 	$trangthai='dat hang';
 	$tenkhachhang = $_POST["hoten"];
@@ -31,7 +32,9 @@
 		{
 			foreach($_SESSION["giohang"] as $key=>$value)
 			{
-				$sql3="select * from tbl_san_pham where id_san_pham=".$value;
+//				$sql3="select * from tbl_san_pham where id_san_pham=".$value;
+				$sql3="select t1.id_san_pham,t1.don_gia,t2.so_luong_ton from tbl_san_pham AS t1,tbl_phien_ban_san_pham AS t2 where t1.id_san_pham=t2.id_san_pham AND t1.id_san_pham=".$value." AND t2.id_phien_ban=".$_SESSION["phienban"][$key];
+//				echo $sql3;
 				$result3=$con->query($sql3);
 				if($result3->num_rows>0)
 				{
@@ -39,14 +42,14 @@
 					{
 //						Them du lieu vao bang chi tiet don hang
 						$thanhtien3=$_SESSION["soluong"][$key]*$row3['don_gia'];
-						$sqlinsert = "insert into tbl_chi_tiet_don_hang(id_don_hang,id_san_pham,don_gia,so_luong,thanh_tien) values('".$_SESSION["id_don_hang"]."','".$row3['id_san_pham']."','".$row3['don_gia']."',".$_SESSION["soluong"][$key].",'".$thanhtien3."')";
+						$sqlinsert = "insert into tbl_chi_tiet_don_hang(id_don_hang,id_san_pham,don_gia,so_luong,thanh_tien,id_phien_ban) values('".$_SESSION["id_don_hang"]."','".$row3['id_san_pham']."','".$row3['don_gia']."',".$_SESSION["soluong"][$key].",'".$thanhtien3."','".$_SESSION["phienban"][$key]."')";
 						if ($con->query($sqlinsert)) {
-							
+							echo $sqlinsert;
 						}
 						else
 						{
 //							gop hang hoa giong nhau
-							$sqlcheck="select * from tbl_chi_tiet_don_hang where id_don_hang='".$_SESSION["id_don_hang"]."' and id_san_pham='".$row3['id_san_pham']."'";
+							$sqlcheck="select * from tbl_chi_tiet_don_hang where id_don_hang='".$_SESSION["id_don_hang"]."' and id_san_pham='".$row3['id_san_pham']."' and id_phien_ban=".$_SESSION["phienban"][$key];
 							$result=$con->query($sqlcheck);
 							if($result->num_rows>0)
 							{
@@ -54,7 +57,7 @@
 								{
 									$_SESSION["soluong"][$key]+=$rowcheck['so_luong'];
 									$thanhtien3=$_SESSION["soluong"][$key]*$rowcheck['don_gia'];
-									$sqlupdate = "update tbl_chi_tiet_don_hang set so_luong =". $_SESSION["soluong"][$key].",thanh_tien=".$thanhtien3." where id_don_hang='".$_SESSION["id_don_hang"]."' and id_san_pham='".$row3['id_san_pham']."'";
+									$sqlupdate = "update tbl_chi_tiet_don_hang set so_luong =". $_SESSION["soluong"][$key].",thanh_tien=".$thanhtien3." where id_don_hang='".$_SESSION["id_don_hang"]."' and id_san_pham='".$row3['id_san_pham']."' and id_phien_ban='".$_SESSION["phienban"][$key]."'";
 									if ($con->query($sqlupdate))
 									{
 										
@@ -64,7 +67,7 @@
 							}
 							else echo $sqlcheck;
 						}
-						if(isset($_SESSION["soluong"][$key]) and $_SESSION["soluong"][$key]>$row3['so_luong'])
+						if(isset($_SESSION["soluong"][$key]) and $_SESSION["soluong"][$key]>$row3['so_luong_ton'])
 						{
 							$sqldelete="DELETE FROM tbl_chi_tiet_don_hang WHERE id_don_hang='".$_SESSION["id_don_hang"]."'";
 							$result=$con->query($sqldelete);
