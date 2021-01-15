@@ -92,6 +92,7 @@ require("public/ketnoi.php");
                         {
                     ?>
                     <a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>" target="_blank" class="km km-title" >
+                        <div class="muc-khuyen-mai">-<?php echo $row['muc_khuyen_mai'] ?>%</div>
                         <img class="km-image" src="images/san-pham/<?php echo $row['anh']?>" alt="Chương trình khuyến mại 1">
                         <p class="km-title-1">
                             <?php echo $row['ten_khuyen_mai']?>
@@ -117,6 +118,7 @@ require("public/ketnoi.php");
                         {
                     ?>
                     <a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>" target="_blank" class="km km-title" >
+                        <div class="muc-khuyen-mai"><?php echo $row['muc_khuyen_mai'] ?></div>
                         <img class="km-image" src="images/san-pham/<?php echo $row['anh']?>" alt="Chương trình khuyến mại 1">
                         <p class="km-title-1">
                             <?php echo $row['ten_khuyen_mai']?>
@@ -142,6 +144,7 @@ require("public/ketnoi.php");
                         {
                     ?>
                     <a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>" target="_blank" class="km km-title" >
+                         <div class="muc-khuyen-mai"><?php echo $row['muc_khuyen_mai'] ?></div>
                         <img class="km-image" src="images/san-pham/<?php echo $row['anh']?>" alt="Chương trình khuyến mại 1">
                         <p class="km-title-1">
                             <?php echo $row['ten_khuyen_mai']?>
@@ -167,6 +170,7 @@ require("public/ketnoi.php");
                         {
                     ?>
                     <a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>" target="_blank" class="km km-title" >
+                        <div class="muc-khuyen-mai"><?php echo $row['muc_khuyen_mai'] ?></div>
                         <img class="km-image" src="images/san-pham/<?php echo $row['anh']?>" alt="Chương trình khuyến mại 1">
                         <p class="km-title-1">
                             <?php echo $row['ten_khuyen_mai']?>

@@ -1039,9 +1039,21 @@ display: grid;
 }
 
 .km-image{
+	position: relative;
 	height: 200px;
     width: 100%;
 }
+.muc-khuyen-mai{
+	color: red;
+	position: absolute;
+	padding: 5px;
+	border: 2px solid red;
+	border-radius: 50%;
+	font-weight: bold;
+	z-index: 996;
+	margin-left: 335px;
+}
+
 .km{
 	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     border-radius: 2px;
@@ -1083,7 +1095,6 @@ display: grid;
 #km-content-2, #km-content-3, #km-content-4{
 	display: none;
 }
-
 /*                                                  Tin tuc                                            */
 /*                            Chung                                */
 
@@ -1566,7 +1577,7 @@ font-family: 'Poppins', sans-serif;
 	font-weight: bold;
 }
 #title-detail-product-2{
-	color: #2c3e50;
+	color: black;
 	margin-bottom: 15px;
 	font-weight: bold;
 	font-size: 25px;
@@ -1623,8 +1634,6 @@ font-family: 'Poppins', sans-serif;
 	margin: 5px 0 0 20%;
 	border: none;
 }
-.nutChiTiet:hover{
-	co
-}
+
 /*                                                 Tuan end                                           */
 

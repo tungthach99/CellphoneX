@@ -1,5 +1,5 @@
 <?php
-$sql="select * from tbl_san_pham where id_san_pham='".$_GET['masanpham']."'";
+$sql="select *,tbl_san_pham.don_gia*(1-tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi from tbl_san_pham LEFT OUTER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham where tbl_san_pham.id_san_pham='".$_GET['masanpham']."'";
 $result=$con->query($sql);
 $row=$result->fetch_assoc();
 	?>
@@ -18,7 +18,13 @@ $row=$result->fetch_assoc();
 		</div>
 		<div id="right_product">
 			<p id="title-detail-product-1"><?php echo $row["ten_san_pham"];?></p>
-			<p id="title-detail-product-2"> Giá sp: <?php echo number_format($row["don_gia"]);?> đ</p>
+			<?php
+			if (isset($row["muc_khuyen_mai"]))
+			echo  "<div id='title-detail-product-2' style='color:#2c3e50; text-decoration: line-through'>Giá sản phẩm: ".number_format($row["don_gia"])."đ</div>".
+			"<div id='title-detail-product-2'>Giá sản phẩm: ".number_format($row["gia_moi"])."đ</div>";
+			else
+			echo "<div id='title-detail-product-2'>Giá sản phẩm: ".number_format($row["don_gia"])."đ</div>";
+			?>
 			<p > Số lượng tồn: <?php echo number_format($row["so_luong"]);?> sp</p>
 			<div id="header-detail-product">MÔ TẢ SẢN PHẨM</div>
 			<p id="title-detail-product-3"><?php echo $row["mo_ta"];?></p>
