@@ -44,6 +44,11 @@ jQuery.noConflict();
 	include("layout/header.php");
 	include("layout/taikhoan.php");
 	require("public/ketnoi.php");
+	if(isset($_GET["loi"]))
+	{
+		if($_GET["loi"]=='1') include("layout/message5.php");
+		if($_GET["loi"]=='2') include("layout/message6.php");
+	}
 ?>
 <!--				Banner dau trang					-->
 	<section class="leCacMuc">
@@ -128,14 +133,46 @@ jQuery.noConflict();
 								$i=$i+1;
 								?>
 								<div class="thanhPhan <?php if($i==1) echo "s1"; ?>">
-									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-heart-o" title="Yêu thích"></i></a></span>
+									<span class="hoverSanPham">
+<!--										Lien ket den san pham-->
+										<a href="sanpham.php?&tensanpham=<?php echo $row["ten_san_pham"];?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a>
+<!--										Them san pham yeu thich-->
+										<?php
+										if (isset($_SESSION["id-user"]))
+										{
+											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id_san_pham"]."'";
+											$resultyt=$con->query($sqlcheckyeuthich);
+											if($resultyt->num_rows>0)
+											{
+										?>
+										<a href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
+										</a>
+										<?php
+											}
+											else
+											{
+										?>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										</a>
+										<?php
+											}
+										}
+										else
+										{
+										?>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										</a>
+										<?php
+										}
+										?>
+									</span>
 									<div class="anhSanPham">
 										<img src="images/san-pham/<?php echo $row['anh']; ?>">
 									</div>
 									<div style="font-size: 16px;">
 										<?php echo $row["ten_san_pham"];?>
 									</div>
-									Giá: <span class="giaDo"><?php echo $row["don_gia"];?><sup><u>đ</u></sup></span>
+									Giá: <span class="giaDo"><?php echo number_format($row["don_gia"])?><sup><u>đ</u></sup></span>
 									<span class="giaGachNgang"></span>
 <!--
 									<div>
@@ -206,7 +243,7 @@ jQuery.noConflict();
 			<h6>SỰ KIỆN NỔI BẬT</h6>
 			<h1>"HI, SPEED"</h1>
 			<p>Ra mắt Iphone 12 và quá nhiều thứ đã bị bỏ lỡ!!!</p>
-			<a href="" class="linkDen">CHI TIẾT SỰ KIỆN</a>
+			<a href="https://www.apple.com/apple-events/october-2020/" class="linkDen">CHI TIẾT SỰ KIỆN</a>
 		</span>
 	</div>
 <!--	Su kien: end.												-->
@@ -226,7 +263,7 @@ jQuery.noConflict();
 					<input type="radio" name="dieuHuong" id="trai4" checked>
 					<input type="radio" name="dieuHuong" id="phai4">
 					<?php
-						$sql="SELECT * FROM tbl_san_pham WHERE id_danh_muc <>'L05' ORDER BY don_gia ASC LIMIT 6";
+						$sql="SELECT tbl_san_pham.id_san_pham,tbl_san_pham.ten_san_pham,tbl_san_pham.don_gia,tbl_san_pham.anh FROM tbl_san_pham LEFT OUTER JOIN tbl_chi_tiet_don_hang ON tbl_san_pham.id_san_pham=tbl_chi_tiet_don_hang.id_san_pham GROUP BY tbl_san_pham.id_san_pham ORDER BY tbl_chi_tiet_don_hang.so_luong DESC LIMIT 6";
 						$result=$con->query($sql);
 						if($result->num_rows>0)
 						{
@@ -236,14 +273,45 @@ jQuery.noConflict();
 								$i=$i+1;
 								?>
 								<div class="thanhPhan <?php if($i==1) echo "s4"; ?>">
-									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-heart-o" title="Yêu thích"></i></a></span>
+									<span class="hoverSanPham">
+										<a href="sanpham.php?&tensanpham=<?php echo $row["ten_san_pham"];?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a>
+<!--									Them san pham yeu thich-->
+										<?php
+										if (isset($_SESSION["id-user"]))
+										{
+											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id_san_pham"]."'";
+											$resultyt=$con->query($sqlcheckyeuthich);
+											if($resultyt->num_rows>0)
+											{
+										?>
+										<a href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
+										</a>
+										<?php
+											}
+											else
+											{
+										?>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										</a>
+										<?php
+											}
+										}
+										else
+										{
+										?>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										</a>
+										<?php
+										}
+										?>
+									</span>
 									<div class="anhSanPham">
 										<img src="images/san-pham/<?php echo $row['anh']; ?>">
 									</div>
 									<div style="font-size: 16px;">
 										<?php echo $row["ten_san_pham"];?>
 									</div>
-									Giá: <span class="giaDo"><?php echo $row["don_gia"];?><sup><u>đ</u></sup></span>
+									Giá: <span class="giaDo"><?php echo number_format($row["don_gia"])?><sup><u>đ</u></sup></span>
 									<span class="giaGachNgang"></span>
 								</div>
 					<?php
@@ -274,7 +342,7 @@ jQuery.noConflict();
 					<input type="radio" name="dieuHuong" id="trai2" checked>
 					<input type="radio" name="dieuHuong" id="phai2">
 					<?php
-						$sql="SELECT * FROM tbl_san_pham WHERE id_danh_muc <>'L05' ORDER BY don_gia ASC LIMIT 6";
+						$sql="SELECT * FROM tbl_san_pham ORDER BY ngay_them DESC LIMIT 6";
 						$result=$con->query($sql);
 						if($result->num_rows>0)
 						{
@@ -284,14 +352,45 @@ jQuery.noConflict();
 								$i=$i+1;
 								?>
 								<div class="thanhPhan <?php if($i==1) echo "s2"; ?>">
-									<span class="hoverSanPham"><a href="#"><i class="fa fa-external-link" title="Mở liên kết"></i></a><a href="#"><i class="fa fa-heart-o" title="Yêu thích"></i></a></span>
+									<span class="hoverSanPham">
+										<a href="sanpham.php?&tensanpham=<?php echo $row["ten_san_pham"];?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a>
+<!--										Them san pham yeu thich-->
+										<?php
+										if (isset($_SESSION["id-user"]))
+										{
+											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id_san_pham"]."'";
+											$resultyt=$con->query($sqlcheckyeuthich);
+											if($resultyt->num_rows>0)
+											{
+										?>
+										<a href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
+										</a>
+										<?php
+											}
+											else
+											{
+										?>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										</a>
+										<?php
+											}
+										}
+										else
+										{
+										?>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										</a>
+										<?php
+										}
+										?>
+									</span>
 									<div class="anhSanPham">
 										<img src="images/san-pham/<?php echo $row['anh']; ?>">
 									</div>
 									<div style="font-size: 16px;">
 										<?php echo $row["ten_san_pham"];?>
 									</div>
-									Giá: <span class="giaDo"><?php echo $row["don_gia"];?><sup><u>đ</u></sup></span>
+									Giá: <span class="giaDo"><?php echo number_format($row["don_gia"])?><sup><u>đ</u></sup></span>
 									<span class="giaGachNgang"></span>
 								</div>
 					<?php

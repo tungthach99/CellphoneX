@@ -83,7 +83,11 @@ $row=$result->fetch_assoc();
 			</div>
 			<div class="right-content-news1">
 				<div class="news-header">
+<<<<<<< HEAD
 					Tin tức <i class="fa fa-angle-double-right"></i>
+=======
+					Tin tức <i class='fa fa-chevron-right'></i><i class='fa fa-chevron-right'></i>
+>>>>>>> 1eb14d3203804e107ad6be359b47d9e0259f52c5
 				</div>
 <?php
 $sql="Select * FROM `tbl_tin_tuc` ORDER BY add_date DESC LIMIT 4";

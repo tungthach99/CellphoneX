@@ -31,6 +31,7 @@
 						echo $row["so_dien_thoai"];
 					}?>">
   		</div>
+<!--
 		<div class="form-group">
    			<select class="custom-select" id="validationCustom04" name="diachi">
         <option disabled value="-1">Chọn tỉnh/thành phố</option>
@@ -99,11 +100,15 @@
 		<option value="Phú Yên">Phú Yên</option>
       </select>
  	 	</div>
+-->
 		<div class="form-group">
-			<input type="text" class="form-control" name="diaChiNhanHang" placeholder="Địa chỉ cụ thể nhận hàng" required>
+			<input type="text" class="form-control" name="diaChiNhanHang" placeholder="Địa chỉ cụ thể nhận hàng" value="<?php if($result->num_rows>0)
+					{
+						echo $row["dia_chi"];
+					}?>" required>
 		</div>
   		<div class="form-group">
-    		<textarea class="form-control" name="ghichu" rows="3" placeholder="Ghi chú"></textarea>
+    		<textarea class="form-control" name="ghichu" rows="5" placeholder="Ghi chú"></textarea>
   		</div>
 	</div>
 	<div class="col-5" style="background-color: #f4f6f7; border-radius: 25px;">
@@ -136,11 +141,11 @@
 				$_SESSION["phivanchuyen"]=30000;
 				$_SESSION["tongtien"]+=$_SESSION["phivanchuyen"];
 			}
-			echo $_SESSION["phivanchuyen"]?><b> VND</b><br>
-			(Miễn phí cho đơn trên 600 000 VND)
+			echo number_format($_SESSION["phivanchuyen"]) ?><b> VND</b><br>
+			(Miễn phí cho đơn trên 600,000 VND)
 		</p>
 		<p style="font-size: 24px;">
-			<b>TỔNG TIỀN: </b><b style="color: red"><?php echo $_SESSION["tongtien"] ?></b><b> VND</b>
+			<b>TỔNG TIỀN: </b><b style="color: red"><?php echo number_format($_SESSION["tongtien"]) ?></b><b> VND</b>
 		</p>
 		<button style="padding: 10px 25px 10px 25px; background-color: #b04dff ;border: none; color: #fff;" type="submit"><b>HOÀN TẤT ĐƠN HÀNG</b></button>
 		<a onClick="dongform('formGioHang')" style="padding: 10px 25px 10px 25px; background-color: rgba(148,137,137,0.1);border: none; color: #b04dff;"><b>ĐÓNG</b></a>

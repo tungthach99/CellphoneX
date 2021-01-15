@@ -10,8 +10,8 @@
 <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
 <script>
 jQuery.noConflict();
 (function( $ ) {
@@ -70,7 +70,7 @@ if($("#veDauTrang").length > 0){
     <div class="col-sm-1"></div>
     <div class="col-sm-2">
     <div class="news-header">
-					Tin tức <i class='fas fa-angle-double-right' style="margin-left: 20px;"></i>
+					Tin tức <i class='fa fa-chevron-right' style="margin-left: 20px;"></i>
 				</div>
     <?php
 $sql="Select * FROM `tbl_tin_tuc` ORDER BY id_tin_tuc";
@@ -108,7 +108,11 @@ $row=$result->fetch_assoc();
 		<form action="xlbinhluan.php" method="POST">
 		<div class="binh-luan-group">
         	<p id="binh-luan-label">Viết bình luận ...<i class="fa fa-pencil"></i></p>
+<<<<<<< HEAD
 			<input type="text" id="comment-box" name="noi_dung" placeholder="Hãy nhập bình luận của bạn ở đây"> </input>
+=======
+			<textarea id="comment-box" name="noi_dung" placeholder="Hãy nhập bình luận của bạn ở đây" required></textarea>
+>>>>>>> 1eb14d3203804e107ad6be359b47d9e0259f52c5
 			<button type="submit"  class="btn btn-primary" style="margin: 0 0 10px 5%;">Gửi</button>
 			<input type="text" style="display: none;" name="ma_tin_tuc" value="<?php echo $row['id_tin_tuc']?>">
 		</div>
