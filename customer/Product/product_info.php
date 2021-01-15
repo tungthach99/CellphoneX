@@ -349,23 +349,13 @@
 </div>
 <div id="product-content">
 <?php 
-<<<<<<< HEAD
 	$sbmoitrang=8;
 	$sql="Select * from tbl_san_pham";
 	
 	if (isset($_GET["maloai"]) or isset($_GET["tensanpham"])) $sql.= " WHERE";
 	if (isset($_GET["maloai"])) $sql.= " id_danh_muc='".$_GET["maloai"]."'";
-=======
-	  $sbmoitrang=8;
-	  $sql="select *,tbl_san_pham.don_gia*(1-tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi from tbl_san_pham LEFT OUTER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham";
-	  if (isset($_GET["maloai"]))
-	  	$sql.= " where id_danh_muc='".$_GET["maloai"]."'";
->>>>>>> 8abc0da2bc52ee9d8aba2416910f01d036d6bb61
-	
-	//code tim kiem sp
-	if (isset($_GET["tensanpham"])) $sql.= " ten_san_pham like '%".$_GET["tensanpham"]."%'";
 
-	//end tk.
+	if (isset($_GET["tensanpham"])) $sql.= " ten_san_pham like '%".$_GET["tensanpham"]."%'";
 	
 //	Bo loc
 	if (isset($_GET["maloai"]) or isset($_GET["tensanpham"]))
