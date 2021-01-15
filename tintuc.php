@@ -83,7 +83,7 @@ $row=$result->fetch_assoc();
 			</div>
 			<div class="right-content-news1">
 				<div class="news-header">
-					Tin tức <i class='fas fa-angle-double-right'></i>
+					Tin tức <i class="fa fa-angle-double-right"></i>
 				</div>
 <?php
 $sql="Select * FROM `tbl_tin_tuc` ORDER BY add_date DESC LIMIT 4";
@@ -99,6 +99,12 @@ if($result->num_rows>0)
 						<h3 class="header-content2-1"><a href="chitiettintuc.php?matintuc=<?php echo $row['id_tin_tuc']?>"><?php echo $row['tieu_de']?></a><br></h3>
 						<div class="news-content-info">
 							<i class="fa fa-clock-o"></i> <?php echo $row['add_date'] ?>
+							<?php
+							$sql1= "Select COUNT(id_tin_tuc) AS so_binh_luan FROM tbl_binh_luan WHERE id_tin_tuc='".$row['id_tin_tuc']."'";
+							$result1=$con->query($sql1);
+							$row1=$result1->fetch_assoc();
+							?>
+							<i class="fa fa-commenting-o" style="margin-left: 15px;"></i> <?php echo $row1['so_binh_luan'] ?> bình luận
 						</div>
 					</div>
 				</div>
@@ -143,6 +149,12 @@ if($result->num_rows>0)
 		<div class="header-tin-tuc"><?php echo $row['tieu_de']?></div>
 		<div style="font-size: 13px; font-style: italic;margin-left:10px;">@<?php echo $row['tac_gia'];?></div>
 		<div style="font-size: 13px; font-style: italic;margin-left:10px;"><?php echo $row['add_date'];?></div>
+		<?php
+			$sql1= "Select COUNT(id_tin_tuc) AS so_binh_luan FROM tbl_binh_luan WHERE id_tin_tuc='".$row['id_tin_tuc']."'";
+			$result1=$con->query($sql1);
+			$row1=$result1->fetch_assoc();
+		?>
+		<div style="font-size: 13px; font-style: italic;margin-left:10px;"><i class="fa fa-commenting-o"></i> <?php echo $row1['so_binh_luan'] ?> bình luận </div>
 	</div>
 	</a>
 </div>
