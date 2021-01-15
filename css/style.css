@@ -1050,7 +1050,7 @@ display: grid;
 	border: 2px solid red;
 	border-radius: 50%;
 	font-weight: bold;
-	z-index: 996;
+	z-index: 800;
 	margin-left: 335px;
 }
 
