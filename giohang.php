@@ -108,27 +108,9 @@ jQuery.noConflict();
 							$_SESSION["tongtien"]=0;
 							if(isset($_SESSION["giohang"])){
 								foreach($_SESSION["giohang"] as $key=>$value){
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-									$sql="select *,tbl_san_pham.don_gia*(1-tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi from tbl_san_pham 
-									LEFT OUTER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham where tbl_san_pham.id_san_pham=".$value;
-=======
-<<<<<<< HEAD
 									$sql="select * from tbl_san_pham where id_san_pham=".$value;
 									if(isset($_SESSION["phienban"]))
 									$sql="SELECT t1.id_san_pham,t1.ten_san_pham,t1.don_gia,t1.anh,t2.so_luong_ton,t3.dung_luong FROM tbl_san_pham AS t1,tbl_phien_ban_san_pham AS t2,tbl_phien_ban AS t3 WHERE t1.id_san_pham=t2.id_san_pham and t2.id_phien_ban=t3.id_phien_ban and t1.id_san_pham=".$value." and t2.id_phien_ban=".$_SESSION["phienban"][$key];
-=======
-									$sql="select *,tbl_san_pham.don_gia*(1-tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi from tbl_san_pham 
-									LEFT OUTER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham where tbl_san_pham.id_san_pham=".$value;
->>>>>>> 8abc0da2bc52ee9d8aba2416910f01d036d6bb61
->>>>>>> Stashed changes
-=======
-									$sql="select * from tbl_san_pham where id_san_pham=".$value;
->>>>>>> parent of 8abc0da... Update giohang.php
-=======
-									$sql="select * from tbl_san_pham where id_san_pham=".$value;
->>>>>>> parent of 8abc0da... Update giohang.php
 									$result=$con->query($sql);
 									if($result->num_rows>0)
 									{
@@ -145,6 +127,7 @@ jQuery.noConflict();
 								<td><?php echo number_format($_SESSION["soluong"][$key]) ?></td>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -153,6 +136,9 @@ jQuery.noConflict();
 =======
 >>>>>>> Stashed changes
 								<td><?php echo number_format($giatinh) ?></td>
+=======
+								<td><?php echo number_format($row['don_gia']) ?></td>
+>>>>>>> parent of 8abc0da... Update giohang.php
 =======
 								<td><?php echo number_format($row['don_gia']) ?></td>
 >>>>>>> parent of 8abc0da... Update giohang.php
