@@ -108,6 +108,7 @@ jQuery.noConflict();
 							$_SESSION["tongtien"]=0;
 							if(isset($_SESSION["giohang"])){
 								foreach($_SESSION["giohang"] as $key=>$value){
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 									$sql="select *,tbl_san_pham.don_gia*(1-tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi from tbl_san_pham 
 									LEFT OUTER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham where tbl_san_pham.id_san_pham=".$value;
@@ -121,6 +122,9 @@ jQuery.noConflict();
 									LEFT OUTER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham where tbl_san_pham.id_san_pham=".$value;
 >>>>>>> 8abc0da2bc52ee9d8aba2416910f01d036d6bb61
 >>>>>>> Stashed changes
+=======
+									$sql="select * from tbl_san_pham where id_san_pham=".$value;
+>>>>>>> parent of 8abc0da... Update giohang.php
 									$result=$con->query($sql);
 									if($result->num_rows>0)
 									{
@@ -131,16 +135,11 @@ jQuery.noConflict();
 							?>
 							<tr>
 								<td style="display: none;"><?php echo $row['id_san_pham'] ?></td>
-								<?php
-								if(isset($row['muc_khuyen_mai']))
-								$giatinh=$row['gia_moi'];
-								else
-								$giatinh=$row['don_gia'];
-								?>
 								<td><?php echo $row['ten_san_pham']?></td>
 								<td><img style="width: 25%;" src="images/san-pham/<?php echo $row['anh'] ?>"></td>
 								<td><?php echo $row['dung_luong']?></td>
 								<td><?php echo number_format($_SESSION["soluong"][$key]) ?></td>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -149,10 +148,13 @@ jQuery.noConflict();
 =======
 >>>>>>> Stashed changes
 								<td><?php echo number_format($giatinh) ?></td>
+=======
+								<td><?php echo number_format($row['don_gia']) ?></td>
+>>>>>>> parent of 8abc0da... Update giohang.php
 								<td><?php echo number_format($row['so_luong']) ?></td>
 >>>>>>> 8abc0da2bc52ee9d8aba2416910f01d036d6bb61
 								<?php
-									$thanhtien=$_SESSION["soluong"][$key]*$giatinh;
+									$thanhtien=$_SESSION["soluong"][$key]*$row['don_gia'];
 									$_SESSION["tongtien"]+=$thanhtien;
 								?>
 								
