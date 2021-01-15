@@ -104,7 +104,7 @@ jQuery.noConflict();
 							<?php
 							if (isset($row["muc_khuyen_mai"]))
 							echo "<p id='title-product-2'>Giá: ".number_format($row["gia_moi"]).
-							"đ <span style='font-size:12px; color:#2c3e50; text-decoration: line-through'>".number_format($row["don_gia"])."</span></p>";
+							"đ <span style='font-size:12px; color:#2c3e50; text-decoration: line-through'>".number_format($row["don_gia"])."đ</span></p>";
 							else
 							echo  "<p id='title-product-2'>Giá: ".number_format($row["don_gia"])."đ </p>";
 							?>
