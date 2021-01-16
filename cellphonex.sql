@@ -3,15 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
-<<<<<<< Updated upstream
--- Thời gian đã tạo: Th1 15, 2021 lúc 05:48 PM
-=======
-<<<<<<< HEAD
--- Thời gian đã tạo: Th1 15, 2021 lúc 06:14 PM
-=======
--- Thời gian đã tạo: Th1 15, 2021 lúc 05:48 PM
->>>>>>> 8abc0da2bc52ee9d8aba2416910f01d036d6bb61
->>>>>>> Stashed changes
+-- Thời gian đã tạo: Th1 16, 2021 lúc 09:41 AM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -144,7 +136,6 @@ CREATE TABLE `tbl_chi_tiet_don_hang` (
 -- Đang đổ dữ liệu cho bảng `tbl_chi_tiet_don_hang`
 --
 
-<<<<<<< HEAD
 INSERT INTO `tbl_chi_tiet_don_hang` (`id_don_hang`, `id_san_pham`, `don_gia`, `so_luong`, `thanh_tien`, `ghi_chu`, `id_phien_ban`) VALUES
 (58, 1, 5000000, 10, 50000000, NULL, 2),
 (58, 1, 5000000, 2, 10000000, NULL, 4),
@@ -156,34 +147,17 @@ INSERT INTO `tbl_chi_tiet_don_hang` (`id_don_hang`, `id_san_pham`, `don_gia`, `s
 (64, 1, 5000000, 1, 5000000, NULL, 5),
 (64, 2, 4290000, 2, 8580000, NULL, 3),
 (65, 1, 5000000, 1, 5000000, NULL, 2),
-(65, 1, 5000000, 4, 20000000, NULL, 4);
-=======
-INSERT INTO `tbl_chi_tiet_don_hang` (`id_don_hang`, `id_san_pham`, `don_gia`, `so_luong`, `thanh_tien`, `ghi_chu`) VALUES
-(36, 1, 5000000, 1, 5000000, NULL),
-(36, 2, 4290000, 0, 0, NULL),
-(37, 2, 4290000, 1, 4290000, NULL),
-(38, 2, 4290000, 1, 4290000, NULL),
-(39, 2, 4290000, 2, 8580000, NULL),
-(40, 3, 2990000, 1, 2990000, NULL),
-(41, 1, 5000000, 1, 5000000, NULL),
-(41, 2, 4290000, 0, 0, NULL),
-(42, 2, 4290000, 1, 4290000, NULL),
-(42, 3, 2990000, 0, 0, NULL),
-(43, 3, 2990000, 1, 2990000, NULL),
-(44, 1, 5000000, 1, 5000000, NULL),
-(44, 2, 4290000, 1, 4290000, NULL),
-(45, 1, 5000000, 1, 5000000, NULL),
-(45, 3, 2990000, 1, 2990000, NULL),
-(46, 1, 5000000, 2, 10000000, NULL),
-(47, 2, 4290000, 1, 4290000, NULL),
-(48, 1, 5000000, 3, 15000000, NULL),
-(49, 1, 5000000, 1, 5000000, NULL),
-(50, 7, 24990000, 4, 99960000, NULL),
-(51, 1, 5000000, 1, 5000000, NULL);
-<<<<<<< Updated upstream
-=======
->>>>>>> 8abc0da2bc52ee9d8aba2416910f01d036d6bb61
->>>>>>> Stashed changes
+(65, 1, 5000000, 4, 20000000, NULL, 4),
+(66, 1, 5000000, 3, 15000000, NULL, 2),
+(67, 1, 5000000, 2, 10000000, NULL, 2),
+(67, 1, 5000000, 2, 10000000, NULL, 4),
+(68, 1, 5000000, 1, 5000000, NULL, 2),
+(69, 2, 4290000, 2, 8580000, NULL, 1),
+(70, 1, 5000000, 2, 10000000, NULL, 4),
+(70, 2, 4290000, 2, 8580000, NULL, 1),
+(71, 1, 5000000, 2, 10000000, NULL, 2),
+(72, 1, 5000000, 2, 10000000, NULL, 2),
+(73, 2, 4290000, 2, 8580000, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -218,7 +192,7 @@ INSERT INTO `tbl_danh_muc` (`id_danh_muc`, `ten_danh_muc`, `mo_ta`, `anh`) VALUE
 CREATE TABLE `tbl_don_hang` (
   `id_don_hang` int(11) NOT NULL,
   `id_khach_hang` int(11) DEFAULT NULL,
-  `id_nhan_vien` int(11) DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `phi_van_chuyen` int(11) DEFAULT NULL,
   `ma_giam_gia` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `tong_tien` float(255,0) DEFAULT NULL,
@@ -234,28 +208,23 @@ CREATE TABLE `tbl_don_hang` (
 -- Đang đổ dữ liệu cho bảng `tbl_don_hang`
 --
 
-INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `id_nhan_vien`, `phi_van_chuyen`, `ma_giam_gia`, `tong_tien`, `trang_thai`, `ngay_dat`, `ten_khach_hang`, `dia_chi_nhan_hang`, `hinh_thuc_mua_hang`, `ghi_chu`) VALUES
-<<<<<<< HEAD
-(58, -1, NULL, 0, '', 107190000, 0, '01/15/2021 10:01:50 pm', '1', '1', 'COD', ''),
-(59, -1, NULL, 0, '', 600540032, 0, '01/15/2021 10:13:40 pm', '1', '1', 'COD', ''),
-(60, -1, NULL, 0, '', 555000000, 0, '01/15/2021 10:15:33 pm', '1', '1', 'COD', ''),
-(61, -1, NULL, 0, '', 9290000, 0, '01/15/2021 10:22:19 pm', '1', '1', 'COD', '1'),
-(62, -1, NULL, 0, '', 9290000, 0, '01/15/2021 10:24:06 pm', '1', '1', 'COD', '1'),
-(63, -1, NULL, 0, '', 9290000, 0, '01/15/2021 10:25:32 pm', '1', '1', 'COD', '1'),
-(64, -1, NULL, 0, '', 33580000, 0, '01/15/2021 10:26:57 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
-(65, 1, NULL, 0, 'TUNGTHACH', 24700000, 0, '01/15/2021 10:37:20 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', '');
-=======
-(36, -1, NULL, 0, '', 5000000, 0, '2021-01-01 00:00:00', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
-(42, 1, NULL, 0, 'TUNGTHACH', 3990000, 0, '2021-01-02 00:00:00', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
-(45, 1, NULL, 0, 'LYCOI', 7890000, 0, '2021-01-03 00:00:00', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', ''),
-(48, 1, NULL, 0, '', 15000000, 0, '01/14/2021 10:24:13 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
-(49, 3, NULL, 0, 'TUNGTHACH', 4700000, 0, '01/14/2021 11:00:31 pm', 'Nguyễn Anh Tuấn', '12 Chùa Bộc', 'COD', ''),
-(50, 1, NULL, 0, '', 99960000, 0, '01/15/2021 12:11:13 am', 'Thạch Thọ Tùng', 'Hà Nội', 'COD', ''),
-(51, 1, NULL, 0, '', 5000000, 0, '01/15/2021 10:29:26 pm', 'Thạch Thọ Tùng', 'Hà Nội', 'COD', '');
-<<<<<<< Updated upstream
-=======
->>>>>>> 8abc0da2bc52ee9d8aba2416910f01d036d6bb61
->>>>>>> Stashed changes
+INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `email`, `phi_van_chuyen`, `ma_giam_gia`, `tong_tien`, `trang_thai`, `ngay_dat`, `ten_khach_hang`, `dia_chi_nhan_hang`, `hinh_thuc_mua_hang`, `ghi_chu`) VALUES
+(58, -1, '', 0, '', 107190000, 0, '01/15/2021 10:01:50 pm', '1', '1', 'COD', ''),
+(59, -1, '', 0, '', 600540032, 0, '01/15/2021 10:13:40 pm', '1', '1', 'COD', ''),
+(60, -1, '', 0, '', 555000000, 0, '01/15/2021 10:15:33 pm', '1', '1', 'COD', ''),
+(61, -1, '', 0, '', 9290000, 0, '01/15/2021 10:22:19 pm', '1', '1', 'COD', '1'),
+(62, -1, '', 0, '', 9290000, 0, '01/15/2021 10:24:06 pm', '1', '1', 'COD', '1'),
+(63, -1, 'thachtung99@gmail.com', 0, '', 9290000, 0, '01/15/2021 10:25:32 pm', '1', '1', 'COD', '1'),
+(64, -1, '', 0, '', 33580000, 0, '01/15/2021 10:26:57 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
+(65, 1, '', 0, 'TUNGTHACH', 24700000, 0, '01/15/2021 10:37:20 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', ''),
+(66, -1, '', 0, '', 15000000, 0, '01/16/2021 01:53:55 am', '1', '1', 'COD', ''),
+(67, -1, '', 0, '', 20000000, 0, '01/16/2021 01:54:55 am', '1', '1', 'COD', ''),
+(68, -1, 'thachtung99@gmail.com', 0, '', 5000000, 0, '01/16/2021 03:07:29 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', 'adc'),
+(69, -1, 'thachtung99@gmail.com', 0, '', 8580000, 0, '01/16/2021 03:11:12 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
+(70, -1, 'thachtung99@gmail.com', 0, '', 18580000, 0, '01/16/2021 03:15:25 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
+(71, -1, 'thachtung99@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:20:43 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
+(72, -1, 'hiimtung123@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:32:33 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '2'),
+(73, -1, 'thachtung99@gmail.com', 0, '', 8580000, 0, '01/16/2021 03:37:39 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '');
 
 -- --------------------------------------------------------
 
@@ -269,7 +238,7 @@ CREATE TABLE `tbl_khach_hang` (
   `email` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
   `so_dien_thoai` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `dia_chi` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `ghi_chu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ma_kich_hoat` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
   `mat_khau` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ten_dang_nhap` varchar(55) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
@@ -278,39 +247,9 @@ CREATE TABLE `tbl_khach_hang` (
 -- Đang đổ dữ liệu cho bảng `tbl_khach_hang`
 --
 
-INSERT INTO `tbl_khach_hang` (`id_khach_hang`, `ten_khach_hang`, `email`, `so_dien_thoai`, `dia_chi`, `ghi_chu`, `mat_khau`, `ten_dang_nhap`) VALUES
-(1, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'Hà Nội', NULL, '1', 'tungthach'),
-(3, 'Nguyễn Anh Tuấn', NULL, '0123456789', 'Hà Nội', NULL, '1', 'tuan');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `tbl_khuyen_mai`
---
-
-CREATE TABLE `tbl_khuyen_mai` (
-  `id_khuyen_mai` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `id_san_pham` int(11) NOT NULL,
-  `ten_khuyen_mai` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `muc_khuyen_mai` int(11) NOT NULL,
-  `anh_khuyen_mai` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `tbl_khuyen_mai`
---
-
-INSERT INTO `tbl_khuyen_mai` (`id_khuyen_mai`, `id_san_pham`, `ten_khuyen_mai`, `muc_khuyen_mai`, `anh_khuyen_mai`) VALUES
-('KM01', 1, 'Giảm giá iPhoneX', 20, '0'),
-('KM01', 2, 'Giảm giá Samsung Galaxy A12', 10, '0'),
-('KM01', 3, 'Giảm giá Samsung Galaxy Note 20', 15, '0'),
-('KM01', 4, 'Giảm giá Xiaomi 10T', 20, '0'),
-('KM02', 5, 'Giảm giá Samsung Galaxy Tab S7', 20, '0'),
-('KM02', 6, 'Giảm giá iPhone 12', 20, '0'),
-('KM03', 7, 'Giảm giá iPhone 11', 10, '0'),
-('KM03', 8, 'Giảm giá Apple iPhone XR', 20, '0'),
-('KM04', 9, 'Giảm giá iPhone 12 mini', 10, '0'),
-('KM04', 10, 'Giảm giá Asus ROG 3', 25, '0');
+INSERT INTO `tbl_khach_hang` (`id_khach_hang`, `ten_khach_hang`, `email`, `so_dien_thoai`, `dia_chi`, `ma_kich_hoat`, `mat_khau`, `ten_dang_nhap`) VALUES
+(1, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'Hà Nội', '1', '1', 'tungthach'),
+(3, 'Nguyễn Anh Tuấn', NULL, '0123456789', 'Hà Nội', '1', '1', 'tuan');
 
 -- --------------------------------------------------------
 
@@ -510,18 +449,19 @@ CREATE TABLE `tbl_tin_tuc` (
   `tieu_de` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `anh` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `noi_dung` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `add_date` date NOT NULL DEFAULT current_timestamp()
+  `add_date` date NOT NULL DEFAULT current_timestamp(),
+  `so_binh_luan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_tin_tuc`
 --
 
-INSERT INTO `tbl_tin_tuc` (`id_tin_tuc`, `tac_gia`, `tieu_de`, `anh`, `noi_dung`, `add_date`) VALUES
-(1, 'cyannat99', 'Tính năng mới \"phát hiện mật khẩu bị lộ\" trên IOS', 'tin-tuc-1.png', 'Khăn choàng cổ là một trong những phụ kiện thời trang bên cạnh những món đồ thiết yếu được các cô gái yêu thích trong mùa lạnh. Khăn choàng cũng gồm nhiều kiểu dáng, mẫu mã khác nhau không kém bất cứ món phụ kiện nào. Khăn choàng voan mỏng, lụa, len,… với nhiều kích thước dài ngắn, độ rộng khác nhau đem đến cho phái nữ vô số sự lựa chọn. Đây được xem là món đồ làm điệu và tạo điểm nhấn thêm cho trang phục của bạn gái. Một chiếc khăn khoác hờ trên cổ cũng đủ khiến cô gái ấy hấp dẫn hơn rất nhiều.\r\nMỗi kiểu khăn được dùng cho mỗi mùa, mỗi mục đích khác nhau. Chẳng hạn mùa đông với những đợt gió mùa, nhiệt độ thấp nhất trong năm thì những chiếc khăn dài, ấm áp như len hay vải là sự lựa chọn thông minh nhất. Hơn nữa, cách thắt khăn dành cho mùa lạnh cũng cầu kì hơn một chút để giúp cơ thể giữ ấm. Đang là mùa đông, bạn đã sắm cho mình những chiếc khăn choàng cổ mới và bổ sung thêm những cách thắt khăn mới dành riêng cho mùa này chưa? Nếu chưa thì hãy để chúng tôi giới thiệu cho bạn vài cách thắt khăn đơn giản mà tạo được điểm nhấn nhé!\r\nCách 1: Thắt khăn dạng nơ bướm.\r\nCách này đơn giản, dễ làm nhưng lại cực kì dễ thương, phù hợp cho những cô nàng điệu đà. Đầu tiên, bạn sẽ quàng khăn qua vai và thắt 1 nút. Sau đó cần dải khăn ở dưới gập lại như hình. Xoay nút vừa gập quay sang phải, rồi lấy dải khăn trên lồng vào khe kéo sang trái. Cuối cùng kéo thành nơ rồi chỉnh lại cho đều hai cánh là được.\r\nCách 2: Thả khăn theo hai vạt áo\r\nMột trong những cách sử dụng khăn choàng phổ biến hiện nay chính là choàng khăn qua vai và thả buông hờ hai cùng vạt áo váy. Cách này dành cho những cô nàng thích sự đơn giản, không quá khéo tay vì bạn không phải tốn nhiều công sức để thực hiện. Hai vạt khăn tung bay cùng hai tà áo khoác măng tô sẽ giúp bạn đánh gục bất cứ chàng trai nào.\r\nCách 3:  Sử dụng khăn choàng làm áo khoác\r\nKhi bạn đã chán ngán với việc phải mặc những chiếc áo khoác dày cộm trên người thì hãy tận dụng ngay chiếc khăn choàng bản lớn, chất liệu len hoặc nỉ trong tủ đồ nhà mình. Một chút biến tấu nhỏ, nhẹ nhàng nhưng đã tạo nên cho mình thêm phong cách thật khác biệt. Các nàng chỉ cần choàng qua bờ vai, luồn vào 2 cánh tay, là đã có ngay một chiếc áo khoác thật ấm áp, độc đáo. Thêm một gợi ý nữa với chiếc khăn choàng đó là bạn choàng khăn qua vai và dùng dây nịt bản nhỏ thắt ngang eo hoặc nối 2 vạt khăn trên vai để tạo thành 1 kiểu áo khoác “độc và lạ” chỉ của riêng bạn.', '2021-01-04'),
-(2, 'tungthach', 'Trên tay iPhone 12 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Khăn choàng cổ là một trong những phụ kiện thời tr', '2021-01-04'),
-(3, 'tungthach', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', '2021-01-13'),
-(4, 'cyannat99', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', '2021-01-13');
+INSERT INTO `tbl_tin_tuc` (`id_tin_tuc`, `tac_gia`, `tieu_de`, `anh`, `noi_dung`, `add_date`, `so_binh_luan`) VALUES
+(1, 'cyannat99', 'Tính năng mới \"phát hiện mật khẩu bị lộ\" trên IOS', 'tin-tuc-1.png', 'Khăn choàng cổ là một trong những phụ kiện thời trang bên cạnh những món đồ thiết yếu được các cô gái yêu thích trong mùa lạnh. Khăn choàng cũng gồm nhiều kiểu dáng, mẫu mã khác nhau không kém bất cứ món phụ kiện nào. Khăn choàng voan mỏng, lụa, len,… với nhiều kích thước dài ngắn, độ rộng khác nhau đem đến cho phái nữ vô số sự lựa chọn. Đây được xem là món đồ làm điệu và tạo điểm nhấn thêm cho trang phục của bạn gái. Một chiếc khăn khoác hờ trên cổ cũng đủ khiến cô gái ấy hấp dẫn hơn rất nhiều.\r\nMỗi kiểu khăn được dùng cho mỗi mùa, mỗi mục đích khác nhau. Chẳng hạn mùa đông với những đợt gió mùa, nhiệt độ thấp nhất trong năm thì những chiếc khăn dài, ấm áp như len hay vải là sự lựa chọn thông minh nhất. Hơn nữa, cách thắt khăn dành cho mùa lạnh cũng cầu kì hơn một chút để giúp cơ thể giữ ấm. Đang là mùa đông, bạn đã sắm cho mình những chiếc khăn choàng cổ mới và bổ sung thêm những cách thắt khăn mới dành riêng cho mùa này chưa? Nếu chưa thì hãy để chúng tôi giới thiệu cho bạn vài cách thắt khăn đơn giản mà tạo được điểm nhấn nhé!\r\nCách 1: Thắt khăn dạng nơ bướm.\r\nCách này đơn giản, dễ làm nhưng lại cực kì dễ thương, phù hợp cho những cô nàng điệu đà. Đầu tiên, bạn sẽ quàng khăn qua vai và thắt 1 nút. Sau đó cần dải khăn ở dưới gập lại như hình. Xoay nút vừa gập quay sang phải, rồi lấy dải khăn trên lồng vào khe kéo sang trái. Cuối cùng kéo thành nơ rồi chỉnh lại cho đều hai cánh là được.\r\nCách 2: Thả khăn theo hai vạt áo\r\nMột trong những cách sử dụng khăn choàng phổ biến hiện nay chính là choàng khăn qua vai và thả buông hờ hai cùng vạt áo váy. Cách này dành cho những cô nàng thích sự đơn giản, không quá khéo tay vì bạn không phải tốn nhiều công sức để thực hiện. Hai vạt khăn tung bay cùng hai tà áo khoác măng tô sẽ giúp bạn đánh gục bất cứ chàng trai nào.\r\nCách 3:  Sử dụng khăn choàng làm áo khoác\r\nKhi bạn đã chán ngán với việc phải mặc những chiếc áo khoác dày cộm trên người thì hãy tận dụng ngay chiếc khăn choàng bản lớn, chất liệu len hoặc nỉ trong tủ đồ nhà mình. Một chút biến tấu nhỏ, nhẹ nhàng nhưng đã tạo nên cho mình thêm phong cách thật khác biệt. Các nàng chỉ cần choàng qua bờ vai, luồn vào 2 cánh tay, là đã có ngay một chiếc áo khoác thật ấm áp, độc đáo. Thêm một gợi ý nữa với chiếc khăn choàng đó là bạn choàng khăn qua vai và dùng dây nịt bản nhỏ thắt ngang eo hoặc nối 2 vạt khăn trên vai để tạo thành 1 kiểu áo khoác “độc và lạ” chỉ của riêng bạn.', '2021-01-04', 0),
+(2, 'tungthach', 'Trên tay iPhone 12 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Khăn choàng cổ là một trong những phụ kiện thời tr', '2021-01-04', 0),
+(3, 'tungthach', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', '2021-01-13', 0),
+(4, 'cyannat99', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', '2021-01-13', 0);
 
 -- --------------------------------------------------------
 
@@ -540,7 +480,10 @@ CREATE TABLE `tbl_yeu_thich` (
 
 INSERT INTO `tbl_yeu_thich` (`id_khach_hang`, `id_san_pham`) VALUES
 (1, 1),
-(1, 5),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 29),
 (3, 1),
 (3, 2),
 (3, 3);
@@ -572,20 +515,13 @@ ALTER TABLE `tbl_danh_muc`
 --
 ALTER TABLE `tbl_don_hang`
   ADD PRIMARY KEY (`id_don_hang`) USING BTREE,
-  ADD KEY `id_khach_hang` (`id_khach_hang`) USING BTREE,
-  ADD KEY `id_nhan_vien` (`id_nhan_vien`) USING BTREE;
+  ADD KEY `id_khach_hang` (`id_khach_hang`) USING BTREE;
 
 --
 -- Chỉ mục cho bảng `tbl_khach_hang`
 --
 ALTER TABLE `tbl_khach_hang`
   ADD PRIMARY KEY (`id_khach_hang`) USING BTREE;
-
---
--- Chỉ mục cho bảng `tbl_khuyen_mai`
---
-ALTER TABLE `tbl_khuyen_mai`
-  ADD KEY `id_san_pham` (`id_san_pham`);
 
 --
 -- Chỉ mục cho bảng `tbl_ma_giam_gia`
@@ -651,15 +587,7 @@ ALTER TABLE `tbl_binh_luan`
 -- AUTO_INCREMENT cho bảng `tbl_don_hang`
 --
 ALTER TABLE `tbl_don_hang`
-<<<<<<< Updated upstream
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
-=======
-<<<<<<< HEAD
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
-=======
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
->>>>>>> 8abc0da2bc52ee9d8aba2416910f01d036d6bb61
->>>>>>> Stashed changes
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khach_hang`

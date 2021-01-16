@@ -125,33 +125,12 @@ jQuery.noConflict();
 								<td><img style="width: 25%;" src="images/san-pham/<?php echo $row['anh'] ?>"></td>
 								<td><?php echo $row['dung_luong']?></td>
 								<td><?php echo number_format($_SESSION["soluong"][$key]) ?></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 								<td><?php echo number_format($row['don_gia']) ?></td>
 								<td><?php echo number_format($row['so_luong_ton']) ?></td>
-=======
->>>>>>> Stashed changes
-								<td><?php echo number_format($giatinh) ?></td>
-=======
-								<td><?php echo number_format($row['don_gia']) ?></td>
->>>>>>> parent of 8abc0da... Update giohang.php
-=======
-								<td><?php echo number_format($row['don_gia']) ?></td>
->>>>>>> parent of 8abc0da... Update giohang.php
-=======
-								<td><?php echo number_format($row['don_gia']) ?></td>
->>>>>>> parent of 8abc0da... Update giohang.php
-								<td><?php echo number_format($row['so_luong']) ?></td>
->>>>>>> 8abc0da2bc52ee9d8aba2416910f01d036d6bb61
 								<?php
 									$thanhtien=$_SESSION["soluong"][$key]*$row['don_gia'];
 									$_SESSION["tongtien"]+=$thanhtien;
 								?>
-								
 								<td><?php echo number_format($thanhtien) ?></td>
 								<td>
 								<a class="fa fa-plus" href="customer/Order/xltangdonhang.php?&stt=<?php echo $key?>"></a>
