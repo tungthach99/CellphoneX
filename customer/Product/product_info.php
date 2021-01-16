@@ -350,7 +350,7 @@
 <div id="product-content">
 <?php 
 	$sbmoitrang=8;
-	$sql="Select * from tbl_san_pham";
+	$sql="Select *,tbl_san_pham.don_gia*(1-tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi from tbl_san_pham LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham";
 	
 	if (isset($_GET["maloai"]) or isset($_GET["tensanpham"])) $sql.= " WHERE";
 	if (isset($_GET["maloai"])) $sql.= " id_danh_muc='".$_GET["maloai"]."'";
