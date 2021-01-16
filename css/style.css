@@ -930,7 +930,9 @@ footer .fa:hover{
 	margin: 0;
 }
 .tinTuc img{
-	max-height: 534px;
+	width: 309px; 
+	height: 200px; 
+	margin-bottom: 5px;
 }
 .tinTuc:hover h6{
 	color: #0066cc;

@@ -126,7 +126,7 @@ if($result->num_rows>0)
 	<div class="tin-tuc">
 	<?php 
 	  $sbmoitrang=3;
-	  $sql="Select * from tbl_tin_tuc";
+	  $sql="Select *,SUBSTR(noi_dung,1,100) AS tom_tat from tbl_tin_tuc";
 	  $sql.=" LIMIT $sbmoitrang";
 	  if(isset($_GET["trang"]))
 	  {
@@ -147,11 +147,13 @@ if($result->num_rows>0)
 	}//end if
 ?>
 <div class="tin-tuc-1">
-	<a href="chitiettintuc.php?matintuc=<?php echo $row['id_tin_tuc']?>"><img id="img-tin-tuc" src="images/tin-tuc/<?php echo $row['anh'];?>">
+	<a href="chitiettintuc.php?matintuc=<?php echo $row['id_tin_tuc']?>">
+	<img id="img-tin-tuc" src="images/tin-tuc/<?php echo $row['anh'];?>">
 	<div style="float:left">
 		<div class="header-tin-tuc"><?php echo $row['tieu_de']?></div>
 		<div style="font-size: 13px; font-style: italic;margin-left:10px;">@<?php echo $row['tac_gia'];?></div>
 		<div style="font-size: 13px; font-style: italic;margin-left:10px;"><?php echo $row['add_date'];?></div>
+		<div style="font-size: 17px;margin-left:10px;width=80%"><?php echo $row['tom_tat'];?> ...</div>
 		<?php
 			$sql1= "Select COUNT(id_tin_tuc) AS so_binh_luan FROM tbl_binh_luan WHERE id_tin_tuc='".$row['id_tin_tuc']."'";
 			$result1=$con->query($sql1);

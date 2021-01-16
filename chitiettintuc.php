@@ -111,11 +111,7 @@ $row=$result->fetch_assoc();
 		<form action="xlbinhluan.php" method="POST">
 		<div class="binh-luan-group">
         	<p id="binh-luan-label">Viết bình luận ...<i class="fa fa-pencil"></i></p>
-<<<<<<< HEAD
 			<input type="text" id="comment-box" name="noi_dung" placeholder="Hãy nhập bình luận của bạn ở đây"> </input>
-=======
-			<textarea id="comment-box" name="noi_dung" placeholder="Hãy nhập bình luận của bạn ở đây" required></textarea>
->>>>>>> 1eb14d3203804e107ad6be359b47d9e0259f52c5
 			<button type="submit"  class="btn btn-primary" style="margin: 0 0 10px 5%;">Gửi</button>
 			<input type="text" style="display: none;" name="ma_tin_tuc" value="<?php echo $row['id_tin_tuc']?>">
 		</div>

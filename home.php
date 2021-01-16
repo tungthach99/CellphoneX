@@ -126,7 +126,9 @@ jQuery.noConflict();
 					<input type="radio" name="dieuHuong" id="trai" checked>
 					<input type="radio" name="dieuHuong" id="phai">
 					<?php
-						$sql="SELECT * FROM tbl_san_pham WHERE id_danh_muc <>'L05' ORDER BY don_gia ASC LIMIT 6";
+						$sql="SELECT *, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi FROM tbl_san_pham 
+						LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham
+						WHERE id_danh_muc <>'L05' ORDER BY IF(tbl_khuyen_mai.muc_khuyen_mai != 0, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100), tbl_san_pham.don_gia) ASC LIMIT 6";
 						$result=$con->query($sql);
 						if($result->num_rows>0)
 						{
@@ -175,8 +177,16 @@ jQuery.noConflict();
 									<div style="font-size: 16px;">
 										<?php echo $row["ten_san_pham"];?>
 									</div>
-									Giá: <span class="giaDo"><?php echo number_format($row["don_gia"])?><sup><u>đ</u></sup></span>
-									<span class="giaGachNgang"></span>
+									Giá: <span class="giaDo"><?php
+									if (isset($row["muc_khuyen_mai"]))
+									echo "<p id='title-product-2'>Giá: ".number_format($row["gia_moi"]).
+									"<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span> <span style='font-size:12px; color:#2c3e50; text-decoration: line-through'>".number_format($row["don_gia"])."<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span></span></p>";
+									else
+									echo  "<p id='title-product-2'>Giá: ".number_format($row["don_gia"])."<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span> </p>";
+								?></span>
 <!--
 									<div>
 										<i>Đánh giá: </i>
@@ -266,7 +276,12 @@ jQuery.noConflict();
 					<input type="radio" name="dieuHuong" id="trai4" checked>
 					<input type="radio" name="dieuHuong" id="phai4">
 					<?php
-						$sql="SELECT tbl_san_pham.id_san_pham,tbl_san_pham.ten_san_pham,tbl_san_pham.don_gia,tbl_san_pham.anh FROM tbl_san_pham LEFT OUTER JOIN tbl_chi_tiet_don_hang ON tbl_san_pham.id_san_pham=tbl_chi_tiet_don_hang.id_san_pham GROUP BY tbl_san_pham.id_san_pham ORDER BY tbl_chi_tiet_don_hang.so_luong DESC LIMIT 6";
+						$sql="SELECT tbl_san_pham.id_san_pham,tbl_san_pham.ten_san_pham,tbl_san_pham.don_gia,tbl_san_pham.anh, 
+						tbl_khuyen_mai.muc_khuyen_mai,tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi FROM tbl_san_pham 
+						LEFT OUTER JOIN tbl_chi_tiet_don_hang ON tbl_san_pham.id_san_pham=tbl_chi_tiet_don_hang.id_san_pham 
+						LEFT OUTER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham
+						GROUP BY tbl_san_pham.id_san_pham 
+						ORDER BY tbl_chi_tiet_don_hang.so_luong DESC LIMIT 6";
 						$result=$con->query($sql);
 						if($result->num_rows>0)
 						{
@@ -314,8 +329,16 @@ jQuery.noConflict();
 									<div style="font-size: 16px;">
 										<?php echo $row["ten_san_pham"];?>
 									</div>
-									Giá: <span class="giaDo"><?php echo number_format($row["don_gia"])?><sup><u>đ</u></sup></span>
-									<span class="giaGachNgang"></span>
+									Giá: <span class="giaDo"><?php
+									if (isset($row["muc_khuyen_mai"]))
+									echo "<p id='title-product-2'>Giá: ".number_format($row["gia_moi"]).
+									"<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span> <span style='font-size:12px; color:#2c3e50; text-decoration: line-through'>".number_format($row["don_gia"])."<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span></span></p>";
+									else
+									echo  "<p id='title-product-2'>Giá: ".number_format($row["don_gia"])."<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span> </p>";
+								?></span>
 								</div>
 					<?php
 							}
@@ -345,7 +368,9 @@ jQuery.noConflict();
 					<input type="radio" name="dieuHuong" id="trai2" checked>
 					<input type="radio" name="dieuHuong" id="phai2">
 					<?php
-						$sql="SELECT * FROM tbl_san_pham ORDER BY ngay_them DESC LIMIT 6";
+						$sql="SELECT *,tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi FROM tbl_san_pham 
+						LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham
+						ORDER BY ngay_them DESC LIMIT 6";
 						$result=$con->query($sql);
 						if($result->num_rows>0)
 						{
@@ -393,8 +418,16 @@ jQuery.noConflict();
 									<div style="font-size: 16px;">
 										<?php echo $row["ten_san_pham"];?>
 									</div>
-									Giá: <span class="giaDo"><?php echo number_format($row["don_gia"])?><sup><u>đ</u></sup></span>
-									<span class="giaGachNgang"></span>
+									Giá: <span class="giaDo"><?php
+									if (isset($row["muc_khuyen_mai"]))
+									echo "<p id='title-product-2'>Giá: ".number_format($row["gia_moi"]).
+									"<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span> <span style='font-size:12px; color:#2c3e50; text-decoration: line-through'>".number_format($row["don_gia"])."<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span></span></p>";
+									else
+									echo  "<p id='title-product-2'>Giá: ".number_format($row["don_gia"])."<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span> </p>";
+								?></span>
 								</div>
 					<?php
 							}
@@ -420,54 +453,26 @@ jQuery.noConflict();
 				<label onClick="nextTinTuc()" id="lablePhai3"><i class="fa fa-angle-right"></i></label>
 				<div class="slide">
 					<div class="slides">
+					<?php
+					$sql="Select *, SUBSTR(noi_dung,1,100) AS tom_tat FROM `tbl_tin_tuc` ORDER BY add_date DESC LIMIT 6";
+					$result=$con->query($sql);	  		
+					if($result->num_rows>0)
+						{
+						while($row=$result->fetch_assoc())
+						{
+					?>
 						<div class="thanhPhan s3" id="tinTuc">
-							<a class="tinTuc" href="#">
-								<img src="images/onepl-nore.png" width="100%;" alt="">
-								<h6><b>OnePlus Nord SE với pin 4,500 mAh, sạc nhanh 65W sẽ ra mắt vào Q1/2021 với giá cực rẻ</b></h6>
-								<p>OnePlus đã tham gia vào phân khúc smartphone tầm trung vào tháng 7 vừa qua. Gần đây, công ty này...</p>
-								<h7>@tungthach</h7>
+							<a class="tinTuc" href="chitiettintuc.php?matintuc=<?php echo $row['id_tin_tuc']?>">
+								<img src="images/tin-tuc/<?php echo $row['anh'];?>" alt="">
+								<h6 style="text-align: center"><b><?php echo $row['tieu_de']?></b></h6>
+								<p><?php echo $row['tom_tat'] ?> ...</p>
+								<h7>@<?php echo $row['tac_gia']?></h7>
 							</a>
 						</div>
-						<div class="thanhPhan">
-							<a class="tinTuc" href="#">
-								<img src="images/onepl-nore.png" width="100%;" alt="">
-								<h6><b>OnePlus Nord SE với pin 4,500 mAh, sạc nhanh 65W sẽ ra mắt vào Q1/2021 với giá cực rẻ</b></h6>
-								<p>OnePlus đã tham gia vào phân khúc smartphone tầm trung vào tháng 7 vừa qua. Gần đây, công ty này...</p>
-								<h7>@tungthach</h7>
-							</a>
-						</div>
-						<div class="thanhPhan">
-							<a class="tinTuc" href="#">
-								<img src="images/onepl-nore.png" width="100%;" alt="">
-								<h6><b>OnePlus Nord SE với pin 4,500 mAh, sạc nhanh 65W sẽ ra mắt vào Q1/2021 với giá cực rẻ</b></h6>
-								<p>OnePlus đã tham gia vào phân khúc smartphone tầm trung vào tháng 7 vừa qua. Gần đây, công ty này...</p>
-								<h7>@tungthach</h7>
-							</a>
-						</div>
-						<div class="thanhPhan">
-							<a class="tinTuc" href="#">
-								<img src="images/onepl-nore.png" width="100%;" alt="">
-								<h6><b>OnePlus Nord SE với pin 4,500 mAh, sạc nhanh 65W sẽ ra mắt vào Q1/2021 với giá cực rẻ</b></h6>
-								<p>OnePlus đã tham gia vào phân khúc smartphone tầm trung vào tháng 7 vừa qua. Gần đây, công ty này...</p>
-								<h7>@tungthach</h7>
-							</a>
-						</div>
-						<div class="thanhPhan">
-							<a class="tinTuc" href="#">
-								<img src="images/onepl-nore.png" width="100%;" alt="">
-								<h6><b>OnePlus Nord SE với pin 4,500 mAh, sạc nhanh 65W sẽ ra mắt vào Q1/2021 với giá cực rẻ</b></h6>
-								<p>OnePlus đã tham gia vào phân khúc smartphone tầm trung vào tháng 7 vừa qua. Gần đây, công ty này...</p>
-								<h7>@tungthach</h7>
-							</a>
-						</div>
-						<div class="thanhPhan">
-							<a class="tinTuc" href="#">
-								<img src="images/onepl-nore.png" width="100%;" alt="">
-								<h6><b>OnePlus Nord SE với pin 4,500 mAh, sạc nhanh 65W sẽ ra mắt vào Q1/2021 với giá cực rẻ</b></h6>
-								<p>OnePlus đã tham gia vào phân khúc smartphone tầm trung vào tháng 7 vừa qua. Gần đây, công ty này...</p>
-								<h7>@tungthach</h7>
-							</a>
-						</div>
+						<?php
+						}//end_while	
+						} //end if
+					?>
 					</div>
 				</div>
 			</div>
