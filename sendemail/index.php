@@ -25,8 +25,8 @@
 //                    $mail->addCC('CCemail@gmail.com');
                     $mail->addBCC('hiimtung123@gmail.com');
                     $mail->isHTML(true);                                  // Set email format to HTML
-                    $mail->Subject = "Thông báo đặt hàng thành công";
-                    $mail->Body = "Vào lúc ".$ngaydat." bạn đã thực hiện đặt hàng thành công. Mã đơn hàng: ".$_SESSION["id_don_hang"];
+                    $mail->Subject = $chude;
+                    $mail->Body = $noidunegmail;
                     $mail->AltBody = "hoàn tất đơn hàng"; //None HTML
                     $result = $mail->send();
                     if (!$result) {

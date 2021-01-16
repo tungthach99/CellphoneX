@@ -87,6 +87,8 @@ session_start();
 			}
 		}
 //		Gửi email xác nhận
+		$chude="Thông báo đặt hàng thành công";
+		$noidunegmail="Vào lúc ".$ngaydat." bạn đã thực hiện đặt hàng thành công. Mã đơn hàng: ".$_SESSION["id_don_hang"];
 		include("../../sendemail/index.php");
 		
 		header("location:../../giohang.php?&action=hoantat");
