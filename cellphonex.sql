@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 16, 2021 lúc 09:41 AM
+-- Thời gian đã tạo: Th1 16, 2021 lúc 08:43 PM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -119,6 +119,31 @@ INSERT INTO `tbl_binh_luan` (`id_binh_luan`, `ten_khach_hang`, `id_tin_tuc`, `no
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `tbl_binh_luan_sp`
+--
+
+CREATE TABLE `tbl_binh_luan_sp` (
+  `id_binh_luan` int(11) NOT NULL,
+  `ten_khach_hang` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `id_san_pham` int(50) NOT NULL,
+  `noi_dung` mediumtext COLLATE utf8_unicode_ci NOT NULL,
+  `ngay_tao` timestamp NOT NULL DEFAULT current_timestamp(),
+  `ngay_sua` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_binh_luan_sp`
+--
+
+INSERT INTO `tbl_binh_luan_sp` (`id_binh_luan`, `ten_khach_hang`, `id_san_pham`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
+(1, 'tuan', 1, 'A', '2021-01-16 17:51:51', '2021-01-16 17:51:51'),
+(2, 'tuan', 1, 'dafsdas', '2021-01-16 17:51:55', '2021-01-16 17:51:55'),
+(3, 'tung', 2, 'a', '2021-01-16 18:49:43', '2021-01-16 18:49:43'),
+(4, 'tung', 1, 'hihi', '2021-01-16 18:49:55', '2021-01-16 18:49:55');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `tbl_chi_tiet_don_hang`
 --
 
@@ -157,7 +182,11 @@ INSERT INTO `tbl_chi_tiet_don_hang` (`id_don_hang`, `id_san_pham`, `don_gia`, `s
 (70, 2, 4290000, 2, 8580000, NULL, 1),
 (71, 1, 5000000, 2, 10000000, NULL, 2),
 (72, 1, 5000000, 2, 10000000, NULL, 2),
-(73, 2, 4290000, 2, 8580000, NULL, 1);
+(73, 2, 4290000, 2, 8580000, NULL, 1),
+(74, 1, 5000000, 2, 10000000, NULL, 2),
+(75, 1, 5000000, 1, 5000000, NULL, 2),
+(76, 3, 2990000, 1, 2990000, NULL, 1),
+(77, 1, 5000000, 1, 5000000, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -224,7 +253,11 @@ INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `email`, `phi_van_ch
 (70, -1, 'thachtung99@gmail.com', 0, '', 18580000, 0, '01/16/2021 03:15:25 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
 (71, -1, 'thachtung99@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:20:43 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
 (72, -1, 'hiimtung123@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:32:33 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '2'),
-(73, -1, 'thachtung99@gmail.com', 0, '', 8580000, 0, '01/16/2021 03:37:39 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '');
+(73, -1, 'thachtung99@gmail.com', 0, '', 8580000, 0, '01/16/2021 03:37:39 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
+(74, 1, 'thachtung99@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:43:26 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
+(75, 1, 'hiimtung123@gmail.com', 0, '', 4000000, 0, '01/16/2021 09:10:38 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
+(76, -1, 'thachtung99@gmail.com', 0, '', 2541500, 0, '01/16/2021 10:36:26 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '1'),
+(77, -1, 'thachtung99@gmail.com', 0, '', 4000000, 0, '01/16/2021 11:07:31 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', '');
 
 -- --------------------------------------------------------
 
@@ -249,7 +282,38 @@ CREATE TABLE `tbl_khach_hang` (
 
 INSERT INTO `tbl_khach_hang` (`id_khach_hang`, `ten_khach_hang`, `email`, `so_dien_thoai`, `dia_chi`, `ma_kich_hoat`, `mat_khau`, `ten_dang_nhap`) VALUES
 (1, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'Hà Nội', '1', '1', 'tungthach'),
-(3, 'Nguyễn Anh Tuấn', NULL, '0123456789', 'Hà Nội', '1', '1', 'tuan');
+(3, 'Nguyễn Anh Tuấn', NULL, '0123456789', 'Hà Nội', '1', '1', 'tuan'),
+(4, 'Thạch Thọ Thanh', 'thachtung99@gmail.com', '0123456798', NULL, 'iDgEriUV', '123456', 'thanh');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_khuyen_mai`
+--
+
+CREATE TABLE `tbl_khuyen_mai` (
+  `id_khuyen_mai` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `id_san_pham` int(11) NOT NULL,
+  `ten_khuyen_mai` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `muc_khuyen_mai` int(11) NOT NULL,
+  `anh_khuyen_mai` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_khuyen_mai`
+--
+
+INSERT INTO `tbl_khuyen_mai` (`id_khuyen_mai`, `id_san_pham`, `ten_khuyen_mai`, `muc_khuyen_mai`, `anh_khuyen_mai`) VALUES
+('KM01', 1, 'Giảm giá iPhoneX', 20, '0'),
+('KM01', 2, 'Giảm giá Samsung Galaxy A12', 10, '0'),
+('KM01', 3, 'Giảm giá Samsung Galaxy Note 20', 15, '0'),
+('KM01', 4, 'Giảm giá Xiaomi 10T', 20, '0'),
+('KM02', 5, 'Giảm giá Samsung Galaxy Tab S7', 20, '0'),
+('KM02', 6, 'Giảm giá iPhone 12', 20, '0'),
+('KM03', 7, 'Giảm giá iPhone 11', 10, '0'),
+('KM03', 8, 'Giảm giá Apple iPhone XR', 20, '0'),
+('KM04', 9, 'Giảm giá iPhone 12 mini', 10, '0'),
+('KM04', 10, 'Giảm giá Asus ROG 3', 25, '0');
 
 -- --------------------------------------------------------
 
@@ -287,6 +351,13 @@ CREATE TABLE `tbl_nhan_vien` (
   `tai_khoan` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `mat_khau` varchar(256) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_nhan_vien`
+--
+
+INSERT INTO `tbl_nhan_vien` (`id_nhan_vien`, `ten_nhan_vien`, `email`, `so_dien_thoai`, `tai_khoan`, `mat_khau`) VALUES
+(3, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'tung', '1');
 
 -- --------------------------------------------------------
 
@@ -364,9 +435,6 @@ INSERT INTO `tbl_phien_ban_san_pham` (`id_san_pham`, `id_phien_ban`, `so_luong_t
 (12, 1, 100),
 (12, 2, 100),
 (12, 3, 155),
-(13, 1, 100),
-(13, 2, 100),
-(13, 3, 155),
 (28, 1, 100),
 (28, 2, 100),
 (28, 3, 155),
@@ -479,10 +547,11 @@ CREATE TABLE `tbl_yeu_thich` (
 --
 
 INSERT INTO `tbl_yeu_thich` (`id_khach_hang`, `id_san_pham`) VALUES
+(1, 0),
 (1, 1),
 (1, 2),
-(1, 3),
 (1, 4),
+(1, 10),
 (1, 29),
 (3, 1),
 (3, 2),
@@ -496,6 +565,12 @@ INSERT INTO `tbl_yeu_thich` (`id_khach_hang`, `id_san_pham`) VALUES
 -- Chỉ mục cho bảng `tbl_binh_luan`
 --
 ALTER TABLE `tbl_binh_luan`
+  ADD PRIMARY KEY (`id_binh_luan`);
+
+--
+-- Chỉ mục cho bảng `tbl_binh_luan_sp`
+--
+ALTER TABLE `tbl_binh_luan_sp`
   ADD PRIMARY KEY (`id_binh_luan`);
 
 --
@@ -522,6 +597,12 @@ ALTER TABLE `tbl_don_hang`
 --
 ALTER TABLE `tbl_khach_hang`
   ADD PRIMARY KEY (`id_khach_hang`) USING BTREE;
+
+--
+-- Chỉ mục cho bảng `tbl_khuyen_mai`
+--
+ALTER TABLE `tbl_khuyen_mai`
+  ADD KEY `id_san_pham` (`id_san_pham`);
 
 --
 -- Chỉ mục cho bảng `tbl_ma_giam_gia`
@@ -584,22 +665,28 @@ ALTER TABLE `tbl_binh_luan`
   MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT cho bảng `tbl_binh_luan_sp`
+--
+ALTER TABLE `tbl_binh_luan_sp`
+  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT cho bảng `tbl_don_hang`
 --
 ALTER TABLE `tbl_don_hang`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khach_hang`
 --
 ALTER TABLE `tbl_khach_hang`
-  MODIFY `id_khach_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_khach_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_nhan_vien`
 --
 ALTER TABLE `tbl_nhan_vien`
-  MODIFY `id_nhan_vien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_nhan_vien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_san_pham`
