@@ -14,7 +14,7 @@
 	if ($_POST["hinhthuc"]=="option3")
 	$hinhthuc = "COD";
 //	Them du lieu vao bang don hang
-	$sql="insert into tbl_don_hang(id_khach_hang,tong_tien,trang_thai,ngay_dat,ten_khach_hang,dia_chi_nhan_hang,hinh_thuc_mua_hang,ghi_chu,ma_giam_gia,phi_van_chuyen) values('".$idkhachhang."',".$tongtien.",'".$trangthai."','".$ngaydat."','".$tenkhachhang."','".$diachi."','".$hinhthuc."','".$_POST["ghichu"]."','".$_SESSION["magiamgia"]."','".$_SESSION["phivanchuyen"]."')";
+	$sql="insert into tbl_don_hang(id_khach_hang,tong_tien,trang_thai,ngay_dat,ten_khach_hang,dia_chi_nhan_hang,hinh_thuc_mua_hang,ghi_chu,email,ma_giam_gia,phi_van_chuyen) values('".$idkhachhang."',".$tongtien.",'".$trangthai."','".$ngaydat."','".$tenkhachhang."','".$diachi."','".$hinhthuc."','".$_POST["ghichu"]."','".$_POST["email"]."','".$_SESSION["magiamgia"]."','".$_SESSION["phivanchuyen"]."')";
 	//echo $sql;
 	if($con->query($sql)==TRUE)
 	{
@@ -83,6 +83,9 @@
 				
 			}
 		}
+//		Gửi email xác nhận
+		include("../../sendemail/index.php");
+		
 		header("location:../../giohang.php?&action=hoantat");
 	}
 	else
