@@ -47,6 +47,20 @@ jQuery.noConflict();
 	include("layout/taikhoan.php");
 	require("public/ketnoi.php");
 ?>
+	<?php
+	if(isset($_GET["action"]) and $_GET["action"] == 'hoantat')
+	{
+	?>
+	<div id="cheManHinh">
+		<div id="thongBaoChinh">
+			<h1>Thông báo!</h1>
+			<p>Đổi mật khẩu thành công</p>
+			<a style="color: #fff; border-radius: 5px; float: right;" onClick="dongform('cheManHinh');" class="linkXanh">Đã hiểu</a>
+		</div>
+	</div>
+	<?php
+	}
+	?>
 	<div class="batDau">
 		<h2>Quên mật khẩu</h2>
 		<?php 
@@ -58,9 +72,9 @@ jQuery.noConflict();
       			}
     		}
 		?>
-		<form action="customer/Account/xlquenmatkhau.php" class="was-validated" method="post">
+		<form id="quenmatkhau" action="customer/Account/xlquenmatkhau.php" class="was-validated" method="post">
 		<?php
-		if(!isset($_GET["tendangnhap"]) and !isset($_GET["email"]))
+		if(!isset($_GET["tendangnhap"]) and !isset($_GET["email"]) and !isset($_SESSION["datlaimatkhau"]))
 		{
 		?>
 			<p>Mời bạn điền một số thông tin cơ bản theo biểu mẫu dưới đây để xác minh tài khoản:</p>
@@ -70,7 +84,7 @@ jQuery.noConflict();
 			</div>
 		<?php
 		}
-		if(isset($_GET["tendangnhap"]) and !isset($_GET["tendangnhap"]))
+		if(isset($_GET["tendangnhap"]) and !isset($_GET["email"]) and !isset($_SESSION["datlaimatkhau"]))
 		{
 		?>
 			<div class="from-group">
@@ -93,9 +107,28 @@ jQuery.noConflict();
 			</div>
 		<?php
 		}
+		
 		?>
-			<button type="submit" class="btn btn-primary">Tiếp theo</button>
+			<button style="<?php
+						   if(isset($_SESSION["datlaimatkhau"])) echo "display:none"
+						   ?>" form="quenmatkhau" type="submit" class="btn btn-primary">Tiếp theo</button>
 		</form>
+		<?php
+			
+		if(isset($_SESSION["datlaimatkhau"]) and $_SESSION["datlaimatkhau"]==1)
+		{
+		?>
+			<form action="customer/Account/xldoimatkhau.php" method="post" class="was-validated" id="doimatkhau">
+				<div class="from-group">
+					<label>Nhập mật khẩu mới:</label>
+					<input type="password" class="form-control" placeholder="Nhập mật khẩu mới" name="matkhaumoi" required>
+					<input type="text" style="display: none" name="tendn" value="<?php echo $_GET["tendangnhap"]?>">
+				</div>
+				<button form="doimatkhau" type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+			</form>
+		<?php
+		}
+		?>
 	</div>
 			
 	</div>

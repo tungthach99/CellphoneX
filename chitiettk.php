@@ -63,41 +63,35 @@ jQuery.noConflict();
 			<div class="form-group row">
 				<span class="col-6">
 					<label>Họ và tên:</label>
-					<input type="text" class="form-control" id="txtho" name="txthoten" required>
-<!--
-					<div class="valid-feedback">Hợp lệ.</div>
-					<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
--->
+					<input type="text" class="form-control" name="txthoten" required>
+
 				</span>
 				<span class="col-2"></span>
 			</div>
 			<div class="from-group">
 				<label>Tên đăng nhập của bạn:</label>
-				<input type="text" class="form-control" id="txttendangnhap" placeholder="Nhập email của bạn" name="txttendangnhap" required>
-<!--
-				<div class="valid-feedback">Hợp lệ.</div>
-				<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
--->
+				<input type="text" class="form-control"placeholder="Tên đăng nhập" name="txttendangnhap" required>
+
 			</div>
 			<div class="from-group">
 				<label>Mật khẩu:</label>
-				<input type="password" class="form-control" id="txtmatkhau" placeholder="Nhập tên đăng nhập" name="txtmatkhau" required>
-<!--
-				<div class="valid-feedback">Hợp lệ.</div>
-				<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
--->
+				<input type="password" class="form-control"placeholder="Mật khẩu" name="txtmatkhau" required>
 			</div>
 			<div class="from-group">
-				<label>Xác nhận mật khẩu:</label>
-				<input type="password" class="form-control" id="txtxacnhanmk" placeholder="Nhập email của bạn" name="txtxacnhanmk" required>
-<!--
-				<div class="valid-feedback">Hợp lệ.</div>
-				<div class="invalid-feedback">Vui lòng nhập thông tin trên!</div>
--->
+				<label>Email:</label>
+				<input type="text" class="form-control"placeholder="Email" name="email" required>
+			</div>
+			<div class="from-group">
+				<label>Số điện thoại:</label>
+				<input type="number" class="form-control" placeholder="Điện thoại" name="sdt" required>
+			</div>
+			<div class="from-group">
+				<label>Địa chỉ:</label>
+				<input type="text" class="form-control" placeholder="Địa chỉ" name="diachi" required>
 			</div>
 			<div class="form-group form-check">
 				<label class="form-check-label">
-				<input class="form-check-input" type="checkbox" id="txtdongydk" name="txtdongydk" required> Tôi đã đọc và đồng ý với <a><b>điều khoản sử dụng</b></a> của CellphoneX.
+				<input class="form-check-input" type="checkbox" name="txtdongydk" required> Tôi đã đọc và đồng ý với <a><b>điều khoản sử dụng</b></a> của CellphoneX.
 				<div class="valid-feedback">Đồng ý.</div>
 				<div class="invalid-feedback">Chấp nhận điều khoản sử dụng để tiếp tục.</div>
 				</label>
