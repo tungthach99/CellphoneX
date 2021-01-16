@@ -350,8 +350,8 @@
 <div id="product-content">
 <?php 
 	$sbmoitrang=8;
-	$sql="Select *,tbl_san_pham.don_gia*(1-tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi from tbl_san_pham LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham";
-	
+	$sql="Select *, IF(tbl_khuyen_mai.muc_khuyen_mai != 0, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100), tbl_san_pham.don_gia) AS gia_moi from tbl_san_pham LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham";
+	$giamoi="IF(tbl_khuyen_mai.muc_khuyen_mai != 0, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100), tbl_san_pham.don_gia)";
 	if (isset($_GET["maloai"]) or isset($_GET["tensanpham"])) $sql.= " WHERE";
 	if (isset($_GET["maloai"])) $sql.= " id_danh_muc='".$_GET["maloai"]."'";
 
@@ -375,15 +375,15 @@
 		}
 		if(isset($_GET["g"]))
 		{
-			if($_GET["g"]==1) $sql.=" AND don_gia<4000000";
-			if($_GET["g"]==2) $sql.=" AND (don_gia<10000000 AND don_gia>=4000000)";
-			if($_GET["g"]==3) $sql.=" AND (don_gia<15000000 AND don_gia>=10000000)";
-			if($_GET["g"]==4) $sql.=" AND don_gia>15000000";
+			if($_GET["g"]==1) $sql.=" AND ".$giamoi."<4000000";
+			if($_GET["g"]==2) $sql.=" AND (".$giamoi."<10000000 AND ".$giamoi.">=4000000)";
+			if($_GET["g"]==3) $sql.=" AND (".$giamoi."<15000000 AND ".$giamoi.">=10000000)";
+			if($_GET["g"]==4) $sql.=" AND ".$giamoi.">15000000";
 		}
 		if(isset($_GET["tt"]))
 		{
-			if($_GET["tt"]==1) $sql.=" ORDER BY don_gia ASC";
-			if($_GET["tt"]==2) $sql.=" ORDER BY don_gia DESC";
+			if($_GET["tt"]==1) $sql.=" ORDER BY ".$giamoi." ASC";
+			if($_GET["tt"]==2) $sql.=" ORDER BY ".$giamoi." DESC";
 		}
 	}
 //	Bo loc:end.
@@ -462,7 +462,7 @@
 <div id="trang">
 		<!--Tinh duoc so trang-->
 		<?php 
-			$sqlsum="Select * from tbl_san_pham";
+			$sqlsum="Select *, IF(tbl_khuyen_mai.muc_khuyen_mai != 0, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100), tbl_san_pham.don_gia) AS gia_moi from tbl_san_pham LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham";
 	  		if (isset($_GET["maloai"]))
 	  			$sqlsum.= " where id_danh_muc='".$_GET["maloai"]."'";
 			if (isset($_GET["tensanpham"]))
@@ -485,10 +485,10 @@
 		}
 		if(isset($_GET["g"]))
 		{
-			if($_GET["g"]==1) $sqlsum.=" AND don_gia<4000000";
-			if($_GET["g"]==2) $sqlsum.=" AND (don_gia<10000000 AND don_gia>=4000000)";
-			if($_GET["g"]==3) $sqlsum.=" AND (don_gia<15000000 AND don_gia>=10000000)";
-			if($_GET["g"]==4) $sqlsum.=" AND don_gia>15000000";
+			if($_GET["g"]==1) $sql.=" AND ".$giamoi."<4000000";
+			if($_GET["g"]==2) $sql.=" AND (".$giamoi."<10000000 AND ".$giamoi.">=4000000)";
+			if($_GET["g"]==3) $sql.=" AND (".$giamoi."<15000000 AND ".$giamoi.">=10000000)";
+			if($_GET["g"]==4) $sql.=" AND ".$giamoi.">15000000";
 		}
 	}
 	
