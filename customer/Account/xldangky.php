@@ -1,4 +1,8 @@
 <?php
+ob_start(); 
+session_start();
+?>
+<?php
 require("../../public/ketnoi.php");
 $hoten=$_POST["txthoten"];
 $tendangnhap=$_POST["txttendangnhap"];

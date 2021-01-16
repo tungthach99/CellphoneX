@@ -1,5 +1,8 @@
 <?php
-	session_start();
+ob_start(); 
+session_start();
+?>
+<?php
 	$bl=3;
 	require("public/ketnoi.php");
 	$_SESSION["kiemtrasua"]=0;

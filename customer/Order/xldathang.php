@@ -1,5 +1,8 @@
 <?php
-	session_start();
+ob_start(); 
+session_start();
+?>
+<?php
 	require("../../public/ketnoi.php");
 	$action="hethang";
 	if(isset($_SESSION["id-user"])) $idkhachhang=$_SESSION["id-user"];

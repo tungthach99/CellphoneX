@@ -1,3 +1,7 @@
+<?php
+ob_start(); 
+session_start();
+?>
 <!doctype html>
 <html>
 <head>
@@ -40,7 +44,6 @@ jQuery.noConflict();
 </head>
 <body>
 <?php
-	session_start();
 	include("layout/header.php");
 	include("layout/taikhoan.php");
 	require("public/ketnoi.php");

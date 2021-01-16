@@ -1,5 +1,8 @@
 <?php
-	session_start();
+ob_start(); 
+session_start();
+?>
+<?php
 	if(isset($_SESSION["id-user"]))
 	{
 		session_destroy();
