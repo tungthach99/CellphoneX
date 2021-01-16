@@ -1,4 +1,8 @@
 <?php
+ob_start(); 
+session_start();
+?>
+<?php
 require("../../public/ketnoi.php");
 $sql="select * from tbl_khach_hang where ten_dang_nhap='".$_POST["tendangnhap"]."'";
 $result=$con->query($sql);

@@ -1,3 +1,7 @@
+<?php
+ob_start(); 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +63,6 @@ if($("#veDauTrang").length > 0){
 </head>
 <body style="transition: 1s; overflow-x: hidden;">
 <?php
-	session_start();
 	include("layout/header.php");
 	include("layout/taikhoan.php");
 	require("public/ketnoi.php");

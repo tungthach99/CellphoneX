@@ -1,5 +1,8 @@
 <?php
-	session_start();
+ob_start(); 
+session_start();
+?>
+<?php
 	if(!isset($_SESSION["giohang"])) $_SESSION["giohang"] = array(0=>"0");
 	if(!isset($_SESSION["soluong"])) $_SESSION["soluong"] = array(0=>"0");
 	if(!isset($_SESSION["phienban"])) $_SESSION["phienban"] = array(0=>"0");
