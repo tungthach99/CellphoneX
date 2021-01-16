@@ -108,13 +108,12 @@ jQuery.noConflict();
 							$_SESSION["tongtien"]=0;
 							if(isset($_SESSION["giohang"])){
 								foreach($_SESSION["giohang"] as $key=>$value){
-									
 									$sql="select * from tbl_san_pham where id_san_pham=".$value;
 									if(isset($_SESSION["phienban"]))
-									$sql="SELECT t1.id_san_pham,t1.ten_san_pham,t1.don_gia,t1.anh,t2.so_luong_ton,t3.dung_luong FROM tbl_san_pham AS t1,tbl_phien_ban_san_pham AS t2,tbl_phien_ban AS t3 WHERE t1.id_san_pham=t2.id_san_pham and t2.id_phien_ban=t3.id_phien_ban and t1.id_san_pham=".$value." and t2.id_phien_ban=".$_SESSION["phienban"][$key];
-
-//									$sql="select * from tbl_san_pham where id_san_pham=".$value;
-
+									$sql="SELECT t1.id_san_pham,t1.ten_san_pham,t1.don_gia,t1.anh,t2.so_luong_ton,t3.dung_luong,t4.muc_khuyen_mai,t1.don_gia*(1-t4.muc_khuyen_mai/100) AS gia_moi
+									FROM tbl_san_pham AS t1 JOIN tbl_phien_ban_san_pham AS t2 JOIN tbl_phien_ban AS t3
+									LEFT OUTER JOIN tbl_khuyen_mai as t4 ON t1.id_san_pham=t4.id_san_pham
+									WHERE t1.id_san_pham=t2.id_san_pham and t2.id_phien_ban=t3.id_phien_ban and t1.id_san_pham=".$value." and t2.id_phien_ban=".$_SESSION["phienban"][$key];
 									$result=$con->query($sql);
 									if($result->num_rows>0)
 									{
@@ -129,16 +128,18 @@ jQuery.noConflict();
 								<td><img style="width: 25%;" src="images/san-pham/<?php echo $row['anh'] ?>"></td>
 								<td><?php echo $row['dung_luong']?></td>
 								<td><?php echo number_format($_SESSION["soluong"][$key]) ?></td>
-
-								<td><?php echo number_format($row['don_gia']) ?></td>
-								<td><?php echo number_format($row['so_luong_ton']) ?></td>
-
-
 								<?php
-									$thanhtien=$_SESSION["soluong"][$key]*$row['don_gia'];
+								if(isset($row['muc_khuyen_mai']))
+								$giatinh=$row['gia_moi'];
+								else
+								$giatinh=$row['don_gia'];
+								?>
+								<td><?php echo number_format($giatinh) ?></td>
+								<td><?php echo number_format($row['so_luong_ton']) ?></td>
+								<?php
+									$thanhtien=$_SESSION["soluong"][$key]*$giatinh;
 									$_SESSION["tongtien"]+=$thanhtien;
 								?>
-								
 								<td><?php echo number_format($thanhtien) ?></td>
 								<td>
 								<a class="fa fa-plus" href="customer/Order/xltangdonhang.php?&stt=<?php echo $key?>"></a>

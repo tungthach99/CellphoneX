@@ -1053,14 +1053,15 @@ display: grid;
     width: 100%;
 }
 .muc-khuyen-mai{
-	color: red;
+	color: white;
+	background-color: red;
 	position: absolute;
 	padding: 5px;
 	border: 2px solid red;
 	border-radius: 50%;
 	font-weight: bold;
 	z-index: 800;
-	margin-left: 335px;
+	margin:3px 0 0 335px;
 }
 
 .km{
