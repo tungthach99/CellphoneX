@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 16, 2021 lúc 08:43 PM
+-- Thời gian đã tạo: Th1 17, 2021 lúc 08:02 AM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -186,7 +186,13 @@ INSERT INTO `tbl_chi_tiet_don_hang` (`id_don_hang`, `id_san_pham`, `don_gia`, `s
 (74, 1, 5000000, 2, 10000000, NULL, 2),
 (75, 1, 5000000, 1, 5000000, NULL, 2),
 (76, 3, 2990000, 1, 2990000, NULL, 1),
-(77, 1, 5000000, 1, 5000000, NULL, 2);
+(77, 1, 5000000, 1, 5000000, NULL, 2),
+(78, 1, 4000000, 1, 5000000, NULL, 2),
+(78, 3, 2541500, 0, 0, NULL, 1),
+(79, 2, 3861000, 4, 15444000, NULL, 1),
+(80, 1, 4000000, 1, 4000000, NULL, 2),
+(80, 11, 450000, 2, 900000, NULL, 1),
+(81, 5, 15192000, 1, 15192000, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -230,34 +236,39 @@ CREATE TABLE `tbl_don_hang` (
   `ten_khach_hang` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
   `dia_chi_nhan_hang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `hinh_thuc_mua_hang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `ghi_chu` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL
+  `ghi_chu` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
+  `dien_thoai` varchar(11) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_don_hang`
 --
 
-INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `email`, `phi_van_chuyen`, `ma_giam_gia`, `tong_tien`, `trang_thai`, `ngay_dat`, `ten_khach_hang`, `dia_chi_nhan_hang`, `hinh_thuc_mua_hang`, `ghi_chu`) VALUES
-(58, -1, '', 0, '', 107190000, 0, '01/15/2021 10:01:50 pm', '1', '1', 'COD', ''),
-(59, -1, '', 0, '', 600540032, 0, '01/15/2021 10:13:40 pm', '1', '1', 'COD', ''),
-(60, -1, '', 0, '', 555000000, 0, '01/15/2021 10:15:33 pm', '1', '1', 'COD', ''),
-(61, -1, '', 0, '', 9290000, 0, '01/15/2021 10:22:19 pm', '1', '1', 'COD', '1'),
-(62, -1, '', 0, '', 9290000, 0, '01/15/2021 10:24:06 pm', '1', '1', 'COD', '1'),
-(63, -1, 'thachtung99@gmail.com', 0, '', 9290000, 0, '01/15/2021 10:25:32 pm', '1', '1', 'COD', '1'),
-(64, -1, '', 0, '', 33580000, 0, '01/15/2021 10:26:57 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
-(65, 1, '', 0, 'TUNGTHACH', 24700000, 0, '01/15/2021 10:37:20 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', ''),
-(66, -1, '', 0, '', 15000000, 0, '01/16/2021 01:53:55 am', '1', '1', 'COD', ''),
-(67, -1, '', 0, '', 20000000, 0, '01/16/2021 01:54:55 am', '1', '1', 'COD', ''),
-(68, -1, 'thachtung99@gmail.com', 0, '', 5000000, 0, '01/16/2021 03:07:29 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', 'adc'),
-(69, -1, 'thachtung99@gmail.com', 0, '', 8580000, 0, '01/16/2021 03:11:12 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
-(70, -1, 'thachtung99@gmail.com', 0, '', 18580000, 0, '01/16/2021 03:15:25 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
-(71, -1, 'thachtung99@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:20:43 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
-(72, -1, 'hiimtung123@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:32:33 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '2'),
-(73, -1, 'thachtung99@gmail.com', 0, '', 8580000, 0, '01/16/2021 03:37:39 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
-(74, 1, 'thachtung99@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:43:26 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
-(75, 1, 'hiimtung123@gmail.com', 0, '', 4000000, 0, '01/16/2021 09:10:38 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', ''),
-(76, -1, 'thachtung99@gmail.com', 0, '', 2541500, 0, '01/16/2021 10:36:26 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '1'),
-(77, -1, 'thachtung99@gmail.com', 0, '', 4000000, 0, '01/16/2021 11:07:31 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', '');
+INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `email`, `phi_van_chuyen`, `ma_giam_gia`, `tong_tien`, `trang_thai`, `ngay_dat`, `ten_khach_hang`, `dia_chi_nhan_hang`, `hinh_thuc_mua_hang`, `ghi_chu`, `dien_thoai`) VALUES
+(58, -1, '', 0, '', 107190000, 0, '01/15/2021 10:01:50 pm', '1', '1', 'COD', '', ''),
+(59, -1, '', 0, '', 600540032, 0, '01/15/2021 10:13:40 pm', '1', '1', 'COD', '', ''),
+(60, -1, '', 0, '', 555000000, 0, '01/15/2021 10:15:33 pm', '1', '1', 'COD', '', ''),
+(61, -1, '', 0, '', 9290000, 0, '01/15/2021 10:22:19 pm', '1', '1', 'COD', '1', ''),
+(62, -1, '', 0, '', 9290000, 0, '01/15/2021 10:24:06 pm', '1', '1', 'COD', '1', ''),
+(63, -1, 'thachtung99@gmail.com', 0, '', 9290000, 0, '01/15/2021 10:25:32 pm', '1', '1', 'COD', '1', ''),
+(64, -1, '', 0, '', 33580000, 0, '01/15/2021 10:26:57 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
+(65, 1, '', 0, 'TUNGTHACH', 24700000, 0, '01/15/2021 10:37:20 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', '', ''),
+(66, -1, '', 0, '', 15000000, 0, '01/16/2021 01:53:55 am', '1', '1', 'COD', '', ''),
+(67, -1, '', 0, '', 20000000, 0, '01/16/2021 01:54:55 am', '1', '1', 'COD', '', ''),
+(68, -1, 'thachtung99@gmail.com', 0, '', 5000000, 0, '01/16/2021 03:07:29 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', 'adc', ''),
+(69, -1, 'thachtung99@gmail.com', 0, '', 8580000, 0, '01/16/2021 03:11:12 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
+(70, -1, 'thachtung99@gmail.com', 0, '', 18580000, 0, '01/16/2021 03:15:25 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
+(71, -1, 'thachtung99@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:20:43 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
+(72, -1, 'hiimtung123@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:32:33 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '2', ''),
+(73, -1, 'thachtung99@gmail.com', 0, '', 8580000, 0, '01/16/2021 03:37:39 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
+(74, 1, 'thachtung99@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:43:26 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
+(75, 1, 'hiimtung123@gmail.com', 0, '', 4000000, 0, '01/16/2021 09:10:38 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
+(76, -1, 'thachtung99@gmail.com', 0, '', 2541500, 0, '01/16/2021 10:36:26 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '1', ''),
+(77, -1, 'thachtung99@gmail.com', 0, '', 4000000, 0, '01/16/2021 11:07:31 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', '', ''),
+(78, -1, 'thachtung99@gmail.com', 0, '', 4000000, 0, '01/17/2021 11:43:26 am', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '123', ''),
+(79, -1, 'thachtung99@gmail.com', 0, '', 15444000, 0, '01/17/2021 11:47:18 am', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
+(80, 1, 'hiimtung123@gmail.com', 0, '', 4900000, 0, '01/17/2021 11:49:34 am', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
+(81, 1, 'hiimtung123@gmail.com', 0, '', 15192000, 0, '01/17/2021 01:20:35 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', '0357756343');
 
 -- --------------------------------------------------------
 
@@ -283,7 +294,8 @@ CREATE TABLE `tbl_khach_hang` (
 INSERT INTO `tbl_khach_hang` (`id_khach_hang`, `ten_khach_hang`, `email`, `so_dien_thoai`, `dia_chi`, `ma_kich_hoat`, `mat_khau`, `ten_dang_nhap`) VALUES
 (1, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'Hà Nội', '1', '1', 'tungthach'),
 (3, 'Nguyễn Anh Tuấn', NULL, '0123456789', 'Hà Nội', '1', '1', 'tuan'),
-(4, 'Thạch Thọ Thanh', 'thachtung99@gmail.com', '0123456798', NULL, 'iDgEriUV', '123456', 'thanh');
+(4, 'Thạch Thọ Thanh', 'thachtung99@gmail.com', '0123456798', NULL, 'iDgEriUV', '123456', 'thanh'),
+(5, 'ly coi', 'abc@gmail.com', '0123456', NULL, 'GVUbg4Cm', '1', 'lycoi');
 
 -- --------------------------------------------------------
 
@@ -349,15 +361,16 @@ CREATE TABLE `tbl_nhan_vien` (
   `email` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `so_dien_thoai` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `tai_khoan` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `mat_khau` varchar(256) COLLATE utf8_unicode_ci NOT NULL
+  `mat_khau` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `quyen` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_nhan_vien`
 --
 
-INSERT INTO `tbl_nhan_vien` (`id_nhan_vien`, `ten_nhan_vien`, `email`, `so_dien_thoai`, `tai_khoan`, `mat_khau`) VALUES
-(3, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'tung', '1');
+INSERT INTO `tbl_nhan_vien` (`id_nhan_vien`, `ten_nhan_vien`, `email`, `so_dien_thoai`, `tai_khoan`, `mat_khau`, `quyen`) VALUES
+(3, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'tung', '1', 0);
 
 -- --------------------------------------------------------
 
@@ -549,13 +562,12 @@ CREATE TABLE `tbl_yeu_thich` (
 INSERT INTO `tbl_yeu_thich` (`id_khach_hang`, `id_san_pham`) VALUES
 (1, 0),
 (1, 1),
-(1, 2),
 (1, 4),
 (1, 10),
-(1, 29),
 (3, 1),
 (3, 2),
-(3, 3);
+(3, 3),
+(5, 11);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -674,13 +686,13 @@ ALTER TABLE `tbl_binh_luan_sp`
 -- AUTO_INCREMENT cho bảng `tbl_don_hang`
 --
 ALTER TABLE `tbl_don_hang`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khach_hang`
 --
 ALTER TABLE `tbl_khach_hang`
-  MODIFY `id_khach_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_khach_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_nhan_vien`

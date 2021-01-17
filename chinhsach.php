@@ -40,17 +40,17 @@ jQuery.noConflict();
 		})
 		$("#chinhSachSuDung").click(function(){
 			$('body,html').animate({
-				scrollTop: 32
+				scrollTop: 200
 			})
 		})
 		$("#chinhSachBaoHanh").click(function(){
 			$('body,html').animate({
-				scrollTop: 290
+				scrollTop: 558
 			})
 		})
 		$("#chinhSachBaoMat").click(function(){
 			$('body,html').animate({
-				scrollTop: 580
+				scrollTop: 970
 			})
 		})
 	}
@@ -58,7 +58,7 @@ jQuery.noConflict();
 })( jQuery );
 </script>
 </head>
-<body style="transition: 1s">
+<body>
 <?php
 	include("layout/header.php");
 	include("layout/taikhoan.php");

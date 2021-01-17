@@ -140,7 +140,7 @@
 				</ul>
 <!--				Lọc theo thương hiệu: end.-->
 			</li>
-			<li class="drop-down"><a class="nav1" href="khuyenmai.php">Giá&nbsp;<i class="fa fa-sort-desc"></i></a>
+			<li class="drop-down"><a class="nav1">Giá&nbsp;<i class="fa fa-sort-desc"></i></a>
 <!--				Lọc theo Giá-->
         		<ul>
 					<li><?php

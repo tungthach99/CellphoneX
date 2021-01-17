@@ -52,6 +52,15 @@ jQuery.noConflict();
 		if($_GET["loi"]=='1') include("layout/message5.php");
 		if($_GET["loi"]=='2') include("layout/message6.php");
 	}
+	if(isset($_GET["action"]))
+	{
+		if($_GET["action"]=='hoantat') include("layout/message7.php");
+		if($_GET["action"]=='fail') include("layout/message8.php");
+	}
+	if(isset($_GET["login"]))
+	{
+		if($_GET["login"]=='1') include("layout/message7.php");
+	}
 ?>
 <!--				Banner dau trang					-->
 	<section class="leCacMuc">
@@ -82,14 +91,14 @@ jQuery.noConflict();
 	<div  class="banner-danh-muc">
 		<div class="hover-lam-mo banner-danh-muc-trai" style="background-color: #010001;">
 			<div class="lamMo">&nbsp;</div>
-			<a class="tieuDeBanner" style="" href="" >ĐIỆN THOẠI</a>
+			<a class="tieuDeBanner" style="" href="sanpham.php?&maloai=L01" >ĐIỆN THOẠI</a>
 			<video id="xuatHien11" autoplay width="100%;">
 				<source src="video/1.mp4">
 			</video>
 		</div>
 		<div class="hover-lam-mo banner-danh-muc-phai" style="background-color: #010001;">
 			<div class="lamMo">&nbsp;</div>
-			<a class="tieuDeBanner" style="" href="" >ĐỒNG HỒ</a>
+			<a class="tieuDeBanner" style="" href="sanpham.php?&maloai=L03" >ĐỒNG HỒ</a>
 			<video id="xuatHien12" autoplay width="100%;">
 				<source src="video/2.mp4">
 			</video>
@@ -99,13 +108,13 @@ jQuery.noConflict();
 	<div  class="banner-danh-muc">
 		<div class="hover-lam-mo banner-danh-muc-trai" style="background-color: #f2f2f2;">
 			<div class="lamMo">&nbsp;</div>
-			<a class="tieuDeBanner" style="" href="" >TABLET</a>
+			<a class="tieuDeBanner" style="" href="sanpham.php?&maloai=L02" >TABLET</a>
 			<img src="images/computer_bn.png" width="100%;">
 			
 		</div>
 		<div class="hover-lam-mo banner-danh-muc-phai" style="background-color: #f2f2f2;">
 			<div class="lamMo">&nbsp;</div>
-			<a class="tieuDeBanner" style="" href="" >TAI NGHE</a>
+			<a class="tieuDeBanner" style="" href="sanpham.php?&maloai=L04" >TAI NGHE</a>
 			<img src="images/airport-pro.png" width="100%;">
 		</div>
 	</div>

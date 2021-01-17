@@ -8,7 +8,6 @@ $sqlupdate="UPDATE tbl_khach_hang SET mat_khau='".$_POST["matkhaumoi"]."' WHERE 
 if($result=$con->query($sqlupdate))
 {
 	unset($_SESSION["datlaimatkhau"]);
-	echo $sqlupdate;
 	header("location:../../quenmatkhau.php?&action=hoantat");
 }
 else //khong ton tai tai khoan
