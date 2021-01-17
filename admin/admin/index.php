@@ -157,7 +157,31 @@ if(!session_start())
               <i class="ni ni-box-2 text-blue"></i> Đơn hàng
             </a>
           </li>
-       
+
+          <li class="nav-item">
+            <a class="nav-link" href="?ql=khuyenmai/ds">
+            <i class="fa fa-tags text-red"></i> Khuyến mại
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="?ql=tintuc/ds">
+            <i class="fa fa-list-alt text-green"></i> Tin tức
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="?ql=binhluantt/ds">
+            <i class="fa fa-comment text-yellow"></i> Bình luận tin tức
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="?ql=binhluansp/ds">
+            <i class="fa fa-comment text-blue"></i> Bình luận sản phẩm
+            </a>
+          </li>
+
         </ul>
       
       </div>
