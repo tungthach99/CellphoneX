@@ -35,6 +35,7 @@
 	        <th scope="col">Ảnh</th>
 	        <th scope="col">Nội dung</th>
             <th scope="col">Ngày thêm</th>
+			<th scope="col">Ngày sửa</th>
             <th scope="col">Tác vụ</th>
 	        
 	      </tr>
@@ -51,6 +52,7 @@
 	        	<td><?php echo $row['anh'];?></td>
 	        	<td height="50px;"><?php echo substr($row['noi_dung'],1,80)?> ...</td>
 	        	<td><?php echo $row['add_date']; ?></td>
+				<td><?php echo $row['edit_date']; ?></td>
 	        	<td>
 	        		<a class="btn btn-outline-primary" href="?ql=tintuc/sua&idsua=<?php echo $row['id_tin_tuc']?>">Sửa</a>
 	        		<a class="btn btn-outline-warning" href="?ql=tintuc/ds&idxoa=<?php echo $row['id_tin_tuc']?>">Xóa</a>
