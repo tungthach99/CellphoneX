@@ -16,7 +16,7 @@ if(isset($_POST['sua']))
 	}else {
      $sql = "UPDATE tbl_san_pham SET ten_san_pham = '$tensanpham', don_gia = '$dongia', anh = '$anh', mo_ta = '$mota', id_danh_muc='$danhmuc' WHERE id_san_pham = $id";
 
-     move_uploaded_file($_FILES['anh']['tmp_name'], "uploads/".$anh);
+     // move_uploaded_file($_FILES['anh']['tmp_name'], "san-pham/".$anh);
 
 		if($connection->query($sql))
      {

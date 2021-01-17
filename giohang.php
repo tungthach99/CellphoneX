@@ -136,6 +136,7 @@ jQuery.noConflict();
 								$giatinh=$row['gia_moi'];
 								else
 								$giatinh=$row['don_gia'];
+								$_SESSION["giatinh"][$key]=$giatinh;
 								?>
 								<td><?php echo number_format($giatinh) ?></td>
 								<td><?php echo number_format($row['so_luong_ton']) ?></td>

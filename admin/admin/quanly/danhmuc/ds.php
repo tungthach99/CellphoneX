@@ -44,6 +44,7 @@ if(isset($_GET['idxoa'])){
 	    	<?php 
 	    	$stt = 1;
 	    	while ($row=$query->fetch_assoc()) {
+        		$_SESSION["id_danh_muc"] = $row['id_danh_muc'];
 	    	 ?>
 	        <tr>
 	        	<td><?php echo $stt; ?></td>
@@ -53,7 +54,9 @@ if(isset($_GET['idxoa'])){
 	        		<img style="height: 100px " src="uploads/<?php echo $row['anh'] ?>" alt="">
 	        	</td>
 	        	<td>
-	        		<a class="btn btn-outline-primary" href="?ql=danhmuc/sua&idsua=<?php echo $row['id_danh_muc']?>">Sửa</a>
+	        		<a class="btn btn-outline-primary" href="?ql=danhmuc/sua&idsua=<?php 
+	        		
+	        		echo $row['id_danh_muc']?>">Sửa</a>
 	        		<a class="btn btn-outline-warning" href="?ql=danhmuc/ds&idxoa=<?php echo $row['id_danh_muc']?>">Xóa</a>
 	        	</td>
 	        </tr>

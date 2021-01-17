@@ -4,17 +4,17 @@
 		
     //Kiểm tra nhập đủ thông tin chưa
 		$tendanhmuc = $_POST['ten_danh_muc'];
-      $mota = $_POST['mota'];
-      $anh = $_FILES['anh']['name'];
+      // $mota = $_POST['mota'];
+      // $anh = $_FILES['anh']['name'];
 		if ($tendanhmuc==""){
 			echo  "<div class='alert alert-danger' role='alert'>
     <strong>Vui lòng nhập đủ thông tin !!!</strong>
 </div>";
 		}else{
 			//Cập nhật dữ liệu
-			$sql = "UPDATE tbl_danh_muc SET ten_danh_muc = '$tendanhmuc', anh = '$anh', mo_ta = '$mota' WHERE id_danh_muc = $id";
+			$sql = "UPDATE tbl_danh_muc SET ten_danh_muc ='".$tendanhmuc."' WHERE id_danh_muc = '".$id."'";
 
-         move_uploaded_file($_FILES['anh']['tmp_name'], "uploads/".$anh);
+         // move_uploaded_file($_FILES['anh']['tmp_name'], "uploads/".$anh);
 
 			if($connection->query($sql))
 				echo "<div class='alert alert-success' role='alert'>
@@ -29,7 +29,7 @@
 	}
 
    //Hiển thị dữ liệu cần sửa
-   $sql = "SELECT ten_danh_muc, mo_ta, anh FROM tbl_danh_muc WHERE id_danh_muc = $id";
+   $sql = "SELECT ten_danh_muc, mo_ta, anh FROM tbl_danh_muc WHERE id_danh_muc ='".$_SESSION["id_danh_muc"]."'";
    $query = $connection->query($sql);
    $row = $query->fetch_assoc();
  ?>
@@ -56,11 +56,11 @@
                            </div>
 
                            <div class="col-lg-12">
-                              <div class="form-group focused">
+                              <!-- <div class="form-group focused">
                                  <label class="form-control-label" for="input-username">Chọn ảnh</label>
                                  <input name="anh" type='file' id="imgInp" /><br>
                                  <img style="height: 200px" id="blah" src="" />
-                              </div>
+                              </div> -->
                            </div>
 
                            <div class="col-lg-12">

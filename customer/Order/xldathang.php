@@ -44,8 +44,8 @@ session_start();
 					while($row3=$result3->fetch_assoc())
 					{
 //						Them du lieu vao bang chi tiet don hang
-						$thanhtien3=$_SESSION["soluong"][$key]*$row3['don_gia'];
-						$sqlinsert = "insert into tbl_chi_tiet_don_hang(id_don_hang,id_san_pham,don_gia,so_luong,thanh_tien,id_phien_ban) values('".$_SESSION["id_don_hang"]."','".$row3['id_san_pham']."','".$row3['don_gia']."',".$_SESSION["soluong"][$key].",'".$thanhtien3."','".$_SESSION["phienban"][$key]."')";
+						$thanhtien3=$_SESSION["soluong"][$key]*$_SESSION["giatinh"][$key];
+						$sqlinsert = "insert into tbl_chi_tiet_don_hang(id_don_hang,id_san_pham,don_gia,so_luong,thanh_tien,id_phien_ban) values('".$_SESSION["id_don_hang"]."','".$row3['id_san_pham']."','".$_SESSION["giatinh"][$key]."',".$_SESSION["soluong"][$key].",'".$thanhtien3."','".$_SESSION["phienban"][$key]."')";
 						if ($con->query($sqlinsert)) {
 							echo $sqlinsert;
 						}
@@ -59,7 +59,7 @@ session_start();
 								while($rowcheck=$result->fetch_assoc())
 								{
 									$_SESSION["soluong"][$key]+=$rowcheck['so_luong'];
-									$thanhtien3=$_SESSION["soluong"][$key]*$rowcheck['don_gia'];
+									$thanhtien3=$_SESSION["soluong"][$key]*$_SESSION["giatinh"][$key];
 									$sqlupdate = "update tbl_chi_tiet_don_hang set so_luong =". $_SESSION["soluong"][$key].",thanh_tien=".$thanhtien3." where id_don_hang='".$_SESSION["id_don_hang"]."' and id_san_pham='".$row3['id_san_pham']."' and id_phien_ban='".$_SESSION["phienban"][$key]."'";
 									if ($con->query($sqlupdate))
 									{
