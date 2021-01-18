@@ -54,7 +54,7 @@ $row=$result->fetch_assoc();
         	<p id="binh-luan-label">Viết bình luận ...<i class="fa fa-pencil"></i></p>
 			<input type="text" id="comment-box" name="noi_dung" placeholder="Hãy nhập bình luận của bạn ở đây"> </input>
 			<button type="submit"  class="btn btn-primary" style="margin: 0 0 10px 5%;">Gửi</button>
-			<input type="text" style="display: none;" name="ma_san_pham" value="<?php echo $row['id_san_pham']?>">
+			<input type="text" style="display: none;" name="ma_san_pham" value="<?php echo $_GET["masanpham"]?>">
 		</div>
 		</form>
 		<div style="margin: 15px 0 10px 0;width: 100%;border-bottom: 2px solid var(--light);"></div>

@@ -10,9 +10,9 @@ session_start();
 	$idkhachhang=$_SESSION["id-user"];
 	$idtintuc=$_POST['ma_tin_tuc'];
 	$tranghientai="location:chitiettintuc.php?matintuc=".$idtintuc;
-	if ($noidung != "" && $idkhachhang != "")
+	if ($noidung != "" && $idkhachhang != 0)
 	{
-		$sql_insert="insert into tbl_binh_luan(id_khach_hang,id_tin_tuc,noi_dung) values('".$tenkhachhang."','".$idtintuc."','".$noidung."')";
+		$sql_insert="insert into tbl_binh_luan(id_khach_hang,id_tin_tuc,noi_dung) values('".$idkhachhang."','".$idtintuc."','".$noidung."')";
 		if($con->query($sql_insert)===TRUE && $con->query($sql_insert1)===TRUE)
 		{	
 			header($tranghientai);
@@ -24,7 +24,7 @@ session_start();
 	}
 	else
 	{
-		if($tenkhachhang == "")
+		if($idkhachhang == "")
 		{
 			$_SESSION["kiemtrasua"]=1;
 			header($tranghientai);
