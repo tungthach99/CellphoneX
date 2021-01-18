@@ -73,7 +73,7 @@ if($("#veDauTrang").length > 0){
     <div class="col-sm-1"></div>
     <div class="col-sm-2">
     <div class="news-header">
-					Tin tức <i class='fa fa-chevron-right' style="margin-left: 20px;"></i>
+					<a href="tintuc.php" style="text-decoration: none;color:white;">Tin tức <i class='fa fa-angle-double-right' style="margin-left: 20px;"></i></a>
 				</div>
     <?php
 $sql="Select * FROM `tbl_tin_tuc` ORDER BY id_tin_tuc";
