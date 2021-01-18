@@ -24,7 +24,7 @@
  ?>
 <div>
 	<h1> Danh sách khuyến mại </h1>
-	
+	<a class="btn btn-success" href="?ql=khuyenmai/them">Thêm</a>
      <div class="table-responsive">
 	  <table class="table align-items-center table-flush">
 	    <thead class="thead-light">

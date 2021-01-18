@@ -24,7 +24,7 @@
  ?>
 <div>
 	<h1> Danh sách tin tức </h1>
-	
+	<a class="btn btn-success" href="?ql=tintuc/them">Thêm</a>
      <div class="table-responsive">
 	  <table class="table align-items-center table-flush">
 	    <thead class="thead-light">
@@ -50,7 +50,7 @@
 	        	<td><?php echo $row['tac_gia']?></td>
 	        	<td><?php echo $row['tieu_de'];?></td>
 	        	<td><?php echo $row['anh'];?></td>
-	        	<td height="50px;"><?php echo substr($row['noi_dung'],1,80)?> ...</td>
+	        	<td height="50px;"><?php echo substr($row['noi_dung'],0,80)?> ...</td>
 	        	<td><?php echo $row['add_date']; ?></td>
 				<td><?php echo $row['edit_date']; ?></td>
 	        	<td>

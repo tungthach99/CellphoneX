@@ -67,7 +67,7 @@ if($result->num_rows>0)
 	{
 ?>
 		<div class="hien-thi-binh-luan">
-			<div class="hien-thi-ten"><?php echo $row3['ten_khach_hang']?><span class="hien-thi-ngay"><?php echo $row3['ngay_tao']?></span></div>
+			<div class="hien-thi-ten"><?php echo $_SESSION["ten-user"]?><span class="hien-thi-ngay"><?php echo $row3['ngay_tao']?></span></div>
 			<div class="hien-thi-noi-dung" value= null><?php echo $row3['noi_dung']?></div>
 			<div style="margin: 10px 0 10px 0;width: 90%;border-bottom: 2px solid var(--light);"></div>
 		</div>

@@ -51,8 +51,9 @@
                                  <input name="tieu_de" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Tiêu đề" value="<?php echo $row['tieu_de'] ?>">
                               </div>
                               <div class="form-group">
-                                 <label class="form-control-label" for="input-username">Ảnh</label>
-                                 <input name="anh" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Ảnh" value="<?php echo $row['anh'] ?>">
+                              <label class="form-control-label" for="input-username">Chọn ảnh</label>
+											<input name="anh" type='file' id="imgInp" /><br>
+  											<img style="height: 200px" id="blah" src="" />
                               </div>
                               <div class="form-group">
                                  <label class="form-control-label" for="input-username">Nội dung</label>

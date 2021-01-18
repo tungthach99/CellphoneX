@@ -5,11 +5,10 @@
 		$idkhuyenmai = $_POST['id_khuyen_mai'];
       $tenkhuyenmai = $_POST['ten_khuyen_mai'];
       $muckhuyenmai = $_POST['muc_khuyen_mai'];
-      $anhkhuyenmai = $_POST['anh_khuyen_mai'];
-	
+      $anh = $_FILES['anh']['name'];$anh = $_FILES['anh']['name'];
 			//Cập nhật dữ liệu
 			$sql = "UPDATE tbl_khuyen_mai SET id_khuyen_mai = '$idkhuyenmai', ten_khuyen_mai = '$tenkhuyenmai'
-            , muc_khuyen_mai='$muckhuyenmai', anh_khuyen_mai='$anhkhuyenmai' WHERE id_san_pham = $id";
+            , muc_khuyen_mai='$muckhuyenmai', anh='$anh' WHERE id_san_pham = $id";
 
 			if($connection->query($sql))
 				echo "<div class='alert alert-success' role='alert'>
@@ -61,8 +60,9 @@
                               </div>
 
                               <div class="form-group">
-                                 <label class="form-control-label" for="input-username">Ảnh khuyến mại</label>
-                                 <input name="anh_khuyen_mai" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Ảnh khuyến mại" value="<?php echo $row['anh_khuyen_mai'] ?>">
+                              <label class="form-control-label" for="input-username">Chọn ảnh</label>
+											<input name="anh" type='file' id="imgInp" /><br>
+  											<img style="height: 200px" id="blah" src="" />
                               </div>
 
                            </div>
