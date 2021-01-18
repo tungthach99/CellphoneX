@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 17, 2021 lúc 06:57 PM
+-- Thời gian đã tạo: Th1 18, 2021 lúc 10:12 AM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -95,7 +95,7 @@ INSERT INTO `tbl_anh` (`id_anh`, `id_src`) VALUES
 
 CREATE TABLE `tbl_binh_luan` (
   `id_binh_luan` int(11) NOT NULL,
-  `id_khach_hang` int(50) NOT NULL,
+  `ten_khach_hang` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `id_tin_tuc` int(50) NOT NULL,
   `noi_dung` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `ngay_tao` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -106,11 +106,15 @@ CREATE TABLE `tbl_binh_luan` (
 -- Đang đổ dữ liệu cho bảng `tbl_binh_luan`
 --
 
-INSERT INTO `tbl_binh_luan` (`id_binh_luan`, `id_khach_hang`, `id_tin_tuc`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
-(16, 0, 1, 'adasdsd', '2021-01-17 16:52:50', '2021-01-17 16:52:50'),
-(17, 0, 1, 'hi', '2021-01-17 16:52:52', '2021-01-17 16:52:52'),
-(19, 0, 1, 'buồn cười quá', '2021-01-17 16:53:09', '2021-01-17 16:53:09'),
-(20, 3, 1, 'A', '2021-01-17 17:44:28', '2021-01-17 17:44:28');
+INSERT INTO `tbl_binh_luan` (`id_binh_luan`, `ten_khach_hang`, `id_tin_tuc`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
+(1, 'tung', 1, ' ', '2021-01-13 17:12:00', '2021-01-13 17:12:00'),
+(2, 'tung', 1, ' ', '2021-01-13 17:12:14', '2021-01-13 17:12:14'),
+(3, 'tung', 1, ' ', '2021-01-13 17:12:45', '2021-01-13 17:12:45'),
+(4, 'tung', 1, ' ', '2021-01-13 17:12:47', '2021-01-13 17:12:47'),
+(5, 'tung', 1, ' ', '2021-01-13 17:13:46', '2021-01-13 17:13:46'),
+(6, 'tung', 1, ' abc', '2021-01-13 17:14:56', '2021-01-13 17:14:56'),
+(7, 'tuan', 3, 'a', '2021-01-14 16:41:00', '2021-01-14 16:41:00'),
+(8, 'tuan', 1, 'a', '2021-01-14 16:41:10', '2021-01-14 16:41:10');
 
 -- --------------------------------------------------------
 
@@ -120,7 +124,7 @@ INSERT INTO `tbl_binh_luan` (`id_binh_luan`, `id_khach_hang`, `id_tin_tuc`, `noi
 
 CREATE TABLE `tbl_binh_luan_sp` (
   `id_binh_luan` int(11) NOT NULL,
-  `id_khach_hang` int(50) NOT NULL,
+  `ten_khach_hang` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `id_san_pham` int(50) NOT NULL,
   `noi_dung` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `ngay_tao` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -131,10 +135,11 @@ CREATE TABLE `tbl_binh_luan_sp` (
 -- Đang đổ dữ liệu cho bảng `tbl_binh_luan_sp`
 --
 
-INSERT INTO `tbl_binh_luan_sp` (`id_binh_luan`, `id_khach_hang`, `id_san_pham`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
-(2, 0, 1, 'dafsdas', '2021-01-16 17:51:55', '2021-01-16 17:51:55'),
-(3, 0, 2, 'a', '2021-01-16 18:49:43', '2021-01-16 18:49:43'),
-(4, 0, 1, 'hihi', '2021-01-16 18:49:55', '2021-01-16 18:49:55');
+INSERT INTO `tbl_binh_luan_sp` (`id_binh_luan`, `ten_khach_hang`, `id_san_pham`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
+(1, 'tuan', 1, 'A', '2021-01-16 17:51:51', '2021-01-16 17:51:51'),
+(2, 'tuan', 1, 'dafsdas', '2021-01-16 17:51:55', '2021-01-16 17:51:55'),
+(3, 'tung', 2, 'a', '2021-01-16 18:49:43', '2021-01-16 18:49:43'),
+(4, 'tung', 1, 'hihi', '2021-01-16 18:49:55', '2021-01-16 18:49:55');
 
 -- --------------------------------------------------------
 
@@ -196,7 +201,7 @@ INSERT INTO `tbl_chi_tiet_don_hang` (`id_don_hang`, `id_san_pham`, `don_gia`, `s
 --
 
 CREATE TABLE `tbl_danh_muc` (
-  `id_danh_muc` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `id_danh_muc` int(50) NOT NULL,
   `ten_danh_muc` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `mo_ta` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `anh` varchar(50) COLLATE utf8_unicode_ci NOT NULL
@@ -207,11 +212,11 @@ CREATE TABLE `tbl_danh_muc` (
 --
 
 INSERT INTO `tbl_danh_muc` (`id_danh_muc`, `ten_danh_muc`, `mo_ta`, `anh`) VALUES
-('L01', 'Điện thoại', '', ''),
-('L02', 'Máy tính bảng', '', ''),
-('L03', 'Đồng hồ', '', ''),
-('L04', 'Tai nghe', '', ''),
-('L05', 'Phụ kiện', '', '');
+(1, 'Điện thoại', '', ''),
+(2, 'Máy tính bảng', '', ''),
+(3, 'Đồng hồ', '', ''),
+(4, 'Tai nghe', '', ''),
+(5, 'Phụ kiện', 'ádád', '');
 
 -- --------------------------------------------------------
 
@@ -240,11 +245,6 @@ CREATE TABLE `tbl_don_hang` (
 --
 
 INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `email`, `phi_van_chuyen`, `ma_giam_gia`, `tong_tien`, `trang_thai`, `ngay_dat`, `ten_khach_hang`, `dia_chi_nhan_hang`, `hinh_thuc_mua_hang`, `ghi_chu`, `dien_thoai`) VALUES
-(58, -1, '', 0, '', 107190000, 0, '01/15/2021 10:01:50 pm', '1', '1', 'COD', '', ''),
-(59, -1, '', 0, '', 600540032, 0, '01/15/2021 10:13:40 pm', '1', '1', 'COD', '', ''),
-(60, -1, '', 0, '', 555000000, 0, '01/15/2021 10:15:33 pm', '1', '1', 'COD', '', ''),
-(61, -1, '', 0, '', 9290000, 0, '01/15/2021 10:22:19 pm', '1', '1', 'COD', '1', ''),
-(62, -1, '', 0, '', 9290000, 0, '01/15/2021 10:24:06 pm', '1', '1', 'COD', '1', ''),
 (63, -1, 'thachtung99@gmail.com', 0, '', 9290000, 0, '01/15/2021 10:25:32 pm', '1', '1', 'COD', '1', ''),
 (64, -1, '', 0, '', 33580000, 0, '01/15/2021 10:26:57 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
 (65, 1, '', 0, 'TUNGTHACH', 24700000, 0, '01/15/2021 10:37:20 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', '', ''),
@@ -261,9 +261,9 @@ INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `email`, `phi_van_ch
 (76, -1, 'thachtung99@gmail.com', 0, '', 2541500, 0, '01/16/2021 10:36:26 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '1', ''),
 (77, -1, 'thachtung99@gmail.com', 0, '', 4000000, 0, '01/16/2021 11:07:31 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', '', ''),
 (78, -1, 'thachtung99@gmail.com', 0, '', 4000000, 0, '01/17/2021 11:43:26 am', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '123', ''),
-(79, -1, 'thachtung99@gmail.com', 0, '', 15444000, 0, '01/17/2021 11:47:18 am', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
-(80, 1, 'hiimtung123@gmail.com', 0, '', 4900000, 0, '01/17/2021 11:49:34 am', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
-(81, 1, 'hiimtung123@gmail.com', 0, '', 15192000, 0, '01/17/2021 01:20:35 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', '0357756343');
+(79, -1, 'thachtung99@gmail.com', 0, '', 15444000, 1, '01/17/2021 11:47:18 am', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
+(80, 1, 'hiimtung123@gmail.com', 0, '', 4900000, 1, '01/17/2021 11:49:34 am', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
+(81, 1, 'hiimtung123@gmail.com', 0, '', 15192000, 1, '01/17/2021 01:20:35 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', '0357756343');
 
 -- --------------------------------------------------------
 
@@ -288,7 +288,7 @@ CREATE TABLE `tbl_khach_hang` (
 
 INSERT INTO `tbl_khach_hang` (`id_khach_hang`, `ten_khach_hang`, `email`, `so_dien_thoai`, `dia_chi`, `ma_kich_hoat`, `mat_khau`, `ten_dang_nhap`) VALUES
 (1, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'Hà Nội', '1', '1', 'tungthach'),
-(3, 'Nguyễn Anh Tuấn', NULL, '0123456789', 'Hà Nội', '1', '1', 'tuan'),
+(3, 'Nguyễn Anh Tuấn', '', '0123456789', 'Hà Nội', '1', '1', 'tuan'),
 (4, 'Thạch Thọ Thanh', 'thachtung99@gmail.com', '0123456798', NULL, 'iDgEriUV', '123456', 'thanh'),
 (5, 'ly coi', 'abc@gmail.com', '0123456', NULL, 'GVUbg4Cm', '1', 'lycoi');
 
@@ -318,7 +318,9 @@ INSERT INTO `tbl_khuyen_mai` (`id_khuyen_mai`, `id_san_pham`, `ten_khuyen_mai`, 
 ('KM02', 5, 'Giảm giá Samsung Galaxy Tab S7', 20, '0'),
 ('KM02', 6, 'Giảm giá iPhone 12', 20, '0'),
 ('KM03', 7, 'Giảm giá iPhone 11', 10, '0'),
-('KM01', 9, 'Giảm giá iPhone 12 Mini', 15, '0');
+('KM03', 8, 'Giảm giá Apple iPhone XR', 20, '0'),
+('KM04', 9, 'Giảm giá iPhone 12 mini', 10, '0'),
+('KM04', 10, 'Giảm giá Asus ROG 3', 25, '0');
 
 -- --------------------------------------------------------
 
@@ -363,8 +365,8 @@ CREATE TABLE `tbl_nhan_vien` (
 --
 
 INSERT INTO `tbl_nhan_vien` (`id_nhan_vien`, `ten_nhan_vien`, `email`, `so_dien_thoai`, `tai_khoan`, `mat_khau`, `quyen`) VALUES
-(3, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'tung', '1', 0),
-(4, 'tuan', 'cyannat99@gmail.com', '0333531875', 'tuan', '1', 1);
+(3, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'tung', '123', 1),
+(9, 'Nguyễn Anh Tuấn', 'gmail@tungthach.com', '0123', 'tuan', '1', 0);
 
 -- --------------------------------------------------------
 
@@ -397,8 +399,8 @@ INSERT INTO `tbl_phien_ban` (`id_phien_ban`, `dung_luong`) VALUES
 
 CREATE TABLE `tbl_phien_ban_san_pham` (
   `id_san_pham` int(11) NOT NULL,
-  `id_phien_ban` int(11) NOT NULL,
-  `so_luong_ton` int(20) NOT NULL
+  `id_phien_ban` int(11) NOT NULL DEFAULT 1,
+  `so_luong_ton` int(20) NOT NULL DEFAULT 100
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -447,7 +449,52 @@ INSERT INTO `tbl_phien_ban_san_pham` (`id_san_pham`, `id_phien_ban`, `so_luong_t
 (28, 3, 155),
 (29, 1, 100),
 (29, 2, 100),
-(29, 3, 155);
+(29, 3, 155),
+(31, 1, 255),
+(32, 1, 255),
+(33, 1, 255),
+(34, 1, 255),
+(35, 1, 255),
+(36, 1, 255),
+(37, 1, 255),
+(38, 1, 255),
+(39, 1, 255),
+(40, 1, 255),
+(41, 1, 255),
+(42, 1, 255),
+(43, 1, 255),
+(44, 1, 255),
+(45, 1, 255),
+(46, 1, 255),
+(47, 1, 255),
+(48, 1, 255),
+(49, 1, 255),
+(50, 1, 255),
+(51, 1, 255),
+(52, 1, 255),
+(53, 1, 255),
+(54, 1, 255),
+(55, 1, 255),
+(56, 1, 255),
+(57, 1, 255),
+(58, 1, 255),
+(59, 1, 255),
+(60, 1, 255),
+(61, 1, 255),
+(62, 1, 255),
+(63, 1, 255),
+(64, 1, 255),
+(65, 1, 255),
+(66, 1, 255),
+(67, 1, 255),
+(68, 1, 255),
+(69, 1, 255),
+(70, 1, 255),
+(71, 1, 255),
+(72, 1, 255),
+(73, 1, 255),
+(74, 1, 255),
+(75, 1, 255);
 
 -- --------------------------------------------------------
 
@@ -459,13 +506,13 @@ CREATE TABLE `tbl_san_pham` (
   `id_san_pham` int(11) NOT NULL,
   `ten_san_pham` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `don_gia` float(11,0) DEFAULT NULL,
-  `id_danh_muc` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `id_danh_muc` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
   `anh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `mo_ta` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_anh` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `so_luong` int(20) NOT NULL,
   `ngay_them` date DEFAULT current_timestamp(),
-  `id_thuong_hieu` int(11) DEFAULT NULL
+  `id_thuong_hieu` int(11) NOT NULL DEFAULT 7
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
@@ -473,20 +520,21 @@ CREATE TABLE `tbl_san_pham` (
 --
 
 INSERT INTO `tbl_san_pham` (`id_san_pham`, `ten_san_pham`, `don_gia`, `id_danh_muc`, `anh`, `mo_ta`, `id_anh`, `so_luong`, `ngay_them`, `id_thuong_hieu`) VALUES
-(1, 'iPhoneX', 5000000, 'L01', 'iPhoneX.jpg', 'Ngừng sản xuất rồi đó.', 'IMG01', 255, '2021-01-01', 1),
-(2, 'Samsung Galaxy A12', 4290000, 'L01', 'samsung-A12.jpg', NULL, 'IMG02', 255, '2021-01-02', 2),
-(3, 'Samsung Galaxy Note 20 Ultra', 2990000, 'L01', 'not-20-ultra.jpg', NULL, 'IMG03', 255, '2021-01-14', 2),
-(4, 'Xiaomi Mi 10T Pro 5G', 12990000, 'L01', 'xiaomi-mi-10t-pro_2_.jpg', NULL, 'IMG04', 255, '2021-01-14', 6),
-(5, 'Samsung Galaxy Tab S7', 18990000, 'L02', 'tabs7plus.jpg', NULL, 'IMG05', 255, '2021-01-30', 2),
-(6, 'Iphone 12 ProMax Chính hãng (VN/A)', 33990000, 'L01', 'iphone12promax.jpg', NULL, 'IMG06', 255, '2021-01-14', 1),
-(7, 'IPhone 11 Chính hãng (VN/A)', 24990000, 'L01', 'iphone11.jpg', NULL, 'IMG07', 255, '2021-01-14', 1),
-(8, 'Apple iphone XR chính hãng (VN/A)', 14990000, 'L01', 'iphone-xr_1_.jpg', NULL, 'IMG08', 255, '2021-01-14', 1),
-(9, 'Iphone 12 mini (VN/A)', 25990000, 'L01', 'iphone-12-mini-black-select-2020_2.jpg', NULL, 'IMG09', 255, '2021-01-14', 1),
-(10, 'Asus ROG phone 3', 22990000, 'L01', 'rog_3.jpg', NULL, 'IMG10', 255, '2021-01-14', 4),
-(11, 'Pin sạc dự phòng Xiaomi Redmi 20000mah sạc nhanh 18W', 450000, 'L05', 'pin-du-phong-xiaomi-2000mah-18w.jpg', 'abc', 'IMG11', 255, '2021-01-14', 6),
-(12, 'Apple Watch Series 6 (VN/A)', 13990000, 'L03', 'img-apple-main-recovered_1_1.jpg', NULL, 'IMG12', 255, '2021-01-14', 1),
-(28, 'Galaxy Watch Active 2', 5990000, 'L03', 'samsung-watch-active-2-1.jpg', 'Tình trạng\r\nNguyên hộp, đầy đủ phụ kiện từ nhà sản xuất\r\nHộp bao gồm\r\nĐồng hồ, bộ sạc, HDSD\r\nBảo hành\r\nBảo hành 12 tháng tại trung tâm bảo hành Chính hãng. 1 đổi 1 trong 30 ngày nếu có lỗi nhà sản xuất.', 'IMG13', 255, '2021-01-14', 2),
-(29, 'Apple AirPods2 VN/A', 3990000, 'L04', 'airport2.jpg', 'Vừa qua, Apple đã chính thức cho ra mắt chiếc tai nghe Airpods 2. Thế hệ thứ 2 lần này không có nhiều sự khác biệt so với thế hệ đầu về ngoại hình, trừ một số chi tiết về đèn báo hiệu cũng như ra mắt thêm phiên bản sạc không dây và sạc thường (sạc có dây)', 'IMG14', 255, '2021-01-14', 1);
+(1, 'iPhoneX', 5000000, '1', 'iPhoneX.jpg', 'Ngừng sản xuất rồi đó.', 'IMG01', 255, '2021-01-01', 1),
+(2, 'Samsung Galaxy A12', 4290000, '1', 'samsung-A12.jpg', NULL, 'IMG02', 255, '2021-01-02', 2),
+(3, 'Samsung Galaxy Note 20 Ultra', 2990000, '1', 'not-20-ultra.jpg', NULL, 'IMG03', 255, '2021-01-14', 2),
+(4, 'Xiaomi Mi 10T Pro 5G', 12990000, '1', 'xiaomi-mi-10t-pro_2_.jpg', NULL, 'IMG04', 255, '2021-01-14', 6),
+(5, 'Samsung Galaxy Tab S7', 18990000, '2', 'tabs7plus.jpg', NULL, 'IMG05', 255, '2021-01-30', 2),
+(6, 'Iphone 12 ProMax Chính hãng (VN/A)', 33990000, '1', 'iphone12promax.jpg', NULL, 'IMG06', 255, '2021-01-14', 1),
+(7, 'IPhone 11 Chính hãng (VN/A)', 24990000, '1', 'iphone11.jpg', NULL, 'IMG07', 255, '2021-01-14', 1),
+(8, 'Apple iphone XR chính hãng (VN/A)', 14990000, '1', 'iphone-xr_1_.jpg', NULL, 'IMG08', 255, '2021-01-14', 1),
+(9, 'Iphone 12 mini (VN/A)', 25990000, '1', 'iphone-12-mini-black-select-2020_2.jpg', NULL, 'IMG09', 255, '2021-01-14', 1),
+(10, 'Asus ROG phone 3', 22990000, '1', 'rog_3.jpg', NULL, 'IMG10', 255, '2021-01-14', 4),
+(11, 'Pin sạc dự phòng Xiaomi Redmi 20000mah sạc nhanh 18W', 450000, '5', 'pin-du-phong-xiaomi-2000mah-18w.jpg', 'abc', 'IMG11', 255, '2021-01-14', 6),
+(12, 'Apple Watch Series 6 (VN/A)', 13990000, '3', 'img-apple-main-recovered_1_1.jpg', NULL, 'IMG12', 255, '2021-01-14', 1),
+(28, 'Galaxy Watch Active 2', 10990000, '3', 'samsung-watch-active-2-1.jpg', 'Tình trạng\r\nNguyên hộp, đầy đủ phụ kiện từ nhà sản xuất\r\nHộp bao gồm\r\nĐồng hồ, bộ sạc, HDSD\r\nBảo hành\r\nBảo hành 12 tháng tại trung tâm bảo hành Chính hãng. 1 đổi 1 trong 30 ngày nếu có lỗi nhà sản xuất.', 'IMG13', 255, '2021-01-14', 2),
+(29, 'Apple AirPods2 VN/A', 3990000, '4', 'airport2.jpg', 'Vừa qua, Apple đã chính thức cho ra mắt chiếc tai nghe Airpods 2. Thế hệ thứ 2 lần này không có nhiều sự khác biệt so với thế hệ đầu về ngoại hình, trừ một số chi tiết về đèn báo hiệu cũng như ra mắt thêm phiên bản sạc không dây và sạc thường (sạc có dây)', 'IMG14', 255, '2021-01-14', 1),
+(33, 'test', 100, '2', 'mac air 13inch.png', 'abc', '', 1000, '0000-00-00', 7);
 
 -- --------------------------------------------------------
 
@@ -525,18 +573,18 @@ CREATE TABLE `tbl_tin_tuc` (
   `anh` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `noi_dung` longtext COLLATE utf8_unicode_ci NOT NULL,
   `add_date` date NOT NULL DEFAULT current_timestamp(),
-  `edit_date` timestamp NOT NULL DEFAULT current_timestamp()
+  `so_binh_luan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_tin_tuc`
 --
 
-INSERT INTO `tbl_tin_tuc` (`id_tin_tuc`, `tac_gia`, `tieu_de`, `anh`, `noi_dung`, `add_date`, `edit_date`) VALUES
-(1, 'cyannat99', 'Tính năng mới ', 'tin-tuc-1.png', 'Khăn choàng cổ là một trong những phụ kiện thời trang bên cạnh những món đồ thiết yếu được các cô gái yêu thích trong mùa lạnh. Khăn choàng cũng gồm nhiều kiểu dáng, mẫu mã khác nhau không kém bất cứ món phụ kiện nào. Khăn choàng voan mỏng, lụa, len,… với nhiều kích thước dài ngắn, độ rộng khác nhau đem đến cho phái nữ vô số sự lựa chọn. Đây được xem là món đồ làm điệu và tạo điểm nhấn thêm cho trang phục của bạn gái. Một chiếc khăn khoác hờ trên cổ cũng đủ khiến cô gái ấy hấp dẫn hơn rất nhiều.Mỗi kiểu khăn được dùng cho mỗi mùa, mỗi mục đích khác nhau. Chẳng hạn mùa đông với những đợt gió mùa, nhiệt độ thấp nhất trong năm thì những chiếc khăn dài, ấm áp như len hay vải là sự lựa chọn thông minh nhất. Hơn nữa, cách thắt khăn dành cho mùa lạnh cũng cầu kì hơn một chút để giúp cơ thể giữ ấm. Đang là mùa đông, bạn đã sắm cho mình những chiếc khăn choàng cổ mới và bổ sung thêm những cách thắt khăn mới dành riêng cho mùa này chưa? Nếu chưa thì hãy để chúng tôi giới thiệu cho bạn vài cách thắt khăn đơn giản mà tạo được điểm nhấn nhé!Cách 1: Thắt khăn dạng nơ bướm.Cách này đơn giản, dễ làm nhưng lại cực kì dễ thương, phù hợp cho những cô nàng điệu đà. Đầu tiên, bạn sẽ quàng khăn qua vai và thắt 1 nút. Sau đó cần dải khăn ở dưới gập lại như hình. Xoay nút vừa gập quay sang phải, rồi lấy dải khăn trên lồng vào khe kéo sang trái. Cuối cùng kéo thành nơ rồi chỉnh lại cho đều hai cánh là được.Cách 2: Thả khăn theo hai vạt áoMột trong những cách sử dụng khăn choàng phổ biến hiện nay chính là choàng khăn qua vai và thả buông hờ hai cùng vạt áo váy. Cách này dành cho những cô nàng thích sự đơn giản, không quá khéo tay vì bạn không phải tốn nhiều công sức để thực hiện. Hai vạt khăn tung bay cùng hai tà áo khoác măng tô sẽ giúp bạn đánh gục bất cứ chàng trai nào.Cách 3:  Sử dụng khăn choàng làm áo khoácKhi bạn đã chán ngán với việc phải mặc những chiếc áo khoác dày cộm trên người thì hãy tận dụng ngay chiếc khăn choàng bản lớn, chất liệu len hoặc nỉ trong tủ đồ nhà mình. Một chút biến tấu nhỏ, nhẹ nhàng nhưng đã tạo nên cho mình thêm phong cách thật khác biệt. Các nàng chỉ cần choàng qua bờ vai, luồn vào 2 cánh tay, là đã có ngay một chiếc áo khoác thật ấm áp, độc đáo. Thêm một gợi ý nữa với chiếc khăn choàng đó là bạn choàng khăn qua vai và dùng dây nịt bản nhỏ thắt ngang eo hoặc nối 2 vạt khăn trên vai để tạo thành 1 kiểu áo khoác “độc và lạ” chỉ của riêng bạn.', '2021-01-04', '2021-01-17 17:56:29'),
-(2, 'hi', 'Tính năng mới \"phát hiện mật khẩu bị lộ\" trên IOS', 'tin-tuc-2.png', 'Vậy chiếc Đồng hồ thông minh Huami Amazfit GTR 2e này có gì khác biệt so với những mẫu đồng hồ trước đó? Hãy cùng Sforum.vn trên tay nhanh dòng sản phẩm này nhé!\r\n\r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-5 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\n\r\nVề ngoại hình, Amazfit GTR 2e có thiết kế mặt tròn tương tự như dòng Amazfit GTR 2 nhưng khung máy được thiết kế bằng nhôm, không phải thép như thế hệ GTR 2. Đồng hồ có 3 màu đen, xanh lá và xam. Phiên bản mình trên tay nhanh hôm nay là màu xám.\r\n\r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-6 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\n\r\nMặt đồng hồ có kích thước khoảng 35.3mm với mặt kính vát cong 2.5D cho cảm giác mượt mà khi vuốt từ màn hình xuống khung máy. Amazfit GTR 2e sở hữu màn hình màu Amoled giúp thông tin hiển thị đẹp và rõ ràng hơn.\r\n\r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-19 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-16 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\nNhư các đồng hồ thông minh khác, Amazfit GTR 2e có cảm biến nhịp tim và đặc biệt hỗ trợ đo nồng độ Oxy trong máu SpO2. Ngoài ra Amazfit GTR 2e còn được trang bị nhiều cảm biến khác như Cảm biến gia tốc, cảm biến con quay hồi chuyển, cảm biến địa từ 3 trục, cảm biến ánh sáng xung quanh, cảm biến áp suất không khí và cảm biến nhiệt độ.\r\n\r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-1 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-10 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-12 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-24 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\nTheo hãng công bố, với thời gian sạc đầy khoảng 2,5 giờ đồng hồ Huami Amazfit GTR 2e cho 12 ngày sử dụng đầy đủ tính năng và lên đến 45 ngày khi sử dụng cơ bản. Sạc được thiết kế dạng nam châm khá chắc chắn, người dùng có thể dễ dàng đặt và tháo sạc một cách dễ dàng.', '2021-01-04', '2021-01-17 17:53:44'),
-(3, 'tungthach', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', '2021-01-13', '2021-01-17 17:53:44'),
-(4, 'cyannat99', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', '2021-01-13', '2021-01-17 17:53:44');
+INSERT INTO `tbl_tin_tuc` (`id_tin_tuc`, `tac_gia`, `tieu_de`, `anh`, `noi_dung`, `add_date`, `so_binh_luan`) VALUES
+(1, 'cyannat99', 'Tính năng mới \"phát hiện mật khẩu bị lộ\" trên IOS', 'tin-tuc-1.png', 'Khăn choàng cổ là một trong những phụ kiện thời trang bên cạnh những món đồ thiết yếu được các cô gái yêu thích trong mùa lạnh. Khăn choàng cũng gồm nhiều kiểu dáng, mẫu mã khác nhau không kém bất cứ món phụ kiện nào. Khăn choàng voan mỏng, lụa, len,… với nhiều kích thước dài ngắn, độ rộng khác nhau đem đến cho phái nữ vô số sự lựa chọn. Đây được xem là món đồ làm điệu và tạo điểm nhấn thêm cho trang phục của bạn gái. Một chiếc khăn khoác hờ trên cổ cũng đủ khiến cô gái ấy hấp dẫn hơn rất nhiều.\r\nMỗi kiểu khăn được dùng cho mỗi mùa, mỗi mục đích khác nhau. Chẳng hạn mùa đông với những đợt gió mùa, nhiệt độ thấp nhất trong năm thì những chiếc khăn dài, ấm áp như len hay vải là sự lựa chọn thông minh nhất. Hơn nữa, cách thắt khăn dành cho mùa lạnh cũng cầu kì hơn một chút để giúp cơ thể giữ ấm. Đang là mùa đông, bạn đã sắm cho mình những chiếc khăn choàng cổ mới và bổ sung thêm những cách thắt khăn mới dành riêng cho mùa này chưa? Nếu chưa thì hãy để chúng tôi giới thiệu cho bạn vài cách thắt khăn đơn giản mà tạo được điểm nhấn nhé!\r\nCách 1: Thắt khăn dạng nơ bướm.\r\nCách này đơn giản, dễ làm nhưng lại cực kì dễ thương, phù hợp cho những cô nàng điệu đà. Đầu tiên, bạn sẽ quàng khăn qua vai và thắt 1 nút. Sau đó cần dải khăn ở dưới gập lại như hình. Xoay nút vừa gập quay sang phải, rồi lấy dải khăn trên lồng vào khe kéo sang trái. Cuối cùng kéo thành nơ rồi chỉnh lại cho đều hai cánh là được.\r\nCách 2: Thả khăn theo hai vạt áo\r\nMột trong những cách sử dụng khăn choàng phổ biến hiện nay chính là choàng khăn qua vai và thả buông hờ hai cùng vạt áo váy. Cách này dành cho những cô nàng thích sự đơn giản, không quá khéo tay vì bạn không phải tốn nhiều công sức để thực hiện. Hai vạt khăn tung bay cùng hai tà áo khoác măng tô sẽ giúp bạn đánh gục bất cứ chàng trai nào.\r\nCách 3:  Sử dụng khăn choàng làm áo khoác\r\nKhi bạn đã chán ngán với việc phải mặc những chiếc áo khoác dày cộm trên người thì hãy tận dụng ngay chiếc khăn choàng bản lớn, chất liệu len hoặc nỉ trong tủ đồ nhà mình. Một chút biến tấu nhỏ, nhẹ nhàng nhưng đã tạo nên cho mình thêm phong cách thật khác biệt. Các nàng chỉ cần choàng qua bờ vai, luồn vào 2 cánh tay, là đã có ngay một chiếc áo khoác thật ấm áp, độc đáo. Thêm một gợi ý nữa với chiếc khăn choàng đó là bạn choàng khăn qua vai và dùng dây nịt bản nhỏ thắt ngang eo hoặc nối 2 vạt khăn trên vai để tạo thành 1 kiểu áo khoác “độc và lạ” chỉ của riêng bạn.', '2021-01-04', 0),
+(2, 'tungthach', 'Trên tay iPhone 12 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Khăn choàng cổ là một trong những phụ kiện thời tr', '2021-01-04', 0),
+(3, 'tungthach', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', '2021-01-13', 0),
+(4, 'cyannat99', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', '2021-01-13', 0);
 
 -- --------------------------------------------------------
 
@@ -668,13 +716,19 @@ ALTER TABLE `tbl_yeu_thich`
 -- AUTO_INCREMENT cho bảng `tbl_binh_luan`
 --
 ALTER TABLE `tbl_binh_luan`
-  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_binh_luan_sp`
 --
 ALTER TABLE `tbl_binh_luan_sp`
   MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_danh_muc`
+--
+ALTER TABLE `tbl_danh_muc`
+  MODIFY `id_danh_muc` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_don_hang`
@@ -692,13 +746,13 @@ ALTER TABLE `tbl_khach_hang`
 -- AUTO_INCREMENT cho bảng `tbl_nhan_vien`
 --
 ALTER TABLE `tbl_nhan_vien`
-  MODIFY `id_nhan_vien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_nhan_vien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_san_pham`
 --
 ALTER TABLE `tbl_san_pham`
-  MODIFY `id_san_pham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_san_pham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_thuong_hieu`
