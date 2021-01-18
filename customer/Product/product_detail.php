@@ -49,7 +49,7 @@ $row=$result->fetch_assoc();
 </div>
 <div style="width: 100%; height: 200px;"></div>
 <!-- Binh luan  -->
-<form action="xlbinhluansp	.php" method="POST">
+<form action="xlbinhluansp.php" method="POST">
 		<div class="binh-luan-group">
         	<p id="binh-luan-label">Viết bình luận ...<i class="fa fa-pencil"></i></p>
 			<input type="text" id="comment-box" name="noi_dung" placeholder="Hãy nhập bình luận của bạn ở đây"> </input>
@@ -77,4 +77,93 @@ if($result->num_rows>0)
 ?>
 </form>
 <!-- Binh luan end   -->
+<!--San pham moi-->
+		<div class="row leCacMuc" style="width: 100%;">
+		<span class="col-sm-1"></span>
+		<span class="col-sm-10 noiDungGioiThieu">
+			<h1>SẢN PHẨM LIÊN QUAN</h1>
+			<div style="text-align: center;">
+			
+			<div class="row" style=" width: 100%;">
+				<label id="labelTrai2" for="trai2"><i class="fa fa-angle-left"></i></label>
+				<label id="lablePhai2" for="phai2"><i class="fa fa-angle-right"></i></label>
+				<div class="slide">
+				<div class="slides">
+					<input type="radio" name="dieuHuong" id="trai2" checked>
+					<input type="radio" name="dieuHuong" id="phai2">
+					<?php
+						$sqllq="SELECT *,tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi FROM tbl_san_pham 
+						LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham
+                        WHERE tbl_san_pham.id_san_pham<>'".$row["id_san_pham"]."' AND tbl_san_pham.don_gia-".$row["don_gia"].">-5000000 AND tbl_san_pham.don_gia-".$row["don_gia"]."<5000000 AND tbl_san_pham.id_danh_muc='".$row["id_danh_muc"]."' 
+						LIMIT 6";
+						$resultlq=$con->query($sqllq);
+						if($resultlq->num_rows>0)
+						{
+							$i=0;
+							while($rowlq=$resultlq->fetch_assoc())
+							{
+								$i=$i+1;
+								?>
+								<div class="thanhPhan <?php if($i==1) echo "s2"; ?>">
+									<span class="hoverSanPham">
+										<a href="sanpham.php?&tensanpham=<?php echo $rowlq["ten_san_pham"];?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a>
+<!--										Them san pham yeu thich-->
+										<?php
+										if (isset($_SESSION["id-user"]))
+										{
+											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$rowlq["id_san_pham"]."'";
+											$resultyt=$con->query($sqlcheckyeuthich);
+											if($resultyt->num_rows>0)
+											{
+										?>
+										<a href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $rowlq["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
+										</a>
+										<?php
+											}
+											else
+											{
+										?>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $rowlq["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										</a>
+										<?php
+											}
+										}
+										else
+										{
+										?>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $rowlq["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										</a>
+										<?php
+										}
+										?>
+									</span>
+									<div class="anhSanPham">
+										<img src="images/san-pham/<?php echo $rowlq['anh']; ?>">
+									</div>
+									<div style="font-size: 16px;">
+										<?php echo $rowlq["ten_san_pham"];?>
+									</div>
+									<span class="giaDo"><?php
+									if (isset($rowlq["muc_khuyen_mai"]))
+									echo "<p id='title-product-2'>Giá: ".number_format($rowlq["gia_moi"]).
+									"<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span> <span style='font-size:12px; color:#2c3e50; text-decoration: line-through'>".number_format($rowlq["don_gia"])."<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span></span></p>";
+									else
+									echo  "<p id='title-product-2'>Giá: ".number_format($rowlq["don_gia"])."<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span> </p>";
+								?></span>
+								</div>
+					<?php
+							}
+						}
+					?>
+				</div>
+				</div>
+			</div>
+			
+			</div>
+		</span>
+	</div>
+<!--San pham moi: end.-->
 <div style="width: 100%; height: 500px;"></div>

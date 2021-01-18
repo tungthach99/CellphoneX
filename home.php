@@ -186,7 +186,7 @@ jQuery.noConflict();
 									<div style="font-size: 16px;">
 										<?php echo $row["ten_san_pham"];?>
 									</div>
-									Giá: <span class="giaDo"><?php
+									<span class="giaDo"><?php
 									if (isset($row["muc_khuyen_mai"]))
 									echo "<p id='title-product-2'>Giá: ".number_format($row["gia_moi"]).
 									"<sup><u>đ</u></sup></span>
@@ -338,7 +338,7 @@ jQuery.noConflict();
 									<div style="font-size: 16px;">
 										<?php echo $row["ten_san_pham"];?>
 									</div>
-									Giá: <span class="giaDo"><?php
+									<span class="giaDo"><?php
 									if (isset($row["muc_khuyen_mai"]))
 									echo "<p id='title-product-2'>Giá: ".number_format($row["gia_moi"]).
 									"<sup><u>đ</u></sup></span>
@@ -427,7 +427,7 @@ jQuery.noConflict();
 									<div style="font-size: 16px;">
 										<?php echo $row["ten_san_pham"];?>
 									</div>
-									Giá: <span class="giaDo"><?php
+									<span class="giaDo"><?php
 									if (isset($row["muc_khuyen_mai"]))
 									echo "<p id='title-product-2'>Giá: ".number_format($row["gia_moi"]).
 									"<sup><u>đ</u></sup></span>
