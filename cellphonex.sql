@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 18, 2021 lúc 04:20 PM
+-- Thời gian đã tạo: Th1 18, 2021 lúc 06:07 PM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -106,6 +106,15 @@ CREATE TABLE `tbl_binh_luan` (
   `ngay_sua` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `tbl_binh_luan`
+--
+
+INSERT INTO `tbl_binh_luan` (`id_binh_luan`, `id_khach_hang`, `id_tin_tuc`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
+(9, 0, 1, 'abc', '2021-01-18 15:46:11', '2021-01-18 15:46:11'),
+(10, 0, 1, 'a', '2021-01-18 15:46:15', '2021-01-18 15:46:15'),
+(11, 0, 1, 'hihi', '2021-01-18 15:46:23', '2021-01-18 15:46:23');
+
 -- --------------------------------------------------------
 
 --
@@ -120,6 +129,14 @@ CREATE TABLE `tbl_binh_luan_sp` (
   `ngay_tao` timestamp NOT NULL DEFAULT current_timestamp(),
   `ngay_sua` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_binh_luan_sp`
+--
+
+INSERT INTO `tbl_binh_luan_sp` (`id_binh_luan`, `id_khach_hang`, `id_san_pham`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
+(5, 1, 0, 'abc', '2021-01-18 15:43:01', '2021-01-18 15:43:01'),
+(6, 1, 0, 'abc', '2021-01-18 15:44:17', '2021-01-18 15:44:17');
 
 -- --------------------------------------------------------
 
@@ -267,7 +284,7 @@ CREATE TABLE `tbl_khach_hang` (
 --
 
 INSERT INTO `tbl_khach_hang` (`id_khach_hang`, `ten_khach_hang`, `email`, `so_dien_thoai`, `dia_chi`, `ma_kich_hoat`, `mat_khau`, `ten_dang_nhap`) VALUES
-(1, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'Hà Nội', '1', '1', 'tungthach'),
+(1, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'Hà Nội', 'IakiahOt', '123', 'tungthach'),
 (3, 'Nguyễn Anh Tuấn', '', '0123456789', 'Hà Nội', '1', '1', 'tuan'),
 (4, 'Thạch Thọ Thanh', 'thachtung99@gmail.com', '0123456798', NULL, 'iDgEriUV', '123456', 'thanh'),
 (5, 'ly coi', 'abc@gmail.com', '0123456', NULL, 'GVUbg4Cm', '1', 'lycoi');
@@ -497,7 +514,7 @@ CREATE TABLE `tbl_san_pham` (
 
 INSERT INTO `tbl_san_pham` (`id_san_pham`, `ten_san_pham`, `don_gia`, `id_danh_muc`, `anh`, `mo_ta`, `id_anh`, `so_luong`, `ngay_them`, `id_thuong_hieu`) VALUES
 (1, 'iPhoneX', 5000000, '1', 'iPhoneX.jpg', 'Ngừng sản xuất rồi đó.', 'IMG01', 255, '2020-12-31 17:00:00', 1),
-(2, 'Samsung Galaxy A12', 4290000, '', '', '', 'IMG02', 255, '2021-01-01 17:00:00', 2),
+(2, 'Samsung Galaxy A12', 4290000, '1', 'samsung-A12.jpg', '', 'IMG02', 255, '2021-01-01 17:00:00', 2),
 (3, 'Samsung Galaxy Note 20 Ultra', 2990000, '1', 'not-20-ultra.jpg', NULL, 'IMG03', 255, '2021-01-13 17:00:00', 2),
 (4, 'Xiaomi Mi 10T Pro 5G', 12990000, '1', 'xiaomi-mi-10t-pro_2_.jpg', NULL, 'IMG04', 255, '2021-01-13 17:00:00', 6),
 (5, 'Samsung Galaxy Tab S7', 18990000, '2', 'tabs7plus.jpg', NULL, 'IMG05', 255, '2021-01-29 17:00:00', 2),
@@ -695,13 +712,13 @@ ALTER TABLE `tbl_yeu_thich`
 -- AUTO_INCREMENT cho bảng `tbl_binh_luan`
 --
 ALTER TABLE `tbl_binh_luan`
-  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_binh_luan_sp`
 --
 ALTER TABLE `tbl_binh_luan_sp`
-  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_danh_muc`
