@@ -7,12 +7,12 @@ session_start();
 	require("public/ketnoi.php");
 	$_SESSION["kiemtrasua"]=0;
 	$noidung=$_POST['noi_dung'];
-	$tenkhachhang=$_SESSION["userngan"];
+	$idkhachhang=$_SESSION["id-user"];
 	$idtintuc=$_POST['ma_tin_tuc'];
 	$tranghientai="location:chitiettintuc.php?matintuc=".$idtintuc;
-	if ($noidung != "" && $tenkhachhang != "")
+	if ($noidung != "" && $idkhachhang != "")
 	{
-		$sql_insert="insert into tbl_binh_luan(ten_khach_hang,id_tin_tuc,noi_dung) values('".$tenkhachhang."','".$idtintuc."','".$noidung."')";
+		$sql_insert="insert into tbl_binh_luan(id_khach_hang,id_tin_tuc,noi_dung) values('".$tenkhachhang."','".$idtintuc."','".$noidung."')";
 		if($con->query($sql_insert)===TRUE && $con->query($sql_insert1)===TRUE)
 		{	
 			header($tranghientai);

@@ -8,7 +8,7 @@
       $noidung = $_POST['noi_dung'];
 	
 			//Cập nhật dữ liệu
-			$sql = "UPDATE tbl_tin_tuc SET tac_gia = '$tacgia', tieu_de = '$tieude', anh='$anh', noi_dung='$noidung' WHERE id_tin_tuc = $id";
+			$sql = "UPDATE tbl_tin_tuc SET tac_gia = '$tacgia', tieu_de = '$tieude', anh='$anh', noi_dung='$noidung', edit_date = now() WHERE id_tin_tuc = $id";
 
 			if($connection->query($sql))
 				echo "<div class='alert alert-success' role='alert'>

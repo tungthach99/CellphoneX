@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 17, 2021 lúc 08:02 AM
+-- Thời gian đã tạo: Th1 17, 2021 lúc 06:57 PM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -95,7 +95,7 @@ INSERT INTO `tbl_anh` (`id_anh`, `id_src`) VALUES
 
 CREATE TABLE `tbl_binh_luan` (
   `id_binh_luan` int(11) NOT NULL,
-  `ten_khach_hang` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `id_khach_hang` int(50) NOT NULL,
   `id_tin_tuc` int(50) NOT NULL,
   `noi_dung` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `ngay_tao` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -106,15 +106,11 @@ CREATE TABLE `tbl_binh_luan` (
 -- Đang đổ dữ liệu cho bảng `tbl_binh_luan`
 --
 
-INSERT INTO `tbl_binh_luan` (`id_binh_luan`, `ten_khach_hang`, `id_tin_tuc`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
-(1, 'tung', 1, ' ', '2021-01-13 17:12:00', '2021-01-13 17:12:00'),
-(2, 'tung', 1, ' ', '2021-01-13 17:12:14', '2021-01-13 17:12:14'),
-(3, 'tung', 1, ' ', '2021-01-13 17:12:45', '2021-01-13 17:12:45'),
-(4, 'tung', 1, ' ', '2021-01-13 17:12:47', '2021-01-13 17:12:47'),
-(5, 'tung', 1, ' ', '2021-01-13 17:13:46', '2021-01-13 17:13:46'),
-(6, 'tung', 1, ' abc', '2021-01-13 17:14:56', '2021-01-13 17:14:56'),
-(7, 'tuan', 3, 'a', '2021-01-14 16:41:00', '2021-01-14 16:41:00'),
-(8, 'tuan', 1, 'a', '2021-01-14 16:41:10', '2021-01-14 16:41:10');
+INSERT INTO `tbl_binh_luan` (`id_binh_luan`, `id_khach_hang`, `id_tin_tuc`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
+(16, 0, 1, 'adasdsd', '2021-01-17 16:52:50', '2021-01-17 16:52:50'),
+(17, 0, 1, 'hi', '2021-01-17 16:52:52', '2021-01-17 16:52:52'),
+(19, 0, 1, 'buồn cười quá', '2021-01-17 16:53:09', '2021-01-17 16:53:09'),
+(20, 3, 1, 'A', '2021-01-17 17:44:28', '2021-01-17 17:44:28');
 
 -- --------------------------------------------------------
 
@@ -124,7 +120,7 @@ INSERT INTO `tbl_binh_luan` (`id_binh_luan`, `ten_khach_hang`, `id_tin_tuc`, `no
 
 CREATE TABLE `tbl_binh_luan_sp` (
   `id_binh_luan` int(11) NOT NULL,
-  `ten_khach_hang` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `id_khach_hang` int(50) NOT NULL,
   `id_san_pham` int(50) NOT NULL,
   `noi_dung` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `ngay_tao` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -135,11 +131,10 @@ CREATE TABLE `tbl_binh_luan_sp` (
 -- Đang đổ dữ liệu cho bảng `tbl_binh_luan_sp`
 --
 
-INSERT INTO `tbl_binh_luan_sp` (`id_binh_luan`, `ten_khach_hang`, `id_san_pham`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
-(1, 'tuan', 1, 'A', '2021-01-16 17:51:51', '2021-01-16 17:51:51'),
-(2, 'tuan', 1, 'dafsdas', '2021-01-16 17:51:55', '2021-01-16 17:51:55'),
-(3, 'tung', 2, 'a', '2021-01-16 18:49:43', '2021-01-16 18:49:43'),
-(4, 'tung', 1, 'hihi', '2021-01-16 18:49:55', '2021-01-16 18:49:55');
+INSERT INTO `tbl_binh_luan_sp` (`id_binh_luan`, `id_khach_hang`, `id_san_pham`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
+(2, 0, 1, 'dafsdas', '2021-01-16 17:51:55', '2021-01-16 17:51:55'),
+(3, 0, 2, 'a', '2021-01-16 18:49:43', '2021-01-16 18:49:43'),
+(4, 0, 1, 'hihi', '2021-01-16 18:49:55', '2021-01-16 18:49:55');
 
 -- --------------------------------------------------------
 
@@ -323,9 +318,7 @@ INSERT INTO `tbl_khuyen_mai` (`id_khuyen_mai`, `id_san_pham`, `ten_khuyen_mai`, 
 ('KM02', 5, 'Giảm giá Samsung Galaxy Tab S7', 20, '0'),
 ('KM02', 6, 'Giảm giá iPhone 12', 20, '0'),
 ('KM03', 7, 'Giảm giá iPhone 11', 10, '0'),
-('KM03', 8, 'Giảm giá Apple iPhone XR', 20, '0'),
-('KM04', 9, 'Giảm giá iPhone 12 mini', 10, '0'),
-('KM04', 10, 'Giảm giá Asus ROG 3', 25, '0');
+('KM01', 9, 'Giảm giá iPhone 12 Mini', 15, '0');
 
 -- --------------------------------------------------------
 
@@ -370,7 +363,8 @@ CREATE TABLE `tbl_nhan_vien` (
 --
 
 INSERT INTO `tbl_nhan_vien` (`id_nhan_vien`, `ten_nhan_vien`, `email`, `so_dien_thoai`, `tai_khoan`, `mat_khau`, `quyen`) VALUES
-(3, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'tung', '1', 0);
+(3, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'tung', '1', 0),
+(4, 'tuan', 'cyannat99@gmail.com', '0333531875', 'tuan', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -531,18 +525,18 @@ CREATE TABLE `tbl_tin_tuc` (
   `anh` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `noi_dung` longtext COLLATE utf8_unicode_ci NOT NULL,
   `add_date` date NOT NULL DEFAULT current_timestamp(),
-  `so_binh_luan` int(11) NOT NULL
+  `edit_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_tin_tuc`
 --
 
-INSERT INTO `tbl_tin_tuc` (`id_tin_tuc`, `tac_gia`, `tieu_de`, `anh`, `noi_dung`, `add_date`, `so_binh_luan`) VALUES
-(1, 'cyannat99', 'Tính năng mới \"phát hiện mật khẩu bị lộ\" trên IOS', 'tin-tuc-1.png', 'Khăn choàng cổ là một trong những phụ kiện thời trang bên cạnh những món đồ thiết yếu được các cô gái yêu thích trong mùa lạnh. Khăn choàng cũng gồm nhiều kiểu dáng, mẫu mã khác nhau không kém bất cứ món phụ kiện nào. Khăn choàng voan mỏng, lụa, len,… với nhiều kích thước dài ngắn, độ rộng khác nhau đem đến cho phái nữ vô số sự lựa chọn. Đây được xem là món đồ làm điệu và tạo điểm nhấn thêm cho trang phục của bạn gái. Một chiếc khăn khoác hờ trên cổ cũng đủ khiến cô gái ấy hấp dẫn hơn rất nhiều.\r\nMỗi kiểu khăn được dùng cho mỗi mùa, mỗi mục đích khác nhau. Chẳng hạn mùa đông với những đợt gió mùa, nhiệt độ thấp nhất trong năm thì những chiếc khăn dài, ấm áp như len hay vải là sự lựa chọn thông minh nhất. Hơn nữa, cách thắt khăn dành cho mùa lạnh cũng cầu kì hơn một chút để giúp cơ thể giữ ấm. Đang là mùa đông, bạn đã sắm cho mình những chiếc khăn choàng cổ mới và bổ sung thêm những cách thắt khăn mới dành riêng cho mùa này chưa? Nếu chưa thì hãy để chúng tôi giới thiệu cho bạn vài cách thắt khăn đơn giản mà tạo được điểm nhấn nhé!\r\nCách 1: Thắt khăn dạng nơ bướm.\r\nCách này đơn giản, dễ làm nhưng lại cực kì dễ thương, phù hợp cho những cô nàng điệu đà. Đầu tiên, bạn sẽ quàng khăn qua vai và thắt 1 nút. Sau đó cần dải khăn ở dưới gập lại như hình. Xoay nút vừa gập quay sang phải, rồi lấy dải khăn trên lồng vào khe kéo sang trái. Cuối cùng kéo thành nơ rồi chỉnh lại cho đều hai cánh là được.\r\nCách 2: Thả khăn theo hai vạt áo\r\nMột trong những cách sử dụng khăn choàng phổ biến hiện nay chính là choàng khăn qua vai và thả buông hờ hai cùng vạt áo váy. Cách này dành cho những cô nàng thích sự đơn giản, không quá khéo tay vì bạn không phải tốn nhiều công sức để thực hiện. Hai vạt khăn tung bay cùng hai tà áo khoác măng tô sẽ giúp bạn đánh gục bất cứ chàng trai nào.\r\nCách 3:  Sử dụng khăn choàng làm áo khoác\r\nKhi bạn đã chán ngán với việc phải mặc những chiếc áo khoác dày cộm trên người thì hãy tận dụng ngay chiếc khăn choàng bản lớn, chất liệu len hoặc nỉ trong tủ đồ nhà mình. Một chút biến tấu nhỏ, nhẹ nhàng nhưng đã tạo nên cho mình thêm phong cách thật khác biệt. Các nàng chỉ cần choàng qua bờ vai, luồn vào 2 cánh tay, là đã có ngay một chiếc áo khoác thật ấm áp, độc đáo. Thêm một gợi ý nữa với chiếc khăn choàng đó là bạn choàng khăn qua vai và dùng dây nịt bản nhỏ thắt ngang eo hoặc nối 2 vạt khăn trên vai để tạo thành 1 kiểu áo khoác “độc và lạ” chỉ của riêng bạn.', '2021-01-04', 0),
-(2, 'tungthach', 'Trên tay iPhone 12 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Khăn choàng cổ là một trong những phụ kiện thời tr', '2021-01-04', 0),
-(3, 'tungthach', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', '2021-01-13', 0),
-(4, 'cyannat99', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', '2021-01-13', 0);
+INSERT INTO `tbl_tin_tuc` (`id_tin_tuc`, `tac_gia`, `tieu_de`, `anh`, `noi_dung`, `add_date`, `edit_date`) VALUES
+(1, 'cyannat99', 'Tính năng mới ', 'tin-tuc-1.png', 'Khăn choàng cổ là một trong những phụ kiện thời trang bên cạnh những món đồ thiết yếu được các cô gái yêu thích trong mùa lạnh. Khăn choàng cũng gồm nhiều kiểu dáng, mẫu mã khác nhau không kém bất cứ món phụ kiện nào. Khăn choàng voan mỏng, lụa, len,… với nhiều kích thước dài ngắn, độ rộng khác nhau đem đến cho phái nữ vô số sự lựa chọn. Đây được xem là món đồ làm điệu và tạo điểm nhấn thêm cho trang phục của bạn gái. Một chiếc khăn khoác hờ trên cổ cũng đủ khiến cô gái ấy hấp dẫn hơn rất nhiều.Mỗi kiểu khăn được dùng cho mỗi mùa, mỗi mục đích khác nhau. Chẳng hạn mùa đông với những đợt gió mùa, nhiệt độ thấp nhất trong năm thì những chiếc khăn dài, ấm áp như len hay vải là sự lựa chọn thông minh nhất. Hơn nữa, cách thắt khăn dành cho mùa lạnh cũng cầu kì hơn một chút để giúp cơ thể giữ ấm. Đang là mùa đông, bạn đã sắm cho mình những chiếc khăn choàng cổ mới và bổ sung thêm những cách thắt khăn mới dành riêng cho mùa này chưa? Nếu chưa thì hãy để chúng tôi giới thiệu cho bạn vài cách thắt khăn đơn giản mà tạo được điểm nhấn nhé!Cách 1: Thắt khăn dạng nơ bướm.Cách này đơn giản, dễ làm nhưng lại cực kì dễ thương, phù hợp cho những cô nàng điệu đà. Đầu tiên, bạn sẽ quàng khăn qua vai và thắt 1 nút. Sau đó cần dải khăn ở dưới gập lại như hình. Xoay nút vừa gập quay sang phải, rồi lấy dải khăn trên lồng vào khe kéo sang trái. Cuối cùng kéo thành nơ rồi chỉnh lại cho đều hai cánh là được.Cách 2: Thả khăn theo hai vạt áoMột trong những cách sử dụng khăn choàng phổ biến hiện nay chính là choàng khăn qua vai và thả buông hờ hai cùng vạt áo váy. Cách này dành cho những cô nàng thích sự đơn giản, không quá khéo tay vì bạn không phải tốn nhiều công sức để thực hiện. Hai vạt khăn tung bay cùng hai tà áo khoác măng tô sẽ giúp bạn đánh gục bất cứ chàng trai nào.Cách 3:  Sử dụng khăn choàng làm áo khoácKhi bạn đã chán ngán với việc phải mặc những chiếc áo khoác dày cộm trên người thì hãy tận dụng ngay chiếc khăn choàng bản lớn, chất liệu len hoặc nỉ trong tủ đồ nhà mình. Một chút biến tấu nhỏ, nhẹ nhàng nhưng đã tạo nên cho mình thêm phong cách thật khác biệt. Các nàng chỉ cần choàng qua bờ vai, luồn vào 2 cánh tay, là đã có ngay một chiếc áo khoác thật ấm áp, độc đáo. Thêm một gợi ý nữa với chiếc khăn choàng đó là bạn choàng khăn qua vai và dùng dây nịt bản nhỏ thắt ngang eo hoặc nối 2 vạt khăn trên vai để tạo thành 1 kiểu áo khoác “độc và lạ” chỉ của riêng bạn.', '2021-01-04', '2021-01-17 17:56:29'),
+(2, 'hi', 'Tính năng mới \"phát hiện mật khẩu bị lộ\" trên IOS', 'tin-tuc-2.png', 'Vậy chiếc Đồng hồ thông minh Huami Amazfit GTR 2e này có gì khác biệt so với những mẫu đồng hồ trước đó? Hãy cùng Sforum.vn trên tay nhanh dòng sản phẩm này nhé!\r\n\r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-5 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\n\r\nVề ngoại hình, Amazfit GTR 2e có thiết kế mặt tròn tương tự như dòng Amazfit GTR 2 nhưng khung máy được thiết kế bằng nhôm, không phải thép như thế hệ GTR 2. Đồng hồ có 3 màu đen, xanh lá và xam. Phiên bản mình trên tay nhanh hôm nay là màu xám.\r\n\r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-6 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\n\r\nMặt đồng hồ có kích thước khoảng 35.3mm với mặt kính vát cong 2.5D cho cảm giác mượt mà khi vuốt từ màn hình xuống khung máy. Amazfit GTR 2e sở hữu màn hình màu Amoled giúp thông tin hiển thị đẹp và rõ ràng hơn.\r\n\r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-19 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-16 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\nNhư các đồng hồ thông minh khác, Amazfit GTR 2e có cảm biến nhịp tim và đặc biệt hỗ trợ đo nồng độ Oxy trong máu SpO2. Ngoài ra Amazfit GTR 2e còn được trang bị nhiều cảm biến khác như Cảm biến gia tốc, cảm biến con quay hồi chuyển, cảm biến địa từ 3 trục, cảm biến ánh sáng xung quanh, cảm biến áp suất không khí và cảm biến nhiệt độ.\r\n\r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-1 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-10 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-12 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\nSforum - Trang thông tin công nghệ mới nhất Amazfit-GTR-2e-24 Trên tay nhanh Đồng hồ thông minh Huami Amazfit GTR 2e: Bản rút gọn của GTR 2, giá khoảng 2.99 triệu đồng \r\nTheo hãng công bố, với thời gian sạc đầy khoảng 2,5 giờ đồng hồ Huami Amazfit GTR 2e cho 12 ngày sử dụng đầy đủ tính năng và lên đến 45 ngày khi sử dụng cơ bản. Sạc được thiết kế dạng nam châm khá chắc chắn, người dùng có thể dễ dàng đặt và tháo sạc một cách dễ dàng.', '2021-01-04', '2021-01-17 17:53:44'),
+(3, 'tungthach', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', '2021-01-13', '2021-01-17 17:53:44'),
+(4, 'cyannat99', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', '2021-01-13', '2021-01-17 17:53:44');
 
 -- --------------------------------------------------------
 
@@ -674,7 +668,7 @@ ALTER TABLE `tbl_yeu_thich`
 -- AUTO_INCREMENT cho bảng `tbl_binh_luan`
 --
 ALTER TABLE `tbl_binh_luan`
-  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_binh_luan_sp`
@@ -698,7 +692,7 @@ ALTER TABLE `tbl_khach_hang`
 -- AUTO_INCREMENT cho bảng `tbl_nhan_vien`
 --
 ALTER TABLE `tbl_nhan_vien`
-  MODIFY `id_nhan_vien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_nhan_vien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_san_pham`
