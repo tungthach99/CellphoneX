@@ -2,7 +2,7 @@
 if(isset($_POST['them']))
 {
 	//kiểm tra thông tin
-    $anh=$_POST['anh'];
+    $anhkm=$_POST['anhkm'];
     $idkhuyenmai = $_POST['id_khuyen_mai'];
 	$hople=true;
 	$message = "";
@@ -10,8 +10,6 @@ if(isset($_POST['them']))
 	{
 		$hople=false;
 		$message .= "<div>Bạn chưa nhập mã chương trình khuyến mại</div>";
-	
-		 
     }
 
 	$idsanpham=$_POST['id_san_pham'];
@@ -43,8 +41,8 @@ if(isset($_POST['them']))
         $result=$connection ->query($sqlcheck);
         if($result->num_rows<=0)
         {
-		$sql="INSERT INTO tbl_khuyen_mai (id_khuyen_mai, id_san_pham, ten_khuyen_mai, muc_khuyen_mai, anh_khuyen_mai) 
-        VALUES ('$idkhuyenmai','$idsanpham','$tenkhuyenmai','$muckhuyenmai','$anh') ";
+		$sql="INSERT INTO tbl_khuyen_mai (id_khuyen_mai, id_san_pham, ten_khuyen_mai, muc_khuyen_mai, anhkm) 
+        VALUES ('$idkhuyenmai','$idsanpham','$tenkhuyenmai','$muckhuyenmai','$anhkm') ";
 		if($connection->query($sql))
         {
      	    echo "<div class='alert alert-success' role='alert'>
@@ -108,7 +106,7 @@ if(isset($_POST['them']))
          <div class="col-lg-12">
             <div class="form-group focused">
             <label class="form-control-label" for="input-username">Chọn ảnh</label>
-			<input name="anh" type='file' id="imgInp" /><br>
+			<input name="anhkm" type='file' id="imgInp" /><br>
   			<img style="height: 200px" id="blah" src="" />
             </div>
          </div>

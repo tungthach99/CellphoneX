@@ -51,7 +51,7 @@
 	        	<td><?php echo $row['id_san_pham'];?></td>
 	        	<td><?php echo $row['ten_khuyen_mai'];?></td>
 	        	<td><?php echo $row['muc_khuyen_mai']?></td>
-	        	<td><?php echo $row['anh_khuyen_mai']; ?></td>
+	        	<td><img style="height: 100px " src="../../images/khuyen-mai/<?php echo $row['anhkm'] ?>" alt=""></td>
 	        	<td>
 	        		<a class="btn btn-outline-primary" href="?ql=khuyenmai/sua&idsua=<?php echo $row['id_san_pham']?>">Sửa</a>
 	        		<a class="btn btn-outline-warning" href="?ql=khuyenmai/ds&idxoa=<?php echo $row['id_san_pham']?>">Xóa</a>

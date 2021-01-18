@@ -118,7 +118,8 @@ $row=$result->fetch_assoc();
 		</form>
 		<div style="margin: 15px 0 10px 0;width: 100%;border-bottom: 2px solid var(--light);"></div>
 <?php
-$sql="select * from tbl_binh_luan where id_tin_tuc='".$_GET['matintuc']."' order by ngay_tao DESC";
+$sql="select * from tbl_binh_luan JOIN tbl_khach_hang ON tbl_khach_hang.id_khach_hang=tbl_binh_luan.id_khach_hang
+where id_tin_tuc='".$_GET['matintuc']."' order by ngay_tao DESC";
 $result=$con->query($sql);
 if($result->num_rows>0)
 	{
@@ -126,7 +127,7 @@ if($result->num_rows>0)
 	{
 ?>
 		<div class="hien-thi-binh-luan">
-			<div class="hien-thi-ten"><?php echo $_SESSION["ten-user"]?><span class="hien-thi-ngay"><?php echo $row['ngay_tao']?></span></div>
+			<div class="hien-thi-ten"><?php echo $row['ten_khach_hang']?><span class="hien-thi-ngay"><?php echo $row['ngay_tao']?></span></div>
 			<div class="hien-thi-noi-dung" value= null><?php echo $row['noi_dung']?></div>
 			<div style="margin: 10px 0 10px 0;width: 90%;border-bottom: 2px solid var(--light);"></div>
 		</div>

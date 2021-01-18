@@ -34,6 +34,7 @@ if(isset($_GET['idxoa'])){
 	    <thead class="thead-light">
 	      <tr>
 	        <th scope="col">STT</th>
+			<th scope="col">Mã sản phẩm</th>
 	        <th scope="col">Tên sản phẩm</th>
 	        <th scope="col">Đơn giá</th>
 	        <th scope="col">Danh mục</th>
@@ -52,6 +53,7 @@ if(isset($_GET['idxoa'])){
 	    	 ?>
 	        <tr>
 	        	<td><?php echo $stt; ?></td>
+				<td><?php echo $row['id_san_pham']; ?></td>
 	        	<td><?php echo substr($row['ten_san_pham'],0,30); ?></td>
 	        	<td><?php echo $row['don_gia']; ?></td>
 	        	<td><?php echo $row['ten_danh_muc']; ?></td>

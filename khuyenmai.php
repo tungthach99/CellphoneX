@@ -73,7 +73,7 @@ require("public/ketnoi.php");
                 <ul>
                     <li><a id="box-km-1" class="box-menu-active"  onclick="doiboxmenu1()">Khuyến mãi hot</a></li>
                     <li><a id="box-km-2" class onclick="doiboxmenu2()">Hotsales cuối tuần</a> </li>
-                    <li><a  id="box-km-3" class onclick="doiboxmenu3()">Chương trình đặt hàng</a></li>
+                    <li><a  id="box-km-3" class onclick="doiboxmenu3()">Apple SALES</a> </li>
                     <li><a id="box-km-4" class onclick="doiboxmenu4()">Ưu đãi đối tác</a></li>
                 </ul>
             </div>
@@ -97,7 +97,7 @@ require("public/ketnoi.php");
                     ?>
                     <a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>" target="_blank" class="km km-title" >
                         <div class="muc-khuyen-mai">-<?php echo $row['muc_khuyen_mai'] ?>%</div>
-                        <img class="km-image" src="images/san-pham/<?php echo $row['anh']?>" alt="Chương trình khuyến mại 1">
+                        <img class="km-image" src="images/khuyen-mai/<?php echo $row['anhkm']?>" alt="Chương trình khuyến mại 1">
                         <p class="km-title-1">
                             <?php echo $row['ten_khuyen_mai']?>
                         </p>
@@ -123,7 +123,7 @@ require("public/ketnoi.php");
                     ?>
                     <a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>" target="_blank" class="km km-title" >
                         <div class="muc-khuyen-mai">-<?php echo $row['muc_khuyen_mai'] ?>%</div>
-                        <img class="km-image" src="images/san-pham/<?php echo $row['anh']?>" alt="Chương trình khuyến mại 1">
+                        <img class="km-image" src="images/khuyen-mai/<?php echo $row['anhkm']?>" alt="Chương trình khuyến mại 1">
                         <p class="km-title-1">
                             <?php echo $row['ten_khuyen_mai']?>
                         </p>
@@ -149,7 +149,7 @@ require("public/ketnoi.php");
                     ?>
                     <a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>" target="_blank" class="km km-title" >
                          <div class="muc-khuyen-mai">-<?php echo $row['muc_khuyen_mai'] ?>%</div>
-                        <img class="km-image" src="images/san-pham/<?php echo $row['anh']?>" alt="Chương trình khuyến mại 1">
+                        <img class="km-image" src="images/khuyen-mai/<?php echo $row['anhkm']?>" alt="Chương trình khuyến mại 1">
                         <p class="km-title-1">
                             <?php echo $row['ten_khuyen_mai']?>
                         </p>
@@ -175,7 +175,7 @@ require("public/ketnoi.php");
                     ?>
                     <a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>" target="_blank" class="km km-title" >
                         <div class="muc-khuyen-mai">-<?php echo $row['muc_khuyen_mai'] ?>%</div>
-                        <img class="km-image" src="images/san-pham/<?php echo $row['anh']?>" alt="Chương trình khuyến mại 1">
+                        <img class="km-image" src="images/khuyen-mai/<?php echo $row['anhkm']?>" alt="Chương trình khuyến mại 1">
                         <p class="km-title-1">
                             <?php echo $row['ten_khuyen_mai']?>
                         </p>

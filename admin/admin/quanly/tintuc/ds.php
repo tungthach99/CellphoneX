@@ -49,7 +49,9 @@
 	        	<td><?php echo $stt; ?></td>
 	        	<td><?php echo $row['tac_gia']?></td>
 	        	<td><?php echo $row['tieu_de'];?></td>
-	        	<td><?php echo $row['anh'];?></td>
+	        	<td>
+				<img style="height: 100px " src="../../images/tin-tuc/<?php echo $row['anh'] ?>" alt="">
+				</td>
 	        	<td height="50px;"><?php echo substr($row['noi_dung'],0,80)?> ...</td>
 	        	<td><?php echo $row['add_date']; ?></td>
 				<td><?php echo $row['edit_date']; ?></td>

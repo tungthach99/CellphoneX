@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 18, 2021 lúc 10:12 AM
+-- Thời gian đã tạo: Th1 18, 2021 lúc 04:20 PM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -85,7 +85,11 @@ INSERT INTO `tbl_anh` (`id_anh`, `id_src`) VALUES
 ('IMG14', 'airport2-2.jpg'),
 ('IMG14', 'airport2-3.jpg'),
 ('IMG12', 'img-apple-main-recovered_1_1.jpg'),
-('IMG12', 'watch.jpg');
+('IMG12', 'watch.jpg'),
+('IMG17', 'reno4.jpg'),
+('IMG17', 'reno4-1.jpg'),
+('IMG17', 'reno4-2.jpg'),
+('IMG17', 'reno4-3.jpg');
 
 -- --------------------------------------------------------
 
@@ -95,26 +99,12 @@ INSERT INTO `tbl_anh` (`id_anh`, `id_src`) VALUES
 
 CREATE TABLE `tbl_binh_luan` (
   `id_binh_luan` int(11) NOT NULL,
-  `ten_khach_hang` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `id_khach_hang` int(50) NOT NULL,
   `id_tin_tuc` int(50) NOT NULL,
   `noi_dung` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `ngay_tao` timestamp NOT NULL DEFAULT current_timestamp(),
   `ngay_sua` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `tbl_binh_luan`
---
-
-INSERT INTO `tbl_binh_luan` (`id_binh_luan`, `ten_khach_hang`, `id_tin_tuc`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
-(1, 'tung', 1, ' ', '2021-01-13 17:12:00', '2021-01-13 17:12:00'),
-(2, 'tung', 1, ' ', '2021-01-13 17:12:14', '2021-01-13 17:12:14'),
-(3, 'tung', 1, ' ', '2021-01-13 17:12:45', '2021-01-13 17:12:45'),
-(4, 'tung', 1, ' ', '2021-01-13 17:12:47', '2021-01-13 17:12:47'),
-(5, 'tung', 1, ' ', '2021-01-13 17:13:46', '2021-01-13 17:13:46'),
-(6, 'tung', 1, ' abc', '2021-01-13 17:14:56', '2021-01-13 17:14:56'),
-(7, 'tuan', 3, 'a', '2021-01-14 16:41:00', '2021-01-14 16:41:00'),
-(8, 'tuan', 1, 'a', '2021-01-14 16:41:10', '2021-01-14 16:41:10');
 
 -- --------------------------------------------------------
 
@@ -124,22 +114,12 @@ INSERT INTO `tbl_binh_luan` (`id_binh_luan`, `ten_khach_hang`, `id_tin_tuc`, `no
 
 CREATE TABLE `tbl_binh_luan_sp` (
   `id_binh_luan` int(11) NOT NULL,
-  `ten_khach_hang` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `id_khach_hang` int(50) NOT NULL,
   `id_san_pham` int(50) NOT NULL,
   `noi_dung` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `ngay_tao` timestamp NOT NULL DEFAULT current_timestamp(),
   `ngay_sua` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `tbl_binh_luan_sp`
---
-
-INSERT INTO `tbl_binh_luan_sp` (`id_binh_luan`, `ten_khach_hang`, `id_san_pham`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
-(1, 'tuan', 1, 'A', '2021-01-16 17:51:51', '2021-01-16 17:51:51'),
-(2, 'tuan', 1, 'dafsdas', '2021-01-16 17:51:55', '2021-01-16 17:51:55'),
-(3, 'tung', 2, 'a', '2021-01-16 18:49:43', '2021-01-16 18:49:43'),
-(4, 'tung', 1, 'hihi', '2021-01-16 18:49:55', '2021-01-16 18:49:55');
 
 -- --------------------------------------------------------
 
@@ -303,24 +283,20 @@ CREATE TABLE `tbl_khuyen_mai` (
   `id_san_pham` int(11) NOT NULL,
   `ten_khuyen_mai` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `muc_khuyen_mai` int(11) NOT NULL,
-  `anh_khuyen_mai` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `anhkm` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_khuyen_mai`
 --
 
-INSERT INTO `tbl_khuyen_mai` (`id_khuyen_mai`, `id_san_pham`, `ten_khuyen_mai`, `muc_khuyen_mai`, `anh_khuyen_mai`) VALUES
-('KM01', 1, 'Giảm giá iPhoneX', 20, '0'),
-('KM01', 2, 'Giảm giá Samsung Galaxy A12', 10, '0'),
-('KM01', 3, 'Giảm giá Samsung Galaxy Note 20', 15, '0'),
-('KM01', 4, 'Giảm giá Xiaomi 10T', 20, '0'),
-('KM02', 5, 'Giảm giá Samsung Galaxy Tab S7', 20, '0'),
-('KM02', 6, 'Giảm giá iPhone 12', 20, '0'),
-('KM03', 7, 'Giảm giá iPhone 11', 10, '0'),
-('KM03', 8, 'Giảm giá Apple iPhone XR', 20, '0'),
-('KM04', 9, 'Giảm giá iPhone 12 mini', 10, '0'),
-('KM04', 10, 'Giảm giá Asus ROG 3', 25, '0');
+INSERT INTO `tbl_khuyen_mai` (`id_khuyen_mai`, `id_san_pham`, `ten_khuyen_mai`, `muc_khuyen_mai`, `anhkm`) VALUES
+('KM03', 12, 'Giảm giá Apple Watch', 15, 'km1.png'),
+('KM03', 7, 'Giảm giá iPhone 11', 20, 'km2.png'),
+('KM01', 5, 'Giảm giá Samsung Galaxy Tab S7', 15, 'km3.png'),
+('KM02', 34, 'Giảm giá Samsung Galaxy Tab S6', 20, 'km4.png'),
+('KM03', 35, 'Giảm giá iPhone 8 Plus', 13, 'km5.png'),
+('KM01', 36, 'Giảm giá OPPO Reno 4', 15, 'km6.png');
 
 -- --------------------------------------------------------
 
@@ -511,7 +487,7 @@ CREATE TABLE `tbl_san_pham` (
   `mo_ta` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_anh` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `so_luong` int(20) NOT NULL,
-  `ngay_them` date DEFAULT current_timestamp(),
+  `ngay_them` timestamp NULL DEFAULT current_timestamp(),
   `id_thuong_hieu` int(11) NOT NULL DEFAULT 7
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
@@ -520,21 +496,24 @@ CREATE TABLE `tbl_san_pham` (
 --
 
 INSERT INTO `tbl_san_pham` (`id_san_pham`, `ten_san_pham`, `don_gia`, `id_danh_muc`, `anh`, `mo_ta`, `id_anh`, `so_luong`, `ngay_them`, `id_thuong_hieu`) VALUES
-(1, 'iPhoneX', 5000000, '1', 'iPhoneX.jpg', 'Ngừng sản xuất rồi đó.', 'IMG01', 255, '2021-01-01', 1),
-(2, 'Samsung Galaxy A12', 4290000, '1', 'samsung-A12.jpg', NULL, 'IMG02', 255, '2021-01-02', 2),
-(3, 'Samsung Galaxy Note 20 Ultra', 2990000, '1', 'not-20-ultra.jpg', NULL, 'IMG03', 255, '2021-01-14', 2),
-(4, 'Xiaomi Mi 10T Pro 5G', 12990000, '1', 'xiaomi-mi-10t-pro_2_.jpg', NULL, 'IMG04', 255, '2021-01-14', 6),
-(5, 'Samsung Galaxy Tab S7', 18990000, '2', 'tabs7plus.jpg', NULL, 'IMG05', 255, '2021-01-30', 2),
-(6, 'Iphone 12 ProMax Chính hãng (VN/A)', 33990000, '1', 'iphone12promax.jpg', NULL, 'IMG06', 255, '2021-01-14', 1),
-(7, 'IPhone 11 Chính hãng (VN/A)', 24990000, '1', 'iphone11.jpg', NULL, 'IMG07', 255, '2021-01-14', 1),
-(8, 'Apple iphone XR chính hãng (VN/A)', 14990000, '1', 'iphone-xr_1_.jpg', NULL, 'IMG08', 255, '2021-01-14', 1),
-(9, 'Iphone 12 mini (VN/A)', 25990000, '1', 'iphone-12-mini-black-select-2020_2.jpg', NULL, 'IMG09', 255, '2021-01-14', 1),
-(10, 'Asus ROG phone 3', 22990000, '1', 'rog_3.jpg', NULL, 'IMG10', 255, '2021-01-14', 4),
-(11, 'Pin sạc dự phòng Xiaomi Redmi 20000mah sạc nhanh 18W', 450000, '5', 'pin-du-phong-xiaomi-2000mah-18w.jpg', 'abc', 'IMG11', 255, '2021-01-14', 6),
-(12, 'Apple Watch Series 6 (VN/A)', 13990000, '3', 'img-apple-main-recovered_1_1.jpg', NULL, 'IMG12', 255, '2021-01-14', 1),
-(28, 'Galaxy Watch Active 2', 10990000, '3', 'samsung-watch-active-2-1.jpg', 'Tình trạng\r\nNguyên hộp, đầy đủ phụ kiện từ nhà sản xuất\r\nHộp bao gồm\r\nĐồng hồ, bộ sạc, HDSD\r\nBảo hành\r\nBảo hành 12 tháng tại trung tâm bảo hành Chính hãng. 1 đổi 1 trong 30 ngày nếu có lỗi nhà sản xuất.', 'IMG13', 255, '2021-01-14', 2),
-(29, 'Apple AirPods2 VN/A', 3990000, '4', 'airport2.jpg', 'Vừa qua, Apple đã chính thức cho ra mắt chiếc tai nghe Airpods 2. Thế hệ thứ 2 lần này không có nhiều sự khác biệt so với thế hệ đầu về ngoại hình, trừ một số chi tiết về đèn báo hiệu cũng như ra mắt thêm phiên bản sạc không dây và sạc thường (sạc có dây)', 'IMG14', 255, '2021-01-14', 1),
-(33, 'test', 100, '2', 'mac air 13inch.png', 'abc', '', 1000, '0000-00-00', 7);
+(1, 'iPhoneX', 5000000, '1', 'iPhoneX.jpg', 'Ngừng sản xuất rồi đó.', 'IMG01', 255, '2020-12-31 17:00:00', 1),
+(2, 'Samsung Galaxy A12', 4290000, '', '', '', 'IMG02', 255, '2021-01-01 17:00:00', 2),
+(3, 'Samsung Galaxy Note 20 Ultra', 2990000, '1', 'not-20-ultra.jpg', NULL, 'IMG03', 255, '2021-01-13 17:00:00', 2),
+(4, 'Xiaomi Mi 10T Pro 5G', 12990000, '1', 'xiaomi-mi-10t-pro_2_.jpg', NULL, 'IMG04', 255, '2021-01-13 17:00:00', 6),
+(5, 'Samsung Galaxy Tab S7', 18990000, '2', 'tabs7plus.jpg', NULL, 'IMG05', 255, '2021-01-29 17:00:00', 2),
+(6, 'Iphone 12 ProMax Chính hãng (VN/A)', 33990000, '1', 'iphone12promax.jpg', NULL, 'IMG06', 255, '2021-01-13 17:00:00', 1),
+(7, 'IPhone 11 Chính hãng (VN/A)', 24990000, '1', 'iphone11.jpg', NULL, 'IMG07', 255, '2021-01-13 17:00:00', 1),
+(8, 'Apple iphone XR chính hãng (VN/A)', 14990000, '1', 'iphone-xr_1_.jpg', NULL, 'IMG08', 255, '2021-01-13 17:00:00', 1),
+(9, 'Iphone 12 mini (VN/A)', 25990000, '1', 'iphone-12-mini-black-select-2020_2.jpg', NULL, 'IMG09', 255, '2021-01-13 17:00:00', 1),
+(10, 'Asus ROG phone 3', 22990000, '1', 'rog_3.jpg', NULL, 'IMG10', 255, '2021-01-13 17:00:00', 4),
+(11, 'Pin sạc dự phòng Xiaomi Redmi 20000mah sạc nhanh 18W', 450000, '5', 'pin-du-phong-xiaomi-2000mah-18w.jpg', 'abc', 'IMG11', 255, '2021-01-13 17:00:00', 6),
+(12, 'Apple Watch Series 6 (VN/A)', 13990000, '3', 'img-apple-main-recovered_1_1.jpg', NULL, 'IMG12', 255, '2021-01-13 17:00:00', 1),
+(28, 'Galaxy Watch Active 2', 10990000, '3', 'samsung-watch-active-2-1.jpg', 'Tình trạng\r\nNguyên hộp, đầy đủ phụ kiện từ nhà sản xuất\r\nHộp bao gồm\r\nĐồng hồ, bộ sạc, HDSD\r\nBảo hành\r\nBảo hành 12 tháng tại trung tâm bảo hành Chính hãng. 1 đổi 1 trong 30 ngày nếu có lỗi nhà sản xuất.', 'IMG13', 255, '2021-01-13 17:00:00', 2),
+(29, 'Apple AirPods2 VN/A', 3990000, '4', 'airport2.jpg', 'Vừa qua, Apple đã chính thức cho ra mắt chiếc tai nghe Airpods 2. Thế hệ thứ 2 lần này không có nhiều sự khác biệt so với thế hệ đầu về ngoại hình, trừ một số chi tiết về đèn báo hiệu cũng như ra mắt thêm phiên bản sạc không dây và sạc thường (sạc có dây)', 'IMG14', 255, '2021-01-13 17:00:00', 1),
+(33, 'test', 100, '2', 'mac air 13inch.png', 'abc', '', 1000, '0000-00-00 00:00:00', 7),
+(34, 'Samsung Galaxy Tab S6', 18490000, '2', 'tab6.jpg', '', 'IMG15', 255, '0000-00-00 00:00:00', 2),
+(35, 'iPhone 8 Plus', 16000000, '1', 'iphone-8-plus.jpg', '', 'IMG16', 255, '0000-00-00 00:00:00', 1),
+(36, 'Oppo Reno 4', 8490000, '1', 'reno4.jpg', 'Điện thoại OPPO Reno 4 - Bộ ba camera sau thời thượng', 'IMG17', 255, '0000-00-00 00:00:00', 7);
 
 -- --------------------------------------------------------
 
@@ -573,18 +552,18 @@ CREATE TABLE `tbl_tin_tuc` (
   `anh` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `noi_dung` longtext COLLATE utf8_unicode_ci NOT NULL,
   `add_date` date NOT NULL DEFAULT current_timestamp(),
-  `so_binh_luan` int(11) NOT NULL
+  `edit_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_tin_tuc`
 --
 
-INSERT INTO `tbl_tin_tuc` (`id_tin_tuc`, `tac_gia`, `tieu_de`, `anh`, `noi_dung`, `add_date`, `so_binh_luan`) VALUES
-(1, 'cyannat99', 'Tính năng mới \"phát hiện mật khẩu bị lộ\" trên IOS', 'tin-tuc-1.png', 'Khăn choàng cổ là một trong những phụ kiện thời trang bên cạnh những món đồ thiết yếu được các cô gái yêu thích trong mùa lạnh. Khăn choàng cũng gồm nhiều kiểu dáng, mẫu mã khác nhau không kém bất cứ món phụ kiện nào. Khăn choàng voan mỏng, lụa, len,… với nhiều kích thước dài ngắn, độ rộng khác nhau đem đến cho phái nữ vô số sự lựa chọn. Đây được xem là món đồ làm điệu và tạo điểm nhấn thêm cho trang phục của bạn gái. Một chiếc khăn khoác hờ trên cổ cũng đủ khiến cô gái ấy hấp dẫn hơn rất nhiều.\r\nMỗi kiểu khăn được dùng cho mỗi mùa, mỗi mục đích khác nhau. Chẳng hạn mùa đông với những đợt gió mùa, nhiệt độ thấp nhất trong năm thì những chiếc khăn dài, ấm áp như len hay vải là sự lựa chọn thông minh nhất. Hơn nữa, cách thắt khăn dành cho mùa lạnh cũng cầu kì hơn một chút để giúp cơ thể giữ ấm. Đang là mùa đông, bạn đã sắm cho mình những chiếc khăn choàng cổ mới và bổ sung thêm những cách thắt khăn mới dành riêng cho mùa này chưa? Nếu chưa thì hãy để chúng tôi giới thiệu cho bạn vài cách thắt khăn đơn giản mà tạo được điểm nhấn nhé!\r\nCách 1: Thắt khăn dạng nơ bướm.\r\nCách này đơn giản, dễ làm nhưng lại cực kì dễ thương, phù hợp cho những cô nàng điệu đà. Đầu tiên, bạn sẽ quàng khăn qua vai và thắt 1 nút. Sau đó cần dải khăn ở dưới gập lại như hình. Xoay nút vừa gập quay sang phải, rồi lấy dải khăn trên lồng vào khe kéo sang trái. Cuối cùng kéo thành nơ rồi chỉnh lại cho đều hai cánh là được.\r\nCách 2: Thả khăn theo hai vạt áo\r\nMột trong những cách sử dụng khăn choàng phổ biến hiện nay chính là choàng khăn qua vai và thả buông hờ hai cùng vạt áo váy. Cách này dành cho những cô nàng thích sự đơn giản, không quá khéo tay vì bạn không phải tốn nhiều công sức để thực hiện. Hai vạt khăn tung bay cùng hai tà áo khoác măng tô sẽ giúp bạn đánh gục bất cứ chàng trai nào.\r\nCách 3:  Sử dụng khăn choàng làm áo khoác\r\nKhi bạn đã chán ngán với việc phải mặc những chiếc áo khoác dày cộm trên người thì hãy tận dụng ngay chiếc khăn choàng bản lớn, chất liệu len hoặc nỉ trong tủ đồ nhà mình. Một chút biến tấu nhỏ, nhẹ nhàng nhưng đã tạo nên cho mình thêm phong cách thật khác biệt. Các nàng chỉ cần choàng qua bờ vai, luồn vào 2 cánh tay, là đã có ngay một chiếc áo khoác thật ấm áp, độc đáo. Thêm một gợi ý nữa với chiếc khăn choàng đó là bạn choàng khăn qua vai và dùng dây nịt bản nhỏ thắt ngang eo hoặc nối 2 vạt khăn trên vai để tạo thành 1 kiểu áo khoác “độc và lạ” chỉ của riêng bạn.', '2021-01-04', 0),
-(2, 'tungthach', 'Trên tay iPhone 12 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Khăn choàng cổ là một trong những phụ kiện thời tr', '2021-01-04', 0),
-(3, 'tungthach', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', '2021-01-13', 0),
-(4, 'cyannat99', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', '2021-01-13', 0);
+INSERT INTO `tbl_tin_tuc` (`id_tin_tuc`, `tac_gia`, `tieu_de`, `anh`, `noi_dung`, `add_date`, `edit_date`) VALUES
+(1, 'cyannat99', 'Tính năng mới ', 'tin-tuc-3.png', 'Khăn choàng cổ là một trong những phụ kiện thời trang bên cạnh những món đồ thiết yếu được các cô gái yêu thích trong mùa lạnh. Khăn choàng cũng gồm nhiều kiểu dáng, mẫu mã khác nhau không kém bất cứ món phụ kiện nào. Khăn choàng voan mỏng, lụa, len,… với nhiều kích thước dài ngắn, độ rộng khác nhau đem đến cho phái nữ vô số sự lựa chọn. Đây được xem là món đồ làm điệu và tạo điểm nhấn thêm cho trang phục của bạn gái. Một chiếc khăn khoác hờ trên cổ cũng đủ khiến cô gái ấy hấp dẫn hơn rất nhiều.Mỗi kiểu khăn được dùng cho mỗi mùa, mỗi mục đích khác nhau. Chẳng hạn mùa đông với những đợt gió mùa, nhiệt độ thấp nhất trong năm thì những chiếc khăn dài, ấm áp như len hay vải là sự lựa chọn thông minh nhất. Hơn nữa, cách thắt khăn dành cho mùa lạnh cũng cầu kì hơn một chút để giúp cơ thể giữ ấm. Đang là mùa đông, bạn đã sắm cho mình những chiếc khăn choàng cổ mới và bổ sung thêm những cách thắt khăn mới dành riêng cho mùa này chưa? Nếu chưa thì hãy để chúng tôi giới thiệu cho bạn vài cách thắt khăn đơn giản mà tạo được điểm nhấn nhé!Cách 1: Thắt khăn dạng nơ bướm.Cách này đơn giản, dễ làm nhưng lại cực kì dễ thương, phù hợp cho những cô nàng điệu đà. Đầu tiên, bạn sẽ quàng khăn qua vai và thắt 1 nút. Sau đó cần dải khăn ở dưới gập lại như hình. Xoay nút vừa gập quay sang phải, rồi lấy dải khăn trên lồng vào khe kéo sang trái. Cuối cùng kéo thành nơ rồi chỉnh lại cho đều hai cánh là được.Cách 2: Thả khăn theo hai vạt áoMột trong những cách sử dụng khăn choàng phổ biến hiện nay chính là choàng khăn qua vai và thả buông hờ hai cùng vạt áo váy. Cách này dành cho những cô nàng thích sự đơn giản, không quá khéo tay vì bạn không phải tốn nhiều công sức để thực hiện. Hai vạt khăn tung bay cùng hai tà áo khoác măng tô sẽ giúp bạn đánh gục bất cứ chàng trai nào.Cách 3:  Sử dụng khăn choàng làm áo khoácKhi bạn đã chán ngán với việc phải mặc những chiếc áo khoác dày cộm trên người thì hãy tận dụng ngay chiếc khăn choàng bản lớn, chất liệu len hoặc nỉ trong tủ đồ nhà mình. Một chút biến tấu nhỏ, nhẹ nhàng nhưng đã tạo nên cho mình thêm phong cách thật khác biệt. Các nàng chỉ cần choàng qua bờ vai, luồn vào 2 cánh tay, là đã có ngay một chiếc áo khoác thật ấm áp, độc đáo. Thêm một gợi ý nữa với chiếc khăn choàng đó là bạn choàng khăn qua vai và dùng dây nịt bản nhỏ thắt ngang eo hoặc nối 2 vạt khăn trên vai để tạo thành 1 kiểu áo khoác “độc và lạ” chỉ của riêng bạn.', '2021-01-04', '2021-01-18 14:34:27'),
+(2, 'tungthach', 'Trên tay iPhone 12 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Khăn choàng cổ là một trong những phụ kiện thời tr', '2021-01-04', '2021-01-18 13:59:19'),
+(3, 'tungthach', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 11 Pro Max: Phù hợp cho những bạn', '2021-01-13', '2021-01-18 13:59:19'),
+(4, 'cyannat99', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', 'tin-tuc-2.png', 'Trên tay iPhone 13 Pro Max: Phù hợp cho những bạn', '2021-01-13', '2021-01-18 13:59:19');
 
 -- --------------------------------------------------------
 
@@ -752,7 +731,7 @@ ALTER TABLE `tbl_nhan_vien`
 -- AUTO_INCREMENT cho bảng `tbl_san_pham`
 --
 ALTER TABLE `tbl_san_pham`
-  MODIFY `id_san_pham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_san_pham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_thuong_hieu`

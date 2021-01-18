@@ -59,7 +59,8 @@ $row=$result->fetch_assoc();
 		</form>
 		<div style="margin: 15px 0 10px 0;width: 100%;border-bottom: 2px solid var(--light);"></div>
 <?php
-$sql3="select * from tbl_binh_luan_sp where id_san_pham='".$_GET['masanpham']."' order by ngay_tao DESC";
+$sql3="select * from tbl_binh_luan_sp JOIN tbl_khach_hang ON tbl_khach_hang.id_khach_hang=tbl_binh_luan_sp.id_khach_hang
+ where id_san_pham='".$_GET['masanpham']."' order by ngay_tao DESC";
 $result3=$con->query($sql3);
 if($result->num_rows>0)
 	{
@@ -67,7 +68,7 @@ if($result->num_rows>0)
 	{
 ?>
 		<div class="hien-thi-binh-luan">
-			<div class="hien-thi-ten"><?php echo $_SESSION["ten-user"]?><span class="hien-thi-ngay"><?php echo $row3['ngay_tao']?></span></div>
+			<div class="hien-thi-ten"><?php echo $row3['ten_khach_hang']?><span class="hien-thi-ngay"><?php echo $row3['ngay_tao']?></span></div>
 			<div class="hien-thi-noi-dung" value= null><?php echo $row3['noi_dung']?></div>
 			<div style="margin: 10px 0 10px 0;width: 90%;border-bottom: 2px solid var(--light);"></div>
 		</div>

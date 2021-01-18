@@ -19,11 +19,11 @@
 					<ul>
 						<li class="drop-down"><a href="sanpham.php?&tensanpham=" class="nav1">Sản phẩm&nbsp;<i class="fa fa-sort-desc"></i></a>
            		     		<ul>
-                 				<li><a class="nav1" href="sanpham.php?&maloai=L01">Điện thoại</a></li>
-                  				<li><a class="nav1" href="sanpham.php?&maloai=L02">Máy tính bảng</a></li>
-                  				<li><a class="nav1" href="sanpham.php?&maloai=L03">Đồng hồ</a></li>
-                  				<li><a class="nav1" href="sanpham.php?&maloai=L04">Tai nghe</a></li>
-								<li><a class="nav1" href="sanpham.php?&maloai=L05">Phụ kiện</a></li>
+                 				<li><a class="nav1" href="sanpham.php?&maloai=1">Điện thoại</a></li>
+                  				<li><a class="nav1" href="sanpham.php?&maloai=2">Máy tính bảng</a></li>
+                  				<li><a class="nav1" href="sanpham.php?&maloai=3">Đồng hồ</a></li>
+                  				<li><a class="nav1" href="sanpham.php?&maloai=4">Tai nghe</a></li>
+								<li><a class="nav1" href="sanpham.php?&maloai=5">Phụ kiện</a></li>
          	       			</ul>
            		   		</li>
 						<li class=" d-none d-lg-block"><a class="nav1" href="khuyenmai.php">Khuyến mãi</a></li>
