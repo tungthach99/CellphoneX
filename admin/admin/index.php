@@ -20,7 +20,7 @@ if(!session_start())
   <meta name="author" content="Creative Tim">
   <title>QUẢN TRỊ - CELLPHONEX</title>
   <!-- Favicon -->
-  <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <link href="./assets/img/brand/20 - Copy (2).png" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
@@ -41,7 +41,7 @@ if(!session_start())
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
-      <a class="navbar-brand pt-0" href=".././page">
+      <a class="navbar-brand pt-0" href="../../home.php">
         <img src=".././assets/media/lienhe/Cell.png" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
@@ -61,7 +61,7 @@ if(!session_start())
           <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media align-items-center">
               <span class="avatar avatar-sm rounded-circle">
-                <img alt="Image placeholder" src="./assets/img/theme/team-1-800x800.jpg">
+                <img alt="Image placeholder" src="./assets/img/theme/Cell.png">
               </span>
             </div>
           </a>
@@ -204,11 +204,13 @@ if(!session_start())
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="./assets/img/theme/team-4-800x800.jpg">
+                  <img alt="Image placeholder" src="./assets/img/theme/Cell.png">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold"> Quản trị viên</span>
+                  <span class="mb-0 text-sm  font-weight-bold">
+					  <a style="color: #fff;" href="dangxuat.php"><?php if(isset($_SESSION['tk'])) echo $_SESSION['tk']['tenhienthi']?>\&nbsp;Đăng xuất</a></span>
                 </div>
+					
               </div>
             </a>
             <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">

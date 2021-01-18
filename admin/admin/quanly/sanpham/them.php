@@ -6,13 +6,15 @@
 		$danhmuc= $_POST['danhmuc'];
 		$mota = $_POST['mota'];
 		$anh = $_FILES['anh']['name'];
-
-		if($tensanpham==""){
-			echo "Vui lòng nhập đủ thông tin!";
+		$soluong = $_POST['soluong'];
+		$sqlcheckthem="select * from tbl_san_pham where ten_san_pham='$tensanpham'";
+		$querycheckthem=$connection->query($sqlcheckthem);
+		if($tensanpham=="" or $dongia=="" or $danhmuc=="" or $anh=="" or $soluong=="" or $querycheckthem->num_rows>0){
+			echo "<br>Vui lòng nhập đủ thông tin! Lưu ý: Tên sản phẩm không được trùng lặp";
 		}else{
-			$sql = "INSERT INTO tbl_san_pham (ten_san_pham, don_gia, id_danh_muc, mo_ta, anh) VALUES ('$tensanpham','$dongia','$danhmuc', '$mota', '$anh')";
+			$sql = "INSERT INTO tbl_san_pham (ten_san_pham, don_gia, id_danh_muc, mo_ta, anh,ngay_them,so_luong) VALUES ('$tensanpham','$dongia','$danhmuc','$mota', '$anh','now()','$soluong')";
 
-			move_uploaded_file($_FILES['anh']['tmp_name'], "uploads/".$anh);
+//			move_uploaded_file($_FILES['anh']['tmp_name'], "uploads/".$anh);
 
 			if ($connection->query($sql)) 
 				echo "<div class='alert alert-success' role='alert'>
@@ -26,7 +28,7 @@
 	}
 ?>
 
-<div>
+<div><br>
 	<div>
 	<h1>Thêm sản phẩm</h1>
 	<div class="mt--7" style="padding-top:70px;">
@@ -55,6 +57,12 @@
 										<div class="form-group focused">
 											<label class="form-control-label" for="input-username">Mô tả</label>
 											<input name="mota" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Mô tả">
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group focused">
+											<label class="form-control-label" for="input-username">Số lượng</label>
+											<input name="soluong" type="number" id="input-username" class="form-control form-control-alternative" placeholder="Số lượng">
 										</div>
 									</div>
 									<div class="col-lg-12">

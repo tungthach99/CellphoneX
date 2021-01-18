@@ -25,7 +25,13 @@ if(isset($_GET['idxoa'])){
       $sql="SELECT * from tbl_nhan_vien";
       $query=$connection->query($sql);
  ?>
-<div>
+<?php
+	if(isset($_SESSION['tk']['quyen']) and $_SESSION['tk']['quyen']=1)
+	{
+		
+	
+?>
+<div><br>
   <h1> Danh sách nhân viên </h1>
   <a class="btn btn-success" href="?ql=nhanvien/them">Thêm</a>
      <div class="table-responsive">
@@ -38,6 +44,7 @@ if(isset($_GET['idxoa'])){
           <th scope="col">Số điện thoại</th>
           <th scope="col">Tài khoản</th>
           <th scope="col">Mật khẩu</th>
+			<th scope="col">Quyền</th>
           <th scope="col">Tác vụ</th>
           
         </tr>
@@ -56,6 +63,7 @@ if(isset($_GET['idxoa'])){
             <td><?php echo $row['so_dien_thoai']; ?></td>
             <td><?php echo $row['tai_khoan']; ?></td>
             <td><?php echo $row['mat_khau']; ?></td>
+			  <td><?php echo $row['quyen']; ?></td>
 
             <td>
               <a class="btn btn-outline-primary" href="?ql=nhanvien/sua&idsua=<?php echo $row['id_nhan_vien']?>">Sửa</a>
@@ -66,3 +74,11 @@ if(isset($_GET['idxoa'])){
       </tbody>
     </table> 
 </div>
+</div>
+<?php 
+	}
+	else
+	{
+		echo "<br>Chỉ những người có đủ quyền hạn mới có thể sử dụng chức năng này!";
+	}
+?>

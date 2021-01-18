@@ -31,6 +31,7 @@
 					$_SESSION['tk']['id'] = $row['id_nhan_vien'];
 					$_SESSION['tk']['tenhienthi'] = $row['ten_nhan_vien'];
 					$_SESSION['tk']['taikhoan'] = $row['tai_khoan'];
+					$_SESSION['tk']['quyen'] = $row['quyen'];
 
 					header("location:index.php");
 			}else{

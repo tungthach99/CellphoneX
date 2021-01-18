@@ -5,6 +5,7 @@ if(isset($_POST['sua']))
 	//kiểm tra thông tin
    $tensanpham=$_POST['tensanpham'];
    $dongia = $_POST['dongia'];
+	$soluong = $_POST['soluong'];
    $danhmuc= $_POST['danhmuc'];
    $mota = $_POST['mota'];
    $anh = $_FILES['anh']['name'];
@@ -14,7 +15,7 @@ if(isset($_POST['sua']))
     <strong>Vui lòng nhập đủ thông tin !!!</strong>
 </div>";
 	}else {
-     $sql = "UPDATE tbl_san_pham SET ten_san_pham = '$tensanpham', don_gia = '$dongia', anh = '$anh', mo_ta = '$mota', id_danh_muc='$danhmuc' WHERE id_san_pham = $id";
+     $sql = "UPDATE tbl_san_pham SET ten_san_pham = '$tensanpham', don_gia = '$dongia', anh = '$anh', mo_ta = '$mota',so_luong = '$soluong', id_danh_muc='$danhmuc' WHERE id_san_pham = $id";
 
      // move_uploaded_file($_FILES['anh']['tmp_name'], "san-pham/".$anh);
 
@@ -34,14 +35,14 @@ if(isset($_POST['sua']))
 
 }     
         //hiển thị dữ liệu cần sửa 
-       $sql="SELECT t1.ten_san_pham, t1.don_gia, t1.mo_ta, t1.anh, t2.ten_danh_muc
+       $sql="SELECT t1.ten_san_pham, t1.don_gia, t1.mo_ta,t1.so_luong, t1.anh, t2.ten_danh_muc
       FROM tbl_san_pham t1 JOIN tbl_danh_muc t2 ON t1.id_danh_muc = t2.id_danh_muc WHERE id_san_pham = $id";
        $query=$connection->query($sql);
        $row=$query->fetch_assoc();
 
    ?>
 
-<div>
+<div><br>
 <h1>Cập nhật sản phẩm</h1>
    <div class=" mt--7" style="
       padding-top: 70px;
@@ -64,7 +65,13 @@ if(isset($_POST['sua']))
                            <div class="col-lg-12">
                               <div class="form-group">
                                  <label class="form-control-label" for="input-username">Đơn giá</label>
-                                 <input name="dongia" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Đơn giá" value="<?php echo $row['don_gia'] ?>">
+                                 <input name="dongia" type="number" id="input-username" class="form-control form-control-alternative" placeholder="Đơn giá" value="<?php echo $row['don_gia'] ?>">
+                              </div>
+                           </div>
+							<div class="col-lg-12">
+                              <div class="form-group">
+                                 <label class="form-control-label" for="input-username">Số lượng</label>
+                                 <input name="soluong" type="number" id="input-username" class="form-control form-control-alternative" placeholder="Số lượng" value="<?php echo $row['so_luong'] ?>">
                               </div>
                            </div>
                            <div class="col-lg-12">
