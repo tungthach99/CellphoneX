@@ -2,14 +2,13 @@
 	if (isset($_POST['them'])) {
 		//Kiểm tra nhập đủ thông tin
 		$tendanhmuc = $_POST['tendanhmuc'];
+		$sqlcheckthemdm="select * from tbl_danh_muc where ten_danh_muc='$tendanhmuc'";
+		$querycheckthemdm=$connection->query($sqlcheckthemdm);
 		$mota = $_POST['mota'];
-		$anh = $_FILES['anh']['name'];
-		if($tendanhmuc==""){
-			echo "Vui lòng nhập đủ thông tin!";
+		if($tendanhmuc=="" or $querycheckthemdm->num_rows>0){
+			echo "Vui lòng nhập đủ thông tin và không được trùng tên danh mục!";
 		}else{
-			$sql = "INSERT INTO tbl_danh_muc (ten_danh_muc, mo_ta, anh) VALUES ('$tendanhmuc','$mota','$anh')";
-
-			move_uploaded_file($_FILES['anh']['tmp_name'], "uploads/".$anh);
+			$sql = "INSERT INTO tbl_danh_muc (ten_danh_muc, mo_ta) VALUES ('$tendanhmuc','$mota')";
 
 			if ($connection->query($sql)) 
 				echo "<div class='alert alert-success' role='alert'>
@@ -24,7 +23,7 @@
 ?>
 
 <div>
-	<div>
+	<div><br>
 	<h1>Thêm danh mục</h1>
 	<div class="mt--7" style="padding-top:70px;">
 		<div class="row">
@@ -47,13 +46,7 @@
 											<input name="mota" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Mô tả">
 										</div>
 									</div>
-									<div class="col-lg-12">
-										<div class="form-group focused">
-											<label class="form-control-label" for="input-username">Chọn ảnh</label>
-											<input name="anh" type='file' id="imgInp" /><br>
-  											<img style="height: 200px" id="blah" src="" />
-										</div>
-									</div>
+									
 								</div>
 							</div>
 							<div>

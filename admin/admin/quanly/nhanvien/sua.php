@@ -43,10 +43,12 @@ if(isset($_POST['sua']))
     $message .= "<div>Bạn chưa nhập mật khẩu</div>";
     
   }
-
-  if($hople == false) {
+	$sqlcheckthemnv="select * from tbl_nhan_vien where id_nhan_vien <>'".$_GET['idsua']."' AND (email='$email' or ten_nhan_vien='$tennhanvien' or so_dien_thoai='$sodienthoai' or tai_khoan='$taikhoan')";
+	$querycheckthemnv=$connection->query($sqlcheckthemnv);
+	
+  if($hople == false or $querycheckthemnv->num_rows>0) {
     echo "<div class='alert alert-danger' role='alert'>
-                 <strong>".$message."</strong>
+                 <strong>".$message."<br>Lưu ý: Thông tin không được trùng trong cơ sở dữ liệu.</strong>
         </div>";
   }
   else {
@@ -62,7 +64,8 @@ if(isset($_POST['sua']))
             `email` = '".$email."',
             `so_dien_thoai` = '".$sodienthoai."',
             `tai_khoan` = '".$taikhoan."',
-            `mat_khau` = '".$matkhau."'
+            `mat_khau` = '".$matkhau."',
+			`quyen` = '".$_POST['quyen']."'
          WHERE `id_nhan_vien` = '".$id."' 
       ";
 
@@ -91,7 +94,7 @@ if(isset($_POST['sua']))
 
    ?>
 
-<div>
+<div><br>
 <h1> Cập nhật nhân viên </h1>
 <div class="card bg-secondary shadow">
 <div class="card-body">
@@ -117,6 +120,10 @@ if(isset($_POST['sua']))
             <div class="form-group focused">
                <label class="form-control-label" for="input-first-name">Số điện thoại</label>
                <input name="sodienthoai" type="text" id="input-first-name" class="form-control form-control-alternative"value="<?php echo $row['so_dien_thoai'] ?>" >
+            </div>
+			 <div class="form-group focused">
+               <label class="form-control-label" for="input-last-name">Quyền</label>
+               <input name="quyen" type="number" id="input-last-name" class="form-control form-control-alternative" value="<?php echo $row['quyen'] ?>">
             </div>
          </div>
       </div>

@@ -2,30 +2,37 @@
 	//xóa chuyên mục
 if(isset($_GET['idxoa'])){
      $id=$_GET['idxoa'];
-     $sql="DELETE FROM tbl_danh_muc where id_danh_muc=$id";
-     
-     if($connection->query($sql))
-     {
-      echo "<div class='alert alert-success' role='alert'>
+	$sqlcheckxoadm="select * from tbl_san_pham where id_danh_muc='$id'";
+	$querycheckxoadm=$connection->query($sqlcheckxoadm);
+	if($querycheckxoadm->num_rows>0)
+	{
+		echo "<div class='alert alert-success' role='alert'>
+    <strong>Không được phép xóa danh mục này</strong>
+            </div>";
+	}
+	else
+	{
+		$sql="DELETE FROM tbl_danh_muc where id_danh_muc=$id";
+		if($connection->query($sql))
+		{
+			echo "<div class='alert alert-success' role='alert'>
     <strong>Xóa thành công</strong>
-            </div>
-";
-     }
-      
-     else 
-     {
-       echo "<div class='alert alert-default' role='alert'>
+			</div>";
+		}
+		else 
+		{
+			echo "<div class='alert alert-default' role='alert'>
     			<strong>Xóa thất bại</strong>
 				</div>";
-     }
-     
- }
+		}
+	}
+}
 
 	//Hiển thị danh sách danh mục
       $sql="SELECT * from tbl_danh_muc";
       $query=$connection->query($sql);
  ?>
-<div>
+<div><br>
 	<h1> Danh sách danh mục </h1>
 	<a class="btn btn-success" href="?ql=danhmuc/them">Thêm</a>
      <div class="table-responsive">
@@ -35,7 +42,6 @@ if(isset($_GET['idxoa'])){
 	        <th scope="col">STT</th>
 	        <th scope="col">Tên danh mục</th>
 	        <th scope="col">Mô tả</th>
-	        <th scope="col">Ảnh</th>
 	        <th scope="col">Tác vụ</th>
 	        
 	      </tr>
@@ -50,9 +56,6 @@ if(isset($_GET['idxoa'])){
 	        	<td><?php echo $stt; ?></td>
 	        	<td><?php echo $row['ten_danh_muc']; ?></td>
 	        	<td><?php echo $row['mo_ta']; ?></td>
-				<td>
-	        		<img style="height: 100px " src="uploads/<?php echo $row['anh'] ?>" alt="">
-	        	</td>
 	        	<td>
 	        		<a class="btn btn-outline-primary" href="?ql=danhmuc/sua&idsua=<?php 
 	        		

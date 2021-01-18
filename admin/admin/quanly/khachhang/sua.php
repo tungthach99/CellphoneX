@@ -6,11 +6,10 @@
       $diachi = $_POST['dia_chi'];
       $sodt = $_POST['sodt'];
       $email = $_POST['email'];
-      $ghichu = $_POST['ghichu'];
       $matkhau = $_POST['matkhau'];
 	
 			//Cập nhật dữ liệu
-			$sql = "UPDATE tbl_khach_hang SET ten_khach_hang = '$tenkhachhang', dia_chi = '$diachi', so_dien_thoai='$sodt', email='$email', ghi_chu='$ghichu', mat_khau='$matkhau' WHERE id_khach_hang = $id";
+			$sql = "UPDATE tbl_khach_hang SET ten_khach_hang = '$tenkhachhang', dia_chi = '$diachi', so_dien_thoai='$sodt', email='$email', mat_khau='$matkhau' WHERE id_khach_hang = $id";
 
 			if($connection->query($sql))
 				echo "<div class='alert alert-success' role='alert'>
@@ -59,11 +58,6 @@
                               <div class="form-group">
                                  <label class="form-control-label" for="input-username">Email</label>
                                  <input name="email" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Email" value="<?php echo $row['email'] ?>">
-                              </div>
-
-                              <div class="form-group">
-                                 <label class="form-control-label" for="input-username">Ghi chú</label>
-                                 <input name="ghichu" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Ghi chú" value="<?php echo $row['ghi_chu'] ?>">
                               </div>
 
                               <div class="form-group">

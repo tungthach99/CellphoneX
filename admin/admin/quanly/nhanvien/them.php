@@ -1,6 +1,7 @@
 <?php 
 if(isset($_POST['them']))
 {
+	$sqlcheckthemnv="select * from tbl_nhan_vien where ";
 	//kiểm tra thông tin
 	$tennhanvien=$_POST['tennhanvien'];
 	$hople=true;
@@ -16,28 +17,32 @@ if(isset($_POST['them']))
 	$email=$_POST['email'];
 	if($email=="")
 	{
+		
 		$hople = false;
 		$message .= "<div>Bạn chưa nhập email</div>";
 		
 	}
-
+	$sqlcheckthemnv.= "email='".$email."'";
 	$sodienthoai=$_POST['sodienthoai'];
 	if($sodienthoai=="")
 	{		
+		
 		$hople = false;
 		$message .= "<div>Bạn chưa nhập số điện thoại</div>";
 		
 	}
-
+	$sqlcheckthemnv.=" or ten_nhan_vien='".$tennhanvien."'";
+	$sqlcheckthemnv.=" or so_dien_thoai='".$sodienthoai."'";
 
 	$taikhoan=$_POST['taikhoan'];
 	if($taikhoan=="")
 	{
+		
 		$hople = false;
 		$message .= "<div>Bạn chưa nhập tài khoản</div>";
 		
 	}
-
+	$sqlcheckthemnv.=" or tai_khoan='".$taikhoan."'";
 	$matkhau=$_POST['matkhau'];
 	if($matkhau=="")		
 	{
@@ -45,14 +50,15 @@ if(isset($_POST['them']))
 		$message .= "<div>Bạn chưa nhập mật khẩu</div>";
 		
 	}
+	$querycheckthemnv=$connection->query($sqlcheckthemnv);
 
-	if($hople == false) {
+	if($hople == false or $querycheckthemnv->num_rows>0) {
 		echo "<div class='alert alert-danger' role='alert'>
-		             <strong>".$message."</strong>
+		             <strong>".$message."<br>Lưu ý thông tin không được nhập trùng</strong>
 				</div>";
 	}
 	else {
-		$sql="INSERT INTO tbl_nhan_vien (ten_nhan_vien, email, so_dien_thoai, tai_khoan, mat_khau) VALUES ('$tennhanvien','$email','$sodienthoai','$taikhoan','$matkhau') ";
+		$sql="INSERT INTO tbl_nhan_vien (ten_nhan_vien, email, so_dien_thoai, tai_khoan, mat_khau,quyen) VALUES ('$tennhanvien','$email','$sodienthoai','$taikhoan','$matkhau','".$_POST['quyen']."') ";
 		if($connection->query($sql))
      {
      	echo "<div class='alert alert-success' role='alert'>
@@ -71,7 +77,7 @@ if(isset($_POST['them']))
 }
    ?>
 
-<div>
+<div><br>
 <h1> Thêm nhân viên </h1>
 <div class="card bg-secondary shadow">
 <div class="card-body">
@@ -111,6 +117,12 @@ if(isset($_POST['them']))
             <div class="form-group focused">
                <label class="form-control-label" for="input-last-name">Mật khẩu</label>
                <input name="matkhau" type="text" id="input-last-name" class="form-control form-control-alternative" >
+            </div>
+         </div>
+		  <div class="col-lg-12">
+            <div class="form-group focused">
+               <label class="form-control-label" for="input-last-name">Quyền</label>
+               <input name="quyen" type="number" id="input-last-name" class="form-control form-control-alternative" >
             </div>
          </div>
       </div>

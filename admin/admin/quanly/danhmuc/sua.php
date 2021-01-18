@@ -4,15 +4,16 @@
 		
     //Kiểm tra nhập đủ thông tin chưa
 		$tendanhmuc = $_POST['ten_danh_muc'];
-      // $mota = $_POST['mota'];
-      // $anh = $_FILES['anh']['name'];
-		if ($tendanhmuc==""){
+		$mota = $_POST['mota'];
+		$sqlchecksuadm="select * from tbl_danh_muc where ten_danh_muc='$tendanhmuc' and id_danh_muc<>'".$_GET['idsua']."'";
+		$querychecksuadm=$connection->query($sqlchecksuadm);
+		if ($tendanhmuc=="" or $querychecksuadm->num_rows>0){
 			echo  "<div class='alert alert-danger' role='alert'>
-    <strong>Vui lòng nhập đủ thông tin !!!</strong>
+    <strong>Vui lòng nhập đủ thông tin và không được nhập trùng tên !!!</strong>
 </div>";
 		}else{
 			//Cập nhật dữ liệu
-			$sql = "UPDATE tbl_danh_muc SET ten_danh_muc ='".$tendanhmuc."' WHERE id_danh_muc = '".$id."'";
+			$sql = "UPDATE tbl_danh_muc SET ten_danh_muc ='$tendanhmuc', mo_ta='$mota'  WHERE id_danh_muc = '".$id."'";
 
          // move_uploaded_file($_FILES['anh']['tmp_name'], "uploads/".$anh);
 
@@ -34,7 +35,7 @@
    $row = $query->fetch_assoc();
  ?>
 
-<div>
+<div><br>
    <h1>Cập nhật danh mục</h1>
    <div class=" mt--7" style="
       padding-top: 70px;
