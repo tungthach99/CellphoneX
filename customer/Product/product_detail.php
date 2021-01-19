@@ -29,7 +29,7 @@ $row=$result->fetch_assoc();
 			<input name="masanpham" type="text" style="display: none;" value="<?php echo $_GET['masanpham'] ?>"><br>
 			<button type="submit" class="btn-mua btn btn-success">Đặt hàng <i class='fa fa-cart-plus'></i>
 			</button>
-			<btn class="btn btn-primary">Chia sẻ <i class="fa fa-share-alt"></i></btn>
+			<a href="https://www.facebook.com/sharer/sharer.php?u=cellphonexhvnh.000webhostapp.com/sanpham.php?product=1&masanpham=<?php echo $_GET["masanpham"]?>"><btn class="btn btn-primary">Chia sẻ <i class="fa fa-share-alt"></i></btn></a>
 		</form>
 		</span>
 		<span id="right_product">
@@ -95,7 +95,7 @@ if($result->num_rows>0)
 					<?php
 						$sqllq="SELECT *,tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi FROM tbl_san_pham 
 						LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham
-                        WHERE tbl_san_pham.id_san_pham<>'".$row["id_san_pham"]."' AND tbl_san_pham.don_gia-".$row["don_gia"].">-5000000 AND tbl_san_pham.don_gia-".$row["don_gia"]."<5000000 AND tbl_san_pham.id_danh_muc='".$row["id_danh_muc"]."' 
+                        WHERE tbl_san_pham.id_san_pham<>'".$_GET["masanpham"]."' AND tbl_san_pham.don_gia-".$row["don_gia"].">-5000000 AND tbl_san_pham.don_gia-".$row["don_gia"]."<5000000 AND tbl_san_pham.id_danh_muc='".$row["id_danh_muc"]."' 
 						LIMIT 6";
 						$resultlq=$con->query($sqllq);
 						if($resultlq->num_rows>0)
