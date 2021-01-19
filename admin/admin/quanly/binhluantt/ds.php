@@ -19,7 +19,7 @@
      }
  }
 	//Hiển thị danh sách chuyên mục
-      $sql="SELECT * from tbl_binh_luan";
+      $sql="SELECT * from tbl_binh_luan JOIN tbl_khach_hang ON tbl_binh_luan.id_khach_hang=tbl_khach_hang.id_khach_hang";
       $query=$connection->query($sql);
  ?>
 <div>
@@ -30,7 +30,8 @@
 	    <thead class="thead-light">
 	      <tr>
 	        <th scope="col">STT</th>
-	        <th scope="col">Tên khách hàng</th>
+	        <th scope="col">Mã khách hàng</th>
+			<th scope="col">Tên khách hàng</th>
 	        <th scope="col">Mã tin tức</th>
 	        <th scope="col">Nội dung</th>
 	        <th scope="col">Ngày bình luận</th>
@@ -45,7 +46,8 @@
 	    	 ?>
 	        <tr>
 	        	<td><?php echo $stt; ?></td>
-	        	<td><?php echo $row['ten_khach_hang']?></td>
+	        	<td><?php echo $row['id_khach_hang']?></td>
+				<td><?php echo $row['ten_khach_hang']?></td>
 	        	<td><?php echo $row['id_tin_tuc'];?></td>
 	        	<td><?php echo substr($row['noi_dung'],0,80);?></td>
 	        	<td><?php echo $row['ngay_tao']?></td>

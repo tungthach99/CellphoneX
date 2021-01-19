@@ -159,6 +159,14 @@ if($result->num_rows>0)
 							}
 						}
 					?>
+					<?php	
+if(isset($_SESSION["kiemtrasua"]) && $_SESSION["kiemtrasua"]==1)
+	require("layout/message.php");
+?>
+<?php	
+if(isset($_SESSION["kiemtrasua"]) && $_SESSION["kiemtrasua"]==2)
+	require("layout/message2.php");
+?>
 				</div>
 				</div>
 			</div>
