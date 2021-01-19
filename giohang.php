@@ -186,7 +186,7 @@ jQuery.noConflict();
 				<?php if(isset($_SESSION["giohang"])) {?>
 				<div style="float: right;"><b>Tổng Tiền: </b><b style="color: red;"><?php echo number_format($_SESSION["tongtien"]) ?></b><b> VND</b></div><?php }?>
 				<div><br>
-					<a href="sanpham.php?&maloai=L01" >&lsaquo; Tiếp tục mua hàng</a>
+					<a href="sanpham.php?&maloai=1" >&lsaquo; Tiếp tục mua hàng</a>
 					<?php if(isset($_SESSION["giohang"]) and $_SESSION["tongtien"]>0) {?>
 					<a onClick="hienthiform('formGioHang')" class="linkDen" style="color: #fff; border-radius: 5px; float: right;">Đặt hàng</a>
 					<?php }?>
