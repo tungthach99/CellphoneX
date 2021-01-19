@@ -116,7 +116,7 @@ jQuery.noConflict();
 			}
 ?>
 			</div>
-			<a href="sanpham.php?&maloai=L01" >&lsaquo; Tiếp tục mua hàng</a>
+			<a href="sanpham.php?&maloai=1" >&lsaquo; Tiếp tục mua hàng</a>
 		</span>
 		<span class="col-2" onClick="dongform('formGioHang')"></span>
 	</div>
