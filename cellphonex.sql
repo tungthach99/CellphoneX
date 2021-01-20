@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 18, 2021 lúc 06:07 PM
+-- Thời gian đã tạo: Th1 20, 2021 lúc 01:13 PM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -111,9 +111,7 @@ CREATE TABLE `tbl_binh_luan` (
 --
 
 INSERT INTO `tbl_binh_luan` (`id_binh_luan`, `id_khach_hang`, `id_tin_tuc`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
-(9, 0, 1, 'abc', '2021-01-18 15:46:11', '2021-01-18 15:46:11'),
-(10, 0, 1, 'a', '2021-01-18 15:46:15', '2021-01-18 15:46:15'),
-(11, 0, 1, 'hihi', '2021-01-18 15:46:23', '2021-01-18 15:46:23');
+(12, 1, 1, 'ấdf', '2021-01-19 06:27:40', '2021-01-19 06:27:40');
 
 -- --------------------------------------------------------
 
@@ -135,8 +133,7 @@ CREATE TABLE `tbl_binh_luan_sp` (
 --
 
 INSERT INTO `tbl_binh_luan_sp` (`id_binh_luan`, `id_khach_hang`, `id_san_pham`, `noi_dung`, `ngay_tao`, `ngay_sua`) VALUES
-(5, 1, 0, 'abc', '2021-01-18 15:43:01', '2021-01-18 15:43:01'),
-(6, 1, 0, 'abc', '2021-01-18 15:44:17', '2021-01-18 15:44:17');
+(8, 1, 1, 'fasdf', '2021-01-19 06:27:51', '2021-01-19 06:27:51');
 
 -- --------------------------------------------------------
 
@@ -253,11 +250,11 @@ INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `email`, `phi_van_ch
 (71, -1, 'thachtung99@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:20:43 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
 (72, -1, 'hiimtung123@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:32:33 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '2', ''),
 (73, -1, 'thachtung99@gmail.com', 0, '', 8580000, 0, '01/16/2021 03:37:39 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
-(74, 1, 'thachtung99@gmail.com', 0, '', 10000000, 0, '01/16/2021 03:43:26 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
-(75, 1, 'hiimtung123@gmail.com', 0, '', 4000000, 0, '01/16/2021 09:10:38 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
-(76, -1, 'thachtung99@gmail.com', 0, '', 2541500, 0, '01/16/2021 10:36:26 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '1', ''),
-(77, -1, 'thachtung99@gmail.com', 0, '', 4000000, 0, '01/16/2021 11:07:31 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', '', ''),
-(78, -1, 'thachtung99@gmail.com', 0, '', 4000000, 0, '01/17/2021 11:43:26 am', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '123', ''),
+(74, 1, 'thachtung99@gmail.com', 0, '', 10000000, 1, '01/16/2021 03:43:26 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
+(75, 1, 'hiimtung123@gmail.com', 0, '', 4000000, 1, '01/16/2021 09:10:38 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
+(76, -1, 'thachtung99@gmail.com', 0, '', 2541500, 1, '01/16/2021 10:36:26 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '1', ''),
+(77, -1, 'thachtung99@gmail.com', 0, '', 4000000, 1, '01/16/2021 11:07:31 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', 'COD', '', ''),
+(78, -1, 'thachtung99@gmail.com', 0, '', 4000000, 1, '01/17/2021 11:43:26 am', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '123', ''),
 (79, -1, 'thachtung99@gmail.com', 0, '', 15444000, 1, '01/17/2021 11:47:18 am', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
 (80, 1, 'hiimtung123@gmail.com', 0, '', 4900000, 1, '01/17/2021 11:49:34 am', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', ''),
 (81, 1, 'hiimtung123@gmail.com', 0, '', 15192000, 1, '01/17/2021 01:20:35 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', 'COD', '', '0357756343');
@@ -285,9 +282,7 @@ CREATE TABLE `tbl_khach_hang` (
 
 INSERT INTO `tbl_khach_hang` (`id_khach_hang`, `ten_khach_hang`, `email`, `so_dien_thoai`, `dia_chi`, `ma_kich_hoat`, `mat_khau`, `ten_dang_nhap`) VALUES
 (1, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'Hà Nội', 'IakiahOt', '123', 'tungthach'),
-(3, 'Nguyễn Anh Tuấn', '', '0123456789', 'Hà Nội', '1', '1', 'tuan'),
-(4, 'Thạch Thọ Thanh', 'thachtung99@gmail.com', '0123456798', NULL, 'iDgEriUV', '123456', 'thanh'),
-(5, 'ly coi', 'abc@gmail.com', '0123456', NULL, 'GVUbg4Cm', '1', 'lycoi');
+(3, 'Nguyễn Anh Tuấn', 'a@E', '0123456789', 'Hà Nội', '1', '1', 'tuan');
 
 -- --------------------------------------------------------
 
@@ -333,8 +328,9 @@ CREATE TABLE `tbl_ma_giam_gia` (
 --
 
 INSERT INTO `tbl_ma_giam_gia` (`ma_giam_gia`, `chiet_khau`, `ngay_ap_dung`, `ngay_ket_thuc`) VALUES
-('JACKNAT', 250000, '2021-01-01 00:00:00', '2021-01-02 00:00:00'),
+('JACKNAT', 1, '2021-01-31 16:19:00', '2021-01-31 22:25:00'),
 ('LYCOI', 100000, '2021-01-01 00:00:00', '2021-01-31 00:00:00'),
+('THANHVIENMOI', 300000, '2021-01-01 00:00:00', '2021-01-31 00:00:00'),
 ('TUNGTHACH', 300000, '2021-01-01 00:00:00', '2021-01-31 00:00:00');
 
 -- --------------------------------------------------------
@@ -401,7 +397,7 @@ CREATE TABLE `tbl_phien_ban_san_pham` (
 --
 
 INSERT INTO `tbl_phien_ban_san_pham` (`id_san_pham`, `id_phien_ban`, `so_luong_ton`) VALUES
-(1, 2, 100),
+(1, 2, 98),
 (1, 4, 100),
 (1, 5, 155),
 (2, 1, 100),
@@ -513,7 +509,7 @@ CREATE TABLE `tbl_san_pham` (
 --
 
 INSERT INTO `tbl_san_pham` (`id_san_pham`, `ten_san_pham`, `don_gia`, `id_danh_muc`, `anh`, `mo_ta`, `id_anh`, `so_luong`, `ngay_them`, `id_thuong_hieu`) VALUES
-(1, 'iPhoneX', 5000000, '1', 'iPhoneX.jpg', 'Ngừng sản xuất rồi đó.', 'IMG01', 255, '2020-12-31 17:00:00', 1),
+(1, 'iPhoneX', 5000000, '1', 'iPhoneX.jpg', 'Ngừng sản xuất rồi đó.', 'IMG01', 253, '2020-12-31 17:00:00', 1),
 (2, 'Samsung Galaxy A12', 4290000, '1', 'samsung-A12.jpg', '', 'IMG02', 255, '2021-01-01 17:00:00', 2),
 (3, 'Samsung Galaxy Note 20 Ultra', 2990000, '1', 'not-20-ultra.jpg', NULL, 'IMG03', 255, '2021-01-13 17:00:00', 2),
 (4, 'Xiaomi Mi 10T Pro 5G', 12990000, '1', 'xiaomi-mi-10t-pro_2_.jpg', NULL, 'IMG04', 255, '2021-01-13 17:00:00', 6),
@@ -527,10 +523,9 @@ INSERT INTO `tbl_san_pham` (`id_san_pham`, `ten_san_pham`, `don_gia`, `id_danh_m
 (12, 'Apple Watch Series 6 (VN/A)', 13990000, '3', 'img-apple-main-recovered_1_1.jpg', NULL, 'IMG12', 255, '2021-01-13 17:00:00', 1),
 (28, 'Galaxy Watch Active 2', 10990000, '3', 'samsung-watch-active-2-1.jpg', 'Tình trạng\r\nNguyên hộp, đầy đủ phụ kiện từ nhà sản xuất\r\nHộp bao gồm\r\nĐồng hồ, bộ sạc, HDSD\r\nBảo hành\r\nBảo hành 12 tháng tại trung tâm bảo hành Chính hãng. 1 đổi 1 trong 30 ngày nếu có lỗi nhà sản xuất.', 'IMG13', 255, '2021-01-13 17:00:00', 2),
 (29, 'Apple AirPods2 VN/A', 3990000, '4', 'airport2.jpg', 'Vừa qua, Apple đã chính thức cho ra mắt chiếc tai nghe Airpods 2. Thế hệ thứ 2 lần này không có nhiều sự khác biệt so với thế hệ đầu về ngoại hình, trừ một số chi tiết về đèn báo hiệu cũng như ra mắt thêm phiên bản sạc không dây và sạc thường (sạc có dây)', 'IMG14', 255, '2021-01-13 17:00:00', 1),
-(33, 'test', 100, '2', 'mac air 13inch.png', 'abc', '', 1000, '0000-00-00 00:00:00', 7),
-(34, 'Samsung Galaxy Tab S6', 18490000, '2', 'tab6.jpg', '', 'IMG15', 255, '0000-00-00 00:00:00', 2),
-(35, 'iPhone 8 Plus', 16000000, '1', 'iphone-8-plus.jpg', '', 'IMG16', 255, '0000-00-00 00:00:00', 1),
-(36, 'Oppo Reno 4', 8490000, '1', 'reno4.jpg', 'Điện thoại OPPO Reno 4 - Bộ ba camera sau thời thượng', 'IMG17', 255, '0000-00-00 00:00:00', 7);
+(34, 'Samsung Galaxy Tab S6', 18490000, '2', 'tab6.jpg', '', 'IMG15', 255, '2021-01-05 17:00:00', 2),
+(35, 'iPhone 8 Plus', 16000000, '1', 'iphone-8-plus.jpg', '', 'IMG16', 255, '2021-01-08 17:00:00', 1),
+(36, 'Oppo Reno 4', 8490000, '1', 'reno4.jpg', 'Điện thoại OPPO Reno 4 - Bộ ba camera sau thời thượng', 'IMG17', 255, '2021-01-06 17:00:00', 3);
 
 -- --------------------------------------------------------
 
@@ -712,13 +707,13 @@ ALTER TABLE `tbl_yeu_thich`
 -- AUTO_INCREMENT cho bảng `tbl_binh_luan`
 --
 ALTER TABLE `tbl_binh_luan`
-  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_binh_luan_sp`
 --
 ALTER TABLE `tbl_binh_luan_sp`
-  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_danh_muc`
@@ -730,7 +725,7 @@ ALTER TABLE `tbl_danh_muc`
 -- AUTO_INCREMENT cho bảng `tbl_don_hang`
 --
 ALTER TABLE `tbl_don_hang`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khach_hang`
@@ -748,7 +743,7 @@ ALTER TABLE `tbl_nhan_vien`
 -- AUTO_INCREMENT cho bảng `tbl_san_pham`
 --
 ALTER TABLE `tbl_san_pham`
-  MODIFY `id_san_pham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_san_pham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_thuong_hieu`
