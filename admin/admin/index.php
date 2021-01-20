@@ -152,6 +152,13 @@ if(!session_start())
             </a>
           </li>
 
+			<li class="nav-item">
+            <a class="nav-link" href="?ql=magiamgia/ds">
+              <i class="fa fa-tags text-yellow"></i> Mã giảm giá
+
+            </a>
+          </li>
+			
           <li class="nav-item">
             <a class="nav-link" href="?ql=donhang/dsdonhang">
               <i class="ni ni-box-2 text-blue"></i> Đơn hàng
@@ -179,6 +186,12 @@ if(!session_start())
           <li class="nav-item">
             <a class="nav-link" href="?ql=binhluansp/ds">
             <i class="fa fa-comment text-blue"></i> Bình luận sản phẩm
+            </a>
+          </li>
+			
+			<li class="nav-item">
+            <a class="nav-link" href="?ql=baocao/ds">
+            <i class="fa fa-list-alt text-blue"></i> Báo cáo
             </a>
           </li>
 

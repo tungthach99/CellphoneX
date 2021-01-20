@@ -22,7 +22,7 @@
       $sql="SELECT * from tbl_tin_tuc";
       $query=$connection->query($sql);
  ?>
-<div>
+<div><br>
 	<h1> Danh sách tin tức </h1>
 	<a class="btn btn-success" href="?ql=tintuc/them">Thêm</a>
      <div class="table-responsive">

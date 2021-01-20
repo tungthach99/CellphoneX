@@ -12,7 +12,7 @@
 		if($tensanpham=="" or $dongia=="" or $danhmuc=="" or $anh=="" or $soluong=="" or $querycheckthem->num_rows>0){
 			echo "<br>Vui lòng nhập đủ thông tin! Lưu ý: Tên sản phẩm không được trùng lặp";
 		}else{
-			$sql = "INSERT INTO tbl_san_pham (ten_san_pham, don_gia, id_danh_muc, mo_ta, anh,ngay_them,so_luong) VALUES ('$tensanpham','$dongia','$danhmuc','$mota', '$anh','now()','$soluong')";
+			$sql = "INSERT INTO tbl_san_pham (ten_san_pham, don_gia, id_danh_muc, mo_ta, anh,ngay_them,so_luong) VALUES ('$tensanpham','$dongia','$danhmuc','$mota', '$anh',curtime(),'$soluong')";
 
 //			move_uploaded_file($_FILES['anh']['tmp_name'], "uploads/".$anh);
 

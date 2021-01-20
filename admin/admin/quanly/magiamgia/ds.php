@@ -2,7 +2,7 @@
 	// Xóa khách hàng
 	if(isset($_GET['idxoa'])){
      $id=$_GET['idxoa'];
-     $sql="DELETE FROM tbl_binh_luan_sp where id_binh_luan = $id";
+     $sql="DELETE FROM tbl_ma_giam_gia where ma_giam_gia = '$id'";
      
      if($connection->query($sql))
      {
@@ -19,24 +19,21 @@
      }
  }
 	//Hiển thị danh sách chuyên mục
-      $sql="SELECT * from tbl_binh_luan_sp JOIN tbl_khach_hang ON tbl_binh_luan_sp.id_khach_hang=tbl_khach_hang.id_khach_hang";
+      $sql="SELECT * from tbl_ma_giam_gia";
       $query=$connection->query($sql);
  ?>
 <div><br>
-	<h1> Danh sách</h1>
-	
+	<h1> Danh sách mã giảm giá</h1>
+	<a class="btn btn-success" href="?ql=magiamgia/them">Thêm</a>
      <div class="table-responsive">
 	  <table class="table align-items-center table-flush">
 	    <thead class="thead-light">
 	      <tr>
 	        <th scope="col">STT</th>
-	        <th scope="col">Mã khách hàng</th>
-			<th scope="col">Tên khách hàng</th>
-	        <th scope="col">Mã sản phẩm</th>
-	        <th scope="col">Nội dung</th>
-	        <th scope="col">Ngày bình luận</th>
-	        <th scope="col">Tác vụ</th>
-	        
+	        <th scope="col">Mã giảm giá</th>
+	        <th scope="col">Chiết khấu</th>
+	        <th scope="col">Ngày áp dụng</th>
+	        <th scope="col">Ngày kết thúc</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -46,13 +43,13 @@
 	    	 ?>
 	        <tr>
 	        	<td><?php echo $stt; ?></td>
-	        	<td><?php echo $row['id_khach_hang']?></td>
-				<td><?php echo $row['ten_khach_hang']?></td>
-	        	<td><?php echo $row['id_san_pham'];?></td>
-	        	<td><?php echo substr($row['noi_dung'],0,80);?></td>
-	        	<td><?php echo $row['ngay_tao']?></td>
+	        	<td><?php echo $row['ma_giam_gia']?></td>
+	        	<td><?php echo $row['chiet_khau'];?></td>
+	        	<td><?php echo $row['ngay_ap_dung'];?></td>
+	        	<td><?php echo $row['ngay_ket_thuc']?></td>
 	        	<td>
-	        		<a class="btn btn-outline-warning" href="?ql=binhluansp/ds&idxoa=<?php echo $row['id_binh_luan']?>">Xóa</a>
+	        		<a class="btn btn-outline-primary" href="?ql=magiamgia/sua&magiamgia=<?php echo $row['ma_giam_gia']?>">Sửa</a>
+	        		<a class="btn btn-outline-warning" href="?ql=magiamgia/ds&idxoa=<?php echo $row['ma_giam_gia']?>">Xóa</a>
 	        	</td>
 	        </tr>
 	    <?php $stt++; } ?>

@@ -7,6 +7,16 @@
       $sodt = $_POST['sodt'];
       $email = $_POST['email'];
       $matkhau = $_POST['matkhau'];
+		
+	$sqlcheck="select * from tbl_khach_hang where id_khach_hang <>'".$_GET['idsua']."' AND (email='$email' or ten_khach_hang='$tenkhachhang' or so_dien_thoai='$sodt')";
+	$querycheck=$connection->query($sqlcheck);
+		
+		if($querycheck->num_rows>0) {
+    echo "<div class='alert alert-danger' role='alert'>
+                 <strong><br>Lưu ý: Thông tin không được trùng trong cơ sở dữ liệu.</strong>
+        </div>";
+  }
+  else {
 	
 			//Cập nhật dữ liệu
 			$sql = "UPDATE tbl_khach_hang SET ten_khach_hang = '$tenkhachhang', dia_chi = '$diachi', so_dien_thoai='$sodt', email='$email', mat_khau='$matkhau' WHERE id_khach_hang = $id";
@@ -21,6 +31,7 @@
     <strong>Cập nhật thất bại</strong>
 </div>";
 		
+	}
 	}
 
    //Hiển thị thông tin cần sửa
@@ -45,24 +56,24 @@
                            <div class="col-lg-12">
                               <div class="form-group">
                                  <label class="form-control-label" for="input-username">Tên khách hàng</label>
-                                 <input name="ten_khach_hang" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Tên khách hàng" value="<?php echo $row['ten_khach_hang'] ?>">
+                                 <input name="ten_khach_hang" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Tên khách hàng" required value="<?php echo $row['ten_khach_hang'] ?>">
                               </div>
                               <div class="form-group">
                                  <label class="form-control-label" for="input-username">Địa chỉ</label>
-                                 <input name="dia_chi" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Địa chỉ" value="<?php echo $row['dia_chi'] ?>">
+                                 <input name="dia_chi" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Địa chỉ" required value="<?php echo $row['dia_chi'] ?>">
                               </div>
                               <div class="form-group">
                                  <label class="form-control-label" for="input-username">Số điện thoại</label>
-                                 <input name="sodt" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Số điện thoại" value="<?php echo $row['so_dien_thoai'] ?>">
+                                 <input name="sodt" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Số điện thoại" required value="<?php echo $row['so_dien_thoai'] ?>">
                               </div>
                               <div class="form-group">
                                  <label class="form-control-label" for="input-username">Email</label>
-                                 <input name="email" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Email" value="<?php echo $row['email'] ?>">
+                                 <input name="email" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Email" required value="<?php echo $row['email'] ?>">
                               </div>
 
                               <div class="form-group">
                                  <label class="form-control-label" for="input-username">Mật khẩu</label>
-                                 <input name="matkhau" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Mật khẩu" value="<?php echo $row['mat_khau'] ?>">
+                                 <input name="matkhau" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Mật khẩu" required value="<?php echo $row['mat_khau'] ?>">
                               </div>
                            </div>
                         </div>

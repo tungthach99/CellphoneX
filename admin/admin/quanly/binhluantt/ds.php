@@ -22,8 +22,8 @@
       $sql="SELECT * from tbl_binh_luan JOIN tbl_khach_hang ON tbl_binh_luan.id_khach_hang=tbl_khach_hang.id_khach_hang";
       $query=$connection->query($sql);
  ?>
-<div>
-	<h1> Danh sách khách hàng </h1>
+<div><br>
+	<h1> Danh sách </h1>
 	
      <div class="table-responsive">
 	  <table class="table align-items-center table-flush">

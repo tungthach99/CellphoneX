@@ -22,7 +22,7 @@
       $sql="SELECT * from tbl_khuyen_mai";
       $query=$connection->query($sql);
  ?>
-<div>
+<div><br>
 	<h1> Danh sách khuyến mại </h1>
 	<a class="btn btn-success" href="?ql=khuyenmai/them">Thêm</a>
      <div class="table-responsive">

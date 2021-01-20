@@ -137,7 +137,7 @@ jQuery.noConflict();
 					<?php
 						$sql="SELECT *, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi FROM tbl_san_pham 
 						LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham
-						WHERE id_danh_muc <>'L05' ORDER BY IF(tbl_khuyen_mai.muc_khuyen_mai != 0, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100), tbl_san_pham.don_gia) ASC LIMIT 6";
+						WHERE id_danh_muc <>'5' ORDER BY IF(tbl_khuyen_mai.muc_khuyen_mai != 0, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100), tbl_san_pham.don_gia) ASC LIMIT 6";
 						$result=$con->query($sql);
 						if($result->num_rows>0)
 						{

@@ -1,10 +1,11 @@
 <?php 
     $id = $_GET['id'];
 	//Hiển thị danh sách đơn hàng
-      $sql="SELECT t1.id_don_hang, t3.ten_san_pham, t1.so_luong, t1.don_gia, t1.thanh_tien
+      $sql="SELECT t1.id_don_hang, t3.ten_san_pham, t1.so_luong, t1.don_gia, t1.thanh_tien,t4.dung_luong
 				FROM tbl_chi_tiet_don_hang t1
 			    JOIN tbl_don_hang t2 ON t1.id_don_hang = t2.id_don_hang
 			    JOIN tbl_san_pham t3 ON t1.id_san_pham = t3.id_san_pham
+				JOIN tbl_phien_ban t4 ON t1.id_phien_ban = t4.id_phien_ban
 			    WHERE t1.id_don_hang = $id";
       $query=$connection->query($sql);
  ?>
@@ -19,6 +20,7 @@
 	        <th scope="col">Số lượng</th>
 	        <th scope="col">Đơn giá</th>
 	        <th scope="col">Thành tiền</th>
+			  <th scope="col">Phiên bản</th>
 	        
 	      </tr>
 	    </thead>
@@ -33,6 +35,7 @@
 	        	<td><?php echo $row['so_luong']; ?></td>
 	        	<td><?php echo $row['don_gia']; ?></td>
 	        	<td><?php echo $row['thanh_tien']; ?></td>
+				<td><?php echo $row['dung_luong']; ?></td>
 	        </tr>
 	    <?php $stt++; } ?>
 	    </tbody>
