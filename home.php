@@ -52,6 +52,10 @@ jQuery.noConflict();
 		if($_GET["loi"]=='1') include("layout/message5.php");
 		if($_GET["loi"]=='2') include("layout/message6.php");
 	}
+	if(isset($_GET["error"]))
+	{
+		if($_GET["error"]=='2') include("layout/message8.php");
+	}
 	if(isset($_GET["action"]))
 	{
 		if($_GET["action"]=='hoantat') include("layout/message7.php");
@@ -135,7 +139,7 @@ jQuery.noConflict();
 					<input type="radio" name="dieuHuong" id="trai" checked>
 					<input type="radio" name="dieuHuong" id="phai">
 					<?php
-						$sql="SELECT *, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi FROM tbl_san_pham 
+						$sql="SELECT *, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi,tbl_san_pham.id_san_pham AS id FROM tbl_san_pham 
 						LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham
 						WHERE id_danh_muc <>'5' ORDER BY IF(tbl_khuyen_mai.muc_khuyen_mai != 0, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100), tbl_san_pham.don_gia) ASC LIMIT 6";
 						$result=$con->query($sql);
@@ -154,19 +158,19 @@ jQuery.noConflict();
 										<?php
 										if (isset($_SESSION["id-user"]))
 										{
-											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id_san_pham"]."'";
+											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id"]."'";
 											$resultyt=$con->query($sqlcheckyeuthich);
 											if($resultyt->num_rows>0)
 											{
 										?>
-										<a href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
+										<a href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
 										</a>
 										<?php
 											}
 											else
 											{
 										?>
-										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
 										</a>
 										<?php
 											}
@@ -174,7 +178,7 @@ jQuery.noConflict();
 										else
 										{
 										?>
-										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
 										</a>
 										<?php
 										}
@@ -286,7 +290,7 @@ jQuery.noConflict();
 					<input type="radio" name="dieuHuong" id="phai4">
 					<?php
 						$sql="SELECT tbl_san_pham.id_san_pham,tbl_san_pham.ten_san_pham,tbl_san_pham.don_gia,tbl_san_pham.anh, 
-						tbl_khuyen_mai.muc_khuyen_mai,tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi FROM tbl_san_pham 
+						tbl_khuyen_mai.muc_khuyen_mai,tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi,tbl_san_pham.id_san_pham AS id FROM tbl_san_pham 
 						LEFT OUTER JOIN tbl_chi_tiet_don_hang ON tbl_san_pham.id_san_pham=tbl_chi_tiet_don_hang.id_san_pham 
 						LEFT OUTER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham
 						GROUP BY tbl_san_pham.id_san_pham 
@@ -306,19 +310,19 @@ jQuery.noConflict();
 										<?php
 										if (isset($_SESSION["id-user"]))
 										{
-											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id_san_pham"]."'";
+											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id"]."'";
 											$resultyt=$con->query($sqlcheckyeuthich);
 											if($resultyt->num_rows>0)
 											{
 										?>
-										<a href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
+										<a href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
 										</a>
 										<?php
 											}
 											else
 											{
 										?>
-										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
 										</a>
 										<?php
 											}
@@ -326,7 +330,7 @@ jQuery.noConflict();
 										else
 										{
 										?>
-										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
 										</a>
 										<?php
 										}
@@ -377,7 +381,7 @@ jQuery.noConflict();
 					<input type="radio" name="dieuHuong" id="trai2" checked>
 					<input type="radio" name="dieuHuong" id="phai2">
 					<?php
-						$sql="SELECT *,tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi FROM tbl_san_pham 
+						$sql="SELECT *,tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi,tbl_san_pham.id_san_pham AS id FROM tbl_san_pham 
 						LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham
 						ORDER BY ngay_them DESC LIMIT 6";
 						$result=$con->query($sql);
@@ -395,19 +399,19 @@ jQuery.noConflict();
 										<?php
 										if (isset($_SESSION["id-user"]))
 										{
-											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id_san_pham"]."'";
+											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id"]."'";
 											$resultyt=$con->query($sqlcheckyeuthich);
 											if($resultyt->num_rows>0)
 											{
 										?>
-										<a href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
+										<a href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
 										</a>
 										<?php
 											}
 											else
 											{
 										?>
-										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
 										</a>
 										<?php
 											}
@@ -415,7 +419,7 @@ jQuery.noConflict();
 										else
 										{
 										?>
-										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
 										</a>
 										<?php
 										}

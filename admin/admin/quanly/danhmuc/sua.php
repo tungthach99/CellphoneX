@@ -30,7 +30,7 @@
 	}
 
    //Hiển thị dữ liệu cần sửa
-   $sql = "SELECT ten_danh_muc, mo_ta, anh FROM tbl_danh_muc WHERE id_danh_muc ='".$_SESSION["id_danh_muc"]."'";
+   $sql = "SELECT ten_danh_muc, mo_ta, anh FROM tbl_danh_muc WHERE id_danh_muc ='".$_GET['idsua']."'";
    $query = $connection->query($sql);
    $row = $query->fetch_assoc();
  ?>

@@ -7,7 +7,7 @@ if(isset($_GET['bcdt']) and isset($_GET['bcdt'])==1)
 		$query=$connection->query($sql);
 		while ($row=$query->fetch_assoc()) 
 		{
-			echo "<br><h1>Tổng doanh thu tháng ".$_POST['thang']." năm ".$_POST['nam']." là: ".number_format($row['tong_tien'])."</h1>";
+			echo "<br><h1>Tổng doanh thu tháng ".$_POST['thang']." năm ".$_POST['nam']." là: ".number_format($row['tong_tien'])." VND</h1>";
 		}
 		echo "<a class='btn btn-outline-default' href='?ql=baocao/ds'> Trở về</a>";
 	}

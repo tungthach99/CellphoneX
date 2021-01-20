@@ -26,7 +26,7 @@ if(isset($_GET['idxoa'])){
       $query=$connection->query($sql);
  ?>
 <?php
-	if(isset($_SESSION['tk']['quyen']) and $_SESSION['tk']['quyen']=1)
+	if(isset($_SESSION['tk']['quyen']) and $_SESSION['tk']['quyen']==1)
 	{
 		
 	

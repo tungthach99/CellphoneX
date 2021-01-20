@@ -199,7 +199,7 @@ jQuery.noConflict();
 				{
 					?>
 			<p style="margin-top: 60px;">Giỏ hàng của bạn trống<p>
-			<a href="sanpham.php?&maloai=L01" >&lsaquo; Tiếp tục mua hàng</a>
+			<a href="sanpham.php?&maloai=1" >&lsaquo; Tiếp tục mua hàng</a>
 					<?php
 				}
 		?>
