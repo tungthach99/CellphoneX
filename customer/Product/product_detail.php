@@ -21,7 +21,7 @@ $row=$result->fetch_assoc();
 				$dem++;
 				?>
 				<input required value="<?php echo $row2["id_phien_ban"];?>" type="radio" id="phienban<?php echo $dem?>" name="phienban" >
-				<label for="phienban<?php echo $dem?>"><b><?php echo $row2["dung_luong"];?>: Còn <?php echo $row2["so_luong_ton"];?> sp</b>
+				<label for="phienban<?php echo $dem?>"><b><?php echo $row2["dung_luong"];?>: Còn <?php echo number_format($row2["so_luong_ton"]);?> sp</b>
 				</label><br>
 				<?php
 			}
